@@ -1,0 +1,41 @@
+{
+    "name": "jpcercal/resume",
+    "description": "My resume",
+    "keywords": [
+        "resume",
+        "console",
+        "pdf",
+        "markdown"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+        "symfony/console": "^3.0",
+        "erusev/parsedown-extra": "^0.7.1",
+        "michelf/php-markdown": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.3.0",
+        "cekurte/tdd": "^1.0.2",
+        "sensiolabs/security-checker": "^3.0",
+        "squizlabs/php_codesniffer": "^2.5"
+    },
+    "authors": [
+        {
+            "name": "João Paulo Cercal",
+            "email": "jpcercal@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cekurte\\Resume\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cekurte\\Resume\\Test\\": "test/"
+        }
+    }
+}
