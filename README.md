@@ -2,7 +2,7 @@
 
 An application that I can use to create My Resume, you can feel free to modify this project for your purposes, but don't forget to give me a star **=)**.
 
-This project requires PHP 5.5+ to run and was tested in OSX only. To see all dependencies check the [composer.json](https://github.com/jpcercal/resume/blob/master/composer.json) file.
+This project requires PHP 5.6+ to run and was tested in OSX only. To see all dependencies check the [composer.json](https://github.com/jpcercal/resume/blob/master/composer.json) file.
 
 ## Installation
 
