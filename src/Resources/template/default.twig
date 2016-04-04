@@ -91,12 +91,14 @@
         }
 
         section.experience .entity span,
-        section.education  .entity span {
+        section.education  .entity span,
+        section.course     .entity span {
             font-size: 14px;
         }
 
         section.experience .row:before,
-        section.education  .row:before {
+        section.education  .row:before,
+        section.course     .row:before {
             border-top: 1px solid #DDD;
             padding-top: 8px;
             content: '';
@@ -105,13 +107,15 @@
         }
 
         section.experience .row:first-child:before,
-        section.education  .row:first-child:before {
+        section.education  .row:first-child:before,
+        section.course     .row:first-child:before {
             border-top: none;
             padding-top: 0px;
         }
 
         section.experience .title h2,
-        section.education  .title h2 {
+        section.education  .title h2,
+        section.course     .title h2 {
             font-family: 'Open Sans', sans-serif;
             font-weight: 400;
             font-size: 14px;
@@ -120,20 +124,23 @@
         }
 
         section.experience .timePeriod ul,
-        section.education  .timePeriod ul {
+        section.education  .timePeriod ul,
+        section.course     .timePeriod ul {
             display: block;
             text-align: right;
             margin: 0px;
         }
 
         section.experience .timePeriod ul li,
-        section.education  .timePeriod ul li {
+        section.education  .timePeriod ul li,
+        section.course     .timePeriod ul li {
             display: inline;
             font-size: 14px;
         }
 
         section.experience p,
-        section.education  p {
+        section.education  p,
+        section.course     p {
             margin-top: 6px;
             text-align: justify;
         }
@@ -236,6 +243,33 @@
                     </div>
                 </div>
                 <p>{{ education.description | nl2br }}</p>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="course">
+        <h1>{{ resume.course.title }}</h1>
+        <div>
+            {% for course in resume.course.items %}
+                <div class="row">
+                    <div class="col-xs-3 entity">
+                        <span>{{ course.hours }} {% if course.hours > 1 %}{{ i18n['course.hours'] }}{% else %}{{ i18n['course.hour'] }}{% endif %}</span>
+                    </div>
+                    <div class="col-xs-6 title">
+                        <h2>{{ course.name }}</h2>
+                    </div>
+                    <div class="col-xs-3 timePeriod">
+                        <ul class="list-unstyled">
+                            {% if course.timePeriod.end is null %}
+                                <li>{{ i18n['timePeriod.currently'] }}</li>
+                            {% else %}
+                                <li>{{ course.timePeriod.start|date('Y') }}</li>
+                                <li class="separator">-</li>
+                                <li>{{ course.timePeriod.end|date('Y') }}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <p>{{ course.description | nl2br }}</p>
             {% endfor %}
         </div>
     </section>

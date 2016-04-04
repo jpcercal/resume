@@ -3,7 +3,7 @@ resume:
     job: PHP Developer
     location: Joinville/SC
     contact:
-        phone: +55 (47) 9128-6226
+        phone: (47) 9128-6226
         email: jpcercal@gmail.com
     link:
         linkedin: www.linkedin.com/in/jpcercal
@@ -11,7 +11,7 @@ resume:
     about:
         title: Perfil
         description: |
-            Desenvolvedor PHP desde 2010. Sempre buscando melhores praticas, novas tecnologias e metologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
+            Desenvolvedor PHP desde 2010. Sempre buscando melhores praticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
     skills:
         title: Skills
         items:
@@ -96,7 +96,7 @@ resume:
                     start: 2011-01
                     end: 2014-12
                 description: |
-                    Eleito o melhor aluno do curso. Obtive também uma das melhores notas no ENADE 2014, por conta disto, recebi uma bolsa de estudos para uma pós-graduação (processo em andamento) de 80%. Meu TCC foi baseado na prova de certificação ZCPE, e continua sendo utilizado até hoje pelo grupo "Rumo à Certificação PHP", também recebi patrocínio da DigitalOcean para hospedar o projeto com eles.
+                    Eleito o melhor aluno do curso. Obtive também uma das melhores notas no ENADE 2014, por conta disto, recebi uma bolsa de estudos para uma pós-graduação (processo em andamento) de 80%. Meu TCC foi baseado na prova de certificação ZCPE, e continua sendo utilizado até hoje pelo grupo "Rumo à Certificação PHP", também recebi patrocínio da DigitalOcean para hospedar o projeto.
             -
                 degree: Técnico em Informática
                 school: SOCIESC
@@ -105,3 +105,22 @@ resume:
                     end: 2010-12
                 description: |
                     Por conta do destaque que tive durante as aulas, participei de projetos internos durante o curso (sem remuneração) e que me trouxeram bastante conhecimento, nesses projetos, desenvolvemos dentre outros, um sistema para alocação de recursos e salas de aula.
+    course:
+        title: Cursos
+        items:
+            -
+                name: PLANSEQ
+                hours: 250
+                timePeriod:
+                    start: 2010-01
+                    end: 2010-12
+                description: |
+                    Lógica de programação estruturada em C e Java.
+            -
+                name: TOTVS
+                hours: 268
+                timePeriod:
+                    start: 2009-01
+                    end: 2009-12
+                description: |
+                    Introdução ao banco de dados Progress, UML, XML, Java, Flex, Subversion, Jira, Confluence e boas práticas de programação.
