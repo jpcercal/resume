@@ -1,0 +1,107 @@
+resume:
+    name: João Paulo Cercal
+    job: PHP Developer
+    location: Joinville/SC
+    contact:
+        phone: +55 (47) 9128-6226
+        email: jpcercal@gmail.com
+    link:
+        linkedin: www.linkedin.com/in/jpcercal
+        github: www.github.com/jpcercal
+    about:
+        title: About me
+        description: |
+            About me text.
+    skills:
+        title: Skills
+        items:
+            -
+                title: Languages, Tools and Technologies
+                items:
+                    -
+                        - PHP
+                        - ZendFramework
+                        - Symfony
+                        - Silex
+                        - Laravel
+                        - Wordpress
+                        - PHPUnit
+                        - Composer
+                    -
+                        - Doctrine
+                        - EloquentORM
+                        - MySQL
+                        - PostgreSQL
+                        - SQLite
+                        - Yaml
+                        - HTML
+                        - XML
+                    -
+                        - Bower
+                        - CSS
+                        - Less
+                        - TwitterBootstrap
+                        - MaterialDesign
+                        - Javascript
+                        - JSON
+                        - AngularJS
+                    -
+                        - jQuery
+                        - ExtJS
+                        - Grunt
+                        - Git
+                        - SVN
+                        - Windows
+                        - Linux
+                        - OSX
+            -
+                title: Certifications
+                items:
+                    -
+                        - Zend Certified PHP Engineer
+    experience:
+        title: Experience
+        items:
+            -
+                position: PHP Developer
+                company: NeoGrid Software
+                timePeriod:
+                    start: 2015-09
+                    end:
+                description: |
+                    Describe your position.
+            -
+                position: PHP Developer
+                company: Humantech
+                timePeriod:
+                    start: 2015-02
+                    end: 2015-09
+                description: |
+                    Describe your position.
+            -
+                position: PHP Developer
+                company: A2C Agency
+                timePeriod:
+                    start: 2013-11
+                    end: 2014-09
+                description: |
+                    Describe your position.
+    education:
+        title: Education
+        items:
+            -
+                degree: Computer Programming
+                school: SOCIESC
+                timePeriod:
+                    start: 2011-01
+                    end: 2014-12
+                description: |
+                    Describe here.
+            -
+                degree: Computer Programming
+                school: SOCIESC
+                timePeriod:
+                    start: 2009-01
+                    end: 2010-12
+                description: |
+                    Describe here.
