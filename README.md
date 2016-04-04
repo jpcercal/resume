@@ -12,6 +12,7 @@ Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/acce
 ```shell
 git clone git@github.com:jpcercal/resume.git
 cd resume/
+composer install
 cp .env.example .env
 mkdir output
 chmod -Rf 777 output/
