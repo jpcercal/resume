@@ -73,7 +73,7 @@ resume:
                     - Leaded the developer team (two front-end developers and two back-end developers) in some time.
             -
                 position: PHP Developer
-                company: Agência A2C
+                company: A2C
                 timePeriod:
                     start: 2013-11
                     end: 2014-09
@@ -97,10 +97,10 @@ resume:
         title: Courses
         items:
             -
-                name: Englishtown
-                hours:
+                name: English
+                info: Englishtown
                 timePeriod:
                     start: 2016-02
                     end:
-                description: |
-                    Studying english to increase my knowledge. Currently my english level is intermediate.
+                description:
+                    - Studying english to increase my knowledge. Currently my english level is intermediate.

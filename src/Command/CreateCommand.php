@@ -44,6 +44,12 @@ class CreateCommand extends Command
                 'The language that will be used to create the resume',
                 'en'
             )
+            ->addOption(
+                'debug',
+                null,
+                InputOption::VALUE_NONE,
+                'Used to debug this command'
+            )
             ->setHelp(file_get_contents(
                 APP_RESOURCES_HELP_PATH . DS . 'CreateCommand.txt'
             ))
@@ -112,6 +118,20 @@ class CreateCommand extends Command
     }
 
     /**
+     * Get the output file html file.
+     *
+     * @param  InputInterface $input
+     * @return string
+     */
+    protected function getOutputHtmlFile(InputInterface $input)
+    {
+        return sprintf(
+            OUTPUT_PATH . DS . 'resume.%s.html',
+            $input->getOption('language')
+        );
+    }
+
+    /**
      * Get the template file.
      *
      * @param  InputInterface $input
@@ -144,9 +164,10 @@ class CreateCommand extends Command
             $pdf  = $this->getPdfInstance();
             $yaml = new Parser();
 
-            $inputFile    = $this->getInputFile($input);
-            $templateFile = $this->getTemplateFile($input);
-            $outputFile   = $this->getOutputFile($input);
+            $inputFile      = $this->getInputFile($input);
+            $templateFile   = $this->getTemplateFile($input);
+            $outputFile     = $this->getOutputFile($input);
+            $outputHtmlFile = $this->getOutputHtmlFile($input);
 
             $resume = $yaml->parse(file_get_contents($inputFile));
 
@@ -154,14 +175,26 @@ class CreateCommand extends Command
                 unlink($outputFile);
             }
 
+            if ($input->getOption('overwrite') && $input->getOption('debug') && file_exists($outputHtmlFile)) {
+                unlink($outputHtmlFile);
+            }
+
             if (!file_exists(OUTPUT_PATH)) {
                 mkdir(OUTPUT_PATH, 0777, true);
             }
 
             $resume['i18n'] = $this->getMessages($input);
+            $resume['base_path'] = APP_RESOURCES_TWIG_PATH . DS . dirname($templateFile) . DS;
+            $resume['path_separator'] = DS;
+
+            $html = $twig->render($templateFile, $resume);
+
+            if ($input->getOption('debug')) {
+                file_put_contents($outputHtmlFile, $html);
+            }
 
             $pdf->generateFromHtml(
-                $twig->render($templateFile, $resume),
+                $html,
                 $outputFile
             );
 

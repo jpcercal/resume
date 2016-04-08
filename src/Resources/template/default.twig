@@ -2,11 +2,24 @@
 <html>
 <head>
     <title>{{ resume.name }}</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- BEGIN Metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- END Metadata -->
+
+    <!-- BEGIN Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <!-- END Fonts -->
+
+    <!-- BEGIN StyleSheets (dependencies) -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- END StyleSheets -->
+
+    <!-- BEGIN StyleSheet -->
     <style type="text/css">
         body {
             font-family: 'Open Sans', sans-serif;
@@ -35,11 +48,13 @@
             font-size: 12px;
         }
 
-        section h1:after {
-            margin-top: 8px;
-            content: '';
+        .bar {
             display: block;
             border-bottom: 1px solid #DDD;
+            height: 1px;
+            width: 100%;
+            background-color: #DDD;
+            margin: 5px 0px;
         }
 
         header .contact ul,
@@ -96,23 +111,6 @@
             font-size: 14px;
         }
 
-        section.experience .row:before,
-        section.education  .row:before,
-        section.course     .row:before {
-            border-top: 1px solid #DDD;
-            padding-top: 8px;
-            content: '';
-            display: block;
-            margin: 0px 15px;
-        }
-
-        section.experience .row:first-child:before,
-        section.education  .row:first-child:before,
-        section.course     .row:first-child:before {
-            border-top: none;
-            padding-top: 0px;
-        }
-
         section.experience .title h2,
         section.education  .title h2,
         section.course     .title h2 {
@@ -129,6 +127,7 @@
             display: block;
             text-align: right;
             margin: 0px;
+            padding: 0px;
         }
 
         section.experience .timePeriod ul li,
@@ -144,7 +143,17 @@
             margin-top: 6px;
             text-align: justify;
         }
+
+        section.experience ul,
+        section.education  ul,
+        section.skils      ul,
+        section.course     ul {
+            padding: 0px 18px;
+            margin: 0px;
+            list-style: square;
+        }
     </style>
+    <!-- END StyleSheet -->
 </head>
 <body class="container">
     <header class="row">
@@ -175,8 +184,12 @@
     {% endif %}
     <section class="experience">
         <h1>{{ resume.experience.title }}</h1>
+        <div class="bar"></div>
         <div>
             {% for experience in resume.experience.items %}
+                {% if not loop.first %}
+                    <div class="bar"></div>
+                {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
                         <span>{{ experience.company }}</span>
@@ -206,8 +219,12 @@
     </section>
     <section class="education">
         <h1>{{ resume.education.title }}</h1>
+        <div class="bar"></div>
         <div>
             {% for education in resume.education.items %}
+                {% if not loop.first %}
+                    <div class="bar"></div>
+                {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
                         <span>{{ education.school }}</span>
@@ -237,6 +254,7 @@
     </section>
     <section class="skills">
         <h1>{{ resume.skills.title }}</h1>
+        <div class="bar"></div>
         <div class="row skills-container">
             {% for skill in resume.skills.items %}
                 <div class="col-xs-{% if (skill.items | length) > 3 %}9{% else %}{{ (skill.items | length) * 3 }}{% endif %}">
@@ -258,11 +276,15 @@
     </section>
     <section class="course">
         <h1>{{ resume.course.title }}</h1>
+        <div class="bar"></div>
         <div>
             {% for course in resume.course.items %}
+                {% if not loop.first %}
+                    <div class="bar"></div>
+                {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
-                        <span>{{ course.hours }} {% if course.hours > 1 %}{{ i18n['course.hours'] }}{% else %}{{ i18n['course.hour'] }}{% endif %}</span>
+                        {{ course.info }}
                     </div>
                     <div class="col-xs-6 title">
                         <h2>{{ course.name }}</h2>
@@ -279,7 +301,11 @@
                         </ul>
                     </div>
                 </div>
-                <p>{{ course.description | nl2br }}</p>
+                <ul>
+                    {% for description in education.description %}
+                        <li>{{ description }}</li>
+                    {% endfor %}
+                </ul>
             {% endfor %}
         </div>
     </section>
