@@ -2,17 +2,21 @@
 
 namespace Cekurte\Resume\Command;
 
-use Cekurte\Environment\Environment;
 use Cekurte\Resume\Exception\FileNotExistsException;
+use Cekurte\Resume\Factory\PdfFactory;
+use Cekurte\Resume\Factory\TwigFactory;
+use Cekurte\Resume\File\I18nFile;
+use Cekurte\Resume\File\InputFile;
+use Cekurte\Resume\File\OutputFile;
+use Cekurte\Resume\File\TemplateFile;
+use Cekurte\Resume\File\Yaml\Parser;
 use Knp\Snappy\Exception\FileAlreadyExistsException;
-use Knp\Snappy\Pdf;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Exception\ParseException;
-use Symfony\Component\Yaml\Parser;
 
 class CreateCommand extends Command
 {
@@ -51,104 +55,15 @@ class CreateCommand extends Command
     }
 
     /**
-     * Get the messages given a language.
-     *
-     * @param  InputInterface $input
-     * @return string
-     */
-    protected function getMessages(InputInterface $input)
-    {
-        $yaml = new Parser();
-
-        $filename = sprintf(
-            APP_RESOURCES_I18N_PATH . DS . 'messages.%s.yml',
-            $input->getOption('language')
-        );
-
-        if (!file_exists($filename)) {
-            $filename = APP_RESOURCES_I18N_PATH . DS . 'messages.en.yml';
-        }
-
-        return $yaml->parse(file_get_contents($filename));
-    }
-
-    /**
-     * Get the input file.
-     *
-     * @param  InputInterface $input
-     * @return string
-     *
-     * @throws FileNotExistsException
-     */
-    protected function getInputFile(InputInterface $input)
-    {
-        $filename = sprintf(
-            APP_RESOURCES_RESUME_PATH . DS . '%s.yml',
-            $input->getOption('language')
-        );
-
-        if (!file_exists($filename)) {
-            throw new FileNotExistsException(sprintf(
-                'The filename "%s" not exists.',
-                $filename
-            ));
-        }
-
-        return $filename;
-    }
-
-    /**
-     * Get the output file.
-     *
-     * @param  InputInterface $input
-     * @return string
-     */
-    protected function getOutputFile(InputInterface $input)
-    {
-        return sprintf(
-            OUTPUT_PATH . DS . 'resume.%s.pdf',
-            $input->getOption('language')
-        );
-    }
-
-    /**
-     * Get the template file.
-     *
-     * @param  InputInterface $input
-     * @return string
-     */
-    protected function getTemplateFile(InputInterface $input)
-    {
-        $filename = sprintf(
-            '%s.twig',
-            $input->getOption('template')
-        );
-
-        if (!file_exists(APP_RESOURCES_TWIG_PATH . DS . $filename)) {
-            throw new FileNotExistsException(sprintf(
-                'The template "%s" not exists.',
-                $filename
-            ));
-        }
-
-        return $filename;
-    }
-
-    /**
      * {@inheritdoc}
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         try {
-            $twig = $this->getTwigInstance();
-            $pdf  = $this->getPdfInstance();
-            $yaml = new Parser();
+            $twig = TwigFactory::create();
+            $pdf  = PdfFactory::create();
 
-            $inputFile    = $this->getInputFile($input);
-            $templateFile = $this->getTemplateFile($input);
-            $outputFile   = $this->getOutputFile($input);
-
-            $resume = $yaml->parse(file_get_contents($inputFile));
+            $outputFile = (new OutputFile($input))->getFilename();
 
             if ($input->getOption('overwrite') && file_exists($outputFile)) {
                 unlink($outputFile);
@@ -158,10 +73,12 @@ class CreateCommand extends Command
                 mkdir(OUTPUT_PATH, 0777, true);
             }
 
-            $resume['i18n'] = $this->getMessages($input);
+            $resume = (new Parser(new InputFile($input)))->getContentParsed();
+
+            $resume['i18n'] = (new Parser(new I18nFile($input)))->getContentParsed();
 
             $pdf->generateFromHtml(
-                $twig->render($templateFile, $resume),
+                $twig->render((new TemplateFile($input))->getFilename(), $resume),
                 $outputFile
             );
 
@@ -194,49 +111,5 @@ class CreateCommand extends Command
                 $e->getMessage()
             ));
         }
-    }
-
-    /**
-     * Get the Twig instance.
-     *
-     * @return \Twig_Environment
-     */
-    public function getTwigInstance()
-    {
-        return new \Twig_Environment(
-            new \Twig_Loader_Filesystem(APP_RESOURCES_TWIG_PATH)
-        );
-    }
-
-    /**
-     * Get the Wkhtmltopdf instance.
-     *
-     * @return Pdf
-     */
-    public function getPdfInstance()
-    {
-        $pdf = new Pdf(Environment::get('WKHTMLTOPDF_BIN'));
-
-        $pdf->setOption(
-            'margin-top',
-            Environment::get('WKHTMLTOPDF_OPTION_MARGIN_TOP')
-        );
-
-        $pdf->setOption(
-            'margin-right',
-            Environment::get('WKHTMLTOPDF_OPTION_MARGIN_RIGHT')
-        );
-
-        $pdf->setOption(
-            'margin-bottom',
-            Environment::get('WKHTMLTOPDF_OPTION_MARGIN_BOTTOM')
-        );
-
-        $pdf->setOption(
-            'margin-left',
-            Environment::get('WKHTMLTOPDF_OPTION_MARGIN_LEFT')
-        );
-
-        return $pdf;
     }
 }
