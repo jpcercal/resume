@@ -1,0 +1,106 @@
+resume:
+    name: João Paulo Cercal
+    job: PHP Developer
+    location: Joinville/SC
+    contact:
+        phone: +55 (47) 9128-6226
+        email: jpcercal@gmail.com
+    link:
+        linkedin: www.linkedin.com/in/jpcercal
+        github: www.github.com/jpcercal
+    about:
+    skills:
+        title: Skills
+        items:
+            -
+                title: Languages, Tools and Technologies
+                items:
+                    -
+                        - PHP
+                        - MVC/MVVM
+                        - ZendFramework
+                        - Symfony
+                        - Silex
+                        - Laravel
+                    -
+                        - Wordpress
+                        - PHPUnit
+                        - Doctrine
+                        - Vagrant
+                        - Apache
+                        - MySQL
+                    -
+                        - HTML/CSS/Less
+                        - TwitterBootstrap
+                        - MaterialDesign
+                        - Javascript
+                        - AngularJS
+                        - jQuery
+                    -
+                        - Grunt
+                        - Git
+                        - SVN
+                        - Windows
+                        - Linux
+                        - OSX
+            -
+                title: Certifications
+                items:
+                    -
+                        - Zend Certified PHP Engineer
+    experience:
+        title: Experience
+        items:
+            -
+                position: PHP Developer
+                company: NeoGrid Software
+                timePeriod:
+                    start: 2015-09
+                    end:
+                description:
+                    - Redesigned an application using the Google Material Design concepts.
+                    - Implemented improvements and integrations between the NeoGrid solutions using RESTful APIs.
+                    - Reduced time to synchronize the database of production environment with the developement environment by 75% by implementing a console application (previously this process was manual).
+            -
+                position: PHP Developer
+                company: Humantech
+                timePeriod:
+                    start: 2015-02
+                    end: 2015-09
+                description:
+                    - Implemented in an existing project 90% of coverage using the PHPUnit, that reduce bugs and increase significantly the quality of source code.
+                    - Created a e-learning plataform using the concepts of gamification.
+                    - Leaded the developer team (two front-end developers and two back-end developers) in some time.
+            -
+                position: PHP Developer
+                company: A2C
+                timePeriod:
+                    start: 2013-11
+                    end: 2014-09
+                description:
+                    - Created a content management system to the 3M brand, with the gamification concepts to improve the users engagement.
+                    - Management the AWS services EC2, RDS and S3.
+                    - Developed an RESTful API to monitor the health of politians with a partner Mail2Easy.
+    education:
+        title: Education
+        items:
+            -
+                degree: Computer Programming
+                school: SOCIESC
+                timePeriod:
+                    start: 2011-01
+                    end: 2014-12
+                description:
+                    - The best student of the course.
+                    - My term paper was written about the Zend Certified PHP Engineer and I developed an application to use as a study guide with an existing group "Rumo à certificação PHP", today this project is hosted by DigitalOcean as a sponsor.
+    course:
+        title: Courses
+        items:
+            -
+                name: English
+                info: Englishtown
+                timePeriod:
+                    start: 2016-02
+                    end:
+                description:
+                    - Studying english to increase my knowledge. Currently my english level is intermediate.

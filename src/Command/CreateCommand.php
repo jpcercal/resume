@@ -5,6 +5,7 @@ namespace Cekurte\Resume\Command;
 use Cekurte\Resume\Exception\FileNotExistsException;
 use Cekurte\Resume\Factory\PdfFactory;
 use Cekurte\Resume\Factory\TwigFactory;
+use Cekurte\Resume\File\DebugFile;
 use Cekurte\Resume\File\I18nFile;
 use Cekurte\Resume\File\InputFile;
 use Cekurte\Resume\File\OutputFile;
@@ -48,13 +49,19 @@ class CreateCommand extends Command
                 'The language that will be used to create the resume',
                 'en'
             )
+            ->addOption(
+                'debug',
+                null,
+                InputOption::VALUE_NONE,
+                'Used to debug this command'
+            )
             ->setHelp(file_get_contents(
                 APP_RESOURCES_HELP_PATH . DS . 'CreateCommand.txt'
             ))
         ;
     }
 
-    /**
+    /*
      * {@inheritdoc}
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -63,10 +70,14 @@ class CreateCommand extends Command
             $twig = TwigFactory::create();
             $pdf  = PdfFactory::create();
 
-            $outputFile = (new OutputFile($input))->getFilename();
+            $outputFilename = (new OutputFile($input))->getFilename();
 
-            if ($input->getOption('overwrite') && file_exists($outputFile)) {
-                unlink($outputFile);
+            if ($input->getOption('overwrite') && file_exists($outputFilename)) {
+                unlink($outputFilename);
+            }
+
+            if ($input->getOption('overwrite') && $input->getOption('debug') && file_exists($outputHtmlFile)) {
+                unlink($outputHtmlFile);
             }
 
             if (!file_exists(OUTPUT_PATH)) {
@@ -77,16 +88,31 @@ class CreateCommand extends Command
 
             $resume['i18n'] = (new Parser(new I18nFile($input)))->getContentParsed();
 
+            $html = $twig->render((new TemplateFile($input))->getFilename(), $resume);
+
+            if ($input->getOption('debug')) {
+                $debugFilename = (new DebugFile($input))->getFilename();
+
+                file_put_contents($debugFilename, $html);
+
+                $output->writeln('<info>Your debug html file was generated with successfully.</info>');
+
+                $output->writeln(sprintf(
+                    'Debug file: <comment>%s</comment>',
+                    $debugFilename
+                ));
+            }
+
             $pdf->generateFromHtml(
-                $twig->render((new TemplateFile($input))->getFilename(), $resume),
-                $outputFile
+                ,
+                $outputFilename
             );
 
             $output->writeln('<info>Your resume was generated with successfully.</info>');
 
             $output->writeln(sprintf(
                 'Generated file: <comment>%s</comment>',
-                $outputFile
+                $outputFilename
             ));
         } catch (FileAlreadyExistsException $e) {
             $output->writeln(sprintf(

@@ -25,11 +25,13 @@ h4, h5, h6 {
     font-size: 12px;
 }
 
-section h1:after {
-    margin-top: 8px;
-    content: '';
+.bar {
     display: block;
     border-bottom: 1px solid #DDD;
+    height: 1px;
+    width: 100%;
+    background-color: #DDD;
+    margin: 5px 0px;
 }
 
 header .contact ul,
@@ -86,23 +88,6 @@ section.course     .entity span {
     font-size: 14px;
 }
 
-section.experience .row:before,
-section.education  .row:before,
-section.course     .row:before {
-    border-top: 1px solid #DDD;
-    padding-top: 8px;
-    content: '';
-    display: block;
-    margin: 0px 15px;
-}
-
-section.experience .row:first-child:before,
-section.education  .row:first-child:before,
-section.course     .row:first-child:before {
-    border-top: none;
-    padding-top: 0px;
-}
-
 section.experience .title h2,
 section.education  .title h2,
 section.course     .title h2 {
@@ -119,6 +104,7 @@ section.course     .timePeriod ul {
     display: block;
     text-align: right;
     margin: 0px;
+    padding: 0px;
 }
 
 section.experience .timePeriod ul li,
@@ -133,4 +119,13 @@ section.education  p,
 section.course     p {
     margin-top: 6px;
     text-align: justify;
+}
+
+section.experience ul,
+section.education  ul,
+section.skils      ul,
+section.course     ul {
+    padding: 0px 18px;
+    margin: 0px;
+    list-style: square;
 }

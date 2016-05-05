@@ -2,14 +2,26 @@
 <html>
 <head>
     <title>{{ resume.name }}</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- BEGIN Metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- END Metadata -->
+
+    <!-- BEGIN Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    {{ less('default/less/style.less') }}
+    <!-- END Fonts -->
 
+    <!-- BEGIN StyleSheets (dependencies) -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- END StyleSheets -->
 
+    <!-- BEGIN StyleSheet -->
+    {{ less('style.less') }}
+    <!-- END StyleSheet -->
 </head>
 <body class="container">
     <header class="row">
@@ -21,7 +33,7 @@
             </ul>
         </div>
         <div class="col-xs-4">
-            <h1 class="name">aaa{{ resume.name }}</h1>
+            <h1 class="name">{{ resume.name }}</h1>
             <span class="location">{{ resume.location }}</span>
         </div>
         <div class="col-xs-4 link">
@@ -32,35 +44,20 @@
             </ul>
         </div>
     </header>
-    <section class="about">
-        <h1>{{ resume.about.title }}</h1>
-        <p>{{ resume.about.description | nl2br }}</p>
-    </section>
-    <section class="skills">
-        <h1>{{ resume.skills.title }}</h1>
-        <div class="row skills-container">
-            {% for skill in resume.skills.items %}
-                <div class="col-xs-{% if (skill.items | length) > 3 %}9{% else %}{{ (skill.items | length) * 3 }}{% endif %}">
-                    <h2>{{ skill.title }}</h2>
-                    <div class="row">
-                        {% for columns in skill.items %}
-                            <div class="col-xs-{% if skill.items | length > 1 %}{{ 12 / (skill.items | length) }}{% else %}12{% endif %}">
-                                <ul>
-                                    {% for item in columns %}
-                                        <li>{{ item }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+    {% if resume.about %}
+        <section class="about">
+            <h1>{{ resume.about.title }}</h1>
+            <p>{{ resume.about.description | nl2br }}</p>
+        </section>
+    {% endif %}
     <section class="experience">
         <h1>{{ resume.experience.title }}</h1>
+        <div class="bar"></div>
         <div>
             {% for experience in resume.experience.items %}
+                {% if not loop.first %}
+                    <div class="bar"></div>
+                {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
                         <span>{{ experience.company }}</span>
@@ -80,14 +77,22 @@
                         </ul>
                     </div>
                 </div>
-                <p>{{ experience.description | nl2br }}</p>
+                <ul>
+                    {% for description in experience.description %}
+                        <li>{{ description }}</li>
+                    {% endfor %}
+                </ul>
             {% endfor %}
         </div>
     </section>
     <section class="education">
         <h1>{{ resume.education.title }}</h1>
+        <div class="bar"></div>
         <div>
             {% for education in resume.education.items %}
+                {% if not loop.first %}
+                    <div class="bar"></div>
+                {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
                         <span>{{ education.school }}</span>
@@ -107,17 +112,47 @@
                         </ul>
                     </div>
                 </div>
-                <p>{{ education.description | nl2br }}</p>
+                <ul>
+                    {% for description in education.description %}
+                        <li>{{ description }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="skills">
+        <h1>{{ resume.skills.title }}</h1>
+        <div class="bar"></div>
+        <div class="row skills-container">
+            {% for skill in resume.skills.items %}
+                <div class="col-xs-{% if (skill.items | length) > 3 %}9{% else %}{{ (skill.items | length) * 3 }}{% endif %}">
+                    <h2>{{ skill.title }}</h2>
+                    <div class="row">
+                        {% for columns in skill.items %}
+                            <div class="col-xs-{% if skill.items | length > 1 %}{{ 12 / (skill.items | length) }}{% else %}12{% endif %}">
+                                <ul>
+                                    {% for item in columns %}
+                                        <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </section>
     <section class="course">
         <h1>{{ resume.course.title }}</h1>
+        <div class="bar"></div>
         <div>
             {% for course in resume.course.items %}
+                {% if not loop.first %}
+                    <div class="bar"></div>
+                {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
-                        <span>{{ course.hours }} {% if course.hours > 1 %}{{ i18n['course.hours'] }}{% else %}{{ i18n['course.hour'] }}{% endif %}</span>
+                        {{ course.info }}
                     </div>
                     <div class="col-xs-6 title">
                         <h2>{{ course.name }}</h2>
@@ -134,7 +169,11 @@
                         </ul>
                     </div>
                 </div>
-                <p>{{ course.description | nl2br }}</p>
+                <ul>
+                    {% for description in education.description %}
+                        <li>{{ description }}</li>
+                    {% endfor %}
+                </ul>
             {% endfor %}
         </div>
     </section>
