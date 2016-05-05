@@ -7,144 +7,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <style type="text/css">
-        body {
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
-            font-size: 13px
-        }
+    {{ less('default/less/style.less') }}
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-        }
 
-        h1 {
-            font-size: 16px;
-        }
-
-        h2 {
-            font-size: 14px;
-        }
-
-        h3 {
-            font-size: 13px;
-        }
-
-        h4, h5, h6 {
-            font-size: 12px;
-        }
-
-        section h1:after {
-            margin-top: 8px;
-            content: '';
-            display: block;
-            border-bottom: 1px solid #DDD;
-        }
-
-        header .contact ul,
-        header .link    ul {
-            margin-bottom: 0px;
-        }
-
-        header .contact,
-        header .link,
-        header .location {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            font-size: 12px;
-        }
-
-        header .contact {
-            text-align: left;
-        }
-
-        header .location {
-            font-size: 11px;
-            text-align: center;
-            display: block;
-        }
-
-        header .link {
-            text-align: right;
-        }
-
-        header h1 {
-            text-align: center;
-            font-size: 17px;
-            font-weight: 500;
-            text-transform: uppercase;
-            margin: 0px;
-        }
-
-        section.about {
-            text-align: justify;
-        }
-
-        section.skills ul {
-            padding-left: 16px;
-            margin-bottom: 0px;
-        }
-
-        section.skills .skills-container {
-            margin-top: -18px;
-        }
-
-        section.experience .entity span,
-        section.education  .entity span,
-        section.course     .entity span {
-            font-size: 14px;
-        }
-
-        section.experience .row:before,
-        section.education  .row:before,
-        section.course     .row:before {
-            border-top: 1px solid #DDD;
-            padding-top: 8px;
-            content: '';
-            display: block;
-            margin: 0px 15px;
-        }
-
-        section.experience .row:first-child:before,
-        section.education  .row:first-child:before,
-        section.course     .row:first-child:before {
-            border-top: none;
-            padding-top: 0px;
-        }
-
-        section.experience .title h2,
-        section.education  .title h2,
-        section.course     .title h2 {
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            text-align: center;
-            margin: 3px 0px 2px 0px;
-        }
-
-        section.experience .timePeriod ul,
-        section.education  .timePeriod ul,
-        section.course     .timePeriod ul {
-            display: block;
-            text-align: right;
-            margin: 0px;
-        }
-
-        section.experience .timePeriod ul li,
-        section.education  .timePeriod ul li,
-        section.course     .timePeriod ul li {
-            display: inline;
-            font-size: 14px;
-        }
-
-        section.experience p,
-        section.education  p,
-        section.course     p {
-            margin-top: 6px;
-            text-align: justify;
-        }
-    </style>
 </head>
 <body class="container">
     <header class="row">
@@ -156,7 +21,7 @@
             </ul>
         </div>
         <div class="col-xs-4">
-            <h1 class="name">{{ resume.name }}</h1>
+            <h1 class="name">aaa{{ resume.name }}</h1>
             <span class="location">{{ resume.location }}</span>
         </div>
         <div class="col-xs-4 link">
