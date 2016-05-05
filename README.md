@@ -10,12 +10,10 @@ The source files is [PSR-2](https://github.com/php-fig/fig-standards/blob/master
 Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) compatible.
 
 ```shell
-git clone git@github.com:jpcercal/resume.git
+git clone https://github.com/jpcercal/resume.git
 cd resume/
 composer install
 cp .env.example .env
-mkdir output
-chmod -Rf 777 output/
 ```
 
 Now you must configure the environment variable according your platform.
