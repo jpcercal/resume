@@ -556,12 +556,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jpcercal/tdd.git",
-                "reference": "5b05af6a687d8918aff6a5a6c0acf2138cd476da"
+                "reference": "05ca2c9fe3d5ecc88d34b415edb15cc7e68ad689"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jpcercal/tdd/zipball/5b05af6a687d8918aff6a5a6c0acf2138cd476da",
-                "reference": "5b05af6a687d8918aff6a5a6c0acf2138cd476da",
+                "url": "https://api.github.com/repos/jpcercal/tdd/zipball/05ca2c9fe3d5ecc88d34b415edb15cc7e68ad689",
+                "reference": "05ca2c9fe3d5ecc88d34b415edb15cc7e68ad689",
                 "shasum": ""
             },
             "require": {
