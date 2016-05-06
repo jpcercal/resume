@@ -11,7 +11,7 @@ resume:
     about:
         title: Perfil
         description: |
-            Desenvolvedor PHP desde 2010. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
+            Sou ZCPE (Zend Certified PHP Engineer) e trabalho com PHP desde 2010, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
     skills:
         title: Skills
         items:
@@ -56,7 +56,7 @@ resume:
         items:
             -
                 position: PHP Developer
-                company: NeoGrid Software
+                company: NeoGrid
                 timePeriod:
                     start: 2015-09
                     end:
