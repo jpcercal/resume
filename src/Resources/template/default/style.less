@@ -14,8 +14,8 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    .font-size-em(13);
+    font-weight: 400;
+    .font-size-em(11);
 }
 
 h1,
@@ -32,6 +32,7 @@ h6 {
 h1 {
     .font-size-em(16);
     margin-top: 18px;
+    margin-bottom: 2px;
 }
 
 h2 {
@@ -88,9 +89,6 @@ header {
 }
 
 section {
-    &.about {
-        text-align: justify;
-    }
 
     &.skills {
         .skills-container {
@@ -103,6 +101,7 @@ section {
         }
     }
 
+    &.about,
     &.experience,
     &.education,
     &.skills,
@@ -139,19 +138,30 @@ section {
             text-align: justify;
         }
 
-        .entity {
-            span {
-                .font-size-em(14);
-            }
+        .entity span,
+        .timePeriod ul li {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
         }
+
+        .entity span,
+        .title h2,
+        .timePeriod ul li {
+            .font-size-em(14);
+            .line-height-em(14);
+            margin-top: 3px;
+            margin-bottom: 2px;
+        }
+
+        .entity span,
+        .timePeriod ul li {
+            display: inline-block;
+        }
+
 
         .title {
             h2 {
-                font-family: 'Open Sans', sans-serif;
-                font-weight: 400;
-                .font-size-em(14);
                 text-align: center;
-                margin: 3px 0px 2px 0px;
             }
         }
 
@@ -161,11 +171,6 @@ section {
                 text-align: right;
                 margin: 0px;
                 padding: 0px;
-
-                li {
-                    display: inline;
-                    .font-size-em(14);
-                }
             }
         }
     }
