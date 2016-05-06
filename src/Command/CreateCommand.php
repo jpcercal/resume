@@ -71,13 +71,14 @@ class CreateCommand extends Command
             $pdf  = PdfFactory::create();
 
             $outputFilename = (new OutputFile($input))->getFilename();
+            $debugFilename = (new DebugFile($input))->getFilename();
 
             if ($input->getOption('overwrite') && file_exists($outputFilename)) {
                 unlink($outputFilename);
             }
 
-            if ($input->getOption('overwrite') && $input->getOption('debug') && file_exists($outputHtmlFile)) {
-                unlink($outputHtmlFile);
+            if ($input->getOption('overwrite') && $input->getOption('debug') && file_exists($debugFilename)) {
+                unlink($debugFilename);
             }
 
             if (!file_exists(OUTPUT_PATH)) {
@@ -88,12 +89,10 @@ class CreateCommand extends Command
 
             $resume['i18n'] = (new Parser(new I18nFile($input)))->getContentParsed();
 
-            $html = $twig->render((new TemplateFile($input))->getFilename(), $resume);
+            $htmlContent = $twig->render((new TemplateFile($input))->getFilename(), $resume);
 
             if ($input->getOption('debug')) {
-                $debugFilename = (new DebugFile($input))->getFilename();
-
-                file_put_contents($debugFilename, $html);
+                file_put_contents($debugFilename, $htmlContent);
 
                 $output->writeln('<info>Your debug html file was generated with successfully.</info>');
 
@@ -104,7 +103,7 @@ class CreateCommand extends Command
             }
 
             $pdf->generateFromHtml(
-                ,
+                $htmlContent,
                 $outputFilename
             );
 
