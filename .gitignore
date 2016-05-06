@@ -3,3 +3,4 @@
 *.lock
 !composer.lock
 .env
+output/*.html
