@@ -11,7 +11,7 @@ resume:
     about:
         title: Perfil
         description: |
-            Desenvolvedor PHP desde 2010. Sempre buscando melhores praticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
+            Desenvolvedor PHP desde 2010. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
     skills:
         title: Skills
         items:
@@ -20,40 +20,32 @@ resume:
                 items:
                     -
                         - PHP
+                        - MVC/MVVM
                         - ZendFramework
                         - Symfony
                         - Silex
                         - Laravel
+                    -
                         - Wordpress
                         - PHPUnit
-                        - Composer
-                    -
                         - Doctrine
-                        - EloquentORM
+                        - Vagrant
+                        - Apache
                         - MySQL
-                        - PostgreSQL
-                        - SQLite
-                        - Yaml
-                        - HTML
-                        - XML
                     -
-                        - Bower
-                        - CSS
-                        - Less
-                        - TwitterBootstrap
-                        - MaterialDesign
-                        - Javascript
-                        - JSON
-                        - AngularJS
-                    -
-                        - jQuery
-                        - ExtJS
                         - Grunt
                         - Git
                         - SVN
                         - Windows
                         - Linux
                         - OSX
+                    -
+                        - Javascript
+                        - jQuery
+                        - AngularJS
+                        - HTML/CSS/Less
+                        - TwitterBootstrap
+                        - MaterialDesign
             -
                 title: Certificações
                 items:
@@ -68,59 +60,71 @@ resume:
                 timePeriod:
                     start: 2015-09
                     end:
-                description: |
-                    Atuando junto com a equipe de e-Commerce trazendo melhorias, boas praticas e servindo de referência e apoio ao time com a linguagem PHP. Atualmente estou trabalhando no projeto Spartacus e fazendo melhorias em processos internos que irão beneficiar o grupo.
+                description:
+                    - Participei da fase de análise de projetos, atuando como Analista/Desenvolvedor
+                    - Desenvolvi uma aplicação web utilizando Material Design e AngularJs para o front-end e Silex para o back-end que automatizou todo o processo de venda da solução WebEDI
+                    - Implementei melhorias, realizei correções de bugs e fiz integrações entre as soluções existentes utilizando API's REST
+                    - Adicionei e configurei o Vagrant para que a equipe pudesse utilizá-lo afim de trabalharmos com ambientes idênticos ao de produção
+                    - Evangelista de boas práticas de programação seguindo as PSR's existentes e implementando testes unitários nos projetos
+                    - Referência na equipe para projetos escritos em PHP e AngularJS
             -
                 position: PHP Developer
                 company: Humantech
                 timePeriod:
                     start: 2015-02
                     end: 2015-09
-                description: |
-                    Implementei melhorias em sistemas legados corrigindo bugs e criamos uma plataforma de ensino utilizando o conceito de gamificação, me tornei referência no que diz respeito a este conceito e também liderei a equipe de desenvolvimento (cinco pessoas) em alguns momentos. Além disto, participei das fases de planejamento e controle de projetos.
+                description:
+                    - Participei das fases de análise e controle de projetos
+                    - Liderei o grupo (cinco pessoas) como subgerente da área de desenvolvimento quando o responsável pela área não estava presente
+                    - Implementei testes unitários em partes críticas dos projetos, reduzindo consideravelmente a quantidade de bugs e aumentando a qualidade dos projetos
+                    - Criamos uma plataforma de ensino utilizando os conceitos de gamificação
             -
                 position: PHP Developer
-                company: Agência A2C
+                company: A2C
                 timePeriod:
                     start: 2013-11
                     end: 2014-09
-                description: |
-                    Melhoramos a plataforma utilizada pela 3M tendo em vista projetos de inovação, a plataforma foi criada visando a utilização dos conceitos de gamificação para facilitar o engajamento dos usuários. Este projeto, foi um sucesso porque triplicou o número de acessos ao portal e trouxe mais engajamento graças ao gamification. Também participei de outro projeto em fase de eleição em 2014, que tinha como objetivo monitorar a reputação dos candidatos à presidência da república, isto trouxe visibilidade e reputação para a agência A2C.
+                description:
+                    - Criamos um CMS para a marca 3M totalmente focado em SEO e utilizando conceitos de gamificação, isto resultou em 3x mais acessos ao portal em poucos meses
+                    - Criamos um sistema para monitorar a reputação dos candidados à presidência da república nas mídias sociais, isto trouxe ainda mais visibilidade na mídia para a Agência
+                    - Referência na equipe para projetos escritos em Symfony 2
+                    - Responsável por gerenciar os serviços da Amazon AWS EC2, RDS e S3
     education:
-        title: Formação Acadêmica
+        title: Educação
         items:
             -
-                degree: Bacharelado em Sistemas de Informação
+                degree: Sistemas de Informação
                 school: SOCIESC
                 timePeriod:
                     start: 2011-01
                     end: 2014-12
-                description: |
-                    Eleito o melhor aluno do curso. Obtive também uma das melhores notas no ENADE 2014, por conta disto, recebi uma bolsa de estudos para uma pós-graduação (processo em andamento) de 80%. Meu TCC foi baseado na prova de certificação ZCPE, e continua sendo utilizado até hoje pelo grupo "Rumo à Certificação PHP", também recebi patrocínio da DigitalOcean para hospedar o projeto.
-            -
-                degree: Técnico em Informática
-                school: SOCIESC
-                timePeriod:
-                    start: 2009-01
-                    end: 2010-12
-                description: |
-                    Por conta do destaque que tive durante as aulas, participei de projetos internos durante o curso (sem remuneração) e que me trouxeram bastante conhecimento, nesses projetos, desenvolvemos dentre outros, um sistema para alocação de recursos e salas de aula.
+                description:
+                    - Eleito o melhor aluno do curso
+                    - TCC utilizado até hoje pelos profissionais que estudam para o título ZCPE, o projeto é de código aberto e está disponível no GitHub, a hospedagem do projeto está sendo patrocinada pela "DigitalOcean"
     course:
         title: Cursos
         items:
             -
-                name: PLANSEQ
-                hours: 250
+                name: Curso de Inglês
+                info: Englishtown
+                timePeriod:
+                    start: 2016-02
+                    end:
+                description:
+                    - Atualmente meu nível (segundo a plataforma de ensino e professores) é intermediário
+            -
+                name: Lógica de Programação (250 horas)
+                info: PLANSEQ
                 timePeriod:
                     start: 2010-01
                     end: 2010-12
-                description: |
-                    Lógica de programação estruturada em C e Java.
+                description:
+                    - Lógica de programação estruturada em C e Java
             -
-                name: TOTVS
-                hours: 268
+                name: Treinamento Interno (268 horas)
+                info: TOTVS
                 timePeriod:
                     start: 2009-01
                     end: 2009-12
-                description: |
-                    Introdução ao banco de dados Progress, UML, XML, Java, Flex, Subversion, Jira, Confluence e boas práticas de programação.
+                description:
+                    - Introdução ao banco de dados Progress, UML, XML, Java, Flex, Subversion, Jira, Confluence e boas práticas de programação
