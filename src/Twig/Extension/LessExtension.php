@@ -2,6 +2,8 @@
 
 namespace Cekurte\Resume\Twig\Extension;
 
+use Cekurte\Resume\Exception\FileNotExistsException;
+
 class LessExtension extends \Twig_Extension
 {
     /**
@@ -23,6 +25,16 @@ class LessExtension extends \Twig_Extension
     }
 
     /**
+     * Get the base path.
+     *
+     * @return string
+     */
+    protected function getBasePath()
+    {
+        return APP_RESOURCES_TWIG_PATH . DS;
+    }
+
+    /**
      * Compile a less file.
      *
      * @param  \Twig_Environment $twig
@@ -32,8 +44,26 @@ class LessExtension extends \Twig_Extension
      */
     public function less(\Twig_Environment $twig, $filename)
     {
-        return $twig->getCompiler()->getFilename();
+        $templateFilename = $twig->getCompiler()->getFilename();
 
-        return 'compiling...' . $filename;
+        $basePath = $this->getBasePath()
+            . substr($templateFilename, 0, strrpos($templateFilename, '/'))
+        ;
+
+        $lessFilename = realpath($basePath . DS . $filename);
+
+        if ($lessFilename === false) {
+            throw new FileNotExistsException(sprintf(
+                'The less file "%s" not exists.',
+                $filename
+            ));
+        }
+
+        $less = new \lessc();
+
+        return sprintf(
+            '<style type="text/css">%s</style>',
+            $less->compileFile($lessFilename)
+        );
     }
 }

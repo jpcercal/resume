@@ -20,8 +20,26 @@
     <!-- END StyleSheets -->
 
     <!-- BEGIN StyleSheet -->
-    {{ less('style.less') }}
+    {{ less('style.less')|raw }}
     <!-- END StyleSheet -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.slim.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var selector = [
+                '.experience ul.description li',
+                '.education ul.description li',
+                '.course ul.description li',
+            ].join();
+
+            $(selector).each(function (index, elem) {
+                var currentText = $(elem).text();
+                var endLineChar = $(elem).is(':last-child') ? '.' : ';';
+
+                $(elem).text(currentText + endLineChar);
+            });
+        });
+    </script>
 </head>
 <body class="container">
     <header class="row">
@@ -47,6 +65,7 @@
     {% if resume.about %}
         <section class="about">
             <h1>{{ resume.about.title }}</h1>
+            <div class="bar"></div>
             <p>{{ resume.about.description | nl2br }}</p>
         </section>
     {% endif %}
@@ -77,7 +96,7 @@
                         </ul>
                     </div>
                 </div>
-                <ul>
+                <ul class="description">
                     {% for description in experience.description %}
                         <li>{{ description }}</li>
                     {% endfor %}
@@ -112,7 +131,7 @@
                         </ul>
                     </div>
                 </div>
-                <ul>
+                <ul class="description">
                     {% for description in education.description %}
                         <li>{{ description }}</li>
                     {% endfor %}
@@ -152,7 +171,7 @@
                 {% endif %}
                 <div class="row">
                     <div class="col-xs-3 entity">
-                        {{ course.info }}
+                        <span>{{ course.info }}</span>
                     </div>
                     <div class="col-xs-6 title">
                         <h2>{{ course.name }}</h2>
@@ -169,8 +188,8 @@
                         </ul>
                     </div>
                 </div>
-                <ul>
-                    {% for description in education.description %}
+                <ul class="description">
+                    {% for description in course.description %}
                         <li>{{ description }}</li>
                     {% endfor %}
                 </ul>

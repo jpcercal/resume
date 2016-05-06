@@ -1,28 +1,45 @@
+@base-size: 11;
+
+.font-size-em(@value: @base-size, @context: @base-size) {
+    font-size: (@value / @context) + 0em;
+}
+
+.line-height-em(@value: @base-size, @context: @base-size) {
+    line-height: (@value / @context) + 0em;
+}
+
+html {
+    font-size: @base-size + 0px;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 13px
+    .font-size-em(13);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    .font-size-em(12);
 }
 
 h1 {
-    font-size: 16px;
+    .font-size-em(16);
+    margin-top: 18px;
 }
 
 h2 {
-    font-size: 14px;
+    .font-size-em(14);
 }
 
 h3 {
-    font-size: 13px;
-}
-
-h4, h5, h6 {
-    font-size: 12px;
+    .font-size-em(13);
 }
 
 .bar {
@@ -34,98 +51,122 @@ h4, h5, h6 {
     margin: 5px 0px;
 }
 
-header .contact ul,
-header .link    ul {
-    margin-bottom: 0px;
+header {
+    h1 {
+        text-align: center;
+        .font-size-em(16);
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0px;
+    }
+
+    .contact,
+    .link,
+    .location {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        .font-size-em(12);
+        display: block;
+
+        ul {
+            margin-bottom: 0px;
+        }
+    }
+
+    .contact {
+        text-align: left;
+    }
+
+    .link {
+        text-align: right;
+    }
+
+    .location {
+        .font-size-em(11);
+        text-align: center;
+    }
 }
 
-header .contact,
-header .link,
-header .location {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 12px;
-}
+section {
+    &.about {
+        text-align: justify;
+    }
 
-header .contact {
-    text-align: left;
-}
+    &.skills {
+        .skills-container {
+            margin-top: -18px;
 
-header .location {
-    font-size: 11px;
-    text-align: center;
-    display: block;
-}
+            ul {
+                padding-left: 16px;
+                margin-bottom: 0px;
+            }
+        }
+    }
 
-header .link {
-    text-align: right;
-}
+    &.experience,
+    &.education,
+    &.skills,
+    &.course {
+        ul li,
+        p {
+            .font-size-em(12);
+            .line-height-em(19);
 
-header h1 {
-    text-align: center;
-    font-size: 17px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 0px;
-}
+            &:first-child {
+                margin-top: 6px;
+            }
 
-section.about {
-    text-align: justify;
-}
+            &:last-child {
+                margin-bottom: 10px;
+            }
+        }
 
-section.skills ul {
-    padding-left: 16px;
-    margin-bottom: 0px;
-}
+        ul {
+            padding: 0px 18px;
+            margin: 0px;
+            list-style: square;
 
-section.skills .skills-container {
-    margin-top: -18px;
-}
+            &.description {
+                padding-right: 0px;
 
-section.experience .entity span,
-section.education  .entity span,
-section.course     .entity span {
-    font-size: 14px;
-}
+                li {
+                    text-align: justify;
+                }
+            }
+        }
 
-section.experience .title h2,
-section.education  .title h2,
-section.course     .title h2 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-    margin: 3px 0px 2px 0px;
-}
+        p {
+            text-align: justify;
+        }
 
-section.experience .timePeriod ul,
-section.education  .timePeriod ul,
-section.course     .timePeriod ul {
-    display: block;
-    text-align: right;
-    margin: 0px;
-    padding: 0px;
-}
+        .entity {
+            span {
+                .font-size-em(14);
+            }
+        }
 
-section.experience .timePeriod ul li,
-section.education  .timePeriod ul li,
-section.course     .timePeriod ul li {
-    display: inline;
-    font-size: 14px;
-}
+        .title {
+            h2 {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                .font-size-em(14);
+                text-align: center;
+                margin: 3px 0px 2px 0px;
+            }
+        }
 
-section.experience p,
-section.education  p,
-section.course     p {
-    margin-top: 6px;
-    text-align: justify;
-}
+        .timePeriod {
+            ul {
+                display: block;
+                text-align: right;
+                margin: 0px;
+                padding: 0px;
 
-section.experience ul,
-section.education  ul,
-section.skils      ul,
-section.course     ul {
-    padding: 0px 18px;
-    margin: 0px;
-    list-style: square;
+                li {
+                    display: inline;
+                    .font-size-em(14);
+                }
+            }
+        }
+    }
 }
