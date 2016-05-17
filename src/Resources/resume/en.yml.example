@@ -1,107 +1,87 @@
 resume:
-    name: João Paulo Cercal
-    job: PHP Developer
-    location: Joinville/SC
+    name: Your name
+    job: Your job
+    location: Your city/Your State
     contact:
-        phone: +55 (47) 9128-6226
-        email: jpcercal@gmail.com
+        phone: Your phone number
+        email: your@email.com
     link:
-        linkedin: www.linkedin.com/in/jpcercal
-        github: www.github.com/jpcercal
+        link1: www.linkedin.com/in/your-user
+        link2: www.github.com/your-user
+        linkN: www.yourcompany.com
     about:
         title: About me
         description: |
-            About me text.
+            Your biography
     skills:
         title: Skills
         items:
             -
-                title: Languages, Tools and Technologies
+                title: Title of the skills group
                 items:
                     -
-                        - PHP
-                        - ZendFramework
-                        - Symfony
-                        - Silex
-                        - Laravel
-                        - Wordpress
-                        - PHPUnit
-                        - Composer
+                        - Your skill
+                        - Your skill
+                        - Your skill
                     -
-                        - Doctrine
-                        - EloquentORM
-                        - MySQL
-                        - PostgreSQL
-                        - SQLite
-                        - Yaml
-                        - HTML
-                        - XML
+                        - Your skill
+                        - Your skill
+                        - Your skill
                     -
-                        - Bower
-                        - CSS
-                        - Less
-                        - TwitterBootstrap
-                        - MaterialDesign
-                        - Javascript
-                        - JSON
-                        - AngularJS
+                        - Your skill
+                        - Your skill
+                        - Your skill
                     -
-                        - jQuery
-                        - ExtJS
-                        - Grunt
-                        - Git
-                        - SVN
-                        - Windows
-                        - Linux
-                        - OSX
+                        - Your skill
+                        - Your skill
+                        - Your skill
             -
-                title: Certifications
+                title: Other skills group
                 items:
                     -
-                        - Zend Certified PHP Engineer
+                        - Your skill
     experience:
         title: Experience
         items:
             -
-                position: PHP Developer
-                company: NeoGrid Software
+                position: Your position
+                company: Your company
                 timePeriod:
                     start: 2015-09
                     end:
-                description: |
-                    Describe your position.
+                description:
+                    - First item
+                    - Second item
             -
-                position: PHP Developer
-                company: Humantech
+                position: Your position
+                company: Your company
                 timePeriod:
-                    start: 2015-02
-                    end: 2015-09
-                description: |
-                    Describe your position.
-            -
-                position: PHP Developer
-                company: A2C Agency
-                timePeriod:
-                    start: 2013-11
-                    end: 2014-09
-                description: |
-                    Describe your position.
+                    start: 2015-09
+                    end:
+                description:
+                    - First item
+                    - Second item
     education:
         title: Education
         items:
             -
-                degree: Computer Programming
-                school: SOCIESC
+                degree: Your degree
+                school: Your school or university
                 timePeriod:
                     start: 2011-01
                     end: 2014-12
-                description: |
-                    Describe here.
+                description:
+                    - First item
+                    - Second item
+    course:
+        title: Courses
+        items:
             -
-                degree: Computer Programming
-                school: SOCIESC
+                name: Your course
+                info: Your school
                 timePeriod:
-                    start: 2009-01
-                    end: 2010-12
-                description: |
-                    Describe here.
+                    start: 2016-02
+                    end:
+                description:
+                    - First item
+                    - Second item
