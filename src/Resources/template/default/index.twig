@@ -69,6 +69,28 @@
             <p>{{ resume.about.description | nl2br }}</p>
         </section>
     {% endif %}
+    <section class="skills">
+        <h1>{{ resume.skills.title }}</h1>
+        <div class="bar"></div>
+        <div class="row skills-container">
+            {% for skill in resume.skills.items %}
+                <div class="col-xs-{% if (skill.items | length) > 3 %}9{% else %}{{ (skill.items | length) * 3 }}{% endif %}">
+                    <h2>{{ skill.title }}</h2>
+                    <div class="row">
+                        {% for columns in skill.items %}
+                            <div class="col-xs-{% if skill.items | length > 1 %}{{ 12 / (skill.items | length) }}{% else %}12{% endif %}">
+                                <ul>
+                                    {% for item in columns %}
+                                        <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
     <section class="experience">
         <h1>{{ resume.experience.title }}</h1>
         <div class="bar"></div>
@@ -171,28 +193,6 @@
                         <li>{{ description }}</li>
                     {% endfor %}
                 </ul>
-            {% endfor %}
-        </div>
-    </section>
-    <section class="skills">
-        <h1>{{ resume.skills.title }}</h1>
-        <div class="bar"></div>
-        <div class="row skills-container">
-            {% for skill in resume.skills.items %}
-                <div class="col-xs-{% if (skill.items | length) > 3 %}9{% else %}{{ (skill.items | length) * 3 }}{% endif %}">
-                    <h2>{{ skill.title }}</h2>
-                    <div class="row">
-                        {% for columns in skill.items %}
-                            <div class="col-xs-{% if skill.items | length > 1 %}{{ 12 / (skill.items | length) }}{% else %}12{% endif %}">
-                                <ul>
-                                    {% for item in columns %}
-                                        <li>{{ item }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
             {% endfor %}
         </div>
     </section>
