@@ -1,0 +1,113 @@
+resume:
+    name: João Paulo Cercal
+    job: PHP Developer
+    location: Joinville/SC
+    contact:
+        phone: +55 (47) 99128-6226
+        email: jpcercal@gmail.com
+    link:
+        linkedin: www.linkedin.com/in/jpcercal
+        github: www.github.com/jpcercal
+    about:
+        title: About me
+        description: |
+            I'm ZCPE (Zend Certified PHP Engineer) and I work with PHP since 2010, passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
+    skills:
+        title: Skills
+        items:
+            -
+                title: Languages, Tools and Technologies
+                items:
+                    -
+                        - PHP
+                        - MVC/MVVM
+                        - Zend
+                        - Symfony
+                        - Silex
+                        - Laravel
+                    -
+                        - Wordpress
+                        - PHPUnit
+                        - Doctrine
+                        - Vagrant
+                        - Apache
+                        - MySQL
+                    -
+                        - Grunt
+                        - Git
+                        - SVN
+                        - Windows
+                        - Linux
+                        - OSX
+                    -
+                        - Javascript
+                        - jQuery
+                        - Angular
+                        - HTML/CSS/Less
+                        - TwitterBootstrap
+                        - Java
+            -
+                title: Certifications
+                items:
+                    -
+                        - Zend Certified PHP Engineer
+    experience:
+        title: Experience
+        items:
+            -
+                position: PHP Developer
+                company: NeoGrid
+                timePeriod:
+                    start: 2015-09
+                    end:
+                description:
+                    - Created a web application using Material Design and AngularJS to the front-end and Silex to the back-end that automated the sales of the WebEDI solution
+                    - Implemented improvements, bug fixes and integrations with NeoGrid solutions using REST APIs
+                    - Added the Vagrant tool to use with my team in order to use environments identical with the production environment
+                    - Evangelist of best practices of programming following the existent PSRs and implementing unit test in the projects
+                    - Reference in my team to projects that was written in PHP and AngularJS
+                    - Recently I'm working on a Java project that will create a new solution to be sold by NeoGrid
+            -
+                position: PHP Developer
+                company: Humantech
+                timePeriod:
+                    start: 2015-02
+                    end: 2015-09
+                description:
+                    - Lead the team (five workers) as assistant manager of the programming department when the manager was not present
+                    - Added unit tests in critical project parts, reducing considerable the amount of bugs and increasing the quality of projects
+                    - Created an e-learning platform using the gamification concepts
+            -
+                position: PHP Developer
+                company: A2C
+                timePeriod:
+                    start: 2013-11
+                    end: 2014-09
+                description:
+                    - Created a CMS to the 3M brand using the gamification concepts and fully focused on SEO, that resulted in three times more access to the website in few months
+                    - Created a software to monitor the reputation of political candidates in social networks, that give more visibility on medias to the agency
+                    - Reference in my team to projects that was written in Symfony 2
+                    - Responsible to manage the Amazon web services EC2, RDS and S3
+    education:
+        title: Education
+        items:
+            -
+                degree: BSc Information Systems
+                school: SOCIESC
+                timePeriod:
+                    start: 2011-01
+                    end: 2014-12
+                description:
+                    - Honor as the best student of the course
+                    - The final paper is based on a tool created to be used by professionals that are studying to achieve the ZCPE certification, the project is open-source and is available on GitHub, the project is hosted by "DigitalOcean" as a sponsor
+    course:
+        title: Courses
+        items:
+            -
+                name: English
+                info: Englishtown
+                timePeriod:
+                    start: 2016-02
+                    end:
+                description:
+                    - I'm studying english to increase my knowledge

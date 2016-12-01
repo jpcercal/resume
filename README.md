@@ -10,12 +10,10 @@ The source files is [PSR-2](https://github.com/php-fig/fig-standards/blob/master
 Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) compatible.
 
 ```shell
-git clone git@github.com:jpcercal/resume.git
+git clone https://github.com/jpcercal/resume.git
 cd resume/
 composer install
 cp .env.example .env
-mkdir output
-chmod -Rf 777 output/
 ```
 
 Now you must configure the environment variable according your platform.
@@ -54,7 +52,7 @@ Check the complete documentation to see all available options running the comman
 php app/console cekurte:resume:create --help
 ```
 
-An example of output can be found here: [My Resume in pt_BR](https://github.com/jpcercal/resume/blob/master/output/resume.pt_BR.pdf).
+An example of output can be found here: My resume in [pt_BR](https://github.com/jpcercal/resume/blob/master/output/resume.pt_BR.pdf) and [EN](https://github.com/jpcercal/resume/blob/master/output/resume.en.pdf).
 
 ## Todo
 
