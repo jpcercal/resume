@@ -45,7 +45,7 @@ resume:
                         - AngularJS
                         - HTML/CSS/Less
                         - TwitterBootstrap
-                        - MaterialDesign
+                        - Java
             -
                 title: Certificações
                 items:
@@ -62,11 +62,12 @@ resume:
                     end:
                 description:
                     - Participei da fase de análise de projetos, atuando como Analista/Desenvolvedor
-                    - Desenvolvi uma aplicação web utilizando Material Design e AngularJs para o front-end e Silex para o back-end que automatizou todo o processo de venda da solução WebEDI
+                    - Desenvolvi uma aplicação web utilizando Material Design e AngularJS para o front-end e Silex para o back-end que automatizou todo o processo de venda da solução WebEDI
                     - Implementei melhorias, realizei correções de bugs e fiz integrações entre as soluções existentes utilizando API's REST
                     - Adicionei e configurei o Vagrant para que a equipe pudesse utilizá-lo afim de trabalharmos com ambientes idênticos ao de produção
                     - Evangelista de boas práticas de programação seguindo as PSR's existentes e implementando testes unitários nos projetos
                     - Referência na equipe para projetos escritos em PHP e AngularJS
+                    - Recentemente eu estou trabalhando em um projeto usando Java para criar uma nova solução para a NeoGrid
             -
                 position: PHP Developer
                 company: Humantech
@@ -111,20 +112,4 @@ resume:
                     start: 2016-02
                     end:
                 description:
-                    - Atualmente meu nível (segundo a plataforma de ensino e professores) é intermediário
-            -
-                name: Lógica de Programação (250 horas)
-                info: PLANSEQ
-                timePeriod:
-                    start: 2010-01
-                    end: 2010-12
-                description:
-                    - Lógica de programação estruturada em C e Java
-            -
-                name: Treinamento Interno (268 horas)
-                info: TOTVS
-                timePeriod:
-                    start: 2009-01
-                    end: 2009-12
-                description:
-                    - Introdução ao banco de dados Progress, UML, XML, Java, Flex, Subversion, Jira, Confluence e boas práticas de programação
+                    - Estou na transição entre o nível intermediário e avançado
