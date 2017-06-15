@@ -15,10 +15,7 @@ class InputFile extends AbstractFile implements YamlFileInterface
      */
     public function __construct(InputInterface $input)
     {
-        $this->filename = sprintf(
-            APP_RESOURCES_RESUME_PATH . DS . '%s.yml',
-            $input->getOption('language')
-        );
+        $this->filename = APP_RESOURCES_RESUME_PATH . DS . 'resume.yml';
 
         if (!file_exists($this->filename)) {
             throw new FileNotExistsException(sprintf(

@@ -1,0 +1,215 @@
+resume:
+    name: João Paulo Cercal
+    job: 
+        en: Senior Software Engineer
+        pt_BR: Engenheiro de Software Sênior 
+        de_DE: Softwareentwickler
+    location: 
+        en: Munich, Germany
+        pt_BR: Munique, Alemanha
+        de_DE: München, Deutschland
+    contact:
+        phone: 
+            en: +55 (47) 99128-6226
+            pt_BR: (47) 99128-6226
+            de_DE: +55 (47) 99128-6226
+        email: jpcercal@gmail.com
+    link:
+        linkedin: www.linkedin.com/in/jpcercal
+        github: www.github.com/jpcercal
+    about:
+        title: 
+            en: About me
+            pt_BR: Perfil
+            de_DE: 
+        description: 
+            en: |
+                I'm ZCPE (Zend Certified PHP Engineer) and I work with PHP since 2009, passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
+            pt_BR: |
+                Sou ZCPE (Zend Certified PHP Engineer) e trabalho com PHP desde 2009, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
+            de_DE: |
+                
+    skills:
+        title: 
+            en: Skills
+            pt_BR: Skills
+            de_DE: 
+        items:
+            -
+                title: 
+                    en: Languages, Tools and Technologies
+                    pt_BR: Linguagens, Ferramentas e Tecnologias
+                    de_DE: 
+                items:
+                    -
+                        - PHP
+                        - MVC/MVVM
+                        - Zend
+                        - Symfony
+                        - Silex
+                        - Laravel
+                    -
+                        - Wordpress
+                        - PHPUnit
+                        - Doctrine
+                        - Vagrant
+                        - Apache
+                        - MySQL
+                    -
+                        - Grunt
+                        - Git
+                        - SVN
+                        - Windows
+                        - Linux
+                        - OSX
+                    -
+                        - Javascript
+                        - jQuery
+                        - Angular
+                        - HTML/CSS/Less
+                        - TwitterBootstrap
+                        - Java
+            -
+                title: 
+                    en: Certifications
+                    pt_BR: Certificações
+                    de_DE: 
+                items:
+                    -
+                        - Zend Certified PHP Engineer
+    experience:
+        title: 
+            en: Experience
+            pt_BR: Experiência Profissional
+            de_DE: 
+        items:
+            -
+                position: 
+                    en: PHP Engineer
+                    pt_BR: Engenheiro de Software
+                    de_DE: 
+                company: FlixBus GmbH
+                timePeriod:
+                    start: 2017-08
+                    end:
+                description:
+                    en:
+                        - Changing the life of approximately one billion of people commute, spending their weekends, building remote relationships, visiting relatives, and discovering the world
+                    pt_BR:
+                        - Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo  
+                    de_DE: 
+                        - 
+            -
+                position: 
+                    en: Senior PHP Developer
+                    pt_BR: Desenvolvedor PHP Sênior
+                    de_DE: 
+                company: NeoGrid
+                timePeriod:
+                    start: 2015-09
+                    end: 2017-07
+                description:
+                    en: 
+                        - Created a web application using Material Design and AngularJS to the front-end and Silex to the back-end that automated the sales of the WebEDI solution
+                        - Implemented improvements, bug fixes and integrations with NeoGrid solutions using REST APIs
+                        - Added the Vagrant tool to use with my team in order to use environments identical with the production environment
+                        - Evangelist of best practices of programming following the existent PSRs and implementing unit test in the projects
+                        - Reference in my team to projects that was written in PHP and AngularJS
+                        - Recently I'm working on a Java project that will create a new solution to be sold by NeoGrid
+                    pt_BR:
+                        - Desenvolvi uma aplicação web utilizando Material Design e AngularJS para o front-end e Silex para o back-end que automatizou todo o processo de venda da solução WebEDI
+                        - Implementei melhorias, realizei correções de bugs e fiz integrações entre as soluções existentes utilizando APIs REST
+                        - Adicionei e configurei o Vagrant para que a equipe pudesse utilizá-lo afim de trabalharmos com ambientes idênticos ao de produção
+                        - Evangelista de boas práticas de programação seguindo as PSRs existentes e implementando testes unitários nos projetos
+                        - Referência na equipe para projetos escritos em PHP e AngularJS
+                        - Recentemente estou trabalhando em um projeto usando Java para criar uma nova solução para a NeoGrid
+                    de_DE: 
+                        - 
+            -
+                position: 
+                    en: PHP Developer
+                    pt_BR: Desenvolvedor PHP
+                    de_DE: 
+                company: Humantech
+                timePeriod:
+                    start: 2015-02
+                    end: 2015-09
+                description:
+                    en: 
+                        - Lead the team (five workers) as assistant manager of the programming department when the manager was not present
+                        - Added unit tests in critical project parts, reducing considerable the amount of bugs and increasing the quality of projects
+                        - Created an e-learning platform using the gamification concepts
+                    pt_BR:
+                        - Liderei o grupo (cinco pessoas) como subgerente da área de desenvolvimento quando o responsável pela área não estava presente
+                        - Implementei testes unitários em partes críticas dos projetos, reduzindo consideravelmente a quantidade de bugs e aumentando a qualidade dos projetos
+                        - Criamos uma plataforma de ensino utilizando os conceitos de gamificação
+                    de_DE: 
+                        - 
+            -
+                position: 
+                    en: PHP Developer
+                    pt_BR: Desenvolvedor PHP
+                    de_DE: 
+                company: A2C
+                timePeriod:
+                    start: 2013-11
+                    end: 2014-09
+                description:
+                    en: 
+                        - Created a CMS to the 3M brand using the gamification concepts and fully focused on SEO, that resulted in three times more access to the website in few months
+                        - Created a software to monitor the reputation of political candidates in social networks, that give more visibility on medias to the agency
+                        - Reference in my team to projects that was written in Symfony 2
+                        - Responsible to manage the Amazon Web Services EC2, RDS and S3
+                    pt_BR:
+                        - Criamos um CMS para a marca 3M utilizando conceitos de gamificação e totalmente focado em SEO, isto resultou em três vezes mais acessos ao portal em poucos meses
+                        - Criamos um sistema para monitorar a reputação dos candidados à presidência da república nas mídias sociais, isto trouxe ainda mais visibilidade na mídia para a Agência
+                        - Referência na equipe para projetos escritos em Symfony 2
+                        - Responsável por gerenciar os serviços da Amazon Web Services EC2, RDS e S3
+                    de_DE: 
+                        - 
+    education:
+        title: 
+            en: Education
+            pt_BR: Educação
+            de_DE: 
+        items:
+            -
+                degree: 
+                    en: BSc Information Systems
+                    pt_BR: Bacharelado em Sistemas de Informação
+                    de_DE: 
+                school: UNISOCIESC
+                timePeriod:
+                    start: 2011-01
+                    end: 2014-12
+                description:
+                    en:
+                        - Honor as the best student of the course
+                        - The final paper is based on a tool created to be used by professionals that are studying to achieve the ZCPE certification, the project is open-source and is available on GitHub, the project is hosted by "DigitalOcean" as a sponsor
+                    pt_BR:
+                        - Eleito o melhor aluno do curso
+                        - TCC utilizado até hoje pelos profissionais que estudam para o título ZCPE, o projeto é de código aberto e está disponível no GitHub, a hospedagem do projeto está sendo patrocinada pela "DigitalOcean"
+                    de_DE: 
+                        - 
+    course:
+        title: 
+            en: Courses
+            pt_BR: Cursos
+            de_DE: 
+        items:
+            -
+                name: 
+                    en: Going to the fluency
+                    pt_BR: Rumo à fluência
+                    de_DE: 
+                info: English Live
+                timePeriod:
+                    start: 2016-02
+                    end:
+                description:
+                    en:
+                        - I'm having classes with a private teacher about a lot of topics to be fluent discussing anything
+                    pt_BR:
+                        - Eu estou tendo aulas com um professor particular sobre muitos tópicos para ser fluente discutindo qualquer coisa
+                    de_DE: 
+                        - 

@@ -87,6 +87,8 @@ class CreateCommand extends Command
 
             $resume = (new Parser(new InputFile($input)))->getContentParsed();
 
+            $resume['language'] = $input->getOption('language');
+
             $resume['i18n'] = (new Parser(new I18nFile($input)))->getContentParsed();
 
             $htmlContent = $twig->render((new TemplateFile($input))->getFilename(), $resume);
