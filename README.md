@@ -52,7 +52,7 @@ Check the complete documentation to see all available options running the comman
 php app/console cekurte:resume:create --help
 ```
 
-An example of output can be found here: My resume in [pt_BR](https://github.com/jpcercal/resume/blob/master/output/resume.pt_BR.pdf) and [EN](https://github.com/jpcercal/resume/blob/master/output/resume.en.pdf).
+An example of output can be found here: My resume in [pt_BR](https://github.com/jpcercal/resume/blob/master/output/resume.pt_BR.pdf), [de_DE](https://github.com/jpcercal/resume/blob/master/output/resume.de_DE.pdf) and [en](https://github.com/jpcercal/resume/blob/master/output/resume.en.pdf).
 
 ## Todo
 

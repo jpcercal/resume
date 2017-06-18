@@ -1,9 +1,9 @@
 resume:
     name: João Paulo Cercal
     job: 
-        en: Senior Software Engineer
-        pt_BR: Engenheiro de Software Sênior 
-        de_DE: Softwareentwickler
+        en: Software Engineer
+        pt_BR: Engenheiro de Software 
+        de_DE: Software-Ingenieur
     location: 
         en: Munich, Germany
         pt_BR: Munique, Alemanha
@@ -21,25 +21,25 @@ resume:
         title: 
             en: About me
             pt_BR: Perfil
-            de_DE: 
+            de_DE: Profil
         description: 
             en: |
                 I'm ZCPE (Zend Certified PHP Engineer) and I work with PHP since 2009, passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
             pt_BR: |
                 Sou ZCPE (Zend Certified PHP Engineer) e trabalho com PHP desde 2009, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
             de_DE: |
-                
+                Ich bin ein ZCPE (Zend Certified PHP Engineer) und arbeite mit PHP seit 2009, meine Leidenschaften sind open-source, Standards, Tests und gut geschriebene Codes. Ich suche immer die beste Praxis, neue Technologien und Methoden, um meinen Artbeitsfluss zu verbessern und meinem Kunden mehr als das für das Projekt erwartete zu liefern.
     skills:
         title: 
             en: Skills
             pt_BR: Skills
-            de_DE: 
+            de_DE: Kompetenzen
         items:
             -
                 title: 
                     en: Languages, Tools and Technologies
                     pt_BR: Linguagens, Ferramentas e Tecnologias
-                    de_DE: 
+                    de_DE: Sprachen, Werkzeuge und Technologien
                 items:
                     -
                         - PHP
@@ -73,7 +73,7 @@ resume:
                 title: 
                     en: Certifications
                     pt_BR: Certificações
-                    de_DE: 
+                    de_DE: Zertifizierungen
                 items:
                     -
                         - Zend Certified PHP Engineer
@@ -81,13 +81,13 @@ resume:
         title: 
             en: Experience
             pt_BR: Experiência Profissional
-            de_DE: 
+            de_DE: Berufserfahrung
         items:
             -
                 position: 
                     en: PHP Engineer
                     pt_BR: Engenheiro de Software
-                    de_DE: 
+                    de_DE: Software-Ingenieur
                 company: FlixBus GmbH
                 timePeriod:
                     start: 2017-08
@@ -98,12 +98,12 @@ resume:
                     pt_BR:
                         - Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo  
                     de_DE: 
-                        - 
+                        - Änderung des Lebens von ungefähr einer Milliarde Reisender, die an Wochenenden Beziehungen schaffen, Verwandte besuchen und die Welt entdecken
             -
                 position: 
                     en: Senior PHP Developer
                     pt_BR: Desenvolvedor PHP Sênior
-                    de_DE: 
+                    de_DE: Senior PHP-Entwickler
                 company: NeoGrid
                 timePeriod:
                     start: 2015-09
@@ -124,12 +124,17 @@ resume:
                         - Referência na equipe para projetos escritos em PHP e AngularJS
                         - Recentemente estou trabalhando em um projeto usando Java para criar uma nova solução para a NeoGrid
                     de_DE: 
-                        - 
+                        - Ich habe eine Web-App mit Material Design und AngularJS für front-end und Silex für back-end entwickelt, die das ganze Absatzverfahren der Lösung WebEDI automatisiert hat
+                        - Ich habe Verbesserungen umgesetzt, Fehlerbehebungen und Integrationen zwischen den vorhandenen Lösungen unter Anwendung von APIs REST durchgeführt
+                        - Ich habe Vargant addiert und konfiguriert, damit das Team ihn benutzen konnte, damit wir mit produktionsidentischen Umgebungen arbeiten
+                        - Evangelist bewährter Programmierungspraktiken nach existierenden PSRs und Umsetzung von Einheitstests in den Projekten
+                        - Referenz im Team für in PHP und AngularJS geschriebene Projekte
+                        - Ich arbeite derzeit an einem Projekt mit Java, um eine neue Lösung für NeoGrid zu schaffen
             -
                 position: 
                     en: PHP Developer
                     pt_BR: Desenvolvedor PHP
-                    de_DE: 
+                    de_DE: PHP-Entwickler
                 company: Humantech
                 timePeriod:
                     start: 2015-02
@@ -144,12 +149,14 @@ resume:
                         - Implementei testes unitários em partes críticas dos projetos, reduzindo consideravelmente a quantidade de bugs e aumentando a qualidade dos projetos
                         - Criamos uma plataforma de ensino utilizando os conceitos de gamificação
                     de_DE: 
-                        - 
+                        - Ich habe das Team (fünf Personen) als Junior Manager im Gebiet der Entwicklung bei Abwesenheit des Zuständigen geleitet
+                        - Ich habe Einheitstests in den kritischen Teilen des Projekts umgesetzt, was deutlich die Anzahl Fehler verringert und die Qualität der Projekte erhöht hat
+                        - Wir haben eine Lernebene geschaffen, die die Gamifizierungskonzepte anwendet
             -
                 position: 
                     en: PHP Developer
                     pt_BR: Desenvolvedor PHP
-                    de_DE: 
+                    de_DE: PHP-Entwickler
                 company: A2C
                 timePeriod:
                     start: 2013-11
@@ -166,18 +173,21 @@ resume:
                         - Referência na equipe para projetos escritos em Symfony 2
                         - Responsável por gerenciar os serviços da Amazon Web Services EC2, RDS e S3
                     de_DE: 
-                        - 
+                        - Wir haben ein CMS für die Marke 3M mit Gamifizierungskonzepten und Schwerpunkt auf SEO erstellt, was eine die Portalzugänge in wenigen Monaten verdreifacht hat
+                        - Wir haben ein System für die Überwachung des Rufes der Kandidaten für Präsident der Republik in den sozialen Medien geschaffen, was mehr Sichtbarkeit in den Medien der Agentur brachte
+                        - Referenz im Team für Projekte mit Symfony 2
+                        - Verantwortlicher für das Management der Dienste von Amazon Web Services EC2, RDS und S3
     education:
         title: 
             en: Education
             pt_BR: Educação
-            de_DE: 
+            de_DE: Bildung
         items:
             -
                 degree: 
                     en: BSc Information Systems
                     pt_BR: Bacharelado em Sistemas de Informação
-                    de_DE: 
+                    de_DE: Bachelor in Informationssystemen
                 school: UNISOCIESC
                 timePeriod:
                     start: 2011-01
@@ -190,26 +200,27 @@ resume:
                         - Eleito o melhor aluno do curso
                         - TCC utilizado até hoje pelos profissionais que estudam para o título ZCPE, o projeto é de código aberto e está disponível no GitHub, a hospedagem do projeto está sendo patrocinada pela "DigitalOcean"
                     de_DE: 
-                        - 
+                        - Bester Student des Kurses
+                        - Diplomarbeit wird bis heute von Fachleuten, die für den Titel ZCPE studieren, angewandt, das Projekt ist open source und ist in GitHub verfügbar, Hosting des Projekts wird von "DigitalOcean" gesponsort
     course:
         title: 
             en: Courses
             pt_BR: Cursos
-            de_DE: 
+            de_DE: Kurse
         items:
             -
                 name: 
                     en: Going to the fluency
                     pt_BR: Rumo à fluência
-                    de_DE: 
+                    de_DE: Auf dem Weg der Beherrschung
                 info: English Live
                 timePeriod:
                     start: 2016-02
-                    end:
+                    end: 
                 description:
                     en:
                         - I'm having classes with a private teacher about a lot of topics to be fluent discussing anything
                     pt_BR:
                         - Eu estou tendo aulas com um professor particular sobre muitos tópicos para ser fluente discutindo qualquer coisa
                     de_DE: 
-                        - 
+                        - Ich werde von einem Privatlehrer über viele Themen unterrichtet, um flüssig bei Gesprächen über alles zu sein
