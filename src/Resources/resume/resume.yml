@@ -24,11 +24,11 @@ resume:
             de_DE: Profil
         description: 
             en: |
-                I'm ZCPE (Zend Certified PHP Engineer) and I work with PHP since 2009, passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
+                I'm a ZCPE (Zend Certified PHP Engineer) and I've worked with PHP since 2009, I'm passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
             pt_BR: |
                 Sou ZCPE (Zend Certified PHP Engineer) e trabalho com PHP desde 2009, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
             de_DE: |
-                Ich bin ein ZCPE (Zend Certified PHP Engineer) und arbeite mit PHP seit 2009, meine Leidenschaften sind open-source, Standards, Tests und gut geschriebene Codes. Ich suche immer die beste Praxis, neue Technologien und Methoden, um meinen Artbeitsfluss zu verbessern und meinem Kunden mehr als das für das Projekt erwartete zu liefern.
+                Ich bin ein ZCPE (Zend Certified PHP Engineer) und arbeite mit PHP seit 2009, meine Leidenschaften sind open-source, Standards, Tests und gut geschriebene Codes. Ich suche immer die beste Praxis, neue Technologien und Methoden, um meinen Arbeitsfluss zu verbessern und meinem Kunden mehr als das für das Projekt erwartete zu liefern.
     skills:
         title: 
             en: Skills
@@ -94,7 +94,7 @@ resume:
                     end:
                 description:
                     en:
-                        - Changing the life of approximately one billion of people commute, spending their weekends, building remote relationships, visiting relatives, and discovering the world
+                        - Changing the life of approximately one billion of people commuting, spending their weekends, building remote relationships, visiting relatives, and discovering the world
                     pt_BR:
                         - Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo  
                     de_DE: 
@@ -110,26 +110,23 @@ resume:
                     end: 2017-07
                 description:
                     en: 
-                        - Created a web application using Material Design and AngularJS to the front-end and Silex to the back-end that automated the sales of the WebEDI solution
+                        - Created a web application using Material Design and AngularJS to the front-end and Silex to the back-end, which automated the sales of the WebEDI solution
                         - Implemented improvements, bug fixes and integrations with NeoGrid solutions using REST APIs
                         - Added the Vagrant tool to use with my team in order to use environments identical with the production environment
                         - Evangelist of best practices of programming following the existent PSRs and implementing unit test in the projects
                         - Reference in my team to projects that was written in PHP and AngularJS
-                        - Recently I'm working on a Java project that will create a new solution to be sold by NeoGrid
                     pt_BR:
                         - Desenvolvi uma aplicação web utilizando Material Design e AngularJS para o front-end e Silex para o back-end que automatizou todo o processo de venda da solução WebEDI
                         - Implementei melhorias, realizei correções de bugs e fiz integrações entre as soluções existentes utilizando APIs REST
                         - Adicionei e configurei o Vagrant para que a equipe pudesse utilizá-lo afim de trabalharmos com ambientes idênticos ao de produção
                         - Evangelista de boas práticas de programação seguindo as PSRs existentes e implementando testes unitários nos projetos
                         - Referência na equipe para projetos escritos em PHP e AngularJS
-                        - Recentemente estou trabalhando em um projeto usando Java para criar uma nova solução para a NeoGrid
                     de_DE: 
                         - Ich habe eine Web-App mit Material Design und AngularJS für front-end und Silex für back-end entwickelt, die das ganze Absatzverfahren der Lösung WebEDI automatisiert hat
                         - Ich habe Verbesserungen umgesetzt, Fehlerbehebungen und Integrationen zwischen den vorhandenen Lösungen unter Anwendung von APIs REST durchgeführt
                         - Ich habe Vargant addiert und konfiguriert, damit das Team ihn benutzen konnte, damit wir mit produktionsidentischen Umgebungen arbeiten
                         - Evangelist bewährter Programmierungspraktiken nach existierenden PSRs und Umsetzung von Einheitstests in den Projekten
                         - Referenz im Team für in PHP und AngularJS geschriebene Projekte
-                        - Ich arbeite derzeit an einem Projekt mit Java, um eine neue Lösung für NeoGrid zu schaffen
             -
                 position: 
                     en: PHP Developer
@@ -141,7 +138,7 @@ resume:
                     end: 2015-09
                 description:
                     en: 
-                        - Lead the team (five workers) as assistant manager of the programming department when the manager was not present
+                        - Led the team (five workers) as assistant manager of the programming department when the manager was not present
                         - Added unit tests in critical project parts, reducing considerable the amount of bugs and increasing the quality of projects
                         - Created an e-learning platform using the gamification concepts
                     pt_BR:
@@ -210,7 +207,7 @@ resume:
         items:
             -
                 name: 
-                    en: Going to the fluency
+                    en: Reaching fluency
                     pt_BR: Rumo à fluência
                     de_DE: Auf dem Weg der Beherrschung
                 info: English Live
