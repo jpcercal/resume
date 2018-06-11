@@ -73,11 +73,11 @@
         <div class="bar"></div>
         <div class="row skills-container">
             {% for skill in resume.skills.items %}
-                <div class="col-xs-{% if (skill.items | length) > 3 %}9{% else %}{{ (skill.items | length) * 3 }}{% endif %}">
+                <div class="col-xs-12">
                     <h2>{{ skill.title[language] }}</h2>
                     <div class="row">
                         {% for columns in skill.items %}
-                            <div class="col-xs-{% if skill.items | length > 1 %}{{ 12 / (skill.items | length) }}{% else %}12{% endif %}">
+                            <div class="col-xs-2">
                                 <ul>
                                     {% for item in columns %}
                                         <li>{{ item }}</li>

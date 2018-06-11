@@ -1,18 +1,18 @@
 resume:
     name: João Paulo Cercal
     job: 
-        en: Software Engineer
-        pt_BR: Engenheiro de Software 
-        de_DE: Software-Ingenieur
+        en: Senior PHP Developer
+        pt_BR: Desenvolvedor PHP Sênior
+        de_DE: Senior PHP-Entwickler
     location: 
         en: Munich, Germany
         pt_BR: Munique, Alemanha
         de_DE: München, Deutschland
     contact:
         phone: 
-            en: +55 (47) 99128-6226
-            pt_BR: (47) 99128-6226
-            de_DE: +55 (47) 99128-6226
+            en: +49 177 9691304
+            pt_BR: +49 177 9691304
+            de_DE: +49 177 9691304
         email: jpcercal@gmail.com
     link:
         linkedin: www.linkedin.com/in/jpcercal
@@ -24,9 +24,9 @@ resume:
             de_DE: Profil
         description: 
             en: |
-                I'm a ZCPE (Zend Certified PHP Engineer) and I've worked with PHP since 2009, I'm passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
+                I'm a ZCPE (Zend Certified PHP Engineer) familiar with agile model of software development cycle. I've been working with PHP since 2009, I'm passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
             pt_BR: |
-                Sou ZCPE (Zend Certified PHP Engineer) e trabalho com PHP desde 2009, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
+                Sou ZCPE (Zend Certified PHP Engineer) familizarizado com o modelo ágil de desenvolvimento de software. Trabalho com PHP desde 2009, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
             de_DE: |
                 Ich bin ein ZCPE (Zend Certified PHP Engineer) und arbeite mit PHP seit 2009, meine Leidenschaften sind open-source, Standards, Tests und gut geschriebene Codes. Ich suche immer die beste Praxis, neue Technologien und Methoden, um meinen Arbeitsfluss zu verbessern und meinem Kunden mehr als das für das Projekt erwartete zu liefern.
     skills:
@@ -42,41 +42,40 @@ resume:
                     de_DE: Sprachen, Werkzeuge und Technologien
                 items:
                     -
-                        - PHP
-                        - MVC/MVVM
-                        - Zend
-                        - Symfony
-                        - Silex
-                        - Laravel
-                    -
-                        - Wordpress
-                        - PHPUnit
-                        - Doctrine
-                        - Vagrant
+                        - Angular
                         - Apache
-                        - MySQL
+                        - CSS
+                        - Devops
+                        - Docker
+                        - Doctrine
                     -
-                        - Grunt
                         - Git
-                        - SVN
-                        - Windows
-                        - Linux
-                        - OSX
-                    -
+                        - Grunt
+                        - HTML
+                        - Java
                         - Javascript
                         - jQuery
-                        - Angular
-                        - HTML/CSS/Less
-                        - TwitterBootstrap
-                        - Java
-            -
-                title: 
-                    en: Certifications
-                    pt_BR: Certificações
-                    de_DE: Zertifizierungen
-                items:
                     -
-                        - Zend Certified PHP Engineer
+                        - Laravel
+                        - Less
+                        - Linux
+                        - MySQL
+                        - Nginx
+                        - OSX
+                    -
+                        - PHP
+                        - PHPUnit
+                        - Sass
+                        - Silex
+                        - SVN
+                        - Symfony
+                    -
+                        - TwitterBootstrap
+                        - Vagrant
+                        - Windows
+                        - Wordpress
+                        - Zend
+
     experience:
         title: 
             en: Experience
@@ -85,18 +84,24 @@ resume:
         items:
             -
                 position: 
-                    en: PHP Engineer
-                    pt_BR: Engenheiro de Software
-                    de_DE: Software-Ingenieur
-                company: FlixBus GmbH
+                    en: Senior PHP Developer
+                    pt_BR: Desenvolvedor PHP Sênior
+                    de_DE: Senior PHP-Entwickler
+                company: FlixBus
                 timePeriod:
                     start: 2017-08
                     end:
                 description:
                     en:
                         - Changing the life of approximately one billion of people commuting, spending their weekends, building remote relationships, visiting relatives, and discovering the world
+                        - We improved the response time for retrieving a cart in almost 70% by extracting the code from the monolith to a new micro-service-oriented architecture
+                        - Volunteer to be a facilitator in agile ceremonies such as retrospective and spring review
+                        - Responsible for taking decisions from a technical perspective regarding our domain
                     pt_BR:
                         - Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo  
+                        - Melhoramos o tempo de resposta do carrinho de compras em quase 70% extraindo o código do sistema legado para uma nova arquitetura orientada a micro-serviços
+                        - Voluntário para ser facilitador em cerimônias ágeis como retrospectiva e spring review
+                        - Responsável pela tomada de decisões em uma perspectiva técnica em nosso time
                     de_DE: 
                         - Änderung des Lebens von ungefähr einer Milliarde Reisender, die an Wochenenden Beziehungen schaffen, Verwandte besuchen und die Welt entdecken
             -
@@ -199,25 +204,3 @@ resume:
                     de_DE: 
                         - Bester Student des Kurses
                         - Diplomarbeit wird bis heute von Fachleuten, die für den Titel ZCPE studieren, angewandt, das Projekt ist open source und ist in GitHub verfügbar, Hosting des Projekts wird von "DigitalOcean" gesponsort
-    course:
-        title: 
-            en: Courses
-            pt_BR: Cursos
-            de_DE: Kurse
-        items:
-            -
-                name: 
-                    en: Reaching fluency
-                    pt_BR: Rumo à fluência
-                    de_DE: Auf dem Weg der Beherrschung
-                info: English Live
-                timePeriod:
-                    start: 2016-02
-                    end: 
-                description:
-                    en:
-                        - I'm having classes with a private teacher about a lot of topics to be fluent discussing anything
-                    pt_BR:
-                        - Eu estou tendo aulas com um professor particular sobre muitos tópicos para ser fluente discutindo qualquer coisa
-                    de_DE: 
-                        - Ich werde von einem Privatlehrer über viele Themen unterrichtet, um flüssig bei Gesprächen über alles zu sein
