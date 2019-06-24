@@ -5,15 +5,15 @@ require realpath(__DIR__ . '/../bootstrap.php');
 require VENDOR_PATH . DS . 'autoload.php';
 
 use Cekurte\Environment\Environment;
-use Cekurte\Resume\Command\CreateCommand;
+use Jpcercal\Resume\Command\ResumeCommand;
 use Dotenv\Dotenv;
 use Symfony\Component\Console\Application;
 
-$dotenv = new Dotenv(ROOT_PATH);
+$dotenv = Dotenv::create(ROOT_PATH);
 $dotenv->load();
 
 $application = new Application();
-$application->setName(Environment::get('APP_PROJECT_NAME'));
-$application->setVersion('v1.0');
-$application->add(new CreateCommand());
+$application->setName('Resume');
+$application->setVersion('v1.1');
+$application->add(new ResumeCommand());
 $application->run();

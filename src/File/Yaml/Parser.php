@@ -1,9 +1,9 @@
 <?php
 
-namespace Cekurte\Resume\File\Yaml;
+namespace Jpcercal\Resume\File\Yaml;
 
-use Cekurte\Resume\Contract\YamlFileInterface;
-use Cekurte\Resume\Contract\YamlParserInterface;
+use Jpcercal\Resume\Contract\YamlFileInterface;
+use Jpcercal\Resume\Contract\YamlParserInterface;
 use Symfony\Component\Yaml\Parser as SymfonyParser;
 
 class Parser implements YamlParserInterface

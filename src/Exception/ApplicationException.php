@@ -1,6 +1,6 @@
 <?php
 
-namespace Cekurte\Resume\Exception;
+namespace Jpcercal\Resume\Exception;
 
 class ApplicationException extends \Exception
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Cekurte\Resume\Twig\Extension;
+namespace Jpcercal\Resume\Twig\Extension;
 
-use Cekurte\Resume\Exception\FileNotExistsException;
+use Jpcercal\Resume\Exception\FileNotExistsException;
 
 class LessExtension extends \Twig_Extension
 {
@@ -21,7 +21,7 @@ class LessExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'cekurte_resume_less_extension';
+        return 'jpcercal_resume_less_extension';
     }
 
     /**

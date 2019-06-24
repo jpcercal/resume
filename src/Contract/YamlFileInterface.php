@@ -1,8 +1,8 @@
 <?php
 
-namespace Cekurte\Resume\Contract;
+namespace Jpcercal\Resume\Contract;
 
-use Cekurte\Resume\Contract\FileInterface;
+use Jpcercal\Resume\Contract\FileInterface;
 
 interface YamlFileInterface extends FileInterface
 {

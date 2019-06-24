@@ -1,10 +1,10 @@
 <?php
 
-namespace Cekurte\Resume\File;
+namespace Jpcercal\Resume\File;
 
-use Cekurte\Resume\Contract\FileInterface;
-use Cekurte\Resume\Exception\FileNotExistsException;
-use Cekurte\Resume\File\AbstractFile;
+use Jpcercal\Resume\Contract\FileInterface;
+use Jpcercal\Resume\Exception\FileNotExistsException;
+use Jpcercal\Resume\File\AbstractFile;
 use Symfony\Component\Console\Input\InputInterface;
 
 class TemplateFile extends AbstractFile implements FileInterface

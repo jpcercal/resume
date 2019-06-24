@@ -1,8 +1,8 @@
 <?php
 
-namespace Cekurte\Resume\Contract;
+namespace Jpcercal\Resume\Contract;
 
-use Cekurte\Resume\Exception\FileNotExistsException;
+use Jpcercal\Resume\Exception\FileNotExistsException;
 use Symfony\Component\Console\Input\InputInterface;
 
 interface FileInterface

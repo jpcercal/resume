@@ -1,8 +1,8 @@
 <?php
 
-namespace Cekurte\Resume\Contract;
+namespace Jpcercal\Resume\Contract;
 
-use Cekurte\Resume\Exception\ApplicationException;
+use Jpcercal\Resume\Exception\ApplicationException;
 
 interface FactoryInterface
 {

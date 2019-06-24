@@ -1,9 +1,9 @@
 <?php
 
-namespace Cekurte\Resume\Factory;
+namespace Jpcercal\Resume\Factory;
 
 use Cekurte\Environment\Environment;
-use Cekurte\Resume\Contract\FactoryInterface;
+use Jpcercal\Resume\Contract\FactoryInterface;
 use Knp\Snappy\Pdf;
 
 class PdfFactory implements FactoryInterface

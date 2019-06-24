@@ -5,14 +5,14 @@ resume:
         pt_BR: Desenvolvedor PHP Sênior
         de_DE: Senior PHP-Entwickler
     location: 
-        en: Munich, Germany
-        pt_BR: Munique, Alemanha
-        de_DE: München, Deutschland
+        en: Berlin, Germany
+        pt_BR: Berlim, Alemanha
+        de_DE: Berlin, Deutschland
     contact:
         phone: 
-            en: +49 177 9691304
-            pt_BR: +49 177 9691304
-            de_DE: +49 177 9691304
+            en: +49 176 87933993
+            pt_BR: +49 176 87933993
+            de_DE: +49 176 87933993
         email: jpcercal@gmail.com
     link:
         linkedin: www.linkedin.com/in/jpcercal
@@ -34,47 +34,7 @@ resume:
             en: Skills
             pt_BR: Skills
             de_DE: Kompetenzen
-        items:
-            -
-                title: 
-                    en: Languages, Tools and Technologies
-                    pt_BR: Linguagens, Ferramentas e Tecnologias
-                    de_DE: Sprachen, Werkzeuge und Technologien
-                items:
-                    -
-                        - Angular
-                        - Apache
-                        - CSS
-                        - Devops
-                        - Docker
-                        - Doctrine
-                    -
-                        - Git
-                        - Grunt
-                        - HTML
-                        - Java
-                        - Javascript
-                        - jQuery
-                    -
-                        - Laravel
-                        - Less
-                        - Linux
-                        - MySQL
-                        - Nginx
-                        - OSX
-                    -
-                        - PHP
-                        - PHPUnit
-                        - Sass
-                        - Silex
-                        - SVN
-                        - Symfony
-                    -
-                        - TwitterBootstrap
-                        - Vagrant
-                        - Windows
-                        - Wordpress
-                        - Zend
+        items: []
 
     experience:
         title: 
@@ -84,13 +44,30 @@ resume:
         items:
             -
                 position: 
+                    en: Senior Software Engineer
+                    pt_BR: Engenheiro de Software Sênior
+                    de_DE: 
+                company: GetYourGuide
+                timePeriod:
+                    start: 2018-12
+                    end: 
+                description:
+                    en:
+                        - Impacting and changing the way how millions of travellers connect to the places they visit, in combination with rigorous A/B testing to craft an unbeatable e-commerce, in numbers during the last months as one team we created about 20 experiments and I worked with 4 of them, in which the last one increased the conversion rate in almost 2%
+                        - Aligning product with technical decisions, having the customer at first and proposing changes while thinking about myself and my parents as travellers have guided me to influence in a killer feature to contact us through whatsapp in which our customers can get support from their smartphone, it increased the second customer purchase considerably and helped us to retain customers
+                        - Doing interviews, providing long detailed feeback about talents and suggesting improvements to the process in order to hire the best engineers and so develop a really good product
+                        - Test driven oriented, impacting the way that the company sees test and so bringing the quality of the product to the next level
+                    pt_BR: []
+                    de_DE: []
+            -
+                position: 
                     en: Senior PHP Developer
                     pt_BR: Desenvolvedor PHP Sênior
                     de_DE: Senior PHP-Entwickler
                 company: FlixBus
                 timePeriod:
                     start: 2017-08
-                    end:
+                    end: 2018-11
                 description:
                     en:
                         - Changing the life of approximately one billion of people commuting, spending their weekends, building remote relationships, visiting relatives, and discovering the world

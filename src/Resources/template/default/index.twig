@@ -61,6 +61,7 @@
             </ul>
         </div>
     </header>
+
     {% if resume.about %}
         <section class="about">
             <h1>{{ resume.about.title[language] }}</h1>
@@ -68,132 +69,144 @@
             <p>{{ resume.about.description[language] | nl2br }}</p>
         </section>
     {% endif %}
-    <section class="skills">
-        <h1>{{ resume.skills.title[language] }}</h1>
-        <div class="bar"></div>
-        <div class="row skills-container">
-            {% for skill in resume.skills.items %}
-                <div class="col-xs-12">
-                    <h2>{{ skill.title[language] }}</h2>
+
+    {% if resume.skills.items is not empty %}
+        <section class="skills">
+            <h1>{{ resume.skills.title[language] }}</h1>
+            <div class="bar"></div>
+            <div class="row skills-container">
+                {% for skill in resume.skills.items %}
+                    <div class="col-xs-12">
+                        <h2>{{ skill.title[language] }}</h2>
+                        <div class="row">
+                            {% for columns in skill.items %}
+                                <div class="col-xs-2">
+                                    <ul>
+                                        {% for item in columns %}
+                                            <li>{{ item }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if resume.experience.items is not empty %}
+        <section class="experience">
+            <h1>{{ resume.experience.title[language] }}</h1>
+            <div class="bar"></div>
+            <div>
+                {% for experience in resume.experience.items %}
+                    {% if not loop.first %}
+                        <div class="bar"></div>
+                    {% endif %}
                     <div class="row">
-                        {% for columns in skill.items %}
-                            <div class="col-xs-2">
-                                <ul>
-                                    {% for item in columns %}
-                                        <li>{{ item }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                        <div class="col-xs-3 entity">
+                            <span>{{ experience.company }}</span>
+                        </div>
+                        <div class="col-xs-6 title">
+                            <h2>{{ experience.position[language] }}</h2>
+                        </div>
+                        <div class="col-xs-3 timePeriod">
+                            <ul class="list-unstyled">
+                                {% if experience.timePeriod.end is null %}
+                                    <li>{{ i18n['timePeriod.currently'] }}</li>
+                                {% else %}
+                                    <li>{{ experience.timePeriod.start|date('Y') }}</li>
+                                    <li class="separator">-</li>
+                                    <li>{{ experience.timePeriod.end|date('Y') }}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="description">
+                        {% for description in experience.description[language] %}
+                            <li>{{ description }}</li>
                         {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if resume.education.items is not empty %}
+        <section class="education">
+            <h1>{{ resume.education.title[language] }}</h1>
+            <div class="bar"></div>
+            <div>
+                {% for education in resume.education.items %}
+                    {% if not loop.first %}
+                        <div class="bar"></div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-xs-3 entity">
+                            <span>{{ education.school }}</span>
+                        </div>
+                        <div class="col-xs-6 title">
+                            <h2>{{ education.degree[language] }}</h2>
+                        </div>
+                        <div class="col-xs-3 timePeriod">
+                            <ul class="list-unstyled">
+                                {% if education.timePeriod.end is null %}
+                                    <li>{{ i18n['timePeriod.currently'] }}</li>
+                                {% else %}
+                                    <li>{{ education.timePeriod.start|date('Y') }}</li>
+                                    <li class="separator">-</li>
+                                    <li>{{ education.timePeriod.end|date('Y') }}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
-    <section class="experience">
-        <h1>{{ resume.experience.title[language] }}</h1>
-        <div class="bar"></div>
-        <div>
-            {% for experience in resume.experience.items %}
-                {% if not loop.first %}
-                    <div class="bar"></div>
-                {% endif %}
-                <div class="row">
-                    <div class="col-xs-3 entity">
-                        <span>{{ experience.company }}</span>
+                    <ul class="description">
+                        {% for description in education.description[language] %}
+                            <li>{{ description }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
+    
+    {% if resume.course.items is not empty %}
+        <section class="course">
+            <h1>{{ resume.course.title[language] }}</h1>
+            <div class="bar"></div>
+            <div>
+                {% for course in resume.course.items %}
+                    {% if not loop.first %}
+                        <div class="bar"></div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-xs-3 entity">
+                            <span>{{ course.info }}</span>
+                        </div>
+                        <div class="col-xs-6 title">
+                            <h2>{{ course.name[language] }}</h2>
+                        </div>
+                        <div class="col-xs-3 timePeriod">
+                            <ul class="list-unstyled">
+                                {% if course.timePeriod.end is null %}
+                                    <li>{{ i18n['timePeriod.currently'] }}</li>
+                                {% else %}
+                                    <li>{{ course.timePeriod.start|date('Y') }}</li>
+                                    <li class="separator">-</li>
+                                    <li>{{ course.timePeriod.end|date('Y') }}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-xs-6 title">
-                        <h2>{{ experience.position[language] }}</h2>
-                    </div>
-                    <div class="col-xs-3 timePeriod">
-                        <ul class="list-unstyled">
-                            {% if experience.timePeriod.end is null %}
-                                <li>{{ i18n['timePeriod.currently'] }}</li>
-                            {% else %}
-                                <li>{{ experience.timePeriod.start|date('Y') }}</li>
-                                <li class="separator">-</li>
-                                <li>{{ experience.timePeriod.end|date('Y') }}</li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-                <ul class="description">
-                    {% for description in experience.description[language] %}
-                        <li>{{ description }}</li>
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </div>
-    </section>
-    <section class="education">
-        <h1>{{ resume.education.title[language] }}</h1>
-        <div class="bar"></div>
-        <div>
-            {% for education in resume.education.items %}
-                {% if not loop.first %}
-                    <div class="bar"></div>
-                {% endif %}
-                <div class="row">
-                    <div class="col-xs-3 entity">
-                        <span>{{ education.school }}</span>
-                    </div>
-                    <div class="col-xs-6 title">
-                        <h2>{{ education.degree[language] }}</h2>
-                    </div>
-                    <div class="col-xs-3 timePeriod">
-                        <ul class="list-unstyled">
-                            {% if education.timePeriod.end is null %}
-                                <li>{{ i18n['timePeriod.currently'] }}</li>
-                            {% else %}
-                                <li>{{ education.timePeriod.start|date('Y') }}</li>
-                                <li class="separator">-</li>
-                                <li>{{ education.timePeriod.end|date('Y') }}</li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-                <ul class="description">
-                    {% for description in education.description[language] %}
-                        <li>{{ description }}</li>
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </div>
-    </section>
-    <section class="course">
-        <h1>{{ resume.course.title[language] }}</h1>
-        <div class="bar"></div>
-        <div>
-            {% for course in resume.course.items %}
-                {% if not loop.first %}
-                    <div class="bar"></div>
-                {% endif %}
-                <div class="row">
-                    <div class="col-xs-3 entity">
-                        <span>{{ course.info }}</span>
-                    </div>
-                    <div class="col-xs-6 title">
-                        <h2>{{ course.name[language] }}</h2>
-                    </div>
-                    <div class="col-xs-3 timePeriod">
-                        <ul class="list-unstyled">
-                            {% if course.timePeriod.end is null %}
-                                <li>{{ i18n['timePeriod.currently'] }}</li>
-                            {% else %}
-                                <li>{{ course.timePeriod.start|date('Y') }}</li>
-                                <li class="separator">-</li>
-                                <li>{{ course.timePeriod.end|date('Y') }}</li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-                <ul class="description">
-                    {% for description in course.description[language] %}
-                        <li>{{ description }}</li>
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </div>
-    </section>
+                    <ul class="description">
+                        {% for description in course.description[language] %}
+                            <li>{{ description }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 </body>
 </html>

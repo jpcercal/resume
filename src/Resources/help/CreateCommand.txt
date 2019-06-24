@@ -1,4 +1,4 @@
-The <info>cekurte:resume:create</info> command create a new resume given a yaml source file:
+The <info>%command.full_name%</info> command create a new resume given a yaml source file:
 
 <info>php %command.full_name%</info>
 

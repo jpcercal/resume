@@ -1,16 +1,16 @@
 <?php
 
-namespace Cekurte\Resume\Command;
+namespace Jpcercal\Resume\Command;
 
-use Cekurte\Resume\Exception\FileNotExistsException;
-use Cekurte\Resume\Factory\PdfFactory;
-use Cekurte\Resume\Factory\TwigFactory;
-use Cekurte\Resume\File\DebugFile;
-use Cekurte\Resume\File\I18nFile;
-use Cekurte\Resume\File\InputFile;
-use Cekurte\Resume\File\OutputFile;
-use Cekurte\Resume\File\TemplateFile;
-use Cekurte\Resume\File\Yaml\Parser;
+use Jpcercal\Resume\Exception\FileNotExistsException;
+use Jpcercal\Resume\Factory\PdfFactory;
+use Jpcercal\Resume\Factory\TwigFactory;
+use Jpcercal\Resume\File\DebugFile;
+use Jpcercal\Resume\File\I18nFile;
+use Jpcercal\Resume\File\InputFile;
+use Jpcercal\Resume\File\OutputFile;
+use Jpcercal\Resume\File\TemplateFile;
+use Jpcercal\Resume\File\Yaml\Parser;
 use Knp\Snappy\Exception\FileAlreadyExistsException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Exception\ParseException;
 
-class CreateCommand extends Command
+class ResumeCommand extends Command
 {
     /**
      * {@inheritdoc}
@@ -27,7 +27,7 @@ class CreateCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('cekurte:resume:create')
+            ->setName('jpcercal:resume')
             ->setDescription('Create a new Resume given a yaml source file.')
             ->addOption(
                 'overwrite',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cekurte\Resume\File;
+namespace Jpcercal\Resume\File;
 
 abstract class AbstractFile
 {

@@ -1,22 +1,13 @@
 <?php
 
-namespace Cekurte\Resume\Contract;
+namespace Jpcercal\Resume\Contract;
 
-use Cekurte\Resume\Contract\YamlFileInterface;
-use Cekurte\Resume\Exception\FileNotExistsException;
+use Jpcercal\Resume\Contract\YamlFileInterface;
+use Jpcercal\Resume\Exception\FileNotExistsException;
 use Symfony\Component\Yaml\Exception\ParseException;
 
 interface YamlParserInterface
 {
-    /**
-     * Constructor.
-     *
-     * @param  YamlFileInterface $file
-     *
-     * @throws FileNotExistsException
-     */
-    // public function __construct(YamlFileInterface $file);
-
     /**
      * Get the content of file.
      *

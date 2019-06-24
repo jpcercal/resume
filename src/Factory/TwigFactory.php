@@ -1,9 +1,9 @@
 <?php
 
-namespace Cekurte\Resume\Factory;
+namespace Jpcercal\Resume\Factory;
 
-use Cekurte\Resume\Contract\FactoryInterface;
-use Cekurte\Resume\Twig\Extension\LessExtension;
+use Jpcercal\Resume\Contract\FactoryInterface;
+use Jpcercal\Resume\Twig\Extension\LessExtension;
 
 class TwigFactory implements FactoryInterface
 {
