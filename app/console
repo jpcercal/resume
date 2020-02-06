@@ -4,13 +4,8 @@
 require realpath(__DIR__ . '/../bootstrap.php');
 require VENDOR_PATH . DS . 'autoload.php';
 
-use Cekurte\Environment\Environment;
 use Jpcercal\Resume\Command\ResumeCommand;
-use Dotenv\Dotenv;
 use Symfony\Component\Console\Application;
-
-$dotenv = Dotenv::create(ROOT_PATH);
-$dotenv->load();
 
 $application = new Application();
 $application->setName('Resume');

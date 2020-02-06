@@ -14,7 +14,7 @@ class OutputFile extends AbstractFile implements FileInterface
     public function __construct(InputInterface $input)
     {
         $this->filename = sprintf(
-            OUTPUT_PATH . DS . 'resume.%s.pdf',
+            OUTPUT_PATH . DS . 'resume.%s.html',
             $input->getOption('language')
         );
     }

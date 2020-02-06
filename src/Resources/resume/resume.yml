@@ -3,181 +3,313 @@ resume:
     job: 
         en: Senior PHP Developer
         pt_BR: Desenvolvedor PHP Sênior
-        de_DE: Senior PHP-Entwickler
     location: 
         en: Berlin, Germany
         pt_BR: Berlim, Alemanha
-        de_DE: Berlin, Deutschland
     contact:
         phone: 
             en: +49 176 87933993
             pt_BR: +49 176 87933993
-            de_DE: +49 176 87933993
         email: jpcercal@gmail.com
     link:
-        linkedin: www.linkedin.com/in/jpcercal
-        github: www.github.com/jpcercal
+        linkedin: linkedin.com/in/jpcercal
+        github: github.com/jpcercal
     about:
         title: 
             en: About me
             pt_BR: Perfil
-            de_DE: Profil
         description: 
             en: |
-                I'm a ZCPE (Zend Certified PHP Engineer) familiar with agile model of software development cycle. I've been working with PHP since 2009, I'm passionate for open-source, patterns, tests and source code well written. Always looking for best practices, new technologies and methodologies to improve my workflow and bring great results to the project and to my customer.
+                I've been working with PHP since 2009, I'm a Zend Certified PHP 
+                Engineer working with Agile, always looking for best practices 
+                and methodologies to improve my workflow and so bring great 
+                results to the project and all stakeholders. 
+                A developer that likes writing tests, enjoys learning new 
+                design-patterns, loves code "well written" (a balance is always 
+                essential), and reads about 20 books per year.
             pt_BR: |
-                Sou ZCPE (Zend Certified PHP Engineer) familizarizado com o modelo ágil de desenvolvimento de software. Trabalho com PHP desde 2009, apaixonado por open-source, padrões, testes e código bem escrito. Sempre buscando melhores práticas, novas tecnologias e metodologias para melhorar meu fluxo de trabalho e trazer retorno além do esperado para o projeto e para o meu cliente.
-            de_DE: |
-                Ich bin ein ZCPE (Zend Certified PHP Engineer) und arbeite mit PHP seit 2009, meine Leidenschaften sind open-source, Standards, Tests und gut geschriebene Codes. Ich suche immer die beste Praxis, neue Technologien und Methoden, um meinen Arbeitsfluss zu verbessern und meinem Kunden mehr als das für das Projekt erwartete zu liefern.
+                Eu trabalho com PHP desde 2009, sou um engenheiro PHP 
+                certificado pela Zend, familizarizado com Agile, sempre buscando 
+                melhores práticas e metodologias para melhorar meu fluxo de 
+                trabalho, desta forma trazendo bons resultados para o projeto e 
+                para todos os stakeholders. Um desenvolvedor que gosta de 
+                escrever testes, adora aprender novos design-patterns, ama código 
+                "bem escrito" (um equilíbrio é sempre essencial) e lê em torno 
+                de 20 livros por ano.
     skills:
         title: 
             en: Skills
             pt_BR: Skills
-            de_DE: Kompetenzen
         items: []
 
     experience:
         title: 
             en: Experience
             pt_BR: Experiência Profissional
-            de_DE: Berufserfahrung
         items:
             -
                 position: 
                     en: Senior Software Engineer
                     pt_BR: Engenheiro de Software Sênior
-                    de_DE: 
                 company: GetYourGuide
                 timePeriod:
                     start: 2018-12
                     end: 
                 description:
                     en:
-                        - Impacting and changing the way how millions of travellers connect to the places they visit, in combination with rigorous A/B testing to craft an unbeatable e-commerce, in numbers during the last months as one team we created about 20 experiments and I worked with 4 of them, in which the last one increased the conversion rate in almost 2%
-                        - Aligning product with technical decisions, having the customer at first and proposing changes while thinking about myself and my parents as travellers have guided me to influence in a killer feature to contact us through whatsapp in which our customers can get support from their smartphone, it increased the second customer purchase considerably and helped us to retain customers
-                        - Doing interviews, providing long detailed feeback about talents and suggesting improvements to the process in order to hire the best engineers and so develop a really good product
-                        - Test driven oriented, impacting the way that the company sees test and so bringing the quality of the product to the next level
-                    pt_BR: []
-                    de_DE: []
+                        - | 
+                            Impacting and changing the way how millions of 
+                            travelers connect to the places they visit, in 
+                            combination with rigorous A/B testing to craft an 
+                            unbeatable e-commerce. In numbers, during the last 
+                            semester, my team created about 20 experiments 
+                            and I worked with 4 of them, in which the last one 
+                            that I've worked on increased the conversion rate 
+                            in almost 2%
+                        - | 
+                            Aligning the product with technical decisions while 
+                            having the customer at first, but also considering 
+                            data over guessing have guided me to influence in a 
+                            killer feature to contact us through WhatsApp in 
+                            which our travelers can get support from their 
+                            smartphones. It increased the second customer 
+                            purchase metric considerably and helped us to retain 
+                            customers
+                        - |
+                            Doing interviews, providing long detailed 
+                            feedback right after it to the talents while 
+                            suggesting improvements to the overall process to 
+                            hire the best people as a consequence developing a 
+                            really good product
+                        - |
+                            Test-driven oriented, impacting the way that 
+                            engineers see unit test bringing then, the quality 
+                            of the product to the next level
+                    pt_BR:
+                        - | 
+                            Impactando e mudando a forma como milhões de 
+                            viajantes se conectam com os lugares que visitam, em
+                            combinação com um rigoroso teste A/B com o fim de 
+                            criar um e-commerce imbatível. Em números, nos 
+                            últimos meses meu time criou 20 experimentos dos 
+                            quais fui responsável por 4 deles, um dos quais 
+                            aumentou o conversion rate para quase 2%
+                        - | 
+                            Alinhando o produto com decisões técnicas ao mesmo 
+                            tempo em que o cliente é levado em consideração 
+                            em todos os momentos me guiaram para que eu pudesse 
+                            influenciar com uma feature em que o cliente pode 
+                            nos contactar via WhatsApp. Isso contribuiu 
+                            positivamente para a métrica de second customer 
+                            purchase e ajudou a empresa a reter clientes
+                        - |
+                            Entrevistas e relatórios minuciosos de feedback para 
+                            todos os talentos logo após a entrevista, sugestões 
+                            de melhoria nos processos de recrutamento nos 
+                            ajudaram o contratar os melhores talentos e a criar 
+                            um bom produto 
+                        - |
+                            Desenvolvimento orientado a testes, impactando a 
+                            forma como a empresa entendia testes trazendo a 
+                            qualidade do produto para um nível muito superior
             -
                 position: 
                     en: Senior PHP Developer
                     pt_BR: Desenvolvedor PHP Sênior
-                    de_DE: Senior PHP-Entwickler
                 company: FlixBus
                 timePeriod:
                     start: 2017-08
                     end: 2018-11
                 description:
                     en:
-                        - Changing the life of approximately one billion of people commuting, spending their weekends, building remote relationships, visiting relatives, and discovering the world
-                        - We improved the response time for retrieving a cart in almost 70% by extracting the code from the monolith to a new micro-service-oriented architecture
-                        - Volunteer to be a facilitator in agile ceremonies such as retrospective and spring review
-                        - Responsible for taking decisions from a technical perspective regarding our domain
+                        - |
+                            Changing the life of approximately one billion of 
+                            people commuting, spending their weekends, building 
+                            remote relationships, visiting relatives, and 
+                            discovering the world
+                        - | 
+                            We improved the response time for retrieving a cart 
+                            in almost 70% by extracting the code from the 
+                            monolith to a new micro-service-oriented 
+                            architecture
+                        - | 
+                            Volunteer to be a facilitator in agile ceremonies 
+                            such as retrospective and sprint review
+                        - | 
+                            Responsible for taking decisions from a technical 
+                            perspective regarding our domain
                     pt_BR:
-                        - Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo  
-                        - Melhoramos o tempo de resposta do carrinho de compras em quase 70% extraindo o código do sistema legado para uma nova arquitetura orientada a micro-serviços
-                        - Voluntário para ser facilitador em cerimônias ágeis como retrospectiva e spring review
-                        - Responsável pela tomada de decisões em uma perspectiva técnica em nosso time
-                    de_DE: 
-                        - Änderung des Lebens von ungefähr einer Milliarde Reisender, die an Wochenenden Beziehungen schaffen, Verwandte besuchen und die Welt entdecken
+                        - | 
+                            Alterando a vida de aproximadamente um bilhão de 
+                            pessoas que se deslocam, utilizando os finais de 
+                            semana, criando relacionamentos, visitando parentes 
+                            e descobrindo o mundo  
+                        - | 
+                            Melhoramos o tempo de resposta do carrinho de 
+                            compras em quase 70% extraindo o código do sistema 
+                            legado para uma nova arquitetura orientada a 
+                            micro-serviços
+                        - | 
+                            Voluntário para ser facilitador em cerimônias ágeis 
+                            como retrospectiva e sprint review
+                        - | 
+                            Responsável pela tomada de decisões em uma 
+                            perspectiva técnica em nosso time
             -
                 position: 
                     en: Senior PHP Developer
                     pt_BR: Desenvolvedor PHP Sênior
-                    de_DE: Senior PHP-Entwickler
                 company: NeoGrid
                 timePeriod:
                     start: 2015-09
                     end: 2017-07
                 description:
                     en: 
-                        - Created a web application using Material Design and AngularJS to the front-end and Silex to the back-end, which automated the sales of the WebEDI solution
-                        - Implemented improvements, bug fixes and integrations with NeoGrid solutions using REST APIs
-                        - Added the Vagrant tool to use with my team in order to use environments identical with the production environment
-                        - Evangelist of best practices of programming following the existent PSRs and implementing unit test in the projects
-                        - Reference in my team to projects that was written in PHP and AngularJS
+                        - | 
+                            Created a web application using Material Design and 
+                            AngularJS to the front-end and Silex to the 
+                            back-end, which automated the sales of the WebEDI 
+                            solution scaling the business and reducing in about 
+                            40% the costs for selling the product
+                        - | 
+                            Implemented improvements, bug fixes and integrations 
+                            with NeoGrid solutions by delivering REST APIs
+                        - | 
+                            Added the Vagrant tool in order to have the 
+                            development environment as close as possible to our 
+                            production server
+                        - | 
+                            Evangelist of best practices of programming 
+                            following the existent PSRs and implementing unit 
+                            test in the projects
+                        - | 
+                            Reference in my team to projects that were written 
+                            in either PHP or JS
                     pt_BR:
-                        - Desenvolvi uma aplicação web utilizando Material Design e AngularJS para o front-end e Silex para o back-end que automatizou todo o processo de venda da solução WebEDI
-                        - Implementei melhorias, realizei correções de bugs e fiz integrações entre as soluções existentes utilizando APIs REST
-                        - Adicionei e configurei o Vagrant para que a equipe pudesse utilizá-lo afim de trabalharmos com ambientes idênticos ao de produção
-                        - Evangelista de boas práticas de programação seguindo as PSRs existentes e implementando testes unitários nos projetos
-                        - Referência na equipe para projetos escritos em PHP e AngularJS
-                    de_DE: 
-                        - Ich habe eine Web-App mit Material Design und AngularJS für front-end und Silex für back-end entwickelt, die das ganze Absatzverfahren der Lösung WebEDI automatisiert hat
-                        - Ich habe Verbesserungen umgesetzt, Fehlerbehebungen und Integrationen zwischen den vorhandenen Lösungen unter Anwendung von APIs REST durchgeführt
-                        - Ich habe Vargant addiert und konfiguriert, damit das Team ihn benutzen konnte, damit wir mit produktionsidentischen Umgebungen arbeiten
-                        - Evangelist bewährter Programmierungspraktiken nach existierenden PSRs und Umsetzung von Einheitstests in den Projekten
-                        - Referenz im Team für in PHP und AngularJS geschriebene Projekte
+                        - | 
+                            Desenvolvi uma aplicação web utilizando Material 
+                            Design e AngularJS para o front-end e Silex para o 
+                            back-end que automatizou todo o processo de venda da 
+                            solução WebEDI escalando o negócio e reduzindo em 
+                            cerca de 40% os custos de venda do produto
+                        - | 
+                            Implementei melhorias, realizei correções de bugs e 
+                            fiz integrações entre as soluções existentes 
+                            utilizando APIs REST
+                        - | 
+                            Adicionei e configurei o Vagrant para que a equipe 
+                            pudesse utilizá-lo afim de trabalharmos com 
+                            ambientes idênticos ao de produção
+                        - | 
+                            Evangelista de boas práticas de programação seguindo 
+                            as PSRs existentes e implementando testes unitários 
+                            nos projetos
+                        - | 
+                            Referência na equipe para projetos escritos em PHP e 
+                            AngularJS
             -
                 position: 
                     en: PHP Developer
                     pt_BR: Desenvolvedor PHP
-                    de_DE: PHP-Entwickler
                 company: Humantech
                 timePeriod:
                     start: 2015-02
                     end: 2015-09
                 description:
                     en: 
-                        - Led the team (five workers) as assistant manager of the programming department when the manager was not present
-                        - Added unit tests in critical project parts, reducing considerable the amount of bugs and increasing the quality of projects
-                        - Created an e-learning platform using the gamification concepts
+                        - | 
+                            Led the team (five engineers) as assistant manager of 
+                            the engineering department
+                        - | 
+                            Added unit tests to critical parts of the project, 
+                            reducing then considerably the number of bugs and so
+                            increasing the quality of our product in earlier 
+                            phases 
+                        - | 
+                            Created an e-learning platform using gamification 
+                            concepts which increased the time that each user 
+                            was investing in learning a new subject
                     pt_BR:
-                        - Liderei o grupo (cinco pessoas) como subgerente da área de desenvolvimento quando o responsável pela área não estava presente
-                        - Implementei testes unitários em partes críticas dos projetos, reduzindo consideravelmente a quantidade de bugs e aumentando a qualidade dos projetos
-                        - Criamos uma plataforma de ensino utilizando os conceitos de gamificação
-                    de_DE: 
-                        - Ich habe das Team (fünf Personen) als Junior Manager im Gebiet der Entwicklung bei Abwesenheit des Zuständigen geleitet
-                        - Ich habe Einheitstests in den kritischen Teilen des Projekts umgesetzt, was deutlich die Anzahl Fehler verringert und die Qualität der Projekte erhöht hat
-                        - Wir haben eine Lernebene geschaffen, die die Gamifizierungskonzepte anwendet
+                        - | 
+                            Liderei o grupo (cinco pessoas) como subgerente da 
+                            área de engenharia de produto
+                        - | 
+                            Implementei testes unitários em partes críticas dos 
+                            projetos, reduzindo consideravelmente a quantidade 
+                            de bugs e aumentando a qualidade dos projetos
+                        - | 
+                            Criamos uma plataforma de ensino utilizando os 
+                            conceitos de gamificação que aumentou o tempo que 
+                            cada usuário usava para aprender um novo assunto
             -
                 position: 
                     en: PHP Developer
                     pt_BR: Desenvolvedor PHP
-                    de_DE: PHP-Entwickler
                 company: A2C
                 timePeriod:
                     start: 2013-11
                     end: 2014-09
                 description:
                     en: 
-                        - Created a CMS to the 3M brand using the gamification concepts and fully focused on SEO, that resulted in three times more access to the website in few months
-                        - Created a software to monitor the reputation of political candidates in social networks, that give more visibility on medias to the agency
-                        - Reference in my team to projects that was written in Symfony 2
-                        - Responsible to manage the Amazon Web Services EC2, RDS and S3
+                        - | 
+                            Created a CMS to the 3M brand using the gamification 
+                            concepts and fully focused on SEO, that resulted in 
+                            three times more access to the website in a few 
+                            months
+                        - | 
+                            Created an application to monitor the reputation of 
+                            political candidates in social networks, it brought 
+                            more visibility to the agency
+                        - | 
+                            Reference in my team to projects that were written 
+                            in Symfony 2
+                        - | 
+                            Responsible for managing AWS EC2, RDS, and S3
                     pt_BR:
-                        - Criamos um CMS para a marca 3M utilizando conceitos de gamificação e totalmente focado em SEO, isto resultou em três vezes mais acessos ao portal em poucos meses
-                        - Criamos um sistema para monitorar a reputação dos candidados à presidência da república nas mídias sociais, isto trouxe ainda mais visibilidade na mídia para a Agência
-                        - Referência na equipe para projetos escritos em Symfony 2
-                        - Responsável por gerenciar os serviços da Amazon Web Services EC2, RDS e S3
-                    de_DE: 
-                        - Wir haben ein CMS für die Marke 3M mit Gamifizierungskonzepten und Schwerpunkt auf SEO erstellt, was eine die Portalzugänge in wenigen Monaten verdreifacht hat
-                        - Wir haben ein System für die Überwachung des Rufes der Kandidaten für Präsident der Republik in den sozialen Medien geschaffen, was mehr Sichtbarkeit in den Medien der Agentur brachte
-                        - Referenz im Team für Projekte mit Symfony 2
-                        - Verantwortlicher für das Management der Dienste von Amazon Web Services EC2, RDS und S3
+                        - | 
+                            Criamos um CMS para a marca 3M utilizando conceitos 
+                            de gamificação e totalmente focado em SEO, isto 
+                            resultou em três vezes mais acessos ao portal em 
+                            poucos meses
+                        - | 
+                            Criamos um sistema para monitorar a reputação dos 
+                            candidados à presidência da república nas mídias 
+                            sociais, isto trouxe ainda mais visibilidade na 
+                            mídia para a Agência
+                        - | 
+                            Referência na equipe para projetos escritos em 
+                            Symfony 2
+                        - | 
+                            Responsável por gerenciar os serviços AWS EC2, RDS e 
+                            S3
     education:
         title: 
             en: Education
             pt_BR: Educação
-            de_DE: Bildung
         items:
             -
                 degree: 
                     en: BSc Information Systems
                     pt_BR: Bacharelado em Sistemas de Informação
-                    de_DE: Bachelor in Informationssystemen
                 school: UNISOCIESC
                 timePeriod:
                     start: 2011-01
                     end: 2014-12
                 description:
                     en:
-                        - Honor as the best student of the course
-                        - The final paper is based on a tool created to be used by professionals that are studying to achieve the ZCPE certification, the project is open-source and is available on GitHub, the project is hosted by "DigitalOcean" as a sponsor
+                        - | 
+                            I was presented as the best graduating student
+                        - | 
+                            The final paper was based on a tool created to be 
+                            used by professionals that are studying to achieve 
+                            the ZCPE certification, the project is open-source 
+                            and it's available on GitHub, the web app has been 
+                            hosted by "DigitalOcean" as a sponsor
                     pt_BR:
-                        - Eleito o melhor aluno do curso
-                        - TCC utilizado até hoje pelos profissionais que estudam para o título ZCPE, o projeto é de código aberto e está disponível no GitHub, a hospedagem do projeto está sendo patrocinada pela "DigitalOcean"
-                    de_DE: 
-                        - Bester Student des Kurses
-                        - Diplomarbeit wird bis heute von Fachleuten, die für den Titel ZCPE studieren, angewandt, das Projekt ist open source und ist in GitHub verfügbar, Hosting des Projekts wird von "DigitalOcean" gesponsort
+                        - | 
+                            Eleito o melhor aluno do curso de gradução
+                        - | 
+                            TCC utilizado até hoje pelos profissionais que 
+                            estudam para o título ZCPE, o projeto é de código 
+                            aberto e está disponível no GitHub, a hospedagem do 
+                            projeto está sendo patrocinada pela "DigitalOcean"

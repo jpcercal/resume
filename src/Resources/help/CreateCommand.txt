@@ -16,8 +16,4 @@ You can also use a different language to create your resume in different languag
 
 <info>php %command.full_name% --language=pt_BR</info>
 
-If you want to see the html that was used to generate the pdf file, then you can use the <comment>--debug</comment> option:
-
-<info>php %command.full_name% --debug</info>
-
-The output of this command will be a PDF file <comment>./output/resume.<LANGUAGE>.pdf</comment>
+The output of this command will be an HTML file <comment>./output/resume.<LANGUAGE>.html</comment>

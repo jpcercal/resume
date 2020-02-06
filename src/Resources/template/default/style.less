@@ -1,21 +1,6 @@
-@base-size: 11;
-
-.font-size-em(@value: @base-size, @context: @base-size) {
-    font-size: (@value / @context) + 0em;
-}
-
-.line-height-em(@value: @base-size, @context: @base-size) {
-    line-height: (@value / @context) + 0em;
-}
-
-html {
-    font-size: @base-size + 0px;
-}
-
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    .font-size-em(12);
 }
 
 h1,
@@ -26,21 +11,20 @@ h5,
 h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    .font-size-em(12);
 }
 
 h1 {
-    .font-size-em(16);
+    font-size: 18px;
     margin-top: 18px;
     margin-bottom: 2px;
 }
 
 h2 {
-    .font-size-em(14);
+    font-size: 17px;
 }
 
-h3 {
-    .font-size-em(13);
+h3, h4, h5, h6 {
+    font-size: 16px;
 }
 
 .bar {
@@ -49,13 +33,12 @@ h3 {
     height: 1px;
     width: 100%;
     background-color: #DDD;
-    margin: 5px 0px;
+    margin: 15px 0px 10px 0px;
 }
 
 header {
     h1 {
         text-align: center;
-        .font-size-em(16);
         font-weight: 500;
         text-transform: uppercase;
         margin: 0px;
@@ -66,7 +49,6 @@ header {
     .location {
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        .font-size-em(12);
         display: block;
 
         ul {
@@ -83,12 +65,13 @@ header {
     }
 
     .location {
-        .font-size-em(11);
+        font-size: 14px;
         text-align: center;
     }
 }
 
 section {
+    margin-top: 35px;
 
     &.skills {
         .skills-container {
@@ -108,8 +91,7 @@ section {
     &.course {
         ul li,
         p {
-            .font-size-em(12);
-            .line-height-em(19);
+            line-height: 24px;
 
             &:first-child {
                 margin-top: 6px;
@@ -147,8 +129,8 @@ section {
         .entity span,
         .title h2,
         .timePeriod ul li {
-            .font-size-em(14);
-            .line-height-em(14);
+            font-size: 17px;
+            line-height: 17px;
             margin-top: 3px;
             margin-bottom: 2px;
         }

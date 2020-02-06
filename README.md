@@ -12,7 +12,11 @@ Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/acce
 ```shell
 git clone https://github.com/jpcercal/resume.git
 cd resume/
-cp .env.example .env
-docker-compose run composer composer install
-docker-compose run php bash
+docker-compose run --rm composer composer install
+
+export RESUME_LANG=en
+# or export RESUME_LANG=pt_BR
+
+docker-compose run --rm php php app/console jpcercal:resume --language="${RESUME_LANG}" --overwrite
+docker-compose run --rm -T athenapdf athenapdf "resume.${RESUME_LANG}.html" "resume.${RESUME_LANG}.pdf"
 ```

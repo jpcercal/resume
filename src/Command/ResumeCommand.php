@@ -3,15 +3,12 @@
 namespace Jpcercal\Resume\Command;
 
 use Jpcercal\Resume\Exception\FileNotExistsException;
-use Jpcercal\Resume\Factory\PdfFactory;
 use Jpcercal\Resume\Factory\TwigFactory;
-use Jpcercal\Resume\File\DebugFile;
 use Jpcercal\Resume\File\I18nFile;
 use Jpcercal\Resume\File\InputFile;
 use Jpcercal\Resume\File\OutputFile;
 use Jpcercal\Resume\File\TemplateFile;
 use Jpcercal\Resume\File\Yaml\Parser;
-use Knp\Snappy\Exception\FileAlreadyExistsException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -49,12 +46,6 @@ class ResumeCommand extends Command
                 'The language that will be used to create the resume',
                 'en'
             )
-            ->addOption(
-                'debug',
-                null,
-                InputOption::VALUE_NONE,
-                'Used to debug this command'
-            )
             ->setHelp(file_get_contents(
                 APP_RESOURCES_HELP_PATH . DS . 'CreateCommand.txt'
             ))
@@ -68,17 +59,11 @@ class ResumeCommand extends Command
     {
         try {
             $twig = TwigFactory::create();
-            $pdf  = PdfFactory::create();
 
             $outputFilename = (new OutputFile($input))->getFilename();
-            $debugFilename = (new DebugFile($input))->getFilename();
 
             if ($input->getOption('overwrite') && file_exists($outputFilename)) {
                 unlink($outputFilename);
-            }
-
-            if ($input->getOption('overwrite') && $input->getOption('debug') && file_exists($debugFilename)) {
-                unlink($debugFilename);
             }
 
             if (!file_exists(OUTPUT_PATH)) {
@@ -93,40 +78,14 @@ class ResumeCommand extends Command
 
             $htmlContent = $twig->render((new TemplateFile($input))->getFilename(), $resume);
 
-            if ($input->getOption('debug')) {
-                file_put_contents($debugFilename, $htmlContent);
+            file_put_contents($outputFilename, $htmlContent);
 
-                $output->writeln('<info>Your debug html file was generated with successfully.</info>');
-
-                $output->writeln(sprintf(
-                    'Debug file: <comment>%s</comment>',
-                    $debugFilename
-                ));
-            }
-
-            $pdf->generateFromHtml(
-                $htmlContent,
-                $outputFilename
-            );
-
-            $output->writeln('<info>Your resume was generated with successfully.</info>');
+            $output->writeln('<info>Your output html file was generated with successfully.</info>');
 
             $output->writeln(sprintf(
                 'Generated file: <comment>%s</comment>',
                 $outputFilename
             ));
-        } catch (FileAlreadyExistsException $e) {
-            $output->writeln(sprintf(
-                '<error>%s</error>',
-                $e->getMessage()
-            ));
-
-            $message = 'Note that you can use the '
-                . '<comment>--overwrite</comment> '
-                . 'option to overwrite an existent resume file.'
-            ;
-
-            $output->writeln($message);
         } catch (FileNotExistsException $e) {
             $output->writeln(sprintf(
                 '<error>%s</error>',

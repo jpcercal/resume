@@ -6,7 +6,7 @@
         "resume",
         "i18n",
         "console",
-        "pdf",
+        "html",
         "yaml"
     ],
     "require": {
@@ -14,9 +14,6 @@
         "symfony/console": "^4.3",
         "symfony/yaml": "^4.3",
         "twig/twig": "^1.42",
-        "knplabs/knp-snappy": "^1.1",
-        "cekurte/environment": "^0.3.0",
-        "vlucas/phpdotenv": "^3.4",
         "leafo/scssphp": "^0.8.4",
         "leafo/lessphp": "^0.5.0"
     },
