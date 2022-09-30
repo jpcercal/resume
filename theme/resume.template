@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>{{#resume.basics}}{{name}}{{/resume.basics}}</title>
+	<style>{{css}}</style>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Acme&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	
+</head>
+<body class="font-sans-serif color-dark">
+	<div class="my-3 d-print-none"></div>
+	<div class="container-fluid p-0 bg-light">
+
+		<div class="row p-0 m-0">		
+			{{#resume.basics}}
+				<div class="col-3 p-0 m-0">
+					<div class="row p-0 m-0">
+						<section class="col p-0 m-0 d-flex gap-1 align-items-center flex-column">
+							<img src="{{picture}}" height="150px" class="m-0 p-0 d-block rounded-circle shadow-4-strong" alt="{{name}}">
+						</section>
+					</div>
+				</div>
+				<div class="col-9 p-0 m-0">
+					<div class="row p-0 m-0">
+						<section class="col p-0 m-0 ms-4 d-flex gap-1 justify-items-center flex-column">
+							<div class="mb-3">
+								<span class="font-monospace color-light-gray fs-6 fw-light fst-normal">&lt;</span><span class="font-monospace color-gray fs-6 fw-light fst-normal">{{label}}</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">/</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">&gt;</span>
+							</div>
+							<p class="m-0 p-0 d-block color-gray fw-light fst-normal">Hi, my name is <strong class="fw-bold fst-normal color-highlight">{{ name }}</strong> (BSc in Information Systems). {{summary}} <span class="color-highlight">♥</span></p>
+						</section>
+					</div>
+				</div>
+				<div class="col-12 p-0 m-0">
+					<div class="row p-0 m-0">
+						<ul class="m-0 p-0 mt-3 list-group d-flex justify-content-center flex-row list-group-horizontal">
+							<li class="list-group-item">
+								<div class="fw-light fst-normal font-monospace color-gray">
+									<i class="bi bi-linkedin"></i> <small>/jpcercal</small>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="fw-light fst-normal font-monospace color-gray">
+									<i class="bi bi-github"></i> <small>/jpcercal</small>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="fw-light fst-normal font-monospace color-gray">
+									<i class="bi bi-envelope-fill"></i> <small>jpcercal@gmail.com</small>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="fw-light fst-normal font-monospace color-gray">
+									<i class="bi bi-telephone-fill"></i> <small>+351 910 958 555</small>
+								</div>
+							</li>
+							<!-- <li class="list-group-item">
+								<div class="fw-light fst-normal font-monospace color-gray">
+									<i class="bi bi-house-door-fill"></i> Coimbra, Portugal
+								</div>
+							</li> -->
+							
+							
+						  </ul>
+					</div>
+				</div>
+
+				
+			{{/resume.basics}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			<div class="col-12 p-0 m-0">
+				<div class="row p-0 m-0">
+					{{#if resume.work.length}}
+						<div class="d-block separator"></div>
+
+						<section class="col-12 p-0 m-0 mt-5">
+							<h1 class="d-block text-capitalize font-monospace text-center color-highlight fs-5 fw-bold fst-normal">latest work experience</h1>
+							<small class="d-block font-monospace text-center color-light-gray fs-6 fw-light fst-normal">(you can check my linkedin profile to see them all)</small>
+							{{#each resume.work}}
+								{{#if @first}}
+								<div class="font-monospace color-highlight text-center m-0 p-0 mb-3">...</div>
+								{{/if}}
+									
+								<div class="row p-0 m-0 mt-4 align-items-center d-flex">
+									
+									<div class="col-12 p-0 m-0">
+										<div>
+											<span class="font-monospace color-highlight fs-6 fw-light fst-normal">&lt;?php&nbsp;</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">// {{ date startDate endDate}}</span>
+										</div>
+										<div>
+											<span class="font-monospace color-light-gray fs-6 fw-light fst-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "</span><span class="font-monospace color-dark fs-6 fw-light fst-normal">{{#if position}}{{position}}{{/if}}{{#if company}} at {{company}}{{/if}}</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">";</span>
+										</div>
+										
+										
+										<!-- <h2 class="font-monospace text-dark fs-6 fw-bold fst-normal">{{#if position}}{{position}}{{/if}}{{#if company}} at {{company}}{{/if}}</h2> -->
+									</div>
+									
+									<!-- <div class="col-1 p-0 m-0 text-center full d-inline-flex justify-content-center align-items-center">
+										<div class="border border-dark bg-light rounded-2 px-2 py-5 fs-6 fw-light fst-normal" style="writing-mode: vertical-lr;">
+											<span>{{#if startDate}}{{date startDate}}{{/if}} - {{#if endDate}}{{date endDate}}{{else}}Present{{/if}}</span>
+										</div>
+									</div> -->
+									<div class="col-12 p-0 m-0 mt-2">
+										{{#if summary}}
+										<div class="summary">
+											<p class="">{{paragraphSplit summary}}</p>
+										</div>
+										{{/if}}
+
+										{{#if highlights.length}}
+											<ul class="m-0 p-0 ms-5 ps-2">
+												{{#each highlights}}
+													<li class="my-2 d-inline-block fw-light fst-normal">{{.}}{{#if @last}}.{{else}};{{/if}}</li>
+												{{/each}}
+											</ul>
+										{{/if}}
+									</div>
+								</div>
+
+
+								<!-- {{#unless @first}}
+									<hr class="my-12 border-0 bg-transparent bg-gradient to-neutral-500 opacity-100">
+								{{/unless}}
+								<div class="d-flex">
+									<div class="w-1/3 entity">
+										<span>{{name}}</span>
+									</div>
+									<div class="w-1/3 title">
+										<h2>{{position}}</h2>
+									</div>
+									<div class="w-1/3 timePeriod">
+										<ul class="list-unstyled">
+											{{#if startDate}}
+												<li>{{date startDate}}</li>
+											{{/if}}
+											<li class="separator">-</li>
+											{{#if endDate}}
+												<li>{{date endDate}}</li>
+											{{else}}
+												Present
+											{{/if}}
+										</ul>
+									</div>
+								</div> -->
+
+
+
+								<!-- {{#if highlights.length}}
+									<ul class="description">
+										{{#each highlights}}
+											<li>{{.}}</li>
+										{{/each}}
+									</ul>
+								{{/if}}
+	-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+								
+								<!--path between 2-3-->
+								
+			
+								
+								
+								<!--path between 1-2-->
+								
+							{{/each}}
+						</section>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+	background-image: repeating-linear-gradient(-45deg, #D9D9D9 0, #D9D9D9 1px, #fff 1px, #fff 4px);
+}
+
+.font-sans-serif {
+	font-family: "Open Sans", sans-serif;
+}
+
+.font-display {
+	font-family: "Acme", sans-serif;
+}
+
+.font-monospace {
+	font-family: "Source Code Pro", monospace;
+}
+
+.color-dark {
+	color: #191919;
+}
+
+.color-gray {
+	color: #2B2B2B;
+}
+
+.color-light-gray {
+	color: #D9D9D9;
+}
+
+.color-white {
+	color: #FFFFFF;
+}
+
+.color-highlight {
+	color: #ED5F1A;
+}

@@ -5,12 +5,12 @@
     },
     "basics": {
         "name": "João Cercal",
-        "label": "Desenvolvedor PHP Sênior",
+        "label": "Senior PHP Developer",
         "picture": "https://avatars.githubusercontent.com/u/366345",
         "email": "jpcercal@gmail.com",
         "phone": "+351 910 958 555",
-        "website": "https://jpcercal.com/",
-        "summary": "Eu trabalho com PHP desde 2009, sou um engenheiro PHP certificado pela Zend, familizarizado com Agile, sempre buscando melhores práticas e metodologias para melhorar meu fluxo de trabalho, desta forma trazendo bons resultados para o projeto e para todos os stakeholders. Um desenvolvedor que gosta de escrever testes, adora aprender novos design-patterns, ama código \"bem escrito\" (um equilíbrio é sempre essencial) e lê em torno de 20 livros por ano",
+        "website": "https://jpcercal.com/en/",
+        "summary": "I’ve been looking for creative, innovative and scalable solutions to enable people to do and experience what they love. On the way, I became a PHP specialist while working with incredible people from different places of the world. A certified Senior Software Engineer who loves what he does since he started his career in 2009.",
         "location": {
             "address": "Coimbra, Portugal"
         },
@@ -30,64 +30,64 @@
     "work": [
         {
             "company": "Turbine Kreuzberg",
-            "position": "Engenheiro de Software Sênior",
+            "position": "Senior Software Engineer",
             "website": "",
             "startDate": "2022-07",
             "summary": "",
             "highlights": [
-                "Aproveitando ao máximo a experiência em PHP e no ecossistema/framework Spryker para projetar, desenvolver e manter sólidas soluções de comércio eletrônico, garantindo o funcionamento eficiente de plataformas digitais",
-                "Otimizando o desempenho do comércio eletrônico por meio de habilidades meticulosas de codificação e uma compreensão abrangente do framework Spryker, o que leva diretamente a experiências aprimoradas para o usuário, tempos de carregamento de página mais rápidos e taxas de conversão aumentadas para nossos clientes",
-                "Resolvendo colaborativamente desafios complexos dentro do nosso ambiente de desenvolvimento ágil, colaborando ativamente com equipes multidisciplinares para enfrentar desafios complexos, utilizando habilidades de resolução de problemas e experiência técnica para criar soluções inovadoras que impulsionam o sucesso de nossos projetos de comércio eletrônico em larga escala"
+                "Making the most of PHP and the Spryker framework/ecosystem to design, develop, and maintain robust e-commerce solutions, ensuring efficient operation of digital platforms",
+                "Optimizing e-commerce performance through meticulous coding skills and a comprehensive understanding of the Spryker framework, which directly leads to enhanced user experiences, faster page load times, and increased conversion rates for our clients",
+                "Collaboratively solving complex challenges within our agile development environment, actively collaborating with cross-functional teams to tackle intricate challenges, utilizing problem-solving skills and technical expertise to create innovative solutions that drive the success of our large-scale e-commerce projects"
             ]
         },
         {
             "company": "Spectrm",
-            "position": "Engenheiro de Software Sênior",
+            "position": "Senior Software Engineer",
             "website": "",
             "startDate": "2020-08",
             "endDate": "2022-06",
             "summary": "",
             "highlights": [
-                "Causando um impacto significativo no mercado ao ajudar empresas de alto nível a envolverem os consumidores de forma eficaz por meio de chatbots inovadores em importantes plataformas de mensagens. Isso resultou em um crescimento substancial nas vendas e no fortalecimento da fidelidade à marca",
-                "Ao projetar, desenvolver e lançar soluções escaláveis para abordar desafios comerciais complexos, com um foco duradouro na escalabilidade, melhorei significativamente a eficiência operacional, expandi a presença de mercado da empresa e assegurei sua adaptabilidade a longo prazo, impulsionando o negócio a novos patamares",
-                "Liderei reuniões da equipe de backend, fui mentor de desenvolvedores de nível junior e desempenhei um papel crucial na definição de estratégias de migração para mudanças essenciais na plataforma",
-                "Introduzi architectural decision records (ADRs), conduzi pós-mortem e facilitei lightning talks para promover uma cultura de melhoria contínua dentro da equipe de engenharia"
+                "Making a significant impact on the market by helping top-tier companies engage consumers effectively through innovative chatbots on major messaging platforms. This resulted in substantial sales growth and strengthened brand loyalty",
+                "By designing, developing, and launching scalable solutions to tackle intricate business challenges, with a lasting focus on scalability, I significantly improved operational efficiency, expanded the company's market presence, and ensured long-term adaptability, driving the business to new heights",
+                "Led backend chapter meetings, mentored junior developers, and played a crucial role in defining migration strategies for essential platform changes",
+                "Introduced architectural decision records (ADRs), conducted post-mortems, and facilitated lightning talks to promote a culture of continuous improvement within the engineering team"
             ]
         },
         {
             "company": "GetYourGuide",
-            "position": "Desenvolvedor PHP Sênior",
+            "position": "Senior PHP Developer",
             "website": "",
             "startDate": "2018-12",
             "endDate": "2020-07",
             "summary": "",
             "highlights": [
-                "Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo",
-                "Melhoramos o tempo de resposta do carrinho de compras em quase 70% extraindo o código do sistema legado para uma nova arquitetura orientada a micro-serviços",
-                "Voluntário para ser facilitador em cerimônias ágeis como retrospectiva e sprint review",
-                "Responsável pela tomada de decisões em uma perspectiva técnica em nosso time"
+                "Impacting and changing the way how millions of travelers connect to the places they visit, using weekends, building relationships, visiting relatives, and discovering the world",
+                "We improved the response time for retrieving a cart in almost 70% by extracting the code from the legacy system into a new microservices-oriented architecture",
+                "Volunteered to be a facilitator in agile ceremonies such as retrospectives and sprint reviews",
+                "Responsible for making technical decisions from a technical perspective within our team"
             ]
         },
         {
             "company": "FlixBus",
-            "position": "Desenvolvedor PHP Sênior",
+            "position": "Senior PHP Developer",
             "website": "",
             "startDate": "2017-08",
             "endDate": "2018-11",
             "summary": "",
             "highlights": [
-                "Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo",
-                "Melhoramos o tempo de resposta do carrinho de compras em quase 70% extraindo o código do sistema legado para uma nova arquitetura orientada a micro-serviços",
-                "Voluntário para ser facilitador em cerimônias ágeis como retrospectiva e sprint review",
-                "Responsável pela tomada de decisões em uma perspectiva técnica em nosso time"
+                "Changing the life of approximately one billion of people commuting, using weekends, building relationships, visiting relatives, and discovering the world",
+                "We improved the response time for retrieving a cart in almost 70% by extracting the code from the legacy system into a new microservices-oriented architecture",
+                "Volunteered to be a facilitator in agile ceremonies such as retrospectives and sprint reviews",
+                "Responsible for making technical decisions from a technical perspective within our team"
             ]
         }
     ],
     "education": [
         {
             "institution": "UNISOCIESC",
-            "area": "Sistemas de Informação",
-            "studyType": "Bacharelado",
+            "area": "Information Systems",
+            "studyType": "BSc",
             "startDate": "2011-01",
             "endDate": "2014-12",
             "gpa": "",
@@ -95,8 +95,8 @@
         },
         {
             "institution": "UNISOCIESC",
-            "area": "Técnico em Informática",
-            "studyType": "Curso Técnico",
+            "area": "Information Systems",
+            "studyType": "Technical Course",
             "startDate": "2009-01",
             "endDate": "2010-12",
             "gpa": "",
@@ -104,14 +104,14 @@
         },
         {
             "institution": "TOTVS",
-            "area": "Programação e Etiqueta Empresarial",
-            "studyType": "Treinamento",
+            "area": "Computer Programming",
+            "studyType": "Training Course",
             "startDate": "2009-08",
             "endDate": "2010-07",
             "courses": [
-                "268 horas de Conceitos básicos de banco de dados Progress, UML, XML, Java, Flex, Subversion, Jira, Confluence e melhores práticas de programação",
-                "8 horas de Comunicação para Negócios",
-                "250 horas de Como programar em C e Java (paradigma estrutural apenas)"
+                "268 hours of Basic concepts of Progress database, UML, XML, Java, Flex, Subversion, Jira, Confluence, and best practices in computer programming",
+                "8 hours of Business Writing",
+                "250 hours of How to program in C and Java (structural paradigm only)"
             ]
         }
     ],
@@ -121,74 +121,60 @@
             "position": "Web Developer",
             "startDate": "2009-05",
             "endDate": "2009-05",
-            "summary": "Desenvolvimento de uma aplicação web para o campus, gerenciando reserva de salas de aula e recursos usando PHP 5.2, MySQL, HTML, CSS e Javascript."
+            "summary": "Development of a web application to the campus, managing classroom reservation and resources using PHP 5.2, MySQL, HTML, CSS, and Javascript."
         },
         {
             "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Speaker - PHP do Jeito Certo",
+            "position": "Speaker - PHP the right way",
             "startDate": "2013-10",
             "endDate": "2013-10",
-            "summary": "Palestrante na 'Semana Acadêmica,' falando sobre a linguagem de programação PHP para a comunidade local."
+            "summary": "Speaker at 'Semana Acadêmica,' speaking about PHP programming language to the local community."
         },
         {
             "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Assistente de Professor",
+            "position": "Teacher Assistant",
             "startDate": "2013-10",
             "endDate": "2013-10",
-            "summary": "Auxílio na ministração de aulas para a comunidade local sobre o uso de ferramentas como Microsoft Office Word, Powerpoint e Excel."
+            "summary": "Assisted in giving classes to the local community on using tools like Microsoft Office Word, Powerpoint, and Excel."
         },
         {
             "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
             "position": "Projeto Programar",
             "startDate": "2013-11",
             "endDate": "2013-11",
-            "summary": "Ensino de programação em C++ para estudantes, abordando tópicos como tipos de dados primitivos, estruturas de controle e declarações de loop."
+            "summary": "Teaching students how to program in C++ covering topics like primitive data types, control structures, and loop statements."
         },
         {
             "organization": "Agência A2C",
-            "position": "Palestrante - Princípios básicos do Symfony2",
+            "position": "Speaker - The basic principles of Symfony2",
             "startDate": "2014-07",
             "endDate": "2014-07",
-            "summary": "Palestrante no evento interno promovendo o desenvolvimento de aplicativos web e de console em PHP com Symfony versão 2.4."
+            "summary": "Speaker in the internal event promoting web and console app development in PHP with Symfony version 2.4."
         },
         {
             "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Membro da Comissão de Avaliação de Exames",
+            "position": "Member of the Examining Evaluation Board",
             "startDate": "2014-11",
             "endDate": "2014-11",
-            "summary": "Membro da Comissão de Avaliação de Exames responsável por avaliar projetos de estudantes."
+            "summary": "Member of the Examining Evaluation Board responsible for evaluating student projects."
         }
     ],
     "languages": [
         {
-            "language": "Inglês",
-            "fluency": "Proficiência profissional no idioma"
+            "language": "English",
+            "fluency": "Professional working proficiency"
         },
         {
-            "language": "Português",
-            "fluency": "Proficiência nativa"
+            "language": "Portuguese",
+            "fluency": "Native"
         },
         {
-            "language": "Espanhol",
-            "fluency": "Proficiência elementar"
+            "language": "Spanish",
+            "fluency": "Elementary proficiency"
         },
         {
-            "language": "Alemão",
-            "fluency": "Proficiência elementar"
-        }
-    ],
-    "certificates": [
-        {
-            "name": "Twig Certified Designer",
-            "organization": "Symfony",
-            "date": "2020-01-01",
-            "credentialID": "https://connect.symfony.com/profile/jpcercal"
-        },
-        {
-            "name": "Zend Certified PHP Engineer",
-            "organization": "Zend by Perforce",
-            "date": "2015-08-01",
-            "credentialID": "http://www.zend.com/en/yellow-pages/ZEND026099"
+            "language": "German",
+            "fluency": "Elementary proficiency"
         }
     ],
     "skills": [
@@ -443,11 +429,11 @@
     ],
     "awards": [
         {
-            "title": "Homenagem - O melhor aluno do curso",
+            "title": "Honor Student - The best graduating student",
             "issued_by": "UNISOCIESC",
             "date": "2015-03",
             "associated_with": "UNISOCIESC - Universidade Sociedade Educacional de Santa Catarina",
-            "description": "\"Para realizar grandes conquistas, devemos não apenas agir, mas também sonhar; não apenas planejar, mas também acreditar.\" - Anatole France.\n\nNós parabenizamos você, considerado o melhor aluno do curso UNISOCIESC."
+            "description": "\"To accomplish great things, we must not only act but also dream; not only plan but also believe.\" - Anatole France.\n\nWe congratulate you, considered the best graduating student UNISOCIESC."
         }
     ],
     "projects": [
