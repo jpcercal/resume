@@ -51,6 +51,59 @@ resume:
                 position: 
                     en: Senior Software Engineer
                     pt_BR: Engenheiro de Software Sênior
+                company: Turbine Kreuzberg
+                timePeriod:
+                    start: 2022-07
+                    end: 
+                description:
+                    en:
+                        - | 
+                            Making the most of PHP and the Spryker 
+                            framework/ecosystem expertise to design, develop, 
+                            and maintain robust e-commerce solutions, ensuring 
+                            the efficient functioning of digital platforms
+                        - | 
+                            Optimizing e-commerce performance through meticulous 
+                            code craftsmanship and a comprehensive understanding 
+                            of the Spryker framework, directly leading to 
+                            enhanced user experiences, faster page loading 
+                            times, and increased conversion rates for our clients
+                        - | 
+                            Collaboratively solving complex challenges within 
+                            our agile development environment, actively 
+                            collaborating with cross-functional teams to 
+                            address complex challenges, utilizing 
+                            problem-solving skills and technical expertise 
+                            to devise innovative solutions that drive the 
+                            success of our large-scale e-commerce projects
+                    pt_BR:
+                        - | 
+                            Aproveitando ao máximo a experiência em PHP 
+                            e no ecossistema/framework Spryker para 
+                            projetar, desenvolver e manter sólidas soluções 
+                            de comércio eletrônico, garantindo o funcionamento 
+                            eficiente de plataformas digitais
+                        - | 
+                            Otimizando o desempenho do comércio eletrônico 
+                            por meio de habilidades meticulosas de codificação 
+                            e uma compreensão abrangente do framework Spryker, 
+                            o que leva diretamente a experiências aprimoradas 
+                            para o usuário, tempos de carregamento de página 
+                            mais rápidos e taxas de conversão aumentadas 
+                            para nossos clientes
+                        - | 
+                            Resolvendo colaborativamente desafios complexos 
+                            dentro do nosso ambiente de desenvolvimento ágil, 
+                            colaborando ativamente com equipes 
+                            multidisciplinares para enfrentar desafios complexos, 
+                            utilizando habilidades de resolução de problemas 
+                            e experiência técnica para criar soluções inovadoras 
+                            que impulsionam o sucesso de nossos projetos de 
+                            comércio eletrônico em larga escala
+            -
+                position: 
+                    en: Senior Software Engineer
+                    pt_BR: Engenheiro de Software Sênior
                 company: Spectrm
                 timePeriod:
                     start: 2020-08
