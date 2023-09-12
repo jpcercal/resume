@@ -1,0 +1,95 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "João Paulo Cercal",
+        "label": "Desenvolvedor PHP Sênior",
+        "picture": "",
+        "email": "jpcercal@gmail.com",
+        "phone": "+351 910 958 555",
+        "website": "",
+        "summary": "Eu trabalho com PHP desde 2009, sou um engenheiro PHP certificado pela Zend, familizarizado com Agile, sempre buscando melhores práticas e metodologias para melhorar meu fluxo de trabalho, desta forma trazendo bons resultados para o projeto e para todos os stakeholders. Um desenvolvedor que gosta de escrever testes, adora aprender novos design-patterns, ama código \"bem escrito\" (um equilíbrio é sempre essencial) e lê em torno de 20 livros por ano",
+        "location": {
+            "address": "Coimbra, Portugal"
+        },
+        "profiles": [
+            {
+                "network": "linkedin",
+                "username": "jpcercal",
+                "url": "https://linkedin.com/in/jpcercal"
+            },
+            {
+                "network": "github",
+                "username": "jpcercal",
+                "url": "https://github.com/jpcercal"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Turbine Kreuzberg",
+            "position": "Engenheiro de Software Sênior",
+            "website": "",
+            "startDate": "2022-07",
+            "summary": "",
+            "highlights": [
+                "Aproveitando ao máximo a experiência em PHP e no ecossistema/framework Spryker para projetar, desenvolver e manter sólidas soluções de comércio eletrônico, garantindo o funcionamento eficiente de plataformas digitais",
+                "Otimizando o desempenho do comércio eletrônico por meio de habilidades meticulosas de codificação e uma compreensão abrangente do framework Spryker, o que leva diretamente a experiências aprimoradas para o usuário, tempos de carregamento de página mais rápidos e taxas de conversão aumentadas para nossos clientes",
+                "Resolvendo colaborativamente desafios complexos dentro do nosso ambiente de desenvolvimento ágil, colaborando ativamente com equipes multidisciplinares para enfrentar desafios complexos, utilizando habilidades de resolução de problemas e experiência técnica para criar soluções inovadoras que impulsionam o sucesso de nossos projetos de comércio eletrônico em larga escala"
+            ]
+        },
+        {
+            "company": "Spectrm",
+            "position": "Engenheiro de Software Sênior",
+            "website": "",
+            "startDate": "2020-08",
+            "endDate": "2022-06",
+            "summary": "",
+            "highlights": [
+                "Causando um impacto significativo no mercado ao ajudar empresas de alto nível a envolverem os consumidores de forma eficaz por meio de chatbots inovadores em importantes plataformas de mensagens. Isso resultou em um crescimento substancial nas vendas e no fortalecimento da fidelidade à marca",
+                "Ao projetar, desenvolver e lançar soluções escaláveis para abordar desafios comerciais complexos, com um foco duradouro na escalabilidade, melhorei significativamente a eficiência operacional, expandi a presença de mercado da empresa e assegurei sua adaptabilidade a longo prazo, impulsionando o negócio a novos patamares",
+                "Liderei reuniões da equipe de backend, fui mentor de desenvolvedores de nível junior e desempenhei um papel crucial na definição de estratégias de migração para mudanças essenciais na plataforma",
+                "Introduzi architectural decision records (ADRs), conduzi pós-mortem e facilitei lightning talks para promover uma cultura de melhoria contínua dentro da equipe de engenharia"
+            ]
+        },
+        {
+            "company": "GetYourGuide",
+            "position": "Desenvolvedor PHP Sênior",
+            "website": "",
+            "startDate": "2018-12",
+            "endDate": "2020-07",
+            "summary": "",
+            "highlights": [
+                "Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo",
+                "Melhoramos o tempo de resposta do carrinho de compras em quase 70% extraindo o código do sistema legado para uma nova arquitetura orientada a micro-serviços",
+                "Voluntário para ser facilitador em cerimônias ágeis como retrospectiva e sprint review",
+                "Responsável pela tomada de decisões em uma perspectiva técnica em nosso time"
+            ]
+        },
+        {
+            "company": "FlixBus",
+            "position": "Desenvolvedor PHP Sênior",
+            "website": "",
+            "startDate": "2017-08",
+            "endDate": "2018-11",
+            "summary": "",
+            "highlights": [
+                "Alterando a vida de aproximadamente um bilhão de pessoas que se deslocam, utilizando os finais de semana, criando relacionamentos, visitando parentes e descobrindo o mundo",
+                "Melhoramos o tempo de resposta do carrinho de compras em quase 70% extraindo o código do sistema legado para uma nova arquitetura orientada a micro-serviços",
+                "Voluntário para ser facilitador em cerimônias ágeis como retrospectiva e sprint review",
+                "Responsável pela tomada de decisões em uma perspectiva técnica em nosso time"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "UNISOCIESC",
+            "area": "Sistemas de Informação",
+            "studyType": "Bacharelado",
+            "startDate": "2011-01",
+            "endDate": "2014-12",
+            "gpa": "",
+            "courses": []
+        }
+    ],
+    "skills": []
+}

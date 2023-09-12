@@ -1,0 +1,95 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+        "name": "João Paulo Cercal",
+        "label": "Senior PHP Developer",
+        "picture": "",
+        "email": "jpcercal@gmail.com",
+        "phone": "+351 910 958 555",
+        "website": "",
+        "summary": "I've been working with PHP since 2009, a Zend-certified PHP engineer, familiar with Agile, always looking for best practices and methodologies to improve my workflow, thus bringing good results to the project and all stakeholders. A developer who enjoys writing tests, loves learning new design patterns, loves 'well-written' code (balance is always essential), and reads around 20 books a year",
+        "location": {
+            "address": "Coimbra, Portugal"
+        },
+        "profiles": [
+            {
+                "network": "linkedin",
+                "username": "jpcercal",
+                "url": "https://linkedin.com/in/jpcercal"
+            },
+            {
+                "network": "github",
+                "username": "jpcercal",
+                "url": "https://github.com/jpcercal"
+            }
+        ]
+    },
+    "work": [
+        {
+            "company": "Turbine Kreuzberg",
+            "position": "Senior Software Engineer",
+            "website": "",
+            "startDate": "2022-07",
+            "summary": "",
+            "highlights": [
+                "Making the most of PHP and the Spryker framework/ecosystem to design, develop, and maintain robust e-commerce solutions, ensuring efficient operation of digital platforms",
+                "Optimizing e-commerce performance through meticulous coding skills and a comprehensive understanding of the Spryker framework, which directly leads to enhanced user experiences, faster page load times, and increased conversion rates for our clients",
+                "Collaboratively solving complex challenges within our agile development environment, actively collaborating with cross-functional teams to tackle intricate challenges, utilizing problem-solving skills and technical expertise to create innovative solutions that drive the success of our large-scale e-commerce projects"
+            ]
+        },
+        {
+            "company": "Spectrm",
+            "position": "Senior Software Engineer",
+            "website": "",
+            "startDate": "2020-08",
+            "endDate": "2022-06",
+            "summary": "",
+            "highlights": [
+                "Making a significant impact on the market by helping top-tier companies engage consumers effectively through innovative chatbots on major messaging platforms. This resulted in substantial sales growth and strengthened brand loyalty",
+                "By designing, developing, and launching scalable solutions to tackle intricate business challenges, with a lasting focus on scalability, I significantly improved operational efficiency, expanded the company's market presence, and ensured long-term adaptability, driving the business to new heights",
+                "Led backend chapter meetings, mentored junior developers, and played a crucial role in defining migration strategies for essential platform changes",
+                "Introduced architectural decision records (ADRs), conducted post-mortems, and facilitated lightning talks to promote a culture of continuous improvement within the engineering team"
+            ]
+        },
+        {
+            "company": "GetYourGuide",
+            "position": "Senior PHP Developer",
+            "website": "",
+            "startDate": "2018-12",
+            "endDate": "2020-07",
+            "summary": "",
+            "highlights": [
+                "Impacting and changing the way how millions of travelers connect to the places they visit, using weekends, building relationships, visiting relatives, and discovering the world",
+                "We improved the response time for retrieving a cart in almost 70% by extracting the code from the legacy system into a new microservices-oriented architecture",
+                "Volunteered to be a facilitator in agile ceremonies such as retrospectives and sprint reviews",
+                "Responsible for making technical decisions from a technical perspective within our team"
+            ]
+        },
+        {
+            "company": "FlixBus",
+            "position": "Senior PHP Developer",
+            "website": "",
+            "startDate": "2017-08",
+            "endDate": "2018-11",
+            "summary": "",
+            "highlights": [
+                "Changing the life of approximately one billion of people commuting, using weekends, building relationships, visiting relatives, and discovering the world",
+                "We improved the response time for retrieving a cart in almost 70% by extracting the code from the legacy system into a new microservices-oriented architecture",
+                "Volunteered to be a facilitator in agile ceremonies such as retrospectives and sprint reviews",
+                "Responsible for making technical decisions from a technical perspective within our team"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "UNISOCIESC",
+            "area": "Information Systems",
+            "studyType": "BSc",
+            "startDate": "2011-01",
+            "endDate": "2014-12",
+            "gpa": "",
+            "courses": []
+        }
+    ],
+    "skills": []
+}
