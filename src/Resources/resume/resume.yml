@@ -51,10 +51,69 @@ resume:
                 position: 
                     en: Senior Software Engineer
                     pt_BR: Engenheiro de Software Sênior
+                company: Spectrm
+                timePeriod:
+                    start: 2020-08
+                    end: 2022-06
+                description:
+                    en:
+                        - | 
+                            Making a significant impact on the market by helping 
+                            top-tier companies engage consumers effectively through 
+                            innovative marketing chatbots on major messaging 
+                            platforms. This led to substantial sales growth and 
+                            boosted brand loyalty
+                        - | 
+                            By designing, developing, and launching scalable 
+                            solutions to tackle intricate business challenges 
+                            with an enduring focus on scalability, I significantly 
+                            enhanced operational efficiency, expanded the company's market 
+                            presence, and secured long-term adaptability, 
+                            propelling the business to new heights
+                        - | 
+                            Led backend chapter meetings, mentored junior developers, 
+                            and played a crucial role in defining migration strategies 
+                            for vital platform changes
+                        - |
+                            Championed architectural decision records (ADRs), 
+                            conducted post-mortems, and facilitated lightning 
+                            talks to foster a culture of continuous improvement 
+                            within the engineering team
+                    pt_BR:
+                        - | 
+                            Causando um impacto significativo no mercado ao 
+                            ajudar empresas de alto nível a envolverem os 
+                            consumidores de forma eficaz por meio de 
+                            chatbots inovadores em importantes plataformas 
+                            de mensagens. Isso resultou em um crescimento 
+                            substancial nas vendas e no fortalecimento 
+                            da fidelidade à marca
+                        - | 
+                            Ao projetar, desenvolver e lançar soluções 
+                            escaláveis para abordar desafios comerciais 
+                            complexos, com um foco duradouro na escalabilidade, 
+                            melhorei significativamente a eficiência operacional, 
+                            expandi a presença de mercado da empresa e assegurei 
+                            sua adaptabilidade a longo prazo, impulsionando 
+                            o negócio a novos patamares
+                        - | 
+                            Liderei reuniões da equipe de backend, fui mentor de 
+                            desenvolvedores de nível junior e desempenhei 
+                            um papel crucial na definição de estratégias 
+                            de migração para mudanças essenciais na plataforma
+                        - |
+                            Introduzi architectural decision records (ADRs), 
+                            conduzi pós-mortem e facilitei lightning talks
+                            para promover uma cultura de melhoria contínua 
+                            dentro da equipe de engenharia
+            -
+                position: 
+                    en: Senior Software Engineer
+                    pt_BR: Engenheiro de Software Sênior
                 company: GetYourGuide
                 timePeriod:
                     start: 2018-12
-                    end: 
+                    end: 2020-07
                 description:
                     en:
                         - | 
