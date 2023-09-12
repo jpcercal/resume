@@ -1,12 +1,15 @@
 {
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "meta": {
+        "theme": "short"
+    },
     "basics": {
         "name": "João Paulo Cercal",
         "label": "Desenvolvedor PHP Sênior",
-        "picture": "",
+        "picture": "https://avatars.githubusercontent.com/u/366345",
         "email": "jpcercal@gmail.com",
         "phone": "+351 910 958 555",
-        "website": "",
+        "website": "https://jpcercal.com/",
         "summary": "Eu trabalho com PHP desde 2009, sou um engenheiro PHP certificado pela Zend, familizarizado com Agile, sempre buscando melhores práticas e metodologias para melhorar meu fluxo de trabalho, desta forma trazendo bons resultados para o projeto e para todos os stakeholders. Um desenvolvedor que gosta de escrever testes, adora aprender novos design-patterns, ama código \"bem escrito\" (um equilíbrio é sempre essencial) e lê em torno de 20 livros por ano",
         "location": {
             "address": "Coimbra, Portugal"
@@ -89,7 +92,1053 @@
             "endDate": "2014-12",
             "gpa": "",
             "courses": []
+        },
+        {
+            "institution": "UNISOCIESC",
+            "area": "Técnico em Informática",
+            "studyType": "Curso Técnico",
+            "startDate": "2009-01",
+            "endDate": "2010-12",
+            "gpa": "",
+            "courses": []
+        },
+        {
+            "institution": "TOTVS",
+            "area": "Programação e Etiqueta Empresarial",
+            "studyType": "Treinamento",
+            "startDate": "2009-08",
+            "endDate": "2010-07",
+            "courses": [
+                "268 horas de Conceitos básicos de banco de dados Progress, UML, XML, Java, Flex, Subversion, Jira, Confluence e melhores práticas de programação",
+                "8 horas de Comunicação para Negócios",
+                "250 horas de Como programar em C e Java (paradigma estrutural apenas)"
+            ]
         }
     ],
-    "skills": []
+    "volunteer": [
+        {
+            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
+            "position": "Web Developer",
+            "startDate": "2009-05",
+            "endDate": "2009-05",
+            "summary": "Desenvolvimento de uma aplicação web para o campus, gerenciando reserva de salas de aula e recursos usando PHP 5.2, MySQL, HTML, CSS e Javascript."
+        },
+        {
+            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
+            "position": "Speaker - PHP do Jeito Certo",
+            "startDate": "2013-10",
+            "endDate": "2013-10",
+            "summary": "Palestrante na 'Semana Acadêmica,' falando sobre a linguagem de programação PHP para a comunidade local."
+        },
+        {
+            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
+            "position": "Assistente de Professor",
+            "startDate": "2013-10",
+            "endDate": "2013-10",
+            "summary": "Auxílio na ministração de aulas para a comunidade local sobre o uso de ferramentas como Microsoft Office Word, Powerpoint e Excel."
+        },
+        {
+            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
+            "position": "Projeto Programar",
+            "startDate": "2013-11",
+            "endDate": "2013-11",
+            "summary": "Ensino de programação em C++ para estudantes, abordando tópicos como tipos de dados primitivos, estruturas de controle e declarações de loop."
+        },
+        {
+            "organization": "Agência A2C",
+            "position": "Palestrante - Princípios básicos do Symfony2",
+            "startDate": "2014-07",
+            "endDate": "2014-07",
+            "summary": "Palestrante no evento interno promovendo o desenvolvimento de aplicativos web e de console em PHP com Symfony versão 2.4."
+        },
+        {
+            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
+            "position": "Membro da Comissão de Avaliação de Exames",
+            "startDate": "2014-11",
+            "endDate": "2014-11",
+            "summary": "Membro da Comissão de Avaliação de Exames responsável por avaliar projetos de estudantes."
+        }
+    ],
+    "languages": [
+        {
+            "language": "Inglês",
+            "fluency": "Proficiência profissional no idioma"
+        },
+        {
+            "language": "Português",
+            "fluency": "Proficiência nativa"
+        },
+        {
+            "language": "Espanhol",
+            "fluency": "Proficiência elementar"
+        },
+        {
+            "language": "Alemão",
+            "fluency": "Proficiência elementar"
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Twig Certified Designer",
+            "organization": "Symfony",
+            "date": "2020-01-01",
+            "credentialID": "https://connect.symfony.com/profile/jpcercal"
+        },
+        {
+            "name": "Zend Certified PHP Engineer",
+            "organization": "Zend by Perforce",
+            "date": "2015-08-01",
+            "credentialID": "http://www.zend.com/en/yellow-pages/ZEND026099"
+        }
+    ],
+    "skills": [
+        {
+            "name": "php",
+            "level": "expert"
+        },
+        {
+            "name": "node",
+            "level": "high intermediate"
+        },
+        {
+            "name": "golang",
+            "level": "high intermediate"
+        },
+        {
+            "name": "typescript",
+            "level": "high intermediate"
+        },
+        {
+            "name": "html",
+            "level": "advanced"
+        },
+        {
+            "name": "css",
+            "level": "advanced"
+        },
+        {
+            "name": "javascript",
+            "level": "advanced"
+        },
+        {
+            "name": "java",
+            "level": "low intermediate"
+        },
+        {
+            "name": "c",
+            "level": "basic understanding"
+        },
+        {
+            "name": "c#",
+            "level": "basic understanding"
+        },
+        {
+            "name": "ruby",
+            "level": "basic understanding"
+        },
+        {
+            "name": "python",
+            "level": "low intermediate"
+        },
+        {
+            "name": "bash",
+            "level": "advanced"
+        },
+        {
+            "name": "symfony",
+            "level": "expert"
+        },
+        {
+            "name": "zend",
+            "level": "high intermediate"
+        },
+        {
+            "name": "laravel",
+            "level": "advanced"
+        },
+        {
+            "name": "wordpress",
+            "level": "advanced"
+        },
+        {
+            "name": "spryker",
+            "level": "advanced"
+        },
+        {
+            "name": "kohana",
+            "level": "advanced"
+        },
+        {
+            "name": "cakephp",
+            "level": "advanced"
+        },
+        {
+            "name": "silex",
+            "level": "expert"
+        },
+        {
+            "name": "slim",
+            "level": "expert"
+        },
+        {
+            "name": "yii",
+            "level": "high intermediate"
+        },
+        {
+            "name": "end to end tests",
+            "level": "expert"
+        },
+        {
+            "name": "performance tests",
+            "level": "advanced"
+        },
+        {
+            "name": "integration tests",
+            "level": "expert"
+        },
+        {
+            "name": "functional tests",
+            "level": "expert"
+        },
+        {
+            "name": "behaviour tests",
+            "level": "advanced"
+        },
+        {
+            "name": "unit tests",
+            "level": "expert"
+        },
+        {
+            "name": "regression tests",
+            "level": "high intermediate"
+        },
+        {
+            "name": "linux",
+            "level": "expert"
+        },
+        {
+            "name": "macOS",
+            "level": "expert"
+        },
+        {
+            "name": "windows",
+            "level": "expert"
+        },
+        {
+            "name": "git",
+            "level": "expert"
+        },
+        {
+            "name": "docker",
+            "level": "expert"
+        },
+        {
+            "name": "vagrant",
+            "level": "expert"
+        },
+        {
+            "name": "kubernetes",
+            "level": "high intermediate"
+        },
+        {
+            "name": "prometheus",
+            "level": "advanced"
+        },
+        {
+            "name": "grafana",
+            "level": "advanced"
+        },
+        {
+            "name": "kibana",
+            "level": "advanced"
+        },
+        {
+            "name": "blackfire",
+            "level": "expert"
+        },
+        {
+            "name": "bugsnag",
+            "level": "expert"
+        },
+        {
+            "name": "sentry",
+            "level": "expert"
+        },
+        {
+            "name": "aws",
+            "level": "advanced"
+        },
+        {
+            "name": "serverless",
+            "level": "expert"
+        },
+        {
+            "name": "xml",
+            "level": "advanced"
+        },
+        {
+            "name": "json",
+            "level": "expert"
+        },
+        {
+            "name": "yaml",
+            "level": "expert"
+        },
+        {
+            "name": "toml",
+            "level": "high intermediate"
+        },
+        {
+            "name": "solid",
+            "level": "expert"
+        },
+        {
+            "name": "kiss",
+            "level": "expert"
+        },
+        {
+            "name": "dry",
+            "level": "expert"
+        },
+        {
+            "name": "design patterns",
+            "level": "advanced"
+        },
+        {
+            "name": "pair programming",
+            "level": "expert"
+        },
+        {
+            "name": "distributed teams",
+            "level": "expert"
+        },
+        {
+            "name": "cross functional",
+            "level": "expert"
+        },
+        {
+            "name": "remote first",
+            "level": "expert"
+        },
+        {
+            "name": "agile",
+            "level": "advanced"
+        },
+        {
+            "name": "active decision records",
+            "level": "advanced"
+        },
+        {
+            "name": "post-mortem",
+            "level": "advanced"
+        },
+        {
+            "name": "rest",
+            "level": "expert"
+        },
+        {
+            "name": "cli",
+            "level": "expert"
+        }
+    ],
+    "awards": [
+        {
+            "title": "Homenagem - O melhor aluno do curso",
+            "issued_by": "UNISOCIESC",
+            "date": "2015-03",
+            "associated_with": "UNISOCIESC - Universidade Sociedade Educacional de Santa Catarina",
+            "description": "\"Para realizar grandes conquistas, devemos não apenas agir, mas também sonhar; não apenas planejar, mas também acreditar.\" - Anatole France.\n\nNós parabenizamos você, considerado o melhor aluno do curso UNISOCIESC."
+        }
+    ],
+    "projects": [
+        {
+            "startDate": "2015-09",
+            "type": "software",
+            "name": "Onboarding",
+            "endDate": "2015-09",
+            "description": "archived",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Lucas Alfredo Cercal",
+                    "profile": "https://www.linkedin.com/in/lucascercal"
+                },
+                {
+                    "name": "Diogo Andrei Schroeder",
+                    "profile": "https://www.linkedin.com/in/diogoandrei"
+                },
+                {
+                    "name": "Larissa Mühlbauer",
+                    "profile": "https://www.linkedin.com/in/larissa-m%C3%BChlbauer-a96b8278"
+                },
+                {
+                    "name": "George Luiz Bittencourt",
+                    "profile": "https://www.linkedin.com/in/georgeluizbittencourt"
+                },
+                {
+                    "name": "Claudia Silva",
+                    "profile": "https://www.linkedin.com/in/claudia-silva-96924a12"
+                }
+            ]
+        },
+        {
+            "startDate": "2015-09",
+            "type": "software",
+            "name": "Tuper RH",
+            "endDate": "2015-09",
+            "description": "A single page application to the TuperRH company manage resumes and jobs. The project was developed in PHP using the Laravel 5.1 framework and AngularJS.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Ricardo Lüders",
+                    "profile": "https://www.linkedin.com/in/ricardoluders"
+                },
+                {
+                    "name": "Rafael César Neves",
+                    "profile": "https://www.linkedin.com/in/rafaelcneves"
+                },
+                {
+                    "name": "Ana Carolina da Luz",
+                    "profile": "https://www.linkedin.com/in/anacarolinaluz"
+                },
+                {
+                    "name": "Adoni Eder",
+                    "profile": "https://www.linkedin.com/in/adoni-eder-07627942"
+                },
+                {
+                    "name": "Celso Ricardo Salazar Valentim",
+                    "profile": "https://www.linkedin.com/in/celsoricardo"
+                }
+            ]
+        },
+        {
+            "startDate": "2015-06",
+            "type": "software",
+            "name": "Quanta Gamification",
+            "endDate": "2015-06",
+            "description": "An internal project that aims to develop a solution to a local business, the differential of this software was the implementation of the gamification engine.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Ricardo Lüders",
+                    "profile": "https://www.linkedin.com/in/ricardoluders"
+                },
+                {
+                    "name": "Jéssica Lorenzi",
+                    "profile": "https://www.linkedin.com/in/jessicalorenzi"
+                },
+                {
+                    "name": "Rafael César Neves",
+                    "profile": "https://www.linkedin.com/in/rafaelcneves"
+                },
+                {
+                    "name": "Ana Carolina da Luz",
+                    "profile": "https://www.linkedin.com/in/anacarolinaluz"
+                },
+                {
+                    "name": "Daniela Pereira Fernandes",
+                    "profile": "https://www.linkedin.com/in/daniela-pereira-fernandes-90793b89"
+                },
+                {
+                    "name": "Adoni Eder",
+                    "profile": "https://www.linkedin.com/in/adoni-eder-07627942"
+                },
+                {
+                    "name": "Juliana Back",
+                    "profile": "https://www.linkedin.com/in/julianaback"
+                },
+                {
+                    "name": "Celso Ricardo Salazar Valentim",
+                    "profile": "https://www.linkedin.com/in/celsoricardo"
+                }
+            ]
+        },
+        {
+            "startDate": "2015-06",
+            "type": "software",
+            "name": "Reserva-e",
+            "endDate": "2015-06",
+            "description": "A good idea winner of the governmental program \"Sinapse da Inovação\". This project allow that the customers make a reservation of one or more services (like a hotel reservation by example). The project was developed in PHP using the Symfony 2.6 framework.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Gustavo Henrique Conci",
+                    "profile": "https://br.linkedin.com/in/gustavohenriqueconci"
+                }
+            ]
+        },
+        {
+            "startDate": "2015-02",
+            "type": "software",
+            "name": "CoffeeCodr",
+            "endDate": "2015-02",
+            "description": "A startup with very potential that created a tool to the little retailers (this tool no have a official name, but the codename of project is umbrella). Archived.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Alessandro H. dos Santos",
+                    "profile": "https://br.linkedin.com/pub/alessandro-h-dos-santos/45/912/32"
+                }
+            ]
+        },
+        {
+            "startDate": "2014-06",
+            "type": "website",
+            "name": "Monitor Eleitoral",
+            "endDate": "2014-06",
+            "description": "Web Application developed in PHP to monitor the buzz of the political candidates through of the social network. Between the technologies used are: the framework Symfony (in the version 2.4), HTML, CSS, Twitter Bootstrap, Javascript with the jQuery Library, Doctrine ORM (in the version 2.2) and MySQL.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Rodrigo Sensever",
+                    "profile": "https://br.linkedin.com/in/sensever"
+                },
+                {
+                    "name": "Lucas Danilo Masson",
+                    "profile": "https://br.linkedin.com/in/lukmass"
+                },
+                {
+                    "name": "Gustavo Henrique Conci",
+                    "profile": "https://br.linkedin.com/in/gustavohenriqueconci"
+                },
+                {
+                    "name": "Bruno Duarte",
+                    "profile": "https://br.linkedin.com/in/brnduarte"
+                },
+                {
+                    "name": "Gabriel Xavier",
+                    "profile": "https://br.linkedin.com/pub/gabriel-xavier/53/723/5"
+                },
+                {
+                    "name": "Charles A. Müller",
+                    "profile": "https://br.linkedin.com/in/charlesmuller"
+                },
+                {
+                    "name": "Cyro F. Klaus",
+                    "profile": "https://br.linkedin.com/in/cyroklaus"
+                },
+                {
+                    "name": "Acidio Alan",
+                    "profile": "https://br.linkedin.com/in/acidio"
+                },
+                {
+                    "name": "João Menezes",
+                    "profile": "https://br.linkedin.com/in/joaoamenezes"
+                }
+            ]
+        },
+        {
+            "startDate": "2014-04",
+            "type": "website",
+            "name": "Som na Caixa",
+            "endDate": "2014-03",
+            "description": "Archived.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Elisete Santos Cercal",
+                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
+                }
+            ]
+        },
+        {
+            "startDate": "2014-02",
+            "type": "website",
+            "name": "Portal 3M Inovação",
+            "endDate": "2014-02",
+            "description": "Website developed in PHP using the Symfony (in the version 2.4) with a expressive and very good team members.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Acidio Alan",
+                    "profile": "https://br.linkedin.com/in/acidio"
+                },
+                {
+                    "name": "Nikolas Soares",
+                    "profile": "https://br.linkedin.com/pub/nikolas-soares/23/9a4/426"
+                },
+                {
+                    "name": "Adan Felipe Medeiros",
+                    "profile": "https://br.linkedin.com/in/adanfm"
+                },
+                {
+                    "name": "Gabriel Xavier",
+                    "profile": "https://br.linkedin.com/pub/gabriel-xavier/53/723/5"
+                },
+                {
+                    "name": "Gustavo Henrique Conci",
+                    "profile": "https://br.linkedin.com/in/gustavohenriqueconci"
+                },
+                {
+                    "name": "Conrado Solano",
+                    "profile": "https://br.linkedin.com/in/conradosolano"
+                },
+                {
+                    "name": "Thiago Augustini",
+                    "profile": "https://br.linkedin.com/in/augustini"
+                },
+                {
+                    "name": "João Menezes",
+                    "profile": "https://br.linkedin.com/in/joaoamenezes"
+                },
+                {
+                    "name": "Bruno Duarte",
+                    "profile": "https://br.linkedin.com/in/brnduarte"
+                },
+                {
+                    "name": "Cyro F. Klaus",
+                    "profile": "https://br.linkedin.com/in/cyroklaus"
+                },
+                {
+                    "name": "Filipi Maisotti de Simas",
+                    "profile": "https://br.linkedin.com/pub/filipi-maisotti-de-simas/"
+                },
+                {
+                    "name": "Anderson de Andrade",
+                    "profile": "https://br.linkedin.com/in/andersondeandrade"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-09",
+            "type": "website",
+            "name": "Quanta Fome",
+            "endDate": "2013-09",
+            "description": "Service of Food Delivery (archived).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-09",
+            "type": "website",
+            "name": "Feirão do Imposto",
+            "endDate": "2013-09",
+            "description": "Hotsite to the campaigns \"O Segredo da Caixa\" and \"Não Mexa no meu Refri\".",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Rolf Scholz Neto",
+                    "profile": "https://br.linkedin.com/in/rolfscholz"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-08",
+            "type": "website",
+            "name": "Konsultare",
+            "endDate": "2013-08",
+            "description": "Institutional Website developed in PHP with the Wordpress CMS (in the version 3.6).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Rolf Scholz Neto",
+                    "profile": "https://br.linkedin.com/in/rolfscholz"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-09",
+            "type": "website",
+            "name": "Habitare",
+            "endDate": "2013-09",
+            "description": "Web Admin Panel developed in PHP Zend Framework 1.12 to manage the content of the website.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Larissa Farias",
+                    "profile": "https://br.linkedin.com/pub/larissa-farias/76/66a/974"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-09",
+            "type": "website",
+            "name": "Nootícias",
+            "endDate": "2013-09",
+            "description": "A news aggregator developed in PHP that was created with Wordpress CMS 3.5 and posteriorly it was rewritten in Symfony 2.5 framework.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Elisete Santos Cercal",
+                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-08",
+            "type": "website",
+            "name": "Landing Page 2Rios",
+            "endDate": "2013-08",
+            "description": "Developed the Landing Page of the brand 2Rios.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Rolf Scholz Neto",
+                    "profile": "https://br.linkedin.com/in/rolfscholz"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-05",
+            "type": "website",
+            "name": "Transgobbi",
+            "endDate": "2013-05",
+            "description": "Website developed in PHP using Wordpress CMS (in the version 3.6).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Davidson Santana",
+                    "profile": "https://br.linkedin.com/pub/davidson-santana/90/b73/122"
+                },
+                {
+                    "name": "Rolf Scholz Neto",
+                    "profile": "https://br.linkedin.com/in/rolfscholz"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-08",
+            "type": "software",
+            "name": "ZCPE",
+            "endDate": "2013-08",
+            "description": "Web Application that was developed in PHP using Symfony 2.4 framework. This project was created to PHP developers that want the ZCPE Certification emitted by Zend and Pursue Vue (archived).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Ari Stopassola Junior",
+                    "profile": "https://br.linkedin.com/in/stopassola"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-05",
+            "type": "website",
+            "name": "SRJ",
+            "endDate": "2013-05",
+            "description": "Created the first website of the SRJ company, that was developed in PHP using Wordpress CMS (in the version 3.5). This project improved the internal process of the company, brought ROI in few months and contributed to create the online presence too.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Elisete Santos Cercal",
+                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-02",
+            "type": "website",
+            "name": "Gomes Máquinas",
+            "endDate": "2013-02",
+            "description": "In this project was developed a new website to the brand Gomes Máquinas, using PHP with the Wordpress CMS (in the version 3.5).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Elisete Santos Cercal",
+                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
+                }
+            ]
+        },
+        {
+            "startDate": "2013-01",
+            "type": "software",
+            "name": "Code Ingressos",
+            "endDate": "2013-01",
+            "description": "E-commerce and POS (Point of Sale) to sell tickets to shows, movies and more using a fingerprint reader.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Alessandro H. dos Santos",
+                    "profile": "https://br.linkedin.com/pub/alessandro-h-dos-santos/45/912/32"
+                }
+            ]
+        },
+        {
+            "startDate": "2012-10",
+            "type": "website",
+            "name": "Cekurte",
+            "endDate": "2012-10",
+            "description": "The first website of the company that was developed in PHP using the Wordpress CMS.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Elisete Santos Cercal",
+                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
+                }
+            ]
+        },
+        {
+            "startDate": "2012-08",
+            "type": "software",
+            "name": "Passe2Triagem",
+            "endDate": "2012-08",
+            "description": "Desktop Software developed in Delphi used to manage the inbound and outbound of trucks.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Michel Deunizio",
+                    "profile": "https://br.linkedin.com/pub/michel-deunizio/60/493/342"
+                }
+            ]
+        },
+        {
+            "startDate": "2012-01",
+            "type": "software",
+            "name": "Softicket PDV, Bar, Caixa, Sync and Admin",
+            "endDate": "2012-01",
+            "description": "POS (Point of Sale) software of the brand Joinville Square Garden.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Gabriel Pereira",
+                    "profile": "https://br.linkedin.com/in/gabapereira"
+                }
+            ]
+        },
+        {
+            "startDate": "2011-11",
+            "type": "software",
+            "name": "SCFG",
+            "endDate": "2011-11",
+            "description": "Web Application developed in PHP used to manage financial projects. Between the technologies used are: the framework CakePHP, HTML, CSS, Twitter Bootstrap, Javascript with the jQuery Library, SQL and MySQL.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Mehran Misaghi",
+                    "profile": "https://br.linkedin.com/pub/mehran-misaghi/7/ba0/738"
+                },
+                {
+                    "name": "Luiz Camargo",
+                    "profile": "https://br.linkedin.com/pub/luiz-camargo/17/18/a5a"
+                }
+            ]
+        },
+        {
+            "startDate": "2011-08",
+            "type": "website",
+            "name": "Joinville Square Garden",
+            "endDate": "2011-08",
+            "description": "A website project developed in PHP with the Joomla CMS.",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Gabriel Pereira",
+                    "profile": "https://br.linkedin.com/in/gabapereira"
+                }
+            ]
+        },
+        {
+            "startDate": "2011-04",
+            "type": "software",
+            "name": "Softicket Web",
+            "endDate": "2011-04",
+            "description": "Web Management System developed in PHP Zend Framework 1.1x to manage the Soficket POS (Point of Sale).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Gabriel Pereira",
+                    "profile": "https://br.linkedin.com/in/gabapereira"
+                }
+            ]
+        },
+        {
+            "startDate": "2010-10",
+            "type": "software",
+            "name": "Igrezuka",
+            "endDate": "2010-10",
+            "description": "Ecclesiastical Web Application developed in PHP (Term Paper).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Adan Felipe Medeiros",
+                    "profile": "https://br.linkedin.com/in/adanfm"
+                },
+                {
+                    "name": "Fernando Mariano",
+                    "profile": "https://br.linkedin.com/pub/fernando-mariano/23/326/ba1/en"
+                }
+            ]
+        },
+        {
+            "startDate": "2010-01",
+            "type": "software",
+            "name": "Deus Provedor",
+            "endDate": "2010-01",
+            "description": "Ecclesiastical Web Application developed in PHP5 (OOP).",
+            "members": [
+                {
+                    "name": "João Paulo Cercal",
+                    "profile": "https://br.linkedin.com/in/jpcercal"
+                },
+                {
+                    "name": "Ademir Camillo",
+                    "profile": "https://br.linkedin.com/pub/ademir-camillo/23/458/6bb"
+                }
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "Peyman Pouryekta (https://www.linkedin.com/in/peymanpouryekta/)",
+            "reference": "When I hired João I was sure he is a skilled senior engineer. After the first few weeks he already exceeded my expectations. He is very professional and reflective, it was great to have him in the team. He proactively supported the team and has good communication skills. I can recommend him and personally hope to have the chance to work with him again."
+        },
+        {
+            "name": "Ricardo Lüders (https://www.linkedin.com/in/ricardoluders/)",
+            "reference": "Profissional dedicado e bastante interessado em progredir profissionalmente, por este motivo possuí metas profissionais bem claras. Busca sempre dominar as tecnologias com as quais trabalha e não encontra dificuldades ao enfrentar novos desafios."
+        },
+        {
+            "name": "Rafael César (https://www.linkedin.com/in/rafaelcneves/)",
+            "reference": "No tempo que trabalhei com o João, tive a oportunidade de perceber e ver que é um excelente profissional, possui facilidade de trabalhar em grupo e está apto para enfrentar qualquer desafio na área de desenvolvimento para web."
+        },
+        {
+            "name": "Ariane Rocha (https://www.linkedin.com/in/arianerocha/)",
+            "reference": "É sempre inspirador trabalhar ao lado de alguém que realmente gosta do que faz, que tem vontade de adquirir conhecimento, se atualizar e que busca por inovação. O Cercal tem esse perfil, é um excelente profissional, e apesar de não ter trabalhado na mesma equipe, sempre foi possível, através de conversas, ver isso nele. Sempre dando dicas à respeito de tecnologias, compartilhando soluções, idéias e novas bibliotecas que poderiam ser úteis."
+        },
+        {
+            "name": "Eliane de Faria Sezerino (https://www.linkedin.com/in/eliane-de-faria-sezerino-1a88b321/)",
+            "reference": "Trabalhei com João Paulo Cercal na Humantech, ele é um profissional dedicado, sempre em busca de desafios e atualização."
+        },
+        {
+            "name": "Rafael Fernandes (https://www.linkedin.com/in/basask/)",
+            "reference": "João Cercal é um profissional bastante focado e dedicado ao aperfeiçoamento de suas habilidades de desenvolvedor. Sempre se mostrou bastante calmo e prestativo na condução das tarefas diárias com sua equipe."
+        },
+        {
+            "name": "João Salves (https://www.linkedin.com/in/joao-salves/)",
+            "reference": "Tive a grande oportunidade de trabalhar com o Cercal na Humantech. Posso afirmar que ele é um cara extremamente dedicado, competente, esforçado e que está sempre buscando o melhor. Além disto, é um excelente colega de trabalho."
+        },
+        {
+            "name": "Victor Vargas de Andrade (https://www.linkedin.com/in/victorvargasdeandrade/)",
+            "reference": "João Paulo aprende rápido e tem interesse em buscar mais conhecimento."
+        },
+        {
+            "name": "Priscila Coral (https://www.linkedin.com/in/priscilacoral/)",
+            "reference": "O João é competente, carismático e um excelente colega de trabalho. Sempre disposto a ajudar no que for preciso e atento às necessidades do cliente e da empresa."
+        },
+        {
+            "name": "Jeniffer Eleutério (https://www.linkedin.com/in/jeniffer-eleut%C3%A9rio-95493139/)",
+            "reference": "João Paulo, é um profissional focado, dedicado, extremamente detalhista, crítico nas análises, desta forma somou muito na A2C no tempo que ficou conosco."
+        },
+        {
+            "name": "Adenilson Melo (https://www.linkedin.com/in/adenilson/)",
+            "reference": "O João Paulo é um profissional extremamente focado e com uma ótima qualidade técnica. Tem um bom censo crítico para questionamentos de processos e para a proposição de melhorias."
+        },
+        {
+            "name": "Anderson de Andrade (https://www.linkedin.com/in/andersondeandrade/)",
+            "reference": "João Paulo participou ativamente na A2C em diversos projetos e plataformas como PHP, Symfony (framework utilizado para desenvolver o projeto do portal 3M Inovação, Monitor Eleitoral e MIP), Wordpress (auxílio em alguns projetos como o do CHA Hotéis), HTML, CSS, Javascript, jQuery, API’s (Livebuzz e Mail2Easy), MySQL (banco de dados do Monitor Eleitoral), PostgreSQL (banco de dados do portal 3M Inovação), GIT (controle e versionamento do código fonte), administração de servidores e desktop Linux na infra da Amazon (utilizando os serviços da AWS: EC2, RDS, S3) e afins."
+        },
+        {
+            "name": "Lucas Danilo Masson (https://www.linkedin.com/in/lukmass/)",
+            "reference": "O João trabalhou comigo em 2 projetos e nestes 2 projetos foi habilidoso e atento as atividades. Não fazia somente por fazer, entedia o contexto e nunca fazia com dúvidas. Sempre perguntava antes de executar e se tinha uma solução mais adequada a apresentava. Foi uma experiência gratificante trabalhar com o João."
+        },
+        {
+            "name": "Eduardo Herenyi (https://www.linkedin.com/in/herenyi/)",
+            "reference": "João Paulo, exerceu função de desenvolvedor PHP em vários projetos da A2C. Tem responsabilidade e comprometimento, foco na qualidade de processos e entregas."
+        },
+        {
+            "name": "Charles A. Müller (https://www.linkedin.com/in/charlesmuller/)",
+            "reference": "João é um developer experiente, com conhecimento profundo em plataforma Linux / PHP. João Paulo Cercal trabalhou comigo na agência A2C, em que destaco o projeto do site 3M Inovação, aplicando todas as boas práticas de SEO especificadas na análise e também ajustando o site para que ficasse bem mais rápido."
+        },
+        {
+            "name": "Bruno Duarte (https://www.linkedin.com/in/bruno-duarte-ux-designer/)",
+            "reference": "João é um profissional dedicado, focado e extremamente competente. Nos trabalhos que realizamos juntos mostrou grandes qualidades técnicas e facilidade em lidar com mudanças de diretrizes. Extremamente profissional."
+        },
+        {
+            "name": "Michel Deunizio (https://www.linkedin.com/in/micheldeunizio/)",
+            "reference": "João Paulo é um Web Developer especialista, conhecimento muito profundo no desenvolvimento de sistemas, pontual em todas as etapas do processo, idéias e implementações inovadoras. Trabalho impecável."
+        },
+        {
+            "name": "Adan Felipe Medeiros (https://www.linkedin.com/in/edmilson-s-teixeira/)",
+            "reference": "O João Paulo é um excelente desenvolvedor, comprometido e dedicado com os projetos que esta participando."
+        },
+        {
+            "name": "Edmilson S. Teixeira (https://www.linkedin.com/in/edmilson-s-teixeira/)",
+            "reference": "João Paulo é um desenvolvedor dedicado e sempre atento, buscando aprender e por em prática novas habilidades e novos conhecimentos."
+        },
+        {
+            "name": "Rolf Scholz Neto (https://www.linkedin.com/in/rodrigobruner/)",
+            "reference": "Profissional com excelente articulação, o João se comunica muito bem e não se contenta apenas em realizar os projetos, traz novas ideias para atender os objetivos do projeto, além de dominar toda a parte de analise e desenvolvimento web."
+        },
+        {
+            "name": "Rodrigo Bruner (https://www.linkedin.com/in/rodrigobruner/)",
+            "reference": "O João Paulo foi meu aluno no Curso Técnico de Informática, se demonstrava ser muito interessado e ativo nas aulas, apresentava um elevado conhecimento técnico e sempre comprometimento nas atividades, o curso se encerrou, mas sempre o encontro em seminários e palestras referente a tecnologia, comprovando seu ávido interesse por tecnologia."
+        }
+    ]
 }
