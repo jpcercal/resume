@@ -1,22 +1,19 @@
 # Resume
 
-An application that I can use to create my personal resume, feel free to modify this project for your own purposes, but don't forget to give me a star **=)**.
+## Install
 
-This project requires PHP 7.3+ to run. In order to see all dependencies check the [composer.json](https://github.com/jpcercal/resume/blob/master/composer.json) file.
+```
+docker run --rm -it -v "$(pwd)":/app -w /app node:20-alpine npm install
+```
 
-## Installation
+## Validate the syntax of the resume.json file
 
-The source files is [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) compatible.
-Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) compatible.
+```
+docker run --rm -it -v "$(pwd)":/app -w /app node:20-alpine npm run validate
+```
 
-```shell
-git clone https://github.com/jpcercal/resume.git
-cd resume/
-docker-compose run --rm composer composer install
+## Generate a new PDF
 
-export RESUME_LANG=en
-# or export RESUME_LANG=pt_BR
-
-docker-compose run --rm php php app/console jpcercal:resume --language="${RESUME_LANG}" --overwrite
-docker-compose run --rm -T athenapdf athenapdf "resume.${RESUME_LANG}.html" "resume.${RESUME_LANG}.pdf"
+```
+docker run --rm -it -v "$(pwd)":/app -w /app node:20-alpine npm run build
 ```

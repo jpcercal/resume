@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "jsonresume-theme-local": "file:theme",
+    "puppeteer": "^21.6.1",
+    "resumed": "^3.0.1"
+  },
+  "name": "resume",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "validate": "resumed validate resume.json",
+    "render": "resumed render resume.json --theme jsonresume-theme-local --output resume.html",
+    "generate-pdf": "node index.js",
+    "build": "npm run validate && npm run render && npm run generate-pdf"
+  },
+  "author": {
+    "name": "João Paulo Cercal",
+    "email": "jpcercal@gmail.com",
+    "url": "https://jpcercal.com/"
+  },
+  "type": "module",
+  "license": "MIT"
+}
