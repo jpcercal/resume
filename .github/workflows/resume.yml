@@ -2,6 +2,9 @@ name: Resume
 
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: build
@@ -39,7 +42,8 @@ jobs:
           branch: ${{ github.ref }}
           force_with_lease: true
 
-      - uses: actions/github-script@v6
+      - name: tagger
+        uses: actions/github-script@v6
         if: github.ref == 'refs/heads/main'
         with:
           script: |       
@@ -67,7 +71,7 @@ jobs:
             })
 
       - uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        if: github.ref == 'refs/heads/main'
         with:
           files: |
             resume.pdf
