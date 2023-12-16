@@ -39,8 +39,35 @@ jobs:
           branch: ${{ github.ref }}
           force_with_lease: true
 
-      - uses: softprops/action-gh-release@v1
+      - uses: actions/github-script@v6
         if: github.ref == 'refs/heads/main'
+        with:
+          script: |       
+            const padding = (v) => v < 10 ? `0${v}` : v;
+
+            const date = new Date();
+            const year = padding(date.getFullYear());
+            const month = padding(date.getMonth());
+            const day = padding(date.getDate());
+            const hours = padding(date.getHours());
+            const minutes = padding(date.getMinutes());
+            const seconds = padding(date.getSeconds());
+
+            const major = year - 2023;
+            const minor = month;
+            const patch = `${day}${hours}${minutes}${seconds}`;
+
+            const releaseName = `${major}.${minor}.${patch}`;
+
+            github.rest.git.createRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `refs/tags/${releaseName}`,
+                sha: context.sha
+            })
+
+      - uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             resume.pdf
