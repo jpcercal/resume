@@ -38,3 +38,9 @@ jobs:
         with:
           branch: ${{ github.ref }}
           force_with_lease: true
+
+      - uses: softprops/action-gh-release@v1
+        if: github.ref == 'refs/heads/main'
+        with:
+          files: |
+            resume.pdf
