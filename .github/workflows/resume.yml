@@ -2,9 +2,6 @@ name: Resume
 
 on: [push]
 
-permissions:
-  contents: write
-
 jobs:
   build:
     name: build
@@ -42,11 +39,12 @@ jobs:
           branch: ${{ github.ref }}
           force_with_lease: true
 
-      - name: tagger
-        uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         if: github.ref == 'refs/heads/main'
         with:
           script: |       
+            const fs = require('fs').promises;
+
             const padding = (v) => v < 10 ? `0${v}` : v;
 
             const date = new Date();
@@ -63,15 +61,29 @@ jobs:
 
             const releaseName = `${major}.${minor}.${patch}`;
 
-            github.rest.git.createRef({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                ref: `refs/tags/${releaseName}`,
-                sha: context.sha
-            })
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${releaseName}`,
+              sha: context.sha
+            });
 
-      - uses: softprops/action-gh-release@v1
-        if: github.ref == 'refs/heads/main'
-        with:
-          files: |
-            resume.pdf
+            const createReleaseResponse = await github.rest.repos.createRelease({
+              draft: false,
+              generate_release_notes: true,
+              name: releaseName,
+              owner: context.repo.owner,
+              prerelease: false,
+              repo: context.repo.repo,
+              tag_name: releaseName,
+            });
+
+            await github.rest.repos.uploadReleaseAsset({
+              name: 'resume.pdf',
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: createReleaseResponse.data.id,
+              data: await fs.readFile('./resume.pdf')
+            });
+
+            return releaseName;
