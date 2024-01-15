@@ -1,5 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "meta": {
+        "applyingFor": "senior-php-engineer"
+    },
     "basics": {
         "name": "João Cercal",
         "label": "Senior PHP Developer",
@@ -61,7 +64,6 @@
             "highlights": [
                 "Impacting and changing the way how millions of travelers connect to the places they visit, using weekends, building relationships, visiting relatives, and discovering the world",
                 "Aligning the product with technical decisions while having the customer at first, but also considering data over guessing have guided me to influence in a killer feature to contact us through WhatsApp in which our travelers can get support from their smartphones. It increased the second customer purchase metric considerably and helped us to retain customers",
-                "Doing interviews, providing long detailed feedback right after it to the talents while suggesting improvements to the overall process to hire the best people as a consequence developing a really good product",
                 "Test-driven oriented, impacting the way that engineers see unit test bringing then, the quality of the product to the next level"
             ]
         },
@@ -75,7 +77,6 @@
             "highlights": [
                 "Changing the life of approximately one billion of people commuting, using weekends, building relationships, visiting relatives, and discovering the world",
                 "We improved the response time for retrieving a cart in almost 70% by extracting the code from the legacy system into a new microservices-oriented architecture",
-                "Volunteered to be a facilitator in agile ceremonies such as retrospectives and sprint reviews",
                 "Responsible for making technical decisions from a technical perspective within our team"
             ]
         }
@@ -176,252 +177,661 @@
     ],
     "skills": [
         {
-            "name": "php",
-            "level": "expert"
+            "name": "PHP",
+            "level": "100",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "node",
-            "level": "high intermediate"
+            "name": "Golang",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "golang",
-            "level": "high intermediate"
+            "name": "Rust",
+            "level": "50",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "typescript",
-            "level": "high intermediate"
+            "name": "Java",
+            "level": "50",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }
         },
         {
-            "name": "html",
-            "level": "advanced"
+            "name": "Scala",
+            "level": "40",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "css",
-            "level": "advanced"
+            "name": "C",
+            "level": "30",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "javascript",
-            "level": "advanced"
+            "name": "C#",
+            "level": "35",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "java",
-            "level": "low intermediate"
+            "name": "Ruby",
+            "level": "35",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "c",
-            "level": "basic understanding"
+            "name": "Python",
+            "level": "50",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "c#",
-            "level": "basic understanding"
+            "name": "Bash Script",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "ruby",
-            "level": "basic understanding"
+            "name": "Node.js",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "python",
-            "level": "low intermediate"
+            "name": "Typescript",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "bash",
-            "level": "advanced"
+            "name": "JS",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "symfony",
-            "level": "expert"
+            "name": "HTML",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "zend",
-            "level": "high intermediate"
+            "name": "CSS (SASS, LESS)",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "laravel",
-            "level": "advanced"
+            "name": "MySQL",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "wordpress",
-            "level": "advanced"
+            "name": "PostgreSQL",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "spryker",
-            "level": "advanced"
+            "name": "SQLite",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "kohana",
-            "level": "advanced"
+            "name": "SQL Server",
+            "level": "60",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-software-engineer"] 
+            }  
         },
         {
-            "name": "cakephp",
-            "level": "advanced"
+            "name": "MongoDB",
+            "level": "50",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "silex",
-            "level": "expert"
+            "name": "Redis",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "slim",
-            "level": "expert"
+            "name": "Memcached",
+            "level": "85",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "yii",
-            "level": "high intermediate"
+            "name": "Elastic Search",
+            "level": "70",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "end to end tests",
-            "level": "expert"
+            "name": "RabbitMQ",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "performance tests",
-            "level": "advanced"
+            "name": "Kafka",
+            "level": "85",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "integration tests",
-            "level": "expert"
+            "name": "Symfony",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "functional tests",
-            "level": "expert"
+            "name": "Zend",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }
         },
         {
-            "name": "behaviour tests",
-            "level": "advanced"
+            "name": "Laravel",
+            "level": "85",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "unit tests",
-            "level": "expert"
+            "name": "Wordpress",
+            "level": "85",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "regression tests",
-            "level": "high intermediate"
+            "name": "Spryker",
+            "level": "85",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "linux",
-            "level": "expert"
+            "name": "Magento",
+            "level": "60",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "macOS",
-            "level": "expert"
+            "name": "Kohana",
+            "level": "40",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "windows",
-            "level": "expert"
+            "name": "CakePHP",
+            "level": "60",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "git",
-            "level": "expert"
+            "name": "Silex",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "docker",
-            "level": "expert"
+            "name": "Slim",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "vagrant",
-            "level": "expert"
+            "name": "Yii",
+            "level": "55",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "kubernetes",
-            "level": "high intermediate"
+            "name": "jQuery",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"]
+            }
         },
         {
-            "name": "prometheus",
-            "level": "advanced"
+            "name": "Angular JS",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"]
+            }
         },
         {
-            "name": "grafana",
-            "level": "advanced"
+            "name": "Vue.js",
+            "level": "70",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"]
+            }
         },
         {
-            "name": "kibana",
-            "level": "advanced"
+            "name": "Spring Boot",
+            "level": "40",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-software-engineer"]
+            }
         },
         {
-            "name": "blackfire",
-            "level": "expert"
+            "name": "Tests",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }
         },
         {
-            "name": "bugsnag",
-            "level": "expert"
+            "name": "Linux/Unix",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "sentry",
-            "level": "expert"
+            "name": "Git",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "aws",
-            "level": "advanced"
+            "name": "Docker",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "serverless",
-            "level": "expert"
+            "name": "Vagrant",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "xml",
-            "level": "advanced"
+            "name": "Kubernetes",
+            "level": "70",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }
         },
         {
-            "name": "json",
-            "level": "expert"
+            "name": "Terraform",
+            "level": "50",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }
         },
         {
-            "name": "yaml",
-            "level": "expert"
+            "name": "CI/CD",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }
         },
         {
-            "name": "toml",
-            "level": "high intermediate"
+            "name": "Prometheus",
+            "level": "75",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "solid",
-            "level": "expert"
+            "name": "Grafana",
+            "level": "70",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "kiss",
-            "level": "expert"
+            "name": "Kibana",
+            "level": "70",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "dry",
-            "level": "expert"
+            "name": "Blackfire",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+            }  
         },
         {
-            "name": "design patterns",
-            "level": "advanced"
+            "name": "Bugsnag",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "pair programming",
-            "level": "expert"
+            "name": "Sentry",
+            "level": "85",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "distributed teams",
-            "level": "expert"
+            "name": "AWS",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "cross functional",
-            "level": "expert"
+            "name": "Serverless",
+            "level": "80",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "remote first",
-            "level": "expert"
+            "name": "XML",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "agile",
-            "level": "advanced"
+            "name": "JSON",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "active decision records",
-            "level": "advanced"
+            "name": "YAML",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         },
         {
-            "name": "post-mortem",
-            "level": "advanced"
+            "name": "TOML",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }
         },
         {
-            "name": "rest",
-            "level": "expert"
+            "name": "ADR",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
         },
         {
-            "name": "cli",
-            "level": "expert"
+            "name": "SOLID",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
+        },
+        {
+            "name": "KISS",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
+        },
+        {
+            "name": "DRY",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
+        },
+        {
+            "name": "Design Patterns",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
+        },
+        {
+            "name": "Pair-Programming",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
+        },
+        {
+            "name": "Distributed teams",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
+        },
+        {
+            "name": "Remote first",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
+        },
+        {
+            "name": "Agile",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+            }  
+        },
+        {
+            "name": "Scrum",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
+        },
+        {
+            "name": "Kanban",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
+        },
+        {
+            "name": "Post-mortem",
+            "level": "90",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
+        },
+        {
+            "name": "REST",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "relevantWhenApplyingFor": [] 
+            }  
         }
     ],
     "awards": [
