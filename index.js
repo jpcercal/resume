@@ -6,19 +6,22 @@ import { render } from 'resumed'
 const resume = JSON.parse(await fs.readFile('resume.json', 'utf-8'))
 const html = await render(resume, theme)
 
-const browser = await puppeteer.launch()
+const browser = await puppeteer.launch({ 
+    headless: 'new',
+    args: ['--no-sandbox'] 
+})
 const page = await browser.newPage()
 
 await page.setContent(html, { waitUntil: 'networkidle0' })
 await page.pdf({ 
     path: 'resume.pdf', 
     format: 'a4', 
-    printBackground: false, 
+    printBackground: true, 
     margin: {
-        top: '40px',
-        right: '25px',
-        bottom: '20px',
-        left: '35px'
+        top: '0px',
+        right: '0px',
+        bottom: '0px',
+        left: '0px',
     }
 })
 await page.screenshot({
@@ -27,8 +30,8 @@ await page.screenshot({
     clip: {
         x: 0,
         y: 0,
-        width: 830,
-        height: 280
+        width: 800,
+        height: (29.7 * 37) * 2, // (A4 in centimeters to pixels) * 2 pages
     }
 })
 
@@ -59,7 +62,7 @@ await page.screenshot({
     clip: {
         x: 0,
         y: 0,
-        width: 830,
+        width: 800,
         height: 72
     }
 })
