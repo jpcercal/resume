@@ -28,6 +28,34 @@ viewing.
 > Actions](https://github.com/jpcercal/resume/actions) to see the workflow in
 > action.
 
+## How do I build the resume file locally?
+
+To run this project locally, you will need to install the following dependencies:
+
+- Docker
+
+Once you have the required dependencies installed, run the following commands
+from the root directory of the project:
+
+```bash
+docker build --tag jpcercal/resume .
+docker run -it --rm -v $(pwd):/app jpcercal/resume npm install
+```
+
+Once the docker image is built, you can apply the changes to the resume and 
+re-render the pdf document using the following command:
+
+```bash
+docker run -it --rm -v $(pwd):/app jpcercal/resume npm run build
+```
+
+This will create two files on the root directory, namely they are:
+
+- resume.html
+- resume.pdf
+
+Enjoy it. =)
+
 ## Some background about what has been done
 
 To fully appreciate the project's potential, let's first gain a grasp of the
