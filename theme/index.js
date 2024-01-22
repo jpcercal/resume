@@ -26,8 +26,16 @@ exports.render = ({ meta, basics, skills, work }) => `
 		.color-gray {
 			color: #2B2B2B;
 		}
+
+		.color-blue {
+			color: #1AA8ED;
+		}
 		
 		.color-light-gray {
+			color: #6A6A6A;
+		}
+		
+		.color-lighter-gray {
 			color: #D9D9D9;
 		}
 		
@@ -37,6 +45,10 @@ exports.render = ({ meta, basics, skills, work }) => `
 		
 		.color-highlight {
 			color: #ED5F1A;
+		}
+
+		.skill.skill-highlighted {
+			color: #1AA8ED !important;
 		}
 
 		.bg-cloud-tag {
@@ -111,6 +123,7 @@ exports.render = ({ meta, basics, skills, work }) => `
 		.jqcloud {
 			font-family: "Source Code Pro", monospace;
 			line-height: normal;
+			text-shadow: 18px 25px 16px rgba(43, 43, 43, 0.05);
 			overflow: hidden;
 			position: relative;
 		}
@@ -187,17 +200,33 @@ exports.render = ({ meta, basics, skills, work }) => `
 		${skills
 			.map((skill, index) => {
 				let weight = skill.level;
+				let skillCssClasses = [];
 
-				if (!skill.meta.relevantWhenApplyingFor.includes(meta.applyingFor)) return;
-			
+				if (!skill.meta.display) {
+					return;
+				}
 
-				return `${index !== 0 ? ',' : ''}{text: "${skill.name}", weight: ${weight}}`;
+				skillCssClasses.push(`skill`);
+				skillCssClasses.push(`skill-${skill.name.toLowerCase().replace(/ /g, '-')}`);
+				skillCssClasses.push(`skill-weight-${weight}`);
+
+				if (skill.meta.highlighted) {
+					skillCssClasses.push(`skill-highlighted`);	
+				}
+
+				return `${index !== 0 ? ',' : ''}{
+					text: "${skill.name}", 
+					weight: ${weight},
+					html: {
+						class: "${skillCssClasses.join(' ')}"
+					}
+				}`;
 			})
 			.join('')}
 		];
 
 		$(function() {
-			$("#example").jQCloud(word_array, {});
+			$("#skills").jQCloud(word_array, {});
 		});
     </script>
 
@@ -226,7 +255,7 @@ exports.render = ({ meta, basics, skills, work }) => `
 				<div class="row p-0 m-0">
 					<section class="col p-0 m-0 ps-3 ms-4 d-flex gap-1 justify-items-center flex-column">
 						<div class="mb-3">
-							<span class="font-monospace color-light-gray fs-6 fw-light fst-normal">&lt;</span><span class="font-monospace color-gray fs-6 fw-light fst-normal">${basics.label}</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">/</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">&gt;</span>
+							<span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">&lt;</span><span class="font-monospace color-gray fs-6 fw-light fst-normal">${basics.label}</span><span class="font-monospace color-blue fs-6 fw-light fst-normal">/</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">&gt;</span>
 						</div>
 						<p class="m-0 p-0 pe-3 d-block color-gray fw-light fst-normal">Hi, my name is <strong class="fw-bold fst-normal color-highlight">${basics.name}</strong> (BSc in Information Systems). ${basics.summary} <span class="color-highlight">♥</span></p>
 					</section>
@@ -258,11 +287,11 @@ exports.render = ({ meta, basics, skills, work }) => `
 
 					<section class="col-12 p-0 m-0 mt-2">
 						<h1 class="d-block text-capitalize font-monospace text-center color-highlight fs-5 fw-bold fst-normal">skills</h1>
-						<small class="d-block font-monospace text-center color-light-gray fs-6 fw-light fst-normal">(some of the things I've been working with)</small>
+						<small class="d-block font-monospace text-center color-gray fs-6 fw-light fst-normal">(some of the things I've been working with)</small>
 						<div class="font-monospace color-highlight text-center m-0 p-0 mb-2">...</div>
 
 						<div class="bg-cloud-tag">
-							<div id="example" style="height: 320px; width: 777px;"></div>
+							<div id="skills" style="height: 320px; width: 777px;"></div>
 						</div>
 					</section>
 				</div>
@@ -274,7 +303,7 @@ exports.render = ({ meta, basics, skills, work }) => `
 
 					<section class="col-12 p-0 m-0 mt-4">
 						<h1 class="d-block text-capitalize font-monospace text-center color-highlight fs-5 fw-bold fst-normal">latest work experience</h1>
-						<small class="d-block font-monospace text-center color-light-gray fs-6 fw-light fst-normal">(you can check my linkedin profile to see them all)</small>
+						<small class="d-block font-monospace text-center color-gray fs-6 fw-light fst-normal">(you can check my linkedin profile to see them all)</small>
 						<div class="font-monospace color-highlight text-center m-0 p-0 mb-3">...</div>
 						${work
 							.map((work, index) => {
@@ -290,7 +319,7 @@ exports.render = ({ meta, basics, skills, work }) => `
 												<span class="font-monospace color-highlight fs-6 fw-light fst-normal">&lt;?php&nbsp;</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">// ${period}</span>
 											</div>
 											<div>
-												<span class="font-monospace color-light-gray fs-6 fw-light fst-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "</span><span class="font-monospace color-dark fs-6 fw-light fst-normal">${work.position} at ${work.company}</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">";</span>
+												<span class="font-monospace color-blue fs-6 fw-light fst-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">&nbsp;"</span><span class="font-monospace color-dark fs-6 fw-light fst-normal">${work.position} at ${work.company}</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">"</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">;</span>
 											</div>
 										</div>
 										
