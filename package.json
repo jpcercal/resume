@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "handlebars": "^4.7.8",
     "jsonresume-theme-local": "file:theme",
     "puppeteer": "^21.6.1",
-    "resumed": "^3.0.1"
+    "resumed": "^3.0.1",
+    "sass": "^1.70.0"
   },
   "name": "resume",
   "description": "",
