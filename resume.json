@@ -1,8 +1,5 @@
 {
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-    "meta": {
-        "applyingFor": "senior-php-engineer"
-    },
     "basics": {
         "name": "João Cercal",
         "label": "Senior PHP Developer",
@@ -182,34 +179,38 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
             "name": "Golang",
-            "level": "80",
+            "level": "95",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": true 
             }  
         },
         {
             "name": "Rust",
-            "level": "50",
+            "level": "70",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": true 
             }  
         },
         {
             "name": "Java",
-            "level": "50",
+            "level": "70",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": true 
             }
         },
         {
@@ -218,43 +219,48 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }
         },
         {
             "name": "C",
-            "level": "30",
+            "level": "40",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }
         },
         {
             "name": "C#",
-            "level": "35",
+            "level": "45",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }
         },
         {
             "name": "Ruby",
-            "level": "35",
+            "level": "45",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }
         },
         {
             "name": "Python",
-            "level": "50",
+            "level": "85",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": true,
+                "highlighted": true 
             }
         },
         {
@@ -263,25 +269,28 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": true 
             }  
         },
         {
             "name": "Node.js",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
-            }  
-        },
-        {
-            "name": "Typescript",
             "level": "90",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": true 
+            }  
+        },
+        {
+            "name": "Typescript",
+            "level": "95",
+            "keywords": [],
+            "meta": {
+                "icon": "",
+                "display": true,
+                "highlighted": true 
             }  
         },
         {
@@ -290,7 +299,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": true 
             }  
         },
         {
@@ -299,7 +309,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -308,7 +319,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -317,7 +329,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -326,7 +339,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -335,7 +349,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -344,7 +359,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-software-engineer"] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -353,7 +369,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -362,7 +379,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -371,7 +389,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -380,7 +399,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }  
         },
         {
@@ -389,16 +409,18 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }  
         },
         {
             "name": "Kafka",
-            "level": "85",
+            "level": "90",
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }  
         },
         {
@@ -407,7 +429,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -416,7 +439,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }
         },
         {
@@ -425,7 +449,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -434,7 +459,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -443,7 +469,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -452,7 +479,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -461,7 +489,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -470,7 +499,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -479,7 +509,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -488,7 +519,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -497,7 +529,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }
         },
         {
@@ -506,7 +539,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"]
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -515,7 +549,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"]
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -524,7 +559,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"]
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -533,7 +569,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-software-engineer"]
+                "display": false,
+                "highlighted": false
             }
         },
         {
@@ -542,7 +579,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -551,7 +589,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }  
         },
         {
@@ -560,7 +599,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }  
         },
         {
@@ -569,7 +609,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }  
         },
         {
@@ -578,7 +619,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -587,7 +629,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -596,7 +639,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -605,7 +649,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false
             }
         },
         {
@@ -614,7 +659,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -623,7 +669,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -632,7 +679,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -641,7 +689,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -650,7 +699,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -659,7 +709,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -668,7 +719,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -677,7 +729,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -686,7 +739,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -695,7 +749,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -704,7 +759,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -713,7 +769,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }
         },
         {
@@ -722,7 +779,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -731,7 +789,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -740,7 +799,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -749,7 +809,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -758,7 +819,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -767,7 +829,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -776,7 +839,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -785,7 +849,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -794,7 +859,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": ["senior-php-engineer", "senior-software-engineer"] 
+                "display": true,
+                "highlighted": false 
             }  
         },
         {
@@ -803,7 +869,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -812,7 +879,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -821,7 +889,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         },
         {
@@ -830,7 +899,8 @@
             "keywords": [],
             "meta": {
                 "icon": "",
-                "relevantWhenApplyingFor": [] 
+                "display": false,
+                "highlighted": false 
             }  
         }
     ],
