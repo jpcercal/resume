@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
     "basics": {
         "name": "João Cercal",
-        "label": "Senior PHP Developer",
+        "label": "Senior Software Engineer",
         "picture": "https://avatars.githubusercontent.com/u/366345",
         "email": "jpcercal@gmail.com",
         "phone": "+351 910 958 555",
@@ -27,7 +27,7 @@
     "work": [
         {
             "company": "Turbine Kreuzberg",
-            "position": "Senior Software Engineer",
+            "position": "Senior PHP Developer",
             "website": "",
             "startDate": "2022-07",
             "summary": "",
