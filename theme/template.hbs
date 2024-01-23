@@ -70,12 +70,10 @@
 
 			<div class="col-12 p-0 m-0 mt-3 mb-2">
 				<div class="row p-0 m-0">
-					<div class="d-block separator"></div>
-
-					<section class="col-12 p-0 m-0 mt-2">
+					<section class="col-12 p-0 m-0 mt-4">
 						<h1 class="d-block text-capitalize font-monospace text-center color-highlight fs-5 fw-bold fst-normal">skills</h1>
 						<small class="d-block font-monospace text-center color-gray fs-6 fw-light fst-normal">(some of the things I've been working with)</small>
-						<div class="font-monospace color-highlight text-center m-0 p-0 mb-2">...</div>
+						<div class="font-monospace color-highlight text-center m-0 p-0 mb-3">...</div>
 
 						<div class="bg-cloud-tag">
 							<div id="skills" style="height: 320px; width: 777px;"></div>
@@ -86,25 +84,26 @@
 
 			<div class="col-12 p-0 m-0">
 				<div class="row p-0 m-0">
-					<div class="d-block separator"></div>
-
-					<section class="col-12 p-0 m-0 mt-4">
+					<section class="col-12 p-0 m-0 mt-5">
 						<h1 class="d-block text-capitalize font-monospace text-center color-highlight fs-5 fw-bold fst-normal">latest work experience</h1>
 						<small class="d-block font-monospace text-center color-gray fs-6 fw-light fst-normal">(you can check my linkedin profile to see them all)</small>
-						<div class="font-monospace color-highlight text-center m-0 p-0 mb-3">...</div>
+						<div class="font-monospace color-highlight text-center m-0 p-0 mb-4">...</div>
 
 						{{#each work}}
 							<div class="row p-0 m-0 ms-4 me-5 mt-3 align-items-center d-flex">
 								<div class="col-12 p-0 m-0">
-									<div>
-										<span class="font-monospace color-highlight fs-6 fw-light fst-normal">&lt;?php&nbsp;</span><span class="font-monospace color-light-gray fs-6 fw-light fst-normal">// {{compileWorkPeriod this.startDate this.endDate}}</span>
-									</div>
-									<div>
-										<span class="font-monospace color-blue fs-6 fw-light fst-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">&nbsp;"</span><span class="font-monospace color-dark fs-6 fw-light fst-normal">{{this.position}} at {{this.company}}</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">"</span><span class="font-monospace color-lighter-gray fs-6 fw-light fst-normal">;</span>
-									</div>
+									<ul class="list-inline">
+										<li class="list-inline-item m-0 p-0 font-monospace color-highlight fs-6 fw-light fst-normal">&lt;?php</li>
+										<li class="list-inline-item m-0 p-0 ms-2 me-1 font-monospace color-blue fs-6 fw-light fst-normal">echo</li>
+										<li class="list-inline-item m-0 p-0 font-monospace color-lighter-gray fs-6 fw-light fst-normal">"</li>
+										<li class="list-inline-item m-0 p-0 font-monospace color-dark fs-6 fw-light fst-normal" style="text-indent: -4px;">{{this.position}} at {{this.company}}</li>
+										<li class="list-inline-item m-0 p-0 font-monospace color-light-gray fs-6 fw-light fst-normal">({{compileWorkPeriod this.startDate this.endDate}})</li>
+										<li class="list-inline-item m-0 p-0 font-monospace color-lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">"</li>
+										<li class="list-inline-item m-0 p-0 font-monospace color-lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">;</li>
+									</ul>
 								</div>
 								
-								<div class="col-12 p-0 m-0 mt-2">
+								<div class="col-12 p-0 m-0 mt-1">
 									<ul class="m-0 p-0 ms-5 ps-2">
 										{{#each this.highlights}}
 											<li class="my-2 d-inline-block fw-light fst-normal">{{.}}{{#if @last}}.{{else}};{{/if}}</li>
