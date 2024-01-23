@@ -3,7 +3,7 @@ const path = require('path')
 const sass = require('sass')
 const fs = require('fs')
 
-exports.render = ({ basics, skills, work }) => {
+exports.render = ({ meta, basics, skills, work }) => {
 	Handlebars.registerHelper('style', () => new Handlebars.SafeString(
 		sass
 			.compile(path.join(__dirname, 'style.scss'))
@@ -52,5 +52,5 @@ exports.render = ({ basics, skills, work }) => {
 	)
 
 	const template = Handlebars.compile(fs.readFileSync(path.join(__dirname, 'template.hbs'), 'utf8'))
-	return template({ basics, skills, work })
+	return template({ meta, basics, skills, work })
 }
