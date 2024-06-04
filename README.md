@@ -39,14 +39,13 @@ from the root directory of the project:
 
 ```bash
 docker build --tag jpcercal/resume .
-docker run -it --rm -v $(pwd):/app jpcercal/resume npm install
 ```
 
 Once the docker image is built, you can apply the changes to the resume and 
 re-render the pdf document using the following command:
 
 ```bash
-docker run -it --rm -v $(pwd):/app jpcercal/resume npm run build
+docker run -it --rm -v $(pwd)/resume.json:/opt/input/resume.json -v $(pwd):/opt/output jpcercal/resume
 ```
 
 This will create two files on the root directory, namely they are:
