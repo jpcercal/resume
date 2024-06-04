@@ -3,20 +3,20 @@ import * as theme from 'jsonresume-theme-local'
 import puppeteer from 'puppeteer'
 import { render } from 'resumed'
 
-const resume = JSON.parse(await fs.readFile('resume.json', 'utf-8'))
+const resume = JSON.parse(await fs.readFile('/opt/input/resume.json', 'utf-8'))
 const html = await render(resume, theme)
 
-const browser = await puppeteer.launch({ 
+const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox'] 
+    args: ['--no-sandbox']
 })
 const page = await browser.newPage()
 
 await page.setContent(html, { waitUntil: 'networkidle0' })
-await page.pdf({ 
-    path: 'resume.pdf', 
-    format: 'a4', 
-    printBackground: true, 
+await page.pdf({
+    path: '/opt/output/resume.pdf',
+    format: 'a4',
+    printBackground: true,
     margin: {
         top: '0px',
         right: '0px',
@@ -25,7 +25,7 @@ await page.pdf({
     }
 })
 await page.screenshot({
-    path: 'resume-preview.pdf.png', 
+    path: '/opt/output/resume-preview.pdf.png',
     type: 'png',
     clip: {
         x: 0,
@@ -57,7 +57,7 @@ console.log(templateJson)
 
 await page.setContent(templateJson, { waitUntil: 'networkidle0' })
 await page.screenshot({
-    path: 'resume-preview.json.png', 
+    path: '/opt/output/resume-preview.json.png',
     type: 'png',
     clip: {
         x: 0,

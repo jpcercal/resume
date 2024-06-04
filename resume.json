@@ -10,7 +10,7 @@
         "email": "jpcercal@gmail.com",
         "phone": "+351 910 958 555",
         "website": "https://jpcercal.com/en/",
-        "summary": "I’ve been looking for creative, innovative and scalable solutions to enable people to do and experience what they love. On the way, I became a PHP specialist while working with incredible people from different places of the world. A certified Senior Software Engineer who loves what he does since he started his career in 2009.",
+        "summary": "I am passionate about creating innovative, scalable solutions that empower people to do what they love. I've become a PHP specialist with expertise in Golang and other languages, working with talented individuals worldwide. Since 2009, I've been a dedicated web developer and a certified Senior Software Engineer.",
         "location": {
             "address": "Coimbra, Portugal"
         },
@@ -29,10 +29,22 @@
     },
     "work": [
         {
+            "company": "Emma",
+            "position": "Senior Software Engineer",
+            "website": "",
+            "startDate": "2024-03",
+            "summary": "",
+            "highlights": [
+                "Architected, designed, improved, and implemented Emma’s technology components, boosting e-commerce performance by developing features in Golang and Java. This led to fast order processing with an event-driven architecture, enhancing the end-to-end purchase process, fewer bugs from better test coverage using testing containers, and streamlined service dependencies, reducing team conflicts",
+                "Mentored junior developers, conducted code reviews, and fostered continuous learning, resulting in improved code quality, team cohesion, and development efficiency"
+            ]
+        },
+        {
             "company": "Turbine Kreuzberg",
             "position": "Senior PHP Developer",
             "website": "",
             "startDate": "2022-07",
+            "endDate": "2024-02",
             "summary": "",
             "highlights": [
                 "Making the most of PHP and the Spryker framework/ecosystem to design, develop, and maintain robust e-commerce solutions, ensuring efficient operation of digital platforms",
@@ -65,19 +77,6 @@
                 "Impacting and changing the way how millions of travelers connect to the places they visit, using weekends, building relationships, visiting relatives, and discovering the world",
                 "Aligning the product with technical decisions while having the customer at first, but also considering data over guessing have guided me to influence in a killer feature to contact us through WhatsApp in which our travelers can get support from their smartphones. It increased the second customer purchase metric considerably and helped us to retain customers",
                 "Test-driven oriented, impacting the way that engineers see unit test bringing then, the quality of the product to the next level"
-            ]
-        },
-        {
-            "company": "FlixBus",
-            "position": "Senior PHP Developer",
-            "website": "",
-            "startDate": "2017-08",
-            "endDate": "2018-11",
-            "summary": "",
-            "highlights": [
-                "Changing the life of approximately one billion of people commuting, using weekends, building relationships, visiting relatives, and discovering the world",
-                "We improved the response time for retrieving a cart in almost 70% by extracting the code from the legacy system into a new microservices-oriented architecture",
-                "Responsible for making technical decisions from a technical perspective within our team"
             ]
         }
     ],
@@ -183,18 +182,18 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
-            "name": "Golang",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true 
-            }  
+          "name": "GO",
+          "level": "100",
+          "keywords": [],
+          "meta": {
+              "icon": "",
+              "display": true,
+              "highlighted": false
+          }
         },
         {
             "name": "Rust",
@@ -203,8 +202,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
-            }  
+                "highlighted": true
+            }
         },
         {
             "name": "Java",
@@ -213,7 +212,7 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
+                "highlighted": true
             }
         },
         {
@@ -223,7 +222,7 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -233,7 +232,7 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -243,7 +242,7 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -253,7 +252,7 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -263,7 +262,7 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
+                "highlighted": true
             }
         },
         {
@@ -273,8 +272,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
-            }  
+                "highlighted": true
+            }
         },
         {
             "name": "Node.js",
@@ -283,8 +282,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
-            }  
+                "highlighted": true
+            }
         },
         {
             "name": "Typescript",
@@ -293,8 +292,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
-            }  
+                "highlighted": true
+            }
         },
         {
             "name": "JS",
@@ -303,8 +302,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": true 
-            }  
+                "highlighted": true
+            }
         },
         {
             "name": "HTML",
@@ -313,8 +312,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "CSS (SASS, LESS)",
@@ -323,8 +322,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "MySQL",
@@ -333,8 +332,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "PostgreSQL",
@@ -343,8 +342,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "SQLite",
@@ -353,8 +352,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "SQL Server",
@@ -363,8 +362,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "MongoDB",
@@ -373,8 +372,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Redis",
@@ -383,8 +382,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Memcached",
@@ -393,8 +392,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Elastic Search",
@@ -404,7 +403,7 @@
                 "icon": "",
                 "display": true,
                 "highlighted": false
-            }  
+            }
         },
         {
             "name": "RabbitMQ",
@@ -414,7 +413,7 @@
                 "icon": "",
                 "display": true,
                 "highlighted": false
-            }  
+            }
         },
         {
             "name": "Kafka",
@@ -424,7 +423,7 @@
                 "icon": "",
                 "display": true,
                 "highlighted": false
-            }  
+            }
         },
         {
             "name": "Symfony",
@@ -433,8 +432,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Zend",
@@ -443,7 +442,7 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -453,8 +452,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Wordpress",
@@ -463,8 +462,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Spryker",
@@ -473,8 +472,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Magento",
@@ -483,8 +482,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Kohana",
@@ -493,8 +492,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "CakePHP",
@@ -503,8 +502,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Silex",
@@ -513,8 +512,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Slim",
@@ -523,8 +522,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Yii",
@@ -533,7 +532,7 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -594,7 +593,7 @@
                 "icon": "",
                 "display": true,
                 "highlighted": false
-            }  
+            }
         },
         {
             "name": "Git",
@@ -604,7 +603,7 @@
                 "icon": "",
                 "display": true,
                 "highlighted": false
-            }  
+            }
         },
         {
             "name": "Docker",
@@ -614,7 +613,7 @@
                 "icon": "",
                 "display": true,
                 "highlighted": false
-            }  
+            }
         },
         {
             "name": "Vagrant",
@@ -623,8 +622,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Kubernetes",
@@ -663,8 +662,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Grafana",
@@ -673,8 +672,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Kibana",
@@ -683,8 +682,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Blackfire",
@@ -693,8 +692,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Bugsnag",
@@ -703,8 +702,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Sentry",
@@ -713,8 +712,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "AWS",
@@ -723,8 +722,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Serverless",
@@ -733,8 +732,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "XML",
@@ -743,8 +742,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "JSON",
@@ -753,8 +752,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "YAML",
@@ -763,8 +762,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "TOML",
@@ -773,7 +772,7 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
+                "highlighted": false
             }
         },
         {
@@ -783,8 +782,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "SOLID",
@@ -793,8 +792,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "KISS",
@@ -803,8 +802,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "DRY",
@@ -813,8 +812,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Design Patterns",
@@ -823,8 +822,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Pair-Programming",
@@ -833,8 +832,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Distributed teams",
@@ -843,8 +842,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Remote first",
@@ -853,8 +852,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Agile",
@@ -863,8 +862,8 @@
             "meta": {
                 "icon": "",
                 "display": true,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Scrum",
@@ -873,8 +872,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Kanban",
@@ -883,8 +882,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "Post-mortem",
@@ -893,8 +892,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         },
         {
             "name": "REST",
@@ -903,8 +902,8 @@
             "meta": {
                 "icon": "",
                 "display": false,
-                "highlighted": false 
-            }  
+                "highlighted": false
+            }
         }
     ],
     "awards": [

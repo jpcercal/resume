@@ -42,7 +42,7 @@ $color--highlight: #ED5F1A;
 }
 
 .skills {
-    height: 320px; 
+    height: 320px;
     width: 777px;
     font-family: $font-family--monospace;
     line-height: normal;
@@ -116,6 +116,14 @@ $color--highlight: #ED5F1A;
             padding: 10px;
         }
     }
+}
+
+.work-experience {
+  .work-experience--items {
+    .work-experience--item:nth-child(2) {
+      padding-top: 30px !important;
+    }
+  }
 }
 
 .background {
