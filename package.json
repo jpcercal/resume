@@ -11,8 +11,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "validate": "resumed validate resume.json",
-    "render": "resumed render resume.json --theme jsonresume-theme-local --output resume.html",
+    "validate": "resumed validate /opt/input/resume.json",
+    "render": "resumed render /opt/input/resume.json --theme jsonresume-theme-local --output /opt/output/resume.html",
     "generate-pdf": "node index.js",
     "build": "npm run validate && npm run render && npm run generate-pdf"
   },
