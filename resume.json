@@ -1,1609 +1,369 @@
 {
-    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-    "meta": {
-        "lang": "en"
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "meta": {
+    "lang": "en"
+  },
+  "basics": {
+    "name": "Aspiring Quality Assurance Engineer",
+    "label": "Elisete Cercal",
+    "picture": "https://avatars.githubusercontent.com/u/146008942",
+    "email": "elisetecercal@gmail.com",
+    "phone": "+351 913 826 427",
+    "website": "",
+    "summary": "Transitioning from a background in HR to Quality Assurance with a focus on analytical skills and problem-solving. Skilled in manual and automated testing with a strong commitment to continuous learning in QA processes and tools. Currently preparing to take the CTFL (Certified Tester Foundation Level) certification exam in December.",
+    "location": {
+      "address": "Coimbra, Portugal"
     },
-    "basics": {
-        "name": "João Cercal",
-        "label": "Senior Software Engineer",
-        "picture": "https://avatars.githubusercontent.com/u/366345",
-        "email": "jpcercal@gmail.com",
-        "phone": "+351 910 958 555",
-        "website": "https://jpcercal.com/en/",
-        "summary": "I am passionate about creating innovative, scalable solutions that empower people to do what they love. I've become a PHP specialist with expertise in Golang and other languages, working with talented individuals worldwide. Since 2009, I've been a dedicated web developer and a certified Senior Software Engineer.",
-        "location": {
-            "address": "Coimbra, Portugal"
-        },
-        "profiles": [
-            {
-                "network": "linkedin",
-                "username": "jpcercal",
-                "url": "https://linkedin.com/in/jpcercal"
-            },
-            {
-                "network": "github",
-                "username": "jpcercal",
-                "url": "https://github.com/jpcercal"
-            }
-        ]
-    },
-    "work": [
-        {
-            "company": "Emma",
-            "position": "Senior Software Engineer",
-            "website": "",
-            "startDate": "2024-03",
-            "summary": "",
-            "highlights": [
-                "Architected, designed, improved, and implemented Emma’s technology components, boosting e-commerce performance by developing features in Golang and Java. This led to fast order processing with an event-driven architecture, enhancing the end-to-end purchase process, fewer bugs from better test coverage using testing containers, and streamlined service dependencies, reducing team conflicts",
-                "Mentored junior developers, conducted code reviews, and fostered continuous learning, resulting in improved code quality, team cohesion, and development efficiency"
-            ]
-        },
-        {
-            "company": "Turbine Kreuzberg",
-            "position": "Senior PHP Developer",
-            "website": "",
-            "startDate": "2022-07",
-            "endDate": "2024-02",
-            "summary": "",
-            "highlights": [
-                "Making the most of PHP and the Spryker framework/ecosystem to design, develop, and maintain robust e-commerce solutions, ensuring efficient operation of digital platforms",
-                "Optimizing e-commerce performance through meticulous coding skills and a comprehensive understanding of the Spryker framework, which directly leads to enhanced user experiences, faster page load times, and increased conversion rates for our clients",
-                "Collaboratively solving complex challenges within our agile development environment, actively collaborating with cross-functional teams to tackle intricate challenges, utilizing problem-solving skills and technical expertise to create innovative solutions that drive the success of our large-scale e-commerce projects"
-            ]
-        },
-        {
-            "company": "Spectrm",
-            "position": "Senior Software Engineer",
-            "website": "",
-            "startDate": "2020-08",
-            "endDate": "2022-06",
-            "summary": "",
-            "highlights": [
-                "Making a significant impact on the market by helping top-tier companies engage consumers effectively through innovative chatbots on major messaging platforms. This resulted in substantial sales growth and strengthened brand loyalty",
-                "By designing, developing, and launching scalable solutions to tackle intricate business challenges, with a lasting focus on scalability, I significantly improved operational efficiency, expanded the company's market presence, and ensured long-term adaptability, driving the business to new heights",
-                "Led backend chapter meetings, mentored junior developers, and played a crucial role in defining migration strategies for essential platform changes",
-                "Introduced architectural decision records (ADRs), conducted post-mortems, and facilitated lightning talks to promote a culture of continuous improvement within the engineering team"
-            ]
-        },
-        {
-            "company": "GetYourGuide",
-            "position": "Senior PHP Developer",
-            "website": "",
-            "startDate": "2018-12",
-            "endDate": "2020-07",
-            "summary": "",
-            "highlights": [
-                "Impacting and changing the way how millions of travelers connect to the places they visit, using weekends, building relationships, visiting relatives, and discovering the world",
-                "Aligning the product with technical decisions while having the customer at first, but also considering data over guessing have guided me to influence in a killer feature to contact us through WhatsApp in which our travelers can get support from their smartphones. It increased the second customer purchase metric considerably and helped us to retain customers",
-                "Test-driven oriented, impacting the way that engineers see unit test bringing then, the quality of the product to the next level"
-            ]
-        }
-    ],
-    "education": [
-        {
-            "institution": "UNISOCIESC",
-            "area": "Information Systems",
-            "studyType": "BSc",
-            "startDate": "2011-01",
-            "endDate": "2014-12",
-            "gpa": "",
-            "courses": []
-        },
-        {
-            "institution": "UNISOCIESC",
-            "area": "Information Systems",
-            "studyType": "Technical Course",
-            "startDate": "2009-01",
-            "endDate": "2010-12",
-            "gpa": "",
-            "courses": []
-        },
-        {
-            "institution": "TOTVS",
-            "area": "Computer Programming",
-            "studyType": "Training Course",
-            "startDate": "2009-08",
-            "endDate": "2010-07",
-            "courses": [
-                "268 hours of Basic concepts of Progress database, UML, XML, Java, Flex, Subversion, Jira, Confluence, and best practices in computer programming",
-                "8 hours of Business Writing",
-                "250 hours of How to program in C and Java (structural paradigm only)"
-            ]
-        }
-    ],
-    "volunteer": [
-        {
-            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Web Developer",
-            "startDate": "2009-05",
-            "endDate": "2009-05",
-            "summary": "Development of a web application to the campus, managing classroom reservation and resources using PHP 5.2, MySQL, HTML, CSS, and Javascript."
-        },
-        {
-            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Speaker - PHP the right way",
-            "startDate": "2013-10",
-            "endDate": "2013-10",
-            "summary": "Speaker at 'Semana Acadêmica,' speaking about PHP programming language to the local community."
-        },
-        {
-            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Teacher Assistant",
-            "startDate": "2013-10",
-            "endDate": "2013-10",
-            "summary": "Assisted in giving classes to the local community on using tools like Microsoft Office Word, Powerpoint, and Excel."
-        },
-        {
-            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Projeto Programar",
-            "startDate": "2013-11",
-            "endDate": "2013-11",
-            "summary": "Teaching students how to program in C++ covering topics like primitive data types, control structures, and loop statements."
-        },
-        {
-            "organization": "Agência A2C",
-            "position": "Speaker - The basic principles of Symfony2",
-            "startDate": "2014-07",
-            "endDate": "2014-07",
-            "summary": "Speaker in the internal event promoting web and console app development in PHP with Symfony version 2.4."
-        },
-        {
-            "organization": "SOCIESC - Sociedade Educacional de Santa Catarina",
-            "position": "Member of the Examining Evaluation Board",
-            "startDate": "2014-11",
-            "endDate": "2014-11",
-            "summary": "Member of the Examining Evaluation Board responsible for evaluating student projects."
-        }
-    ],
-    "languages": [
-        {
-            "language": "English",
-            "fluency": "Professional working proficiency"
-        },
-        {
-            "language": "Portuguese",
-            "fluency": "Native"
-        },
-        {
-            "language": "Spanish",
-            "fluency": "Elementary proficiency"
-        },
-        {
-            "language": "German",
-            "fluency": "Elementary proficiency"
-        }
-    ],
-    "skills": [
-        {
-            "name": "PHP",
-            "level": "100",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-          "name": "GO",
-          "level": "100",
-          "keywords": [],
-          "meta": {
-              "icon": "",
-              "display": true,
-              "highlighted": false
-          }
-        },
-        {
-            "name": "Rust",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "Java",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "Scala",
-            "level": "40",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "C",
-            "level": "40",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "C#",
-            "level": "45",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Ruby",
-            "level": "45",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Python",
-            "level": "85",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "Bash Script",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "Node.js",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "Typescript",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "JS",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": true
-            }
-        },
-        {
-            "name": "HTML",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "CSS (SASS, LESS)",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "MySQL",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "PostgreSQL",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "SQLite",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "SQL Server",
-            "level": "60",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "MongoDB",
-            "level": "50",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Redis",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Memcached",
-            "level": "85",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Elastic Search",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "RabbitMQ",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Kafka",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Symfony",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Zend",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Laravel",
-            "level": "85",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Wordpress",
-            "level": "85",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Spryker",
-            "level": "85",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Magento",
-            "level": "60",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Kohana",
-            "level": "40",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "CakePHP",
-            "level": "60",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Silex",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Slim",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Yii",
-            "level": "55",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "jQuery",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Angular JS",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Vue.js",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Spring Boot",
-            "level": "40",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Tests",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Linux/Unix",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Git",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Docker",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Vagrant",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Kubernetes",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Terraform",
-            "level": "50",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "CI/CD",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Prometheus",
-            "level": "75",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Grafana",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Kibana",
-            "level": "70",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Blackfire",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Bugsnag",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Sentry",
-            "level": "85",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "AWS",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Serverless",
-            "level": "80",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "XML",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "JSON",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "YAML",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "TOML",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "ADR",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "SOLID",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "KISS",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "DRY",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Design Patterns",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Pair-Programming",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Distributed teams",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Remote first",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Agile",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": true,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Scrum",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Kanban",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "Post-mortem",
-            "level": "90",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        },
-        {
-            "name": "REST",
-            "level": "95",
-            "keywords": [],
-            "meta": {
-                "icon": "",
-                "display": false,
-                "highlighted": false
-            }
-        }
-    ],
-    "awards": [
-        {
-            "title": "Honor Student - The best graduating student",
-            "issued_by": "UNISOCIESC",
-            "date": "2015-03",
-            "associated_with": "UNISOCIESC - Universidade Sociedade Educacional de Santa Catarina",
-            "description": "\"To accomplish great things, we must not only act but also dream; not only plan but also believe.\" - Anatole France.\n\nWe congratulate you, considered the best graduating student UNISOCIESC."
-        }
-    ],
-    "projects": [
-        {
-            "startDate": "2015-09",
-            "type": "software",
-            "name": "Onboarding",
-            "endDate": "2015-09",
-            "description": "archived",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Lucas Alfredo Cercal",
-                    "profile": "https://www.linkedin.com/in/lucascercal"
-                },
-                {
-                    "name": "Diogo Andrei Schroeder",
-                    "profile": "https://www.linkedin.com/in/diogoandrei"
-                },
-                {
-                    "name": "Larissa Mühlbauer",
-                    "profile": "https://www.linkedin.com/in/larissa-m%C3%BChlbauer-a96b8278"
-                },
-                {
-                    "name": "George Luiz Bittencourt",
-                    "profile": "https://www.linkedin.com/in/georgeluizbittencourt"
-                },
-                {
-                    "name": "Claudia Silva",
-                    "profile": "https://www.linkedin.com/in/claudia-silva-96924a12"
-                }
-            ]
-        },
-        {
-            "startDate": "2015-09",
-            "type": "software",
-            "name": "Tuper RH",
-            "endDate": "2015-09",
-            "description": "A single page application to the TuperRH company manage resumes and jobs. The project was developed in PHP using the Laravel 5.1 framework and AngularJS.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Ricardo Lüders",
-                    "profile": "https://www.linkedin.com/in/ricardoluders"
-                },
-                {
-                    "name": "Rafael César Neves",
-                    "profile": "https://www.linkedin.com/in/rafaelcneves"
-                },
-                {
-                    "name": "Ana Carolina da Luz",
-                    "profile": "https://www.linkedin.com/in/anacarolinaluz"
-                },
-                {
-                    "name": "Adoni Eder",
-                    "profile": "https://www.linkedin.com/in/adoni-eder-07627942"
-                },
-                {
-                    "name": "Celso Ricardo Salazar Valentim",
-                    "profile": "https://www.linkedin.com/in/celsoricardo"
-                }
-            ]
-        },
-        {
-            "startDate": "2015-06",
-            "type": "software",
-            "name": "Quanta Gamification",
-            "endDate": "2015-06",
-            "description": "An internal project that aims to develop a solution to a local business, the differential of this software was the implementation of the gamification engine.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Ricardo Lüders",
-                    "profile": "https://www.linkedin.com/in/ricardoluders"
-                },
-                {
-                    "name": "Jéssica Lorenzi",
-                    "profile": "https://www.linkedin.com/in/jessicalorenzi"
-                },
-                {
-                    "name": "Rafael César Neves",
-                    "profile": "https://www.linkedin.com/in/rafaelcneves"
-                },
-                {
-                    "name": "Ana Carolina da Luz",
-                    "profile": "https://www.linkedin.com/in/anacarolinaluz"
-                },
-                {
-                    "name": "Daniela Pereira Fernandes",
-                    "profile": "https://www.linkedin.com/in/daniela-pereira-fernandes-90793b89"
-                },
-                {
-                    "name": "Adoni Eder",
-                    "profile": "https://www.linkedin.com/in/adoni-eder-07627942"
-                },
-                {
-                    "name": "Juliana Back",
-                    "profile": "https://www.linkedin.com/in/julianaback"
-                },
-                {
-                    "name": "Celso Ricardo Salazar Valentim",
-                    "profile": "https://www.linkedin.com/in/celsoricardo"
-                }
-            ]
-        },
-        {
-            "startDate": "2015-06",
-            "type": "software",
-            "name": "Reserva-e",
-            "endDate": "2015-06",
-            "description": "A good idea winner of the governmental program \"Sinapse da Inovação\". This project allow that the customers make a reservation of one or more services (like a hotel reservation by example). The project was developed in PHP using the Symfony 2.6 framework.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Gustavo Henrique Conci",
-                    "profile": "https://br.linkedin.com/in/gustavohenriqueconci"
-                }
-            ]
-        },
-        {
-            "startDate": "2015-02",
-            "type": "software",
-            "name": "CoffeeCodr",
-            "endDate": "2015-02",
-            "description": "A startup with very potential that created a tool to the little retailers (this tool no have a official name, but the codename of project is umbrella). Archived.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Alessandro H. dos Santos",
-                    "profile": "https://br.linkedin.com/pub/alessandro-h-dos-santos/45/912/32"
-                }
-            ]
-        },
-        {
-            "startDate": "2014-06",
-            "type": "website",
-            "name": "Monitor Eleitoral",
-            "endDate": "2014-06",
-            "description": "Web Application developed in PHP to monitor the buzz of the political candidates through of the social network. Between the technologies used are: the framework Symfony (in the version 2.4), HTML, CSS, Twitter Bootstrap, Javascript with the jQuery Library, Doctrine ORM (in the version 2.2) and MySQL.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Rodrigo Sensever",
-                    "profile": "https://br.linkedin.com/in/sensever"
-                },
-                {
-                    "name": "Lucas Danilo Masson",
-                    "profile": "https://br.linkedin.com/in/lukmass"
-                },
-                {
-                    "name": "Gustavo Henrique Conci",
-                    "profile": "https://br.linkedin.com/in/gustavohenriqueconci"
-                },
-                {
-                    "name": "Bruno Duarte",
-                    "profile": "https://br.linkedin.com/in/brnduarte"
-                },
-                {
-                    "name": "Gabriel Xavier",
-                    "profile": "https://br.linkedin.com/pub/gabriel-xavier/53/723/5"
-                },
-                {
-                    "name": "Charles A. Müller",
-                    "profile": "https://br.linkedin.com/in/charlesmuller"
-                },
-                {
-                    "name": "Cyro F. Klaus",
-                    "profile": "https://br.linkedin.com/in/cyroklaus"
-                },
-                {
-                    "name": "Acidio Alan",
-                    "profile": "https://br.linkedin.com/in/acidio"
-                },
-                {
-                    "name": "João Menezes",
-                    "profile": "https://br.linkedin.com/in/joaoamenezes"
-                }
-            ]
-        },
-        {
-            "startDate": "2014-04",
-            "type": "website",
-            "name": "Som na Caixa",
-            "endDate": "2014-03",
-            "description": "Archived.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Elisete Santos Cercal",
-                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
-                }
-            ]
-        },
-        {
-            "startDate": "2014-02",
-            "type": "website",
-            "name": "Portal 3M Inovação",
-            "endDate": "2014-02",
-            "description": "Website developed in PHP using the Symfony (in the version 2.4) with a expressive and very good team members.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Acidio Alan",
-                    "profile": "https://br.linkedin.com/in/acidio"
-                },
-                {
-                    "name": "Nikolas Soares",
-                    "profile": "https://br.linkedin.com/pub/nikolas-soares/23/9a4/426"
-                },
-                {
-                    "name": "Adan Felipe Medeiros",
-                    "profile": "https://br.linkedin.com/in/adanfm"
-                },
-                {
-                    "name": "Gabriel Xavier",
-                    "profile": "https://br.linkedin.com/pub/gabriel-xavier/53/723/5"
-                },
-                {
-                    "name": "Gustavo Henrique Conci",
-                    "profile": "https://br.linkedin.com/in/gustavohenriqueconci"
-                },
-                {
-                    "name": "Conrado Solano",
-                    "profile": "https://br.linkedin.com/in/conradosolano"
-                },
-                {
-                    "name": "Thiago Augustini",
-                    "profile": "https://br.linkedin.com/in/augustini"
-                },
-                {
-                    "name": "João Menezes",
-                    "profile": "https://br.linkedin.com/in/joaoamenezes"
-                },
-                {
-                    "name": "Bruno Duarte",
-                    "profile": "https://br.linkedin.com/in/brnduarte"
-                },
-                {
-                    "name": "Cyro F. Klaus",
-                    "profile": "https://br.linkedin.com/in/cyroklaus"
-                },
-                {
-                    "name": "Filipi Maisotti de Simas",
-                    "profile": "https://br.linkedin.com/pub/filipi-maisotti-de-simas/"
-                },
-                {
-                    "name": "Anderson de Andrade",
-                    "profile": "https://br.linkedin.com/in/andersondeandrade"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-09",
-            "type": "website",
-            "name": "Quanta Fome",
-            "endDate": "2013-09",
-            "description": "Service of Food Delivery (archived).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-09",
-            "type": "website",
-            "name": "Feirão do Imposto",
-            "endDate": "2013-09",
-            "description": "Hotsite to the campaigns \"O Segredo da Caixa\" and \"Não Mexa no meu Refri\".",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Rolf Scholz Neto",
-                    "profile": "https://br.linkedin.com/in/rolfscholz"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-08",
-            "type": "website",
-            "name": "Konsultare",
-            "endDate": "2013-08",
-            "description": "Institutional Website developed in PHP with the Wordpress CMS (in the version 3.6).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Rolf Scholz Neto",
-                    "profile": "https://br.linkedin.com/in/rolfscholz"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-09",
-            "type": "website",
-            "name": "Habitare",
-            "endDate": "2013-09",
-            "description": "Web Admin Panel developed in PHP Zend Framework 1.12 to manage the content of the website.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Larissa Farias",
-                    "profile": "https://br.linkedin.com/pub/larissa-farias/76/66a/974"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-09",
-            "type": "website",
-            "name": "Nootícias",
-            "endDate": "2013-09",
-            "description": "A news aggregator developed in PHP that was created with Wordpress CMS 3.5 and posteriorly it was rewritten in Symfony 2.5 framework.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Elisete Santos Cercal",
-                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-08",
-            "type": "website",
-            "name": "Landing Page 2Rios",
-            "endDate": "2013-08",
-            "description": "Developed the Landing Page of the brand 2Rios.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Rolf Scholz Neto",
-                    "profile": "https://br.linkedin.com/in/rolfscholz"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-05",
-            "type": "website",
-            "name": "Transgobbi",
-            "endDate": "2013-05",
-            "description": "Website developed in PHP using Wordpress CMS (in the version 3.6).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Davidson Santana",
-                    "profile": "https://br.linkedin.com/pub/davidson-santana/90/b73/122"
-                },
-                {
-                    "name": "Rolf Scholz Neto",
-                    "profile": "https://br.linkedin.com/in/rolfscholz"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-08",
-            "type": "software",
-            "name": "ZCPE",
-            "endDate": "2013-08",
-            "description": "Web Application that was developed in PHP using Symfony 2.4 framework. This project was created to PHP developers that want the ZCPE Certification emitted by Zend and Pursue Vue (archived).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Ari Stopassola Junior",
-                    "profile": "https://br.linkedin.com/in/stopassola"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-05",
-            "type": "website",
-            "name": "SRJ",
-            "endDate": "2013-05",
-            "description": "Created the first website of the SRJ company, that was developed in PHP using Wordpress CMS (in the version 3.5). This project improved the internal process of the company, brought ROI in few months and contributed to create the online presence too.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Elisete Santos Cercal",
-                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-02",
-            "type": "website",
-            "name": "Gomes Máquinas",
-            "endDate": "2013-02",
-            "description": "In this project was developed a new website to the brand Gomes Máquinas, using PHP with the Wordpress CMS (in the version 3.5).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Elisete Santos Cercal",
-                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
-                }
-            ]
-        },
-        {
-            "startDate": "2013-01",
-            "type": "software",
-            "name": "Code Ingressos",
-            "endDate": "2013-01",
-            "description": "E-commerce and POS (Point of Sale) to sell tickets to shows, movies and more using a fingerprint reader.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Alessandro H. dos Santos",
-                    "profile": "https://br.linkedin.com/pub/alessandro-h-dos-santos/45/912/32"
-                }
-            ]
-        },
-        {
-            "startDate": "2012-10",
-            "type": "website",
-            "name": "Cekurte",
-            "endDate": "2012-10",
-            "description": "The first website of the company that was developed in PHP using the Wordpress CMS.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Elisete Santos Cercal",
-                    "profile": "https://br.linkedin.com/pub/elisete-santos-cercal/55/a47/861"
-                }
-            ]
-        },
-        {
-            "startDate": "2012-08",
-            "type": "software",
-            "name": "Passe2Triagem",
-            "endDate": "2012-08",
-            "description": "Desktop Software developed in Delphi used to manage the inbound and outbound of trucks.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Michel Deunizio",
-                    "profile": "https://br.linkedin.com/pub/michel-deunizio/60/493/342"
-                }
-            ]
-        },
-        {
-            "startDate": "2012-01",
-            "type": "software",
-            "name": "Softicket PDV, Bar, Caixa, Sync and Admin",
-            "endDate": "2012-01",
-            "description": "POS (Point of Sale) software of the brand Joinville Square Garden.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Gabriel Pereira",
-                    "profile": "https://br.linkedin.com/in/gabapereira"
-                }
-            ]
-        },
-        {
-            "startDate": "2011-11",
-            "type": "software",
-            "name": "SCFG",
-            "endDate": "2011-11",
-            "description": "Web Application developed in PHP used to manage financial projects. Between the technologies used are: the framework CakePHP, HTML, CSS, Twitter Bootstrap, Javascript with the jQuery Library, SQL and MySQL.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Mehran Misaghi",
-                    "profile": "https://br.linkedin.com/pub/mehran-misaghi/7/ba0/738"
-                },
-                {
-                    "name": "Luiz Camargo",
-                    "profile": "https://br.linkedin.com/pub/luiz-camargo/17/18/a5a"
-                }
-            ]
-        },
-        {
-            "startDate": "2011-08",
-            "type": "website",
-            "name": "Joinville Square Garden",
-            "endDate": "2011-08",
-            "description": "A website project developed in PHP with the Joomla CMS.",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Gabriel Pereira",
-                    "profile": "https://br.linkedin.com/in/gabapereira"
-                }
-            ]
-        },
-        {
-            "startDate": "2011-04",
-            "type": "software",
-            "name": "Softicket Web",
-            "endDate": "2011-04",
-            "description": "Web Management System developed in PHP Zend Framework 1.1x to manage the Soficket POS (Point of Sale).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Gabriel Pereira",
-                    "profile": "https://br.linkedin.com/in/gabapereira"
-                }
-            ]
-        },
-        {
-            "startDate": "2010-10",
-            "type": "software",
-            "name": "Igrezuka",
-            "endDate": "2010-10",
-            "description": "Ecclesiastical Web Application developed in PHP (Term Paper).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Adan Felipe Medeiros",
-                    "profile": "https://br.linkedin.com/in/adanfm"
-                },
-                {
-                    "name": "Fernando Mariano",
-                    "profile": "https://br.linkedin.com/pub/fernando-mariano/23/326/ba1/en"
-                }
-            ]
-        },
-        {
-            "startDate": "2010-01",
-            "type": "software",
-            "name": "Deus Provedor",
-            "endDate": "2010-01",
-            "description": "Ecclesiastical Web Application developed in PHP5 (OOP).",
-            "members": [
-                {
-                    "name": "João Paulo Cercal",
-                    "profile": "https://br.linkedin.com/in/jpcercal"
-                },
-                {
-                    "name": "Ademir Camillo",
-                    "profile": "https://br.linkedin.com/pub/ademir-camillo/23/458/6bb"
-                }
-            ]
-        }
-    ],
-    "references": [
-        {
-            "name": "Peyman Pouryekta (https://www.linkedin.com/in/peymanpouryekta/)",
-            "reference": "When I hired João I was sure he is a skilled senior engineer. After the first few weeks he already exceeded my expectations. He is very professional and reflective, it was great to have him in the team. He proactively supported the team and has good communication skills. I can recommend him and personally hope to have the chance to work with him again."
-        },
-        {
-            "name": "Ricardo Lüders (https://www.linkedin.com/in/ricardoluders/)",
-            "reference": "Profissional dedicado e bastante interessado em progredir profissionalmente, por este motivo possuí metas profissionais bem claras. Busca sempre dominar as tecnologias com as quais trabalha e não encontra dificuldades ao enfrentar novos desafios."
-        },
-        {
-            "name": "Rafael César (https://www.linkedin.com/in/rafaelcneves/)",
-            "reference": "No tempo que trabalhei com o João, tive a oportunidade de perceber e ver que é um excelente profissional, possui facilidade de trabalhar em grupo e está apto para enfrentar qualquer desafio na área de desenvolvimento para web."
-        },
-        {
-            "name": "Ariane Rocha (https://www.linkedin.com/in/arianerocha/)",
-            "reference": "É sempre inspirador trabalhar ao lado de alguém que realmente gosta do que faz, que tem vontade de adquirir conhecimento, se atualizar e que busca por inovação. O Cercal tem esse perfil, é um excelente profissional, e apesar de não ter trabalhado na mesma equipe, sempre foi possível, através de conversas, ver isso nele. Sempre dando dicas à respeito de tecnologias, compartilhando soluções, idéias e novas bibliotecas que poderiam ser úteis."
-        },
-        {
-            "name": "Eliane de Faria Sezerino (https://www.linkedin.com/in/eliane-de-faria-sezerino-1a88b321/)",
-            "reference": "Trabalhei com João Paulo Cercal na Humantech, ele é um profissional dedicado, sempre em busca de desafios e atualização."
-        },
-        {
-            "name": "Rafael Fernandes (https://www.linkedin.com/in/basask/)",
-            "reference": "João Cercal é um profissional bastante focado e dedicado ao aperfeiçoamento de suas habilidades de desenvolvedor. Sempre se mostrou bastante calmo e prestativo na condução das tarefas diárias com sua equipe."
-        },
-        {
-            "name": "João Salves (https://www.linkedin.com/in/joao-salves/)",
-            "reference": "Tive a grande oportunidade de trabalhar com o Cercal na Humantech. Posso afirmar que ele é um cara extremamente dedicado, competente, esforçado e que está sempre buscando o melhor. Além disto, é um excelente colega de trabalho."
-        },
-        {
-            "name": "Victor Vargas de Andrade (https://www.linkedin.com/in/victorvargasdeandrade/)",
-            "reference": "João Paulo aprende rápido e tem interesse em buscar mais conhecimento."
-        },
-        {
-            "name": "Priscila Coral (https://www.linkedin.com/in/priscilacoral/)",
-            "reference": "O João é competente, carismático e um excelente colega de trabalho. Sempre disposto a ajudar no que for preciso e atento às necessidades do cliente e da empresa."
-        },
-        {
-            "name": "Jeniffer Eleutério (https://www.linkedin.com/in/jeniffer-eleut%C3%A9rio-95493139/)",
-            "reference": "João Paulo, é um profissional focado, dedicado, extremamente detalhista, crítico nas análises, desta forma somou muito na A2C no tempo que ficou conosco."
-        },
-        {
-            "name": "Adenilson Melo (https://www.linkedin.com/in/adenilson/)",
-            "reference": "O João Paulo é um profissional extremamente focado e com uma ótima qualidade técnica. Tem um bom censo crítico para questionamentos de processos e para a proposição de melhorias."
-        },
-        {
-            "name": "Anderson de Andrade (https://www.linkedin.com/in/andersondeandrade/)",
-            "reference": "João Paulo participou ativamente na A2C em diversos projetos e plataformas como PHP, Symfony (framework utilizado para desenvolver o projeto do portal 3M Inovação, Monitor Eleitoral e MIP), Wordpress (auxílio em alguns projetos como o do CHA Hotéis), HTML, CSS, Javascript, jQuery, API’s (Livebuzz e Mail2Easy), MySQL (banco de dados do Monitor Eleitoral), PostgreSQL (banco de dados do portal 3M Inovação), GIT (controle e versionamento do código fonte), administração de servidores e desktop Linux na infra da Amazon (utilizando os serviços da AWS: EC2, RDS, S3) e afins."
-        },
-        {
-            "name": "Lucas Danilo Masson (https://www.linkedin.com/in/lukmass/)",
-            "reference": "O João trabalhou comigo em 2 projetos e nestes 2 projetos foi habilidoso e atento as atividades. Não fazia somente por fazer, entedia o contexto e nunca fazia com dúvidas. Sempre perguntava antes de executar e se tinha uma solução mais adequada a apresentava. Foi uma experiência gratificante trabalhar com o João."
-        },
-        {
-            "name": "Eduardo Herenyi (https://www.linkedin.com/in/herenyi/)",
-            "reference": "João Paulo, exerceu função de desenvolvedor PHP em vários projetos da A2C. Tem responsabilidade e comprometimento, foco na qualidade de processos e entregas."
-        },
-        {
-            "name": "Charles A. Müller (https://www.linkedin.com/in/charlesmuller/)",
-            "reference": "João é um developer experiente, com conhecimento profundo em plataforma Linux / PHP. João Paulo Cercal trabalhou comigo na agência A2C, em que destaco o projeto do site 3M Inovação, aplicando todas as boas práticas de SEO especificadas na análise e também ajustando o site para que ficasse bem mais rápido."
-        },
-        {
-            "name": "Bruno Duarte (https://www.linkedin.com/in/bruno-duarte-ux-designer/)",
-            "reference": "João é um profissional dedicado, focado e extremamente competente. Nos trabalhos que realizamos juntos mostrou grandes qualidades técnicas e facilidade em lidar com mudanças de diretrizes. Extremamente profissional."
-        },
-        {
-            "name": "Michel Deunizio (https://www.linkedin.com/in/micheldeunizio/)",
-            "reference": "João Paulo é um Web Developer especialista, conhecimento muito profundo no desenvolvimento de sistemas, pontual em todas as etapas do processo, idéias e implementações inovadoras. Trabalho impecável."
-        },
-        {
-            "name": "Adan Felipe Medeiros (https://www.linkedin.com/in/edmilson-s-teixeira/)",
-            "reference": "O João Paulo é um excelente desenvolvedor, comprometido e dedicado com os projetos que esta participando."
-        },
-        {
-            "name": "Edmilson S. Teixeira (https://www.linkedin.com/in/edmilson-s-teixeira/)",
-            "reference": "João Paulo é um desenvolvedor dedicado e sempre atento, buscando aprender e por em prática novas habilidades e novos conhecimentos."
-        },
-        {
-            "name": "Rolf Scholz Neto (https://www.linkedin.com/in/rodrigobruner/)",
-            "reference": "Profissional com excelente articulação, o João se comunica muito bem e não se contenta apenas em realizar os projetos, traz novas ideias para atender os objetivos do projeto, além de dominar toda a parte de analise e desenvolvimento web."
-        },
-        {
-            "name": "Rodrigo Bruner (https://www.linkedin.com/in/rodrigobruner/)",
-            "reference": "O João Paulo foi meu aluno no Curso Técnico de Informática, se demonstrava ser muito interessado e ativo nas aulas, apresentava um elevado conhecimento técnico e sempre comprometimento nas atividades, o curso se encerrou, mas sempre o encontro em seminários e palestras referente a tecnologia, comprovando seu ávido interesse por tecnologia."
-        }
+    "profiles": [
+      {
+        "network": "linkedin",
+        "username": "elisetecercal",
+        "url": "https://linkedin.com/in/elisetecercal/"
+      },
+      {
+        "network": "github",
+        "username": "elisetecercal",
+        "url": "https://github.com/elisetecercal"
+      }
     ]
+  },
+  "work": [
+    {
+      "company": "QA Coders & Pipoca Ágil aaa",
+      "position": "QA Volunteer",
+      "website": "",
+      "startDate": "2023-07",
+      "summary": "",
+      "highlights": [
+        "Designed and executed test cases following best practices for various scenarios",
+        "Documented testing processes using Gherkin methodology and developed skills in automated testing with Cypress",
+        "Conducted API testing with Postman and Robot Framework",
+        "Worked in an Agile team setting at Pipoca Ágil, applying Scrum practices to manage and coordinate projects effectively",
+        "Leveraged project management tools like Jira, Trello, and Azure DevOps for Agile workflows",
+        "Attended some QA conferences, gaining insights from experts and improving my understanding of advanced QA practices"
+      ]
+    },
+    {
+      "company": "and Freelancer in German IT Market  ",
+      "position": "HR  Intern at A2C ",
+      "website": "",
+      "startDate": "2014-07",
+      "endDate": "2022-06",
+      "summary": "",
+      "highlights": [
+        "Recruited IT talent, overseeing the entire recruitment lifecycle from sourcing to onboarding",
+        "Advised clients on optimizing hiring strategies and improving candidate evaluation processes",
+        "Recruited and onboarded new employees, conducting initial screening and extending offers",
+        "Managed HR administrative functions, including payroll, employee records, vacation schedules, and monthly HR reporting",
+        "Contributed to HR initiatives, such as 360-feedback processes, enhancing team cohesion and retention"
+      ]
+    },
+
+    {
+      "company": "Tecnicon",
+      "position": "Business Assistant",
+      "website": "",
+      "startDate": "2012-07",
+      "endDate": "2013-06",
+      "summary": "",
+      "highlights": [
+        "Managed lead generation and communication, providing ERP-based solutions tailoredt o client needs",
+        "Ulized CRM tools to maintain client relations through calls,emails,and conferences",
+        "Collaborated with colleagues to organize corporate events, team-building activities, and celebrations, contributing to a positive organizational culture."
+      ]
+    }
+  ],
+
+  "certificates": [
+    {
+      "name": "Bachelor Degree in Human Resources Management - UNISOCIESC",
+      "date": "2012-01-15",
+      "url": "https://www.unisociesc.com.br/graduacao/gestao-de-recursos-humanos/",
+      "issuer": "UNISOCIESC"
+    },
+    {
+      "name": "Manual Software Testing - Udemy - (16 hours)",
+      "date": "2024-01-15",
+      "url": "https://www.udemy.com/course/teste-de-software-manual-do-planejamento-a-execucao/?couponCode=KEEPLEARNING",
+      "issuer": "Udemy"
+    },
+    {
+      "name": "The Complete Quality Assurance Course - Udemy - (9.5 hours)",
+      "date": "2023-10-12",
+      "url": "https://www.udemy.com/course/the-complete-quality-assurance/?couponCode=KEEPLEARNING",
+      "issuer": "Udemy"
+    },
+    {
+      "name": "Introdution Software Testing - Coursera - (16 hours)",
+      "date": "2023-12-15",
+      "url": "https://www.coursera.org/learn/intro-teste-de-software",
+      "issuer": "University of São Paulo (USP)"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Portuguese",
+      "fluency": "Native"
+    },
+
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    },
+    {
+      "language": "German",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "skills": [
+    {
+      "name": "QA",
+      "level": "100",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Cypress",
+      "level": "60",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "SDLC",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": true
+      }
+    },
+    {
+      "name": "Manual Testing",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": true
+      }
+    },
+    {
+      "name": "Gherkin",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": true
+      }
+    },
+    {
+      "name": "Agile",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Jira",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Trello",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Notion",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Figma",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Miro",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+
+    {
+      "name": "Functional Testing",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": true
+      }
+    },
+    {
+      "name": "End-to-end Testing",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+
+    {
+      "name": "Test Case",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": true
+      }
+    },
+    {
+      "name": "Test Planning",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": true
+      }
+    },
+    {
+      "name": "Storytelling methodology",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Scrum",
+      "level": "65",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Selenium",
+      "level": "55",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+
+    {
+      "name": "Postman",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Team Collaboration",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+    {
+      "name": "Adaptability",
+      "level": "75",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+
+    {
+      "name": "Effective Communication",
+      "level": "85",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+
+    {
+      "name": "Robot Framework",
+      "level": "87",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    },
+
+    {
+      "name": "Problem-solving",
+      "level": "80",
+      "keywords": [],
+      "meta": {
+        "icon": "",
+        "display": true,
+        "highlighted": false
+      }
+    }
+  ],
+  "awards": [],
+  "projects": [],
+  "references": []
 }

@@ -47,7 +47,7 @@
 						<div class="mb-3">
 							<span class="font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal">&lt;</span><span class="font-family--monospace text-color--gray fs-6 fw-light fst-normal">{{basics.label}}</span><span class="font-family--monospace text-color--blue fs-6 fw-light fst-normal">/</span><span class="font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal">&gt;</span>
 						</div>
-						<p class="m-0 p-0 pe-3 d-block text-color--gray fw-light fst-normal">Hi, my name is <strong class="fw-bold fst-normal text-color--highlight">{{basics.name}}</strong> (BSc in Information Systems). {{basics.summary}} <span class="text-color--highlight">♥</span></p>
+						<p class="m-0 p-0 pe-3 d-block text-color--gray fw-light fst-normal">{{basics.summary}} <span class="text-color--highlight">♥</span></p>
 					</section>
 				</div>
 			</div>
@@ -69,46 +69,73 @@
 				</div>
 			</div>
 
-			<div class="col-12 p-0 m-0 mt-3 mb-2">
-				<div class="row p-0 m-0">
-					<section class="col-12 p-0 m-0 mt-4">
-						<h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">skills</h1>
-						<small class="d-block font-family--monospace text-center text-color--gray fs-6 fw-light fst-normal">(some of the things I've been working with)</small>
-						<div class="font-family--monospace text-color--highlight text-center m-0 p-0 mb-3">...</div>
-
-						<div class="background background--skills">
-							<div id="skills" class="skills"></div>
-						</div>
-					</section>
-				</div>
-			</div>
-
 			<div class="col-12 p-0 m-0">
 				<div class="row p-0 m-0">
-					<section class="work-experience col-12 p-0 m-0 mt-2">
+					<section class="work-experience col-12 p-0 m-0 mt-5">
 						<h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">latest work experience</h1>
-						<small class="d-block font-family--monospace text-center text-color--gray fs-6 fw-light fst-normal">(you can check previous positions on my linkedin profile)</small>
-						<div class="font-family--monospace text-color--highlight text-center m-0 p-0 mb-4">...</div>
 
                         <div class="work-experience--items">
                             {{#each work}}
                                 <div class="work-experience--item row p-0 m-0 ms-4 me-5 mt-3 align-items-center d-flex">
                                     <div class="col-12 p-0 m-0">
                                         <ul class="list-inline">
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--highlight fs-6 fw-light fst-normal">&lt;?php</li>
-                                            <li class="list-inline-item m-0 p-0 ms-2 me-1 font-family--monospace text-color--blue fs-6 fw-light fst-normal">echo</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal">"</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--dark fs-6 fw-light fst-normal" style="text-indent: -4px;">{{this.position}} at {{this.company}}</li>
+                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--highlight fs-6 fw-light fst-normal">🐞</li>
+                                            <li class="list-inline-item m-0 p-0 ms-2 me-1 font-family--monospace text-color--blue fs-6 fw-light fst-normal"></li>
+                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal"></li>
+                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--dark fs-6 fw-light fst-normal" style="text-indent: -4px;">{{this.position}} {{this.company}}</li>
                                             <li class="list-inline-item m-0 p-0 font-family--monospace text-color--light-gray fs-6 fw-light fst-normal">({{compileWorkPeriod this.startDate this.endDate}})</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">"</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">;</li>
+                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;"></li>
+                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">.</li>
                                         </ul>
                                     </div>
-                                    <div class="col-12 p-0 m-0 mt-1">
+                                    <div class="col-12 p-0 m-0 mt-1 work-experience--highlights">
                                         <ul class="m-0 p-0 ms-5 ps-2">
                                             {{#each this.highlights}}
-                                                <li class="my-2 d-inline-block fw-light fst-normal">{{.}}{{#if @last}}.{{else}};{{/if}}</li>
+                                                <li class="my-2 d-inline-block fw-light fst-normal work-experience--highlight">{{.}}{{#if @last}}.{{else}};{{/if}}</li>
                                             {{/each}}
+                                        </ul>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+					</section>
+				</div>
+			</div>
+
+
+            <div class="col-12 p-0 m-0">
+				<div class="row p-0 m-0 mt-1">
+					<section class="certificates col-12 p-0 m-0 mt-4">
+						<h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">courses</h1>
+
+                        <div class="certificates--items">
+                            {{#each certificates}}
+                                <div class="certificates--item row p-0 m-0 ms-4 me-5 mt-3 align-items-center d-flex">
+                                    <div class="col-12 p-0 m-0">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item m-0 ms-5 p-0 font-family--monospace text-color--light-gray fs-6 fw-light fst-normal">{{this.name}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+					</section>
+				</div>
+			</div>
+
+
+            <div class="col-12 p-0 m-0">
+				<div class="row p-0 m-0 mt-1">
+					<section class="languages col-12 p-0 m-0 mt-4">
+						<h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">languages</h1>
+
+
+                        <div class="languages--items">
+                            {{#each languages}}
+                                <div class="languages--item row p-0 m-0 ms-4 me-5 mt-3 align-items-center d-flex">
+                                    <div class="col-12 p-0 m-0">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item m-0 ms-5 p-0 font-family--monospace text-color--light-gray fs-6 fw-light fst-normal">{{this.language}} - {{this.fluency}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -119,5 +146,17 @@
 			</div>
 		</div>
 	</div>
+
+    <div class="col-12 p-0 m-0 mt-3">
+        <div class="row p-0 m-0">
+            <section class="col-12 p-0 m-0">
+                <h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">skills</h1>
+
+                <div class="background background--skills">
+                    <div id="skills" class="skills"></div>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
