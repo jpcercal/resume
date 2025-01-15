@@ -10,9 +10,9 @@
         "email": "jpcercal@gmail.com",
         "phone": "+351 910 958 555",
         "website": "https://jpcercal.com/en/",
-        "summary": "I am passionate about creating innovative, scalable solutions that empower people to do what they love. I've become a PHP specialist with expertise in Golang and other languages, working with talented individuals worldwide. Since 2009, I've been a dedicated web developer and a certified Senior Software Engineer.",
+        "summary": "I am passionate about creating innovative, scalable solutions that empower people to do what they love. I've become a PHP specialist with expertise in Golang and other languages, working with talented individuals worldwide. Since 2009, I've been a dedicated web developer and a certified Staff Software Engineer.",
         "location": {
-            "address": "Coimbra, Portugal"
+            "address": "Portugal"
         },
         "profiles": [
             {
@@ -29,10 +29,23 @@
     },
     "work": [
         {
+            "company": "LastPass",
+            "position": "Staff Software Engineer",
+            "website": "",
+            "startDate": "2024-08",
+            "summary": "",
+            "highlights": [
+                "Security and Risk Mitigation: Leading initiatives to prevent account takeovers and managing Akamai services, including Bot Management and WAF, to enhance platform security and protect user data",
+                "Engineering and Automation: Delivering scalable, high-performance software solutions and optimizing processes through automation to improve reliability and reduce manual effort",
+                "Leadership and Mentorship: Driving project design and development strategies as a Tech Lead while mentoring junior developers and fostering a culture of continuous learning and professional growth"
+            ]
+        },
+        {
             "company": "Emma",
             "position": "Senior Software Engineer",
             "website": "",
             "startDate": "2024-03",
+            "endDate": "2024-07",
             "summary": "",
             "highlights": [
                 "Architected, designed, improved, and implemented Emma’s technology components, boosting e-commerce performance by developing features in Golang and Java. This led to fast order processing with an event-driven architecture, enhancing the end-to-end purchase process, fewer bugs from better test coverage using testing containers, and streamlined service dependencies, reducing team conflicts",
@@ -64,19 +77,6 @@
                 "By designing, developing, and launching scalable solutions to tackle intricate business challenges, with a lasting focus on scalability, I significantly improved operational efficiency, expanded the company's market presence, and ensured long-term adaptability, driving the business to new heights",
                 "Led backend chapter meetings, mentored junior developers, and played a crucial role in defining migration strategies for essential platform changes",
                 "Introduced architectural decision records (ADRs), conducted post-mortems, and facilitated lightning talks to promote a culture of continuous improvement within the engineering team"
-            ]
-        },
-        {
-            "company": "GetYourGuide",
-            "position": "Senior PHP Developer",
-            "website": "",
-            "startDate": "2018-12",
-            "endDate": "2020-07",
-            "summary": "",
-            "highlights": [
-                "Impacting and changing the way how millions of travelers connect to the places they visit, using weekends, building relationships, visiting relatives, and discovering the world",
-                "Aligning the product with technical decisions while having the customer at first, but also considering data over guessing have guided me to influence in a killer feature to contact us through WhatsApp in which our travelers can get support from their smartphones. It increased the second customer purchase metric considerably and helped us to retain customers",
-                "Test-driven oriented, impacting the way that engineers see unit test bringing then, the quality of the product to the next level"
             ]
         }
     ],
