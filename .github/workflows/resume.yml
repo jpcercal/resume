@@ -64,15 +64,15 @@ jobs:
           script: |
             const fs = require('fs').promises;
 
-            const padding = (v) => v < 10 ? `0${v}` : v;
+            const pad = (v) => v < 10 ? `0${v}` : v;
 
-            const date = new Date();
-            const year = padding(date.getFullYear());
-            const month = padding(date.getMonth());
-            const day = padding(date.getDate());
-            const hours = padding(date.getHours());
-            const minutes = padding(date.getMinutes());
-            const seconds = padding(date.getSeconds());
+            const d = new Date();
+            const year = pad(d.getFullYear());
+            const month = pad(d.getMonth() + 1);
+            const day = pad(d.getDate());
+            const hours = pad(d.getHours());
+            const minutes = pad(d.getMinutes());
+            const seconds = pad(d.getSeconds());
 
             const major = year - 2023;
             const minor = month;
@@ -84,10 +84,10 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: `refs/tags/${releaseName}`,
-              sha: context.sha
+              sha: context.sha,
             });
 
-            const createReleaseResponse = await github.rest.repos.createRelease({
+            const release = await github.rest.repos.createRelease({
               draft: false,
               generate_release_notes: true,
               name: releaseName,
@@ -101,8 +101,8 @@ jobs:
               name: 'resume.pdf',
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: createReleaseResponse.data.id,
-              data: await fs.readFile('./resume.pdf')
+              release_id: release.data.id,
+              data: await fs.readFile('./resume.pdf'),
             });
 
             return releaseName;
