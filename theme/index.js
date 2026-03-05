@@ -84,6 +84,40 @@ exports.render = async (resume) => {
     );
   });
 
+  Handlebars.registerHelper("jsonLd", () => {
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": basics.name,
+      "jobTitle": basics.label,
+      "description": basics.summary,
+      "image": basics.picture,
+      "email": basics.email ? `mailto:${basics.email}` : undefined,
+      "telephone": basics.phone,
+      "url": basics.website,
+      "address": basics.location ? {
+        "@type": "PostalAddress",
+        "addressLocality": basics.location.address,
+      } : undefined,
+      "sameAs": (basics.profiles || []).map((p) => p.url),
+      "hasOccupation": (work || []).map((w) => ({
+        "@type": "Occupation",
+        "name": w.position,
+        "hiringOrganization": { "@type": "Organization", "name": w.company },
+        "startDate": w.startDate,
+        "endDate": w.endDate || undefined,
+      })),
+      "knowsAbout": (skills || []).filter((s) => s.meta?.display).map((s) => s.name),
+      "knowsLanguage": (languages || []).map((l) => ({
+        "@type": "Language",
+        "name": l.language,
+      })),
+    };
+    return new Handlebars.SafeString(
+      `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`,
+    );
+  });
+
   // ── Pre-process skills ──────────────────────────────────────────────────
   // Filter to displayed ones; highlighted first, then sorted by level desc.
   const displayedSkills = (skills || [])
