@@ -27,16 +27,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
+    <!-- ═══ Styles (compiled TailwindCSS + custom classes) ═════════════════ -->
+    <style>
+        {{style}}
+    </style>
+
     <!-- ═══ Structured data — schema.org/Person (machine-readable) ═════════
          Enables ATS systems, search engines, and AI agents to parse the resume
          as structured data without relying on visual layout interpretation.
          ════════════════════════════════════════════════════════════════════ -->
     {{{jsonLd}}}
-
-    <!-- ═══ Styles (compiled TailwindCSS + custom classes) ═════════════════ -->
-    <style>
-        {{style}}
-    </style>
 </head>
 <body>
     <!-- ═══ Page decorative background (aria-hidden — purely visual) ═══════ -->
@@ -58,20 +58,22 @@
         <div class="page__content">
             <div class="basics__identity">
 
-                <div class="flex w-full justify-center items-center mb-6">
-                    <div class="w-1/4">
-                        <!-- h1: primary page heading — document title for screen readers and PDF outline -->
-                        <h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
+
+                    <div class="flex w-full justify-center items-center mb-6">
+                        <div class="w-1/4">
+                            <!-- h1: primary page heading — document title for screen readers and PDF outline -->
+                            <h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
+                        </div>
+                        <div class="w-1/4">
+                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                            <h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">{{basics.label}}</h2>
+                        </div>
+                        <div class="w-1/2">
+                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                            <h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">{{ meta.mission_statement }}</h3>
+                        </div>
                     </div>
-                    <div class="w-1/4">
-                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
-                        <h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">{{basics.label}}</h2>
-                    </div>
-                    <div class="w-1/2">
-                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
-                        <h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">{{ meta.mission_statement }}</h3>
-                    </div>
-                </div>
+
 
                 {{#if basics.picture}}
                 <figure class="basics__photo-figure" role="img" aria-label="Profile photo of {{basics.name}}">
