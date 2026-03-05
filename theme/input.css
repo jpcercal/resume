@@ -1,3 +1,9 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. TAILWIND IMPORT & DESIGN TOKENS
+   Tailwind v4 uses @theme for CSS custom properties (design tokens).
+   All colour and typography values are defined here — no raw literals elsewhere.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @import "tailwindcss";
 
 @theme {
@@ -26,13 +32,28 @@
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "Courier New", monospace;
 
-  /* ── Accent alias ────────────────────────────────────────────────────── */
+  /* ── Accent alias — exposes --color-primary-500 as --color-accent so
+        .text-accent utility and var(--color-accent) continue to work ──── */
   --color-accent: var(--color-primary-500);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. CSS RESET NOTE
+   @import "tailwindcss" includes Tailwind Preflight — a normalize/reset layer
+   that applies box-sizing: border-box, removes default margins, normalises
+   headings, lists, etc. No additional reset stylesheet is required.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. BASE / BODY
+   font-size is set in px here as the authoritative baseline for print output
+   (PDF rendering via Puppeteer/Chromium). All child elements use rem so they
+   scale relative to this single px root.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 body {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 14px; /* px baseline for print — children use rem */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -41,9 +62,10 @@ body {
   print-color-adjust: exact;
 }
 
-.text-accent {
-  color: var(--color-accent);
-}
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. PAGE BACKGROUND
+   Fixed full-page decorative SVG wave pattern rendered behind all content.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 .page__background-top {
   position: relative;
@@ -106,11 +128,29 @@ body {
   background-position: bottom;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. ACCENT COLOUR UTILITY
+   Exposes the primary-500 brand colour as a composable utility class. Used
+   inline in the template for accent-coloured text spans and labels.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. BASICS — IDENTITY (JSON Resume: basics.name / basics.label / basics.summary)
+   The .basics block is the page header containing the candidate's name,
+   label, tagline, and professional summary.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Block: page header wrapper */
 .basics {
   background-color: var(--color-neutral-0);
   border-bottom: 2px solid var(--color-neutral-300);
 }
 
+/* Element: inner container — clearfix so it grows around the floated photo */
 .basics__identity {
   max-width: 56rem;
   margin: 0 auto;
@@ -156,6 +196,7 @@ body {
   border-left: none;
 }
 
+/* Element: professional summary paragraph */
 .basics__summary {
   font-size: 0.8rem;
   line-height: 1.65;
@@ -163,15 +204,24 @@ body {
   margin: 0;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. BASICS — PHOTO (JSON Resume: basics.picture)
+   Profile photo floated left; text in .basics__identity flows around it
+   using CSS shape-outside.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Element: <figure> wrapper around the photo — inherits the float so text wraps */
 .basics__photo-figure {
   float: left;
   margin: 0;
+  -webkit-shape-outside: circle(50%);
   shape-outside: circle(50%);
   margin-right: 1.25rem;
   margin-bottom: 0.5rem;
   margin-top: 0.25rem;
 }
 
+/* Element: circular profile photo inside the figure */
 .basics__photo {
   display: block;
   width: 5.5rem;
@@ -181,6 +231,8 @@ body {
   border: 0.1rem solid var(--color-neutral-300);
 }
 
+/* Element: figcaption — visually hidden; preserved in PDF tagged structure and
+   read by screen readers as an accessible description of the photo */
 .basics__photo-figure figcaption {
   position: absolute;
   width: 1px;
@@ -193,16 +245,24 @@ body {
   border: 0;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. BASICS — CONTACTS (JSON Resume: basics.profiles / basics.email / basics.phone)
+   Horizontal strip of contact links rendered below the identity block.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Override Tailwind Preflight — <address> is italicised by browsers by default */
 address.basics__contacts {
   font-style: normal;
 }
 
+/* Element: contact strip container */
 .basics__contacts {
   background-color: rgba(249, 250, 251, 0.85);
   border-top: 1px solid rgba(229, 231, 235, 0.8);
   padding: 0.6rem 0;
 }
 
+/* Block: individual contact link (profile, email, phone) */
 .contact {
   display: inline-flex;
   align-items: center;
@@ -211,6 +271,7 @@ address.basics__contacts {
   font-weight: 500;
   color: var(--color-neutral-700);
   text-decoration: none;
+  -webkit-transition: color 0.12s ease;
   transition: color 0.12s ease;
 }
 
@@ -222,15 +283,22 @@ address.basics__contacts {
   border-radius: 0.75rem;
 }
 
+/* Nested SVG icon inside any contact link */
 .contact svg {
   flex-shrink: 0;
   color: var(--color-neutral-700);
+  -webkit-transition: color 0.12s ease;
   transition: color 0.12s ease;
 }
 
 .contact:hover {
   color: var(--color-accent);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   9. SECTION HEADING (shared across: work, skills, and future sections)
+   Small-caps uppercase label with accent colour and a bottom border rule.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 .section__heading {
   font-size: 0.6rem;
@@ -245,11 +313,18 @@ address.basics__contacts {
   border-bottom: 0.05rem solid var(--color-skill-border);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   10. WORK (JSON Resume: work[].highlights / work[].summary)
+   Bullet-point items for work experience highlights.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Block: work experience entry — semantic <article> wrapper */
 .work__entry {
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
+/* Element: header row inside a work entry */
 .work__entry-header {
   display: flex;
   align-items: baseline;
@@ -257,28 +332,32 @@ address.basics__contacts {
   gap: 0.75rem;
 }
 
+/* Element: h3 title containing position and company */
 .work__entry-title {
   min-width: 0;
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
   flex-wrap: wrap;
-  margin: 0;
-  font-size: inherit;
+  margin: 0; /* override Preflight h3 margin */
+  font-size: inherit; /* keep visual size controlled by child spans */
 }
 
+/* Element: position span within the h3 */
 .work__position {
   font-weight: 600;
   color: var(--color-neutral-900);
   font-size: 0.875rem;
 }
 
+/* Element: company span within the h3 */
 .work__company {
   color: var(--color-accent);
   font-weight: 500;
   font-size: 0.875rem;
 }
 
+/* Element: date range paragraph */
 .work__period {
   font-size: 0.75rem;
   color: var(--color-neutral-500);
@@ -287,6 +366,12 @@ address.basics__contacts {
   margin: 0;
 }
 
+/* Element: <time> inside the period — inherit styles, no extra chrome */
+.work__period time {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Element: unordered highlights list — Preflight strips list styles; restore clean state */
 .work__highlights-list {
   list-style: none;
   padding: 0;
@@ -296,11 +381,13 @@ address.basics__contacts {
   gap: 0.375rem;
 }
 
+/* Block: a single highlight bullet or summary paragraph */
 .work__highlight {
   position: relative;
   padding-left: 0.85rem;
 }
 
+/* Pseudo-element: small filled circle used as the bullet marker */
 .work__highlight::before {
   content: "";
   position: absolute;
@@ -312,6 +399,12 @@ address.basics__contacts {
   background-color: var(--color-accent);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   11. SKILLS (JSON Resume: skills[])
+   Pill badges — default (muted) and highlighted (accent-filled) variants.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Element: skills <ul> wrapper — Preflight strips list styles; restore clean state */
 .skills__list {
   list-style: none;
   padding: 0;
@@ -321,6 +414,7 @@ address.basics__contacts {
   gap: 0.375rem;
 }
 
+/* Block: skill badge pill */
 .skill {
   display: inline-block;
   padding: 0.18rem 0.55rem;
@@ -333,13 +427,28 @@ address.basics__contacts {
   white-space: nowrap;
 }
 
+/* Modifier: highlighted / featured skill — filled with accent colour */
 .skill--highlighted {
   background-color: var(--color-accent);
   color: var(--color-neutral-0);
   border-color: var(--color-accent);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   12. TAILWIND UTILITY SAFELIST
+   Tailwind v4 cannot scan Handlebars templates at build time. Every utility
+   used directly in template.hbs must be listed here via @source inline() so
+   Tailwind includes the generated CSS for those classes.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 @source inline("flex items-baseline justify-between gap-3 mb-3 min-w-0 gap-1 flex-wrap font-semibold text-gray-900 text-lg text-gray-400 text-sm text-gray-500 font-medium whitespace-nowrap flex-shrink-0 text-xs font-mono underline max-w-4xl mx-auto px-10 justify-center items-center gap-x-8 gap-y-1 mt-1.5 space-y-1.5 mt-3 space-y-5 break-inside-avoid mt-2 gap-1.5 py-7 space-y-6 text-gray-700 leading-relaxed -ml-2 w-full w-1/4 w-1/2 mb-6 italic -mr-2 text-gray-600 font-medium text-gray-300");
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   13. PAGE CONTENT WRAPPER
+   Provides 1cm side padding for all body content. .page__background and
+   .basics__contacts are intentionally outside this wrapper so they span
+   the full page width without side margins.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 .page__content {
   padding-left: 1.5cm;
@@ -347,6 +456,13 @@ address.basics__contacts {
   position: relative;
   z-index: 10;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   14. PRINT & PAGE
+   Top-level @page rule — CSS @page takes precedence over Puppeteer's JS
+   margin parameter in Chromium. Placed at top level (not inside @media print)
+   so Puppeteer's PDF pipeline picks it up correctly.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
 @page {
   size: A4;
@@ -361,6 +477,12 @@ address.basics__contacts {
   html {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+
+  /* Generic utility kept for backward compatibility */
+  .break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .work__entry {
