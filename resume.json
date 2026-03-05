@@ -11,7 +11,7 @@
     "email": "jpcercal@gmail.com",
     "phone": "+351 910 958 555",
     "website": "https://jpcercal.com/en/",
-    "summary": "I am passionate about creating innovative, scalable solutions that empower people to do what they love. I've become a PHP specialist with expertise in Golang and other languages, working with talented individuals worldwide. Since 2009, I've been a dedicated web developer and a certified Senior Software Engineer.",
+    "summary": "I am passionate about creating innovative, scalable solutions that empower people to do what they love. With over 17 years of continuous experience in software engineering, I've evolved from a hands-on developer into a technical leader who architects systems, drives platform reliability, and delivers measurable business impact. I thrive in taking ownership of complex, cross-functional challenges, from re-architecting critical user flows to optimizing cloud infrastructure and strengthening security posture at scale. I've worked with talented individuals worldwide and I am always looking for ways to raise the bar for the teams and systems I work with.",
     "location": {
       "address": "Coimbra, Portugal"
     },
@@ -198,8 +198,8 @@
       "keywords": [],
       "meta": {
         "icon": "",
-        "display": false,
-        "highlighted": false
+        "display": true,
+        "highlighted": true
       }
     },
     {
@@ -208,7 +208,7 @@
       "keywords": [],
       "meta": {
         "icon": "",
-        "display": false,
+        "display": true,
         "highlighted": false
       }
     },
