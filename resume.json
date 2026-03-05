@@ -1,7 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "meta": {
-    "lang": "en"
+    "lang": "en",
+    "mission_statement": "Architecting Systems & Empowering People"
   },
   "basics": {
     "name": "João Cercal",
