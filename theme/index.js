@@ -1,14 +1,19 @@
 const Handlebars = require('handlebars')
 const path = require('path')
-const sass = require('sass')
+const postcss = require('postcss')
+const tailwindcss = require('@tailwindcss/postcss')
 const fs = require('fs')
 
-exports.render = ({ meta, basics, skills, work }) => {
-	Handlebars.registerHelper('style', () => new Handlebars.SafeString(
-		sass
-			.compile(path.join(__dirname, 'style.scss'))
-			.css
-	))
+exports.render = async ({ meta, basics, skills, work }) => {
+	// Compile TailwindCSS from input.css
+	const inputCssPath = path.join(__dirname, 'input.css')
+	const inputCss = fs.readFileSync(inputCssPath, 'utf8')
+	const result = await postcss([tailwindcss()]).process(inputCss, {
+		from: inputCssPath,
+	})
+	const compiledCss = result.css
+
+	Handlebars.registerHelper('style', () => new Handlebars.SafeString(compiledCss))
 
 	Handlebars.registerHelper('compilePhoneNumber', (telephoneNumber) => new Handlebars
 		.SafeString(telephoneNumber

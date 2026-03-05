@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Primary palette (brand / accent — orange) ──────────────────────── */
+  --color-primary-300: #f97316;
+  --color-primary-500: #ed5f1a;
+  --color-primary-700: #c2410c;
+
+  /* ── Neutral palette (gray scale — mirrors Tailwind gray) ────────────── */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #e5e7eb;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-900: #111827;
+
+  /* ── Skill badge palette ────────────────────────────────────────────── */
+  --color-skill-bg: #f1f5f9;
+  --color-skill-text: #475569;
+  --color-skill-border: #e2e8f0;
+
+  /* ── Typography ─────────────────────────────────────────────────────── */
+  --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Courier New", monospace;
+
+  /* ── Accent alias ────────────────────────────────────────────────────── */
+  --color-accent: var(--color-primary-500);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: transparent;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
