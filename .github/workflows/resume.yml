@@ -2,45 +2,54 @@ name: Resume
 
 on: [push]
 
+env:
+  IMAGE: jpcercal/resume
+
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      # ── Build multi-arch image and push to Docker Hub ────────────────────
+      - uses: docker/setup-qemu-action@v3
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
         with:
-          node-version: '20'
-          cache: 'npm'
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - run: |
-          mkdir -p /opt/input/
-          mkdir -p /opt/output/
-          cp resume.json /opt/input/resume.json
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.IMAGE }}:latest,${{ env.IMAGE }}:${{ github.sha }}
 
-      - run: |
-          npm install
-
-      - run: |
-          npm run build
-
-      - run: |
-          cp -Rf /opt/output/* .
+      # ── Run the image to generate artifacts ──────────────────────────────
+      - name: Build resume
+        run: docker run --rm -v "$PWD:/app" ${{ env.IMAGE }}:${{ github.sha }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: resume.pdf
           path: resume.pdf
 
-      - run: |
+      # ── Commit PDF + preview back to the branch ───────────────────────────
+      - name: Commit build artifacts
+        run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add resume.pdf
-          git add resume-preview.pdf.png
-          git add resume-preview.json.png
+          git add resume.pdf resume-preview.pdf.png resume.html
           git commit --amend --no-edit
 
       - uses: ad-m/github-push-action@master
@@ -48,6 +57,7 @@ jobs:
           branch: ${{ github.ref }}
           force_with_lease: true
 
+      # ── Create versioned release (main branch only) ───────────────────────
       - uses: actions/github-script@v7
         if: github.ref == 'refs/heads/main'
         with:
