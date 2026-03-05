@@ -23,8 +23,8 @@
   --color-skill-border: #e2e8f0;
 
   /* ── Typography ─────────────────────────────────────────────────────── */
-  --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "Courier New", monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
 
   /* ── Accent alias ────────────────────────────────────────────────────── */
   --color-accent: var(--color-primary-500);
