@@ -1,39 +1,34 @@
-import { promises as fs } from 'fs'
-import * as theme from 'jsonresume-theme-local'
-import puppeteer from 'puppeteer'
-import { render } from 'resumed'
+import { promises as fs } from "fs";
+import * as theme from "jsonresume-theme-local";
+import puppeteer from "puppeteer";
+import { render } from "resumed";
 
-const resume = JSON.parse(await fs.readFile('/opt/input/resume.json', 'utf-8'))
-const html = await render(resume, theme)
+const resume = JSON.parse(await fs.readFile("/app/resume.json", "utf-8"));
+const html = await render(resume, theme);
 
 const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox']
-})
-const page = await browser.newPage()
+  headless: true,
+  args: ["--no-sandbox"],
+});
+const page = await browser.newPage();
 
-await page.setContent(html, { waitUntil: 'networkidle0' })
+await page.setContent(html, { waitUntil: "networkidle0" });
 await page.pdf({
-    path: '/opt/output/resume.pdf',
-    format: 'a4',
-    printBackground: true,
-    margin: {
-        top: '0px',
-        right: '0px',
-        bottom: '0px',
-        left: '0px',
-    }
-})
+  path: "/app/resume.pdf",
+  format: "a4",
+  printBackground: true,
+  tagged: true, // emit PDF/UA structure tree for screen readers and ATS parsers
+});
 await page.screenshot({
-    path: '/opt/output/resume-preview.pdf.png',
-    type: 'png',
-    clip: {
-        x: 0,
-        y: 0,
-        width: 800,
-        height: (29.7 * 37) * 2, // (A4 in centimeters to pixels) * 2 pages
-    }
-})
+  path: "/app/resume-preview.pdf.png",
+  type: "png",
+  clip: {
+    x: 0,
+    y: 0,
+    width: 800,
+    height: 29.7 * 37 * 2, // (A4 in centimeters to pixels) * 2 pages
+  },
+});
 
 const templateJson = `
 <html>
@@ -51,19 +46,19 @@ const templateJson = `
         </code>
     </body>
 </html>
-`
+`;
 
-console.log(templateJson)
+console.log(templateJson);
 
-await page.setContent(templateJson, { waitUntil: 'networkidle0' })
+await page.setContent(templateJson, { waitUntil: "domcontentloaded" });
 await page.screenshot({
-    path: '/opt/output/resume-preview.json.png',
-    type: 'png',
-    clip: {
-        x: 0,
-        y: 0,
-        width: 800,
-        height: 72
-    }
-})
-await browser.close()
+  path: "/app/resume-preview.json.png",
+  type: "png",
+  clip: {
+    x: 0,
+    y: 0,
+    width: 800,
+    height: 72,
+  },
+});
+await browser.close();

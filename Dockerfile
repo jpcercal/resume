@@ -1,43 +1,34 @@
-FROM node:20-alpine
+FROM node:24-alpine
 
-# Install dependencies
-RUN apk update && apk upgrade && \
-    apk add --no-cache \
+# Chromium and required system libs for Puppeteer
+RUN apk add --no-cache \
     chromium \
     nss \
     freetype \
     harfbuzz \
     ca-certificates \
-    fontconfig \
-    ttf-dejavu \
-    ttf-droid \
-    ttf-freefont \
-    ttf-liberation \
-    ttf-inconsolata
+    ttf-freefont
 
-# Set the environment variable to use the installed Chromium
-ENV PUPPETEER_SKIP_DOWNLOAD true
+# Use system Chromium — skip Puppeteer's bundled download
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-# Set working directory
-WORKDIR /opt/app
+# Install dependencies into /deps — outside the bind-mount target (/app).
+# This way, `docker run -v $PWD:/app` never shadows node_modules.
+WORKDIR /deps
+COPY package.json package-lock.json ./
+COPY theme/ ./theme/
+RUN npm ci
 
-# /opt/app    is where the application code is stored
-# /opt/input  is where it will look for the resume.json file
-# /opt/output is where it will save the generated files resume*.{png,html,pdf}
-COPY ./.puppeteerrc.cjs        /opt/app/.puppeteerrc.cjs
-COPY ./index.js                /opt/app/index.js
-COPY ./package-lock.json       /opt/app/package-lock.json
-COPY ./package.json            /opt/app/package.json
-COPY ./theme                   /opt/app/theme
-COPY ./resume.json             /opt/input/resume.json
-COPY ./resume-preview.json.png /opt/output/resume-preview.json.png
-COPY ./resume-preview.pdf.png  /opt/output/resume-preview.pdf.png
-COPY ./resume.html             /opt/output/resume.html
-COPY ./resume.pdf              /opt/output/resume.pdf
+# NODE_PATH lets Node resolve modules from /deps/node_modules for CJS.
+# For ESM, symlink /node_modules → /deps/node_modules so Node's ESM resolver
+# finds packages when walking up from /app/index.js: /app → / → /node_modules.
+ENV NODE_PATH=/deps/node_modules
+ENV PATH="/deps/node_modules/.bin:$PATH"
+RUN ln -s /deps/node_modules /node_modules
 
-# Install app dependencies
-RUN npm install
+WORKDIR /app
 
-# Command to run your application
-CMD ["npm", "run", "build"]
+# Source and outputs come from the bind-mount at runtime (-v "$PWD:/app").
+# Outputs (resume.pdf, preview PNGs) land in /app (= $PWD on host).
+ENTRYPOINT ["npm", "run", "build"]

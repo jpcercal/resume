@@ -1,123 +1,233 @@
 <!DOCTYPE html>
 <html lang="{{meta.lang}}">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{{basics.name}} - {{basics.label}}</title>
+    <!-- ═══ Primary document metadata ═════════════════════════════════════ -->
+    <title>{{basics.name}} — {{basics.label}}</title>
+    <meta name="description"  content="{{basics.summary}}">
+    <meta name="author"       content="{{basics.name}}">
+    <meta name="keywords"     content="resume, cv, curriculum vitae, {{basics.label}}, {{basics.name}}">
+    <meta name="generator"    content="jsonresume-theme-local">
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jqcloud2@2.0.3/dist/jqcloud.min.js"></script>
-    <script type="text/javascript">
-      	const skills = [{{compileSkills skills}}];
+    <!-- ═══ Open Graph — social sharing & machine preview ═════════════════ -->
+    <meta property="og:type"        content="profile">
+    <meta property="og:title"       content="{{basics.name}} — {{basics.label}}">
+    <meta property="og:description" content="{{basics.summary}}">
+    {{#if basics.picture}}
+    <meta property="og:image"       content="{{basics.picture}}">
+    {{/if}}
+    {{#if basics.website}}
+    <meta property="og:url"         content="{{basics.website}}">
+    {{/if}}
 
-		$(() => {
-			$("#skills").jQCloud(skills, {});
-		});
-    </script>
+    <!-- ═══ Fonts ══════════════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- ═══ Styles (compiled TailwindCSS + custom classes) ═════════════════ -->
+    <style>
+        {{style}}
+    </style>
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-	<style>
-		{{style}}
-	</style>
+    <!-- ═══ Structured data — schema.org/Person (machine-readable) ═════════
+         Enables ATS systems, search engines, and AI agents to parse the resume
+         as structured data without relying on visual layout interpretation.
+         ════════════════════════════════════════════════════════════════════ -->
+    {{{jsonLd}}}
 </head>
+<body>
+    <!-- ═══ Page decorative background (aria-hidden — purely visual) ═══════ -->
+    <div class="page__background-top" aria-hidden="true" role="presentation"></div>
 
-<body class="font-family--sans-serif">
-	<div class="mb-2 background background--first-page-top"></div>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         basics (JSON Resume: basics)
+         role="banner" marks this as the page-level header landmark for
+         screen readers and assistive technologies.
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <header class="basics page__background-header" role="banner">
 
-	<div class="container-fluid p-0">
+        <!-- ═══ basics — photo (JSON Resume: basics.picture) ══════════════════
+             Wrapped in <figure>/<figcaption> for semantic image grouping.
+             figcaption is visually hidden but read by screen readers and
+             preserved in the PDF tagged structure tree.
+             ═══════════════════════════════════════════════════════════════════ -->
+        <!-- ═══ basics — identity (JSON Resume: basics.name / basics.label / basics.summary) -->
+        <div class="page__content">
+            <div class="basics__identity">
 
-		<div class="row p-0 m-0">
-			<div class="col-3 p-0 m-0 ps-5">
-				<div class="row p-0 m-0">
-					<section class="col p-0 m-0 d-flex gap-1 align-items-center flex-column">
-						<img src="{{basics.picture}}" height="150px" class="m-0 p-0 d-block rounded-circle shadow-4-strong" alt="{{basics.name}}">
-					</section>
-				</div>
-			</div>
-			<div class="col-9 p-0 m-0 pe-5">
-				<div class="row p-0 m-0">
-					<section class="col p-0 m-0 ps-3 ms-4 d-flex gap-1 justify-items-center flex-column">
-						<div class="mb-3">
-							<span class="font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal">&lt;</span><span class="font-family--monospace text-color--gray fs-6 fw-light fst-normal">{{basics.label}}</span><span class="font-family--monospace text-color--blue fs-6 fw-light fst-normal">/</span><span class="font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal">&gt;</span>
-						</div>
-						<p class="m-0 p-0 pe-3 d-block text-color--gray fw-light fst-normal">Hi, my name is <strong class="fw-bold fst-normal text-color--highlight">{{basics.name}}</strong> (BSc in Information Systems). {{basics.summary}} <span class="text-color--highlight">♥</span></p>
-					</section>
-				</div>
-			</div>
-			<div class="col-12 p-0 m-0">
-				<div class="row p-0 m-0">
-					<div class="m-0 p-0 mt-3 btn-group d-flex justify-content-center flex-row">
-						{{#each basics.profiles}}
-							<a href="{{this.url}}" class="btn btn-light fw-light fst-normal font-family--monospace text-color--gray">
-								<i class="bi bi-{{this.network}}"></i> <small>/{{this.username}}</small>
-							</a>
-						{{/each}}
-						<a href="mailto:{{basics.email}}" class="btn btn-light fw-light fst-normal font-family--monospace text-color--gray">
-							<i class="bi bi-envelope-fill"></i> <small>{{basics.email}}</small>
-						</a>
-						<a href="tel:{{compilePhoneNumber basics.phone}}" class="btn btn-light fw-light fst-normal font-family--monospace text-color--gray">
-							<span><i class="bi bi-telephone-fill"></i> <small>{{basics.phone}}</small></span>
-						</a>
-					</div>
-				</div>
-			</div>
 
-			<div class="col-12 p-0 m-0 mt-3 mb-2">
-				<div class="row p-0 m-0">
-					<section class="col-12 p-0 m-0 mt-4">
-						<h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">skills</h1>
-						<small class="d-block font-family--monospace text-center text-color--gray fs-6 fw-light fst-normal">(some of the things I've been working with)</small>
-						<div class="font-family--monospace text-color--highlight text-center m-0 p-0 mb-3">...</div>
-
-						<div class="background background--skills">
-							<div id="skills" class="skills"></div>
-						</div>
-					</section>
-				</div>
-			</div>
-
-			<div class="col-12 p-0 m-0">
-				<div class="row p-0 m-0">
-					<section class="work-experience col-12 p-0 m-0 mt-2">
-						<h1 class="d-block text-capitalize font-family--monospace text-center text-color--highlight fs-5 fw-bold fst-normal">latest work experience</h1>
-						<small class="d-block font-family--monospace text-center text-color--gray fs-6 fw-light fst-normal">(you can check previous positions on my linkedin profile)</small>
-						<div class="font-family--monospace text-color--highlight text-center m-0 p-0 mb-4">...</div>
-
-                        <div class="work-experience--items">
-                            {{#each work}}
-                                <div class="work-experience--item row p-0 m-0 ms-4 me-5 mt-3 align-items-center d-flex">
-                                    <div class="col-12 p-0 m-0">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--highlight fs-6 fw-light fst-normal">&lt;?php</li>
-                                            <li class="list-inline-item m-0 p-0 ms-2 me-1 font-family--monospace text-color--blue fs-6 fw-light fst-normal">echo</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal">"</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--dark fs-6 fw-light fst-normal" style="text-indent: -4px;">{{this.position}} at {{this.company}}</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--light-gray fs-6 fw-light fst-normal">({{compileWorkPeriod this.startDate this.endDate}})</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">"</li>
-                                            <li class="list-inline-item m-0 p-0 font-family--monospace text-color--lighter-gray fs-6 fw-light fst-normal" style="text-indent: -5px;">;</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-12 p-0 m-0 mt-1">
-                                        <ul class="m-0 p-0 ms-5 ps-2">
-                                            {{#each this.highlights}}
-                                                <li class="my-2 d-inline-block fw-light fst-normal">{{.}}{{#if @last}}.{{else}};{{/if}}</li>
-                                            {{/each}}
-                                        </ul>
-                                    </div>
-                                </div>
-                            {{/each}}
+                    <div class="flex w-full justify-center items-center mb-6">
+                        <div class="w-1/4">
+                            <!-- h1: primary page heading — document title for screen readers and PDF outline -->
+                            <h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
                         </div>
-					</section>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <div class="w-1/4">
+                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                            <h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">{{basics.label}}</h2>
+                        </div>
+                        <div class="w-1/2">
+                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                            <h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">{{ meta.mission_statement }}</h3>
+                        </div>
+                    </div>
+
+
+                {{#if basics.picture}}
+                <figure class="basics__photo-figure" role="img" aria-label="Profile photo of {{basics.name}}">
+                    <img src="{{basics.picture}}"
+                        alt="Professional headshot of {{basics.name}}, {{basics.label}}"
+                        class="basics__photo"
+                        width="88"
+                        height="88">
+                    <figcaption>Profile photo of {{basics.name}}</figcaption>
+                </figure>
+                {{/if}}
+
+                <!-- Professional summary — full paragraph, read by screen readers and OCR -->
+                <p class="basics__summary">
+                    <div class="mb-6">
+                        <span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
+                        <span class="text-accent" aria-hidden="true">&#x2665;</span>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <!-- ═══ basics — contacts (JSON Resume: basics.profiles / basics.email / basics.phone)
+             <address> is the correct semantic element for contact information
+             associated with the nearest <article> or <body> ancestor.
+             aria-label provides a clear landmark label for screen readers.
+             ════════════════════════════════════════════════════════════════ -->
+        <address class="basics__contacts" aria-label="Contact information for {{basics.name}}">
+            <div class="max-w-4xl mx-auto px-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-1">
+
+                {{#each basics.profiles}}
+                <a href="{{this.url}}"
+                   class="contact"
+                   aria-label="{{this.network}} profile of {{this.username}}"
+                   rel="noopener noreferrer"
+                   target="_blank">
+                    {{{networkIcon this.network}}}
+                    <span class="font-mono text-gray-700 text-xs">/{{this.username}}</span>
+                </a>
+                {{/each}}
+
+                <a href="mailto:{{basics.email}}"
+                   class="contact"
+                   aria-label="Send email to {{basics.email}}">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <span class="font-mono text-gray-700 text-xs">{{basics.email}}</span>
+                </a>
+
+                <a href="tel:{{compilePhoneNumber basics.phone}}"
+                   class="contact contact--phone"
+                   aria-label="Call {{basics.phone}}">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="white" aria-hidden="true" focusable="false">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <span class="font-mono text-xs">{{basics.phone}}</span>
+                </a>
+
+            </div>
+        </address>
+
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Main content — <main> landmark for skip-navigation and screen readers
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="page__content">
+        <main class="max-w-4xl mx-auto py-7 space-y-6 text-gray-700"
+            id="main-content"
+            aria-label="Resume content">
+
+            <!-- ═══ work (JSON Resume: work[]) ════════════════════════════════════
+                aria-labelledby ties the section landmark to its visible h2 heading
+                so screen readers announce "Work Experience, region" on focus.
+                ═══════════════════════════════════════════════════════════════════ -->
+            {{#if work}}
+            <section aria-labelledby="work-heading">
+                <h1 class="section__heading" id="work-heading">
+                    Professional Experience
+                    <span class="text-gray-400 font-mono" aria-label="(most recent positions)">(most recent positions, full work history on LinkedIn)</span>
+                </h1>
+                <div class="mt-3 space-y-5">
+                    {{#each work}}
+                    <!-- Each position is an independent <article> — a self-contained
+                        piece of content with its own heading, dates, and highlights -->
+                    <article class="work__entry"
+                            aria-labelledby="work-{{@index}}-title">
+
+                        <header class="work__entry-header">
+                            <!-- h3: identifies this article within the h1→h2→h3 outline -->
+                            <h2 class="work__entry-title" id="work-{{@index}}-title">
+                                <span class="work__position">{{this.position}}</span>
+                                <span aria-hidden="true" class="text-gray-400 text-sm">·</span>
+                                <span class="work__company text-accent">{{this.company}}</span>
+                            </h2>
+                            <!-- <time> elements carry machine-readable datetime attributes
+                                so ATS parsers and AI agents can extract structured dates -->
+                            <p class="work__period text-gray-400 text-xs">
+                                <time datetime="{{this.startDate}}">{{formatDate this.startDate}}</time>
+                                <span aria-hidden="true"> – </span>
+                                {{#if this.endDate}}
+                                <time datetime="{{this.endDate}}">{{formatDate this.endDate}}</time>
+                                {{else}}
+                                <span>Present</span>
+                                {{/if}}
+                            </p>
+                        </header>
+
+                        {{#if this.highlights}}
+                        <ul class="work__highlights-list"
+                            role="list"
+                            aria-label="Key achievements and responsibilities at {{this.company}}">
+                            {{#each this.highlights}}
+                            <li class="work__highlight text-sm text-gray-700 leading-relaxed">{{.}}{{highlightPunctuation @index ../highlights.length}}</li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+
+                        {{#if this.summary}}
+                        <p class="work__highlight mt-1.5 text-sm text-gray-700 leading-relaxed">{{this.summary}}</p>
+                        {{/if}}
+
+                    </article>
+                    {{/each}}
+                </div>
+            </section>
+            {{/if}}
+
+            <!-- ═══ skills (JSON Resume: skills[]) ════════════════════════════════
+                Skills rendered as a semantic list (<ul><li>) rather than bare spans
+                so screen readers enumerate them and PDF structure preserves order.
+                ═══════════════════════════════════════════════════════════════════ -->
+            {{#if displayedSkills}}
+            <section aria-labelledby="skills-heading">
+                <h1 class="section__heading" id="skills-heading">Skills</h1>
+                <ul class="skills__list"
+                    role="list"
+                    aria-label="Technical and professional skills">
+                    {{#each displayedSkills}}
+                    <li class="skill{{#if this.meta.highlighted}} skill--highlighted{{/if}}"
+                        {{#if this.level}}aria-label="{{this.name}}, proficiency level {{this.level}} out of 100"{{else}}aria-label="{{this.name}}"{{/if}}>{{this.name}}</li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/if}}
+
+        </main>
+    </div>
+
+    <!-- ═══ Page decorative background (aria-hidden — purely visual) ═══════ -->
+    <div class="page__background-footer" aria-hidden="true" role="presentation"></div>
+
 </body>
 </html>

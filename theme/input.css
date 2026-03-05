@@ -1,0 +1,519 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. TAILWIND IMPORT & DESIGN TOKENS
+   Tailwind v4 uses @theme for CSS custom properties (design tokens).
+   All colour and typography values are defined here — no raw literals elsewhere.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import "tailwindcss";
+
+@theme {
+  /* ── Primary palette (brand / accent — orange) ──────────────────────── */
+  --color-primary-300: #f97316;
+  --color-primary-500: #ed5f1a;
+  --color-primary-700: #c2410c;
+
+  /* ── Neutral palette (gray scale — mirrors Tailwind gray) ────────────── */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #e5e7eb;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-900: #111827;
+
+  /* ── Skill badge palette ────────────────────────────────────────────── */
+  --color-skill-bg: #f1f5f9;
+  --color-skill-text: #475569;
+  --color-skill-border: #e2e8f0;
+
+  /* ── Typography ─────────────────────────────────────────────────────── */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* ── Accent alias — exposes --color-primary-500 as --color-accent so
+        .text-accent utility and var(--color-accent) continue to work ──── */
+  --color-accent: var(--color-primary-500);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. CSS RESET NOTE
+   @import "tailwindcss" includes Tailwind Preflight — a normalize/reset layer
+   that applies box-sizing: border-box, removes default margins, normalises
+   headings, lists, etc. No additional reset stylesheet is required.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3. BASE / BODY
+   font-size is set in px here as the authoritative baseline for print output
+   (PDF rendering via Puppeteer/Chromium). All child elements use rem so they
+   scale relative to this single px root.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px; /* px baseline for print — children use rem */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: transparent;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4. PAGE BACKGROUND
+   Fixed full-page decorative SVG wave pattern rendered behind all content.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.page__background-top {
+  position: relative;
+  height: auto;
+  width: auto;
+}
+
+.page__background-top::before {
+  /* content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1rem;
+  opacity: 1;
+  z-index: 1;
+  background-color: var(--color-neutral-100);
+  border-bottom: 0.2rem solid var(--color-neutral-200); */
+
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2rem;
+  opacity: 0.4;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: cover;
+  background-color: var(--color-neutral-0);
+  background-image: url('data:image/svg+xml,<svg id="visual" viewBox="0 0 900 30" width="900" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="900" height="30" fill="%23fff"></rect><path d="M0 9L4.8 9C9.7 9 19.3 9 29 9.8C38.7 10.7 48.3 12.3 58 12.3C67.7 12.3 77.3 10.7 87 10.7C96.7 10.7 106.3 12.3 116 12.5C125.7 12.7 135.3 11.3 145 11.7C154.7 12 164.3 14 174 14.8C183.7 15.7 193.3 15.3 203 15.3C212.7 15.3 222.3 15.7 232 15.3C241.7 15 251.3 14 261 14C270.7 14 280.3 15 290 14.3C299.7 13.7 309.3 11.3 319 10C328.7 8.7 338.3 8.3 348 9.3C357.7 10.3 367.3 12.7 377 13.3C386.7 14 396.3 13 406 13.3C415.7 13.7 425.3 15.3 435.2 15C445 14.7 455 12.3 464.8 12.7C474.7 13 484.3 16 494 17C503.7 18 513.3 17 523 15.3C532.7 13.7 542.3 11.3 552 10.2C561.7 9 571.3 9 581 10.2C590.7 11.3 600.3 13.7 610 14.5C619.7 15.3 629.3 14.7 639 13.5C648.7 12.3 658.3 10.7 668 11.3C677.7 12 687.3 15 697 16.8C706.7 18.7 716.3 19.3 726 19.2C735.7 19 745.3 18 755 16C764.7 14 774.3 11 784 10.2C793.7 9.3 803.3 10.7 813 11.7C822.7 12.7 832.3 13.3 842 13.2C851.7 13 861.3 12 871 12.2C880.7 12.3 890.3 13.7 895.2 14.3L900 15L900 0L895.2 0C890.3 0 880.7 0 871 0C861.3 0 851.7 0 842 0C832.3 0 822.7 0 813 0C803.3 0 793.7 0 784 0C774.3 0 764.7 0 755 0C745.3 0 735.7 0 726 0C716.3 0 706.7 0 697 0C687.3 0 677.7 0 668 0C658.3 0 648.7 0 639 0C629.3 0 619.7 0 610 0C600.3 0 590.7 0 581 0C571.3 0 561.7 0 552 0C542.3 0 532.7 0 523 0C513.3 0 503.7 0 494 0C484.3 0 474.7 0 464.8 0C455 0 445 0 435.2 0C425.3 0 415.7 0 406 0C396.3 0 386.7 0 377 0C367.3 0 357.7 0 348 0C338.3 0 328.7 0 319 0C309.3 0 299.7 0 290 0C280.3 0 270.7 0 261 0C251.3 0 241.7 0 232 0C222.3 0 212.7 0 203 0C193.3 0 183.7 0 174 0C164.3 0 154.7 0 145 0C135.3 0 125.7 0 116 0C106.3 0 96.7 0 87 0C77.3 0 67.7 0 58 0C48.3 0 38.7 0 29 0C19.3 0 9.7 0 4.8 0L0 0Z" fill="%23D9D9D9" stroke-linecap="round" stroke-linejoin="miter"></path></svg>');
+}
+
+.page__background-header {
+  position: relative;
+  height: auto;
+  width: auto;
+  z-index: 0;
+}
+
+.page__background-header::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: cover;
+  background-color: var(--color-neutral-0);
+  background-image: url('data:image/svg+xml,<svg id="visual" viewBox="0 0 900 300" width="900" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="900" height="300" fill="%23fff"></rect><path d="M0 53L39 52L78 54L117 22L157 63L196 130L235 94L274 96L313 26L352 60L391 152L430 53L470 88L509 113L548 82L587 108L626 123L665 130L704 87L743 126L783 94L822 48L861 31L900 59L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23ffffff"></path><path d="M0 64L39 162L78 133L117 161L157 60L196 89L235 156L274 90L313 44L352 54L391 127L430 56L470 152L509 95L548 154L587 79L626 55L665 158L704 49L743 128L783 76L822 46L861 129L900 74L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23fbfbfb"></path><path d="M0 72L39 171L78 96L117 125L157 122L196 75L235 155L274 102L313 135L352 137L391 84L430 148L470 92L509 143L548 79L587 139L626 154L665 131L704 155L743 180L783 120L822 106L861 145L900 114L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23f7f7f7"></path><path d="M0 176L39 85L78 152L117 182L157 185L196 96L235 161L274 128L313 92L352 93L391 83L430 192L470 173L509 116L548 184L587 91L626 190L665 129L704 181L743 118L783 188L822 84L861 188L900 130L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23f3f3f3"></path><path d="M0 135L39 172L78 181L117 154L157 151L196 118L235 170L274 151L313 149L352 155L391 201L430 160L470 191L509 108L548 197L587 194L626 129L665 111L704 149L743 142L783 199L822 167L861 130L900 110L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23efefef"></path><path d="M0 132L39 133L78 142L117 198L157 144L196 189L235 155L274 212L313 134L352 156L391 179L430 189L470 170L509 127L548 173L587 157L626 188L665 157L704 202L743 171L783 217L822 154L861 151L900 177L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23eeeeee"></path><path d="M0 160L39 177L78 153L117 180L157 217L196 157L235 154L274 172L313 175L352 172L391 190L430 211L470 195L509 175L548 218L587 227L626 202L665 187L704 226L743 153L783 166L822 224L861 209L900 182L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23eeeeee"></path><path d="M0 223L39 198L78 235L117 175L157 204L196 177L235 189L274 209L313 210L352 196L391 234L430 200L470 194L509 213L548 233L587 227L626 183L665 176L704 179L743 181L783 177L822 189L861 224L900 181L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23efefef"></path><path d="M0 241L39 247L78 228L117 193L157 237L196 236L235 234L274 201L313 233L352 219L391 236L430 230L470 255L509 227L548 219L587 238L626 219L665 197L704 200L743 209L783 198L822 230L861 193L900 194L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23f3f3f3"></path><path d="M0 254L39 233L78 220L117 260L157 232L196 217L235 234L274 219L313 248L352 216L391 231L430 241L470 247L509 234L548 221L587 218L626 220L665 257L704 242L743 261L783 242L822 215L861 240L900 269L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23f7f7f7"></path><path d="M0 269L39 237L78 248L117 239L157 270L196 278L235 277L274 259L313 270L352 270L391 261L430 268L470 248L509 255L548 262L587 276L626 246L665 266L704 245L743 239L783 276L822 276L861 265L900 251L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23fbfbfb"></path><path d="M0 293L39 288L78 270L117 263L157 293L196 277L235 291L274 262L313 283L352 279L391 278L430 283L470 278L509 266L548 286L587 290L626 277L665 264L704 259L743 263L783 291L822 259L861 259L900 293L900 301L861 301L822 301L783 301L743 301L704 301L665 301L626 301L587 301L548 301L509 301L470 301L430 301L391 301L352 301L313 301L274 301L235 301L196 301L157 301L117 301L78 301L39 301L0 301Z" fill="%23ffffff"></path></svg>');
+}
+
+.page__background-footer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 675'%3E%3Cpath fill='%23fff' d='M0 0h900v675H0z'/%3E%3Cpath fill='%23fefefe' d='m0 667 56-117 57 108 56 1 56-91 56 89 57-47 56 27 56-15 56-49 57 5 56 24 56-48 56 90 57-29 56-58 56 91v28H0Z'/%3E%3Cpath fill='%23fcfcfc' d='m0 588 56 36 57 42 56-114 56 109 56-28 57-66 56 75 56-7 56-24 57 51 56-107 56-5 56 21 57 8 56 7 56 41v49H0Z'/%3E%3Cpath fill='%23fbfbfb' d='m0 591 56 81 57-91 56-17 56 46 56 24 57-15 56 4 56-53 56 15 57 89 56-11 56-91 56 29 57 43 56-63 56-14v109H0Z'/%3E%3Cpath fill='%23f9f9f9' d='m0 608 56-17 57 35 56 37 56-46 56-25 57 12 56-22 56 71 56-43 57 38 56-30 56-35 56 30 57-28 56 30 56-1v62H0Z'/%3E%3Cpath fill='%23f8f8f8' d='m0 586 56 52 57 24 56 2 56-60 56 19 57 50 56-40 56 40 56-4 57-57 56 28 56-29 56-16 57-1 56 75 56-63v70H0Z'/%3E%3Cpath fill='%23f6f6f6' d='m0 666 56 3 57-70 56 15 56 11 56 20 57 8 56-6 56-1 56-33 57 5 56 17 56-37 56 60 57-6 56 4 56-36v56H0Z'/%3E%3Cpath fill='%23f4f4f4' d='m0 648 56-39 57 54 56-1 56-39 56 30 57-9 56 16 56-26 56-22 57 43 56-32 56 46 56-54 57 47 56 5 56-56v65H0Z'/%3E%3Cpath fill='%23f3f3f3' d='m0 622 56 36 57-21 56 15 56-21 56 34 57-24 56 11 56 14 56-1 57-17 56 4 56-3 56-9 57 12 56-28 56 35v17H0Z'/%3E%3Cpath fill='%23f1f1f1' d='m0 671 56-29 57 21 56-15 56 19 56-15 57-21 56 3 56 7 56 7 57 6 56 4 56-16 56 2 57 18 56-27 56 31v10H0Z'/%3E%3Cpath fill='%23f0f0f0' d='m0 668 56-27 57 4 56 25 56 2 56-28 57 3 56 20 56-24 56 8 57 3 56 10 56 8 56-12 57-1 56 8 56 7v2H0Z'/%3E%3Cpath fill='%23eee' d='m0 668 56-5 57-4 56-6 56 17 56 1 57-9 56-5 56 13 56-14 57 7 56 3 56-12h56l57 13 56 1 56-4v12H0Z'/%3E%3C/svg%3E");
+  background-size: 100%;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5. ACCENT COLOUR UTILITY
+   Exposes the primary-500 brand colour as a composable utility class. Used
+   inline in the template for accent-coloured text spans and labels.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6. BASICS — IDENTITY (JSON Resume: basics.name / basics.label / basics.summary)
+   The .basics block is the page header containing the candidate's name,
+   label, tagline, and professional summary.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Block: page header wrapper */
+.basics {
+  background-color: var(--color-neutral-0);
+  border-bottom: 2px solid var(--color-neutral-300);
+}
+
+/* Element: inner container — clearfix so it grows around the floated photo */
+.basics__identity {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem 0 1.25rem;
+}
+
+.basics__identity::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.basics__identity-name,
+.basics__identity-label,
+.basics__identity-mission_statement {
+  margin-top: 2.4rem;
+  line-height: 1rem;
+  padding: 0.75rem 0.25rem 0.75rem 0.25rem;
+  display: block;
+  font-weight: 700;
+  border: 0.2rem solid var(--color-neutral-100);
+  border-radius: 0.01rem;
+}
+
+.basics__identity-name {
+  background: var(--color-primary-500);
+  color: var(--color-neutral-0);
+  /* border-radius: 2rem 0 0 1rem; */
+  border-radius: 0.5rem 0 0 1rem;
+  border-right: none;
+}
+
+.basics__identity-label {
+  background: var(--color-gray-700);
+  color: var(--color-neutral-0);
+  border-left: none;
+  border-right: none;
+}
+
+.basics__identity-mission_statement {
+  background: var(--color-gray-500);
+  color: var(--color-neutral-0);
+  border-radius: 0 0.5rem 1rem 0;
+  border-left: none;
+}
+
+/* Element: professional summary paragraph */
+.basics__summary {
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--color-neutral-600);
+  margin: 0;
+}
+
+.basics__summary strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7. BASICS — PHOTO (JSON Resume: basics.picture)
+   Profile photo floated left; text in .basics__identity flows around it
+   using CSS shape-outside.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Element: <figure> wrapper around the photo — inherits the float so text wraps */
+.basics__photo-figure {
+  float: left;
+  margin: 0;
+  -webkit-shape-outside: circle(50%);
+  shape-outside: circle(50%);
+  margin-right: 1.25rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Element: circular profile photo inside the figure */
+.basics__photo {
+  display: block;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.1rem solid var(--color-neutral-300);
+}
+
+/* Element: figcaption — visually hidden; preserved in PDF tagged structure and
+   read by screen readers as an accessible description of the photo */
+.basics__photo-figure figcaption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   8. BASICS — CONTACTS (JSON Resume: basics.profiles / basics.email / basics.phone)
+   Horizontal strip of contact links rendered below the identity block.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Override Tailwind Preflight — <address> is italicised by browsers by default */
+address.basics__contacts {
+  font-style: normal;
+}
+
+/* Element: contact strip container */
+.basics__contacts {
+  background-color: rgba(
+    249,
+    250,
+    251,
+    0.85
+  ); /* neutral-50, semi-transparent */
+  border-top: 1px solid rgba(229, 231, 235, 0.8);
+  padding: 0.6rem 0;
+}
+
+/* Block: individual contact link (profile, email, phone) */
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-neutral-700);
+  text-decoration: none;
+  -webkit-transition: color 0.12s ease;
+  transition: color 0.12s ease;
+}
+
+.contact--phone {
+  background-color: var(--color-gray-400);
+  color: var(--color-neutral-0);
+  line-height: 1.5rem;
+  padding: 0 0.35rem;
+  border-radius: 0.75rem;
+}
+
+/* Nested SVG icon inside any contact link */
+.contact svg {
+  flex-shrink: 0;
+  color: var(--color-neutral-700);
+  -webkit-transition: color 0.12s ease;
+  transition: color 0.12s ease;
+}
+
+.contact:hover {
+  color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   9. SECTION HEADING (shared across: work, skills, and future sections)
+   Small-caps uppercase label with accent colour and a bottom border rule.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.section__heading {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0;
+  padding: 0 0.2rem;
+  line-height: 2rem;
+  border-bottom: 0.05rem solid var(--color-skill-border);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   10. WORK (JSON Resume: work[].highlights / work[].summary)
+   Bullet-point items for work experience highlights.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Block: work experience entry — semantic <article> wrapper */
+.work__entry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Element: header row inside a work entry */
+.work__entry-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Element: h3 title containing position and company */
+.work__entry-title {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin: 0; /* override Preflight h3 margin */
+  font-size: inherit; /* keep visual size controlled by child spans */
+}
+
+/* Element: position span within the h3 */
+.work__position {
+  font-weight: 600;
+  color: var(--color-neutral-900);
+  font-size: 0.875rem;
+}
+
+/* Element: company span within the h3 */
+.work__company {
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Element: date range paragraph */
+.work__period {
+  font-size: 0.75rem;
+  color: var(--color-neutral-500);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Element: <time> inside the period — inherit styles, no extra chrome */
+.work__period time {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Element: unordered highlights list — Preflight strips list styles; restore clean state */
+.work__highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.375rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+/* Block: a single highlight bullet or summary paragraph */
+.work__highlight {
+  position: relative;
+  padding-left: 0.85rem;
+}
+
+/* Pseudo-element: small filled circle used as the bullet marker */
+.work__highlight::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.47em;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   11. SKILLS (JSON Resume: skills[])
+   Pill badges — default (muted) and highlighted (accent-filled) variants.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Element: skills <ul> wrapper — Preflight strips list styles; restore clean state */
+.skills__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+/* Block: skill badge pill */
+.skill {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: var(--color-skill-bg);
+  color: var(--color-skill-text);
+  border: 1px solid var(--color-skill-border);
+  white-space: nowrap;
+}
+
+/* Modifier: highlighted / featured skill — filled with accent colour */
+.skill--highlighted {
+  background-color: var(--color-accent);
+  color: var(--color-neutral-0);
+  border-color: var(--color-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   12. TAILWIND UTILITY SAFELIST
+   Tailwind v4 cannot scan Handlebars templates at build time. Every utility
+   used directly in template.hbs must be listed here via @source inline() so
+   Tailwind includes the generated CSS for those classes.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@source inline("flex items-baseline justify-between gap-3 mb-3 min-w-0 gap-1 flex-wrap font-semibold text-gray-900 text-lg text-gray-400 text-sm text-gray-500 font-medium whitespace-nowrap flex-shrink-0 text-xs font-mono underline max-w-4xl mx-auto px-10 justify-center items-center gap-x-8 gap-y-1 mt-1.5 space-y-1.5 mt-3 space-y-5 break-inside-avoid mt-2 gap-1.5 py-7 space-y-6 text-gray-700 leading-relaxed -ml-2");
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   13. PAGE CONTENT WRAPPER
+   Provides 1cm side padding for all body content. .page__background and
+   .basics__contacts are intentionally outside this wrapper so they span
+   the full page width without side margins.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.page__content {
+  padding-left: 1.5cm;
+  padding-right: 1.5cm;
+  position: relative;
+  z-index: 10;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   14. PRINT & PAGE
+   Top-level @page rule — CSS @page takes precedence over Puppeteer's JS
+   margin parameter in Chromium. Placed at top level (not inside @media print)
+   so Puppeteer's PDF pipeline picks it up correctly.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@page {
+  size: A4;
+  margin: 1cm 0 0 0;
+}
+
+@page :first {
+  margin-top: 0;
+}
+
+@media print {
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Generic utility kept for backward compatibility */
+  .break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .work__entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .basics__contacts {
+    break-inside: avoid;
+  }
+}

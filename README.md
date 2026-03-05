@@ -1,121 +1,122 @@
 # Resume
 
-[![View Resume](https://img.shields.io/badge/Jo%C3%A3o's_Resume-VIEW-blue?logo=googlechrome&logoColor=ffffff 'View Resume')](https://github.com/jpcercal/resume/blob/main/resume.pdf) [![Download Resume](https://img.shields.io/badge/Jo%C3%A3o's_Resume-DOWNLOAD-ED5F1A?logo=githubsponsors&logoColor=ffffff 'Download Resume')](https://raw.githubusercontent.com/jpcercal/resume/main/resume.pdf) [![resume.json](https://img.shields.io/badge//resume.json-2B2B2B?logo=github&logoColor=ffffff 'resume.json')](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json) [![github actions](https://img.shields.io/badge/github%20actions-2B2B2B?logo=githubactions&logoColor=ffffff 'github actions')](https://github.com/jpcercal/resume/actions)
+[![View Resume](https://img.shields.io/badge/Jo%C3%A3o's_Resume-VIEW-blue?logo=googlechrome&logoColor=ffffff 'View Resume')](https://github.com/jpcercal/resume/blob/main/resume.pdf) [![Download Resume](https://img.shields.io/badge/Jo%C3%A3o's_Resume-DOWNLOAD-ED5F1A?logo=githubsponsors&logoColor=ffffff 'Download Resume')](https://raw.githubusercontent.com/jpcercal/resume/main/resume.pdf) [![resume.json](https://img.shields.io/badge//resume.json-2B2B2B?logo=github&logoColor=ffffff 'resume.json')](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json) [![github actions](https://img.shields.io/badge/github%20actions-2B2B2B?logo=githubactions&logoColor=ffffff 'github actions')](https://github.com/jpcercal/resume/actions) [![CI](https://github.com/jpcercal/resume/actions/workflows/resume.yml/badge.svg?branch=main)](https://github.com/jpcercal/resume/actions/workflows/resume.yml?query=branch%3Amain) [![Latest Release](https://img.shields.io/github/v/release/jpcercal/resume?display_name=tag&logo=github&logoColor=ffffff&color=2B2B2B)](https://github.com/jpcercal/resume/releases) [![Docker Pulls](https://img.shields.io/docker/pulls/jpcercal/resume?logo=docker&logoColor=ffffff&color=2496ED)](https://hub.docker.com/r/jpcercal/resume) [![Node 24+](https://img.shields.io/badge/Node.js-24%2B-339933?logo=nodedotjs&logoColor=ffffff)](https://nodejs.org/)
 
-As a software engineer with a thirst for adventure, I'm constantly seeking ways
-to enhance my skills and tackle new challenges. Recently, I embarked on a
-project to create a resume generator that utilizes JSON resume schema files to
-produce polished PDF resumes. This project allowed me to delve into the world of
-resume automation, exploring both its potential benefits and potential pitfalls.
+As a software engineer with a thirst for adventure, I'm constantly looking for ways to
+apply engineering rigour to problems that most people solve manually. A resume is one of
+those problems. It goes stale, the formatting drifts, version history disappears into a
+graveyard of `final_v3.docx` files, and every update turns into a tedious afternoon of
+pixel-pushing. I decided to treat my resume the same way I treat production software:
+as source code, with automation, versioning, and a proper release pipeline. This
+repository is the result.
 
-## How do I access João's resume?
+## Why your resume deserves a repository
+
+The instincts that make engineers effective — reproducibility, automation, auditability —
+apply just as well to a resume as they do to any other deliverable. Here is why I think
+every engineer should have one of these:
+
+**Your resume is source code.** The single source of truth lives in `resume.json`, a
+structured file that follows the open [JSON Resume](https://jsonresume.org/) schema. Every
+change is a commit. The full history is preserved. There are no conflicting copies,
+no formatting accidents, and no mystery about what changed between versions.
+
+**Every push ships a release.** The moment you push, the CI pipeline takes over. It builds
+a Docker image, renders the HTML, generates the PDF, minifies the page, deploys it to
+GitHub Pages, force-amends the commit to include the built artifacts, and tags a new
+versioned release — all without you touching a single tool manually. The pipeline does
+in seconds what used to take an afternoon.
+
+**One Docker command, anywhere.** The build is fully containerised and produces identical
+output on Intel, Apple Silicon, and ARM servers. There is no "it works on my machine"
+problem. Anyone can clone the repo, run a single command, and have a pixel-perfect PDF
+in their working directory.
+
+## How does it work?
+
+The pipeline is intentionally simple:
+
+| Step | What happens |
+|------|--------------|
+| Edit `resume.json` | Update your content — work experience, skills, education |
+| `git push` | Triggers the GitHub Actions workflow |
+| CI builds the image | Multi-arch Docker image pushed to Docker Hub |
+| Artifacts are generated | `resume.pdf`, `resume.html`, and two preview PNGs |
+| HTML is minified | CSS, JS, and whitespace compressed for the web |
+| GitHub Pages is updated | The minified HTML is live at your Pages URL |
+| Release is tagged | A versioned GitHub release is created with `resume.pdf` as an asset |
+
+Under the hood, [resumed](https://github.com/rbardini/resumed) validates the JSON and
+renders it through a custom [Handlebars](https://handlebarsjs.com/) template styled with
+[TailwindCSS v4](https://tailwindcss.com/). [Puppeteer](https://pptr.dev/) then takes the
+HTML and prints it to PDF using a headless Chromium instance baked into the Docker image.
+No external services, no proprietary tooling — just open-source software running in a
+reproducible container.
+
+## See it in action
 
 ![A preview of the resume file](resume-preview.pdf.png)
 
-At the very top of the document, you can click on the `João's Resume | VIEW`
-button to view João's resume in PDF format. Additionally, you can click on the
-`João's Resume | DOWNLOAD` button to download a copy of the resume for offline
-viewing.
+At the very top of this page you can click `João's Resume | VIEW` to open the PDF directly
+in your browser, or `João's Resume | DOWNLOAD` to save a copy for offline viewing.
 
-> For the tech-savvy, the detailed information is stored in the JSON file
-> [resume.json](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json),
-> you can see a preview of how this file looks like below: 
-> 
+> For the tech-savvy, the raw data is in
+> [`resume.json`](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json) —
+> the file that drives everything. Here is a preview of what it looks like:
+>
 > ![A preview of the resume.json file](resume-preview.json.png)
 
-> And, of course you are welcome to check the workflow jobs on
-> `.github/workflows/resume.yml` or simply click on [Github
-> Actions](https://github.com/jpcercal/resume/actions) to see the workflow in
-> action.
+> The full workflow is defined in `.github/workflows/resume.yml`. You can watch it run
+> live on [GitHub Actions](https://github.com/jpcercal/resume/actions).
 
-## How do I build the resume file locally?
+## Build it yourself
 
-To run this project locally, you will need to install the following dependencies:
+The only dependency is [Docker](https://www.docker.com/). Once installed, you have two
+options:
 
-- Docker
+**Option 1 — Pull the pre-built image from Docker Hub (fastest):**
 
-Once you have the required dependencies installed, run the following commands
-from the root directory of the project:
+```bash
+docker pull jpcercal/resume
+```
+
+**Option 2 — Build the image locally (after making changes to the `Dockerfile`):**
 
 ```bash
 docker build --tag jpcercal/resume .
 ```
 
-Once the docker image is built, you can apply the changes to the resume and 
-re-render the pdf document using the following command:
+Either way, generate all artifacts with a single command:
 
 ```bash
-docker run -it --rm -v $(pwd)/resume.json:/opt/input/resume.json -v $(pwd):/opt/output jpcercal/resume
+docker run --rm -v "$PWD:/app" jpcercal/resume
 ```
 
-This will create two files on the root directory, namely they are:
+> **Windows PowerShell:** replace `"$PWD"` with `"${PWD}"`.
 
-- resume.html
-- resume.pdf
+This mounts the project root as `/app` inside the container and writes four files directly
+into your working directory:
+
+- `resume.pdf`
+- `resume.html`
+- `resume-preview.pdf.png`
+- `resume-preview.json.png`
+
+The image is built for both `linux/amd64` and `linux/arm64`, so it runs natively on
+Intel/AMD machines as well as Apple Silicon (M-series) and ARM servers — no emulation
+overhead.
 
 Enjoy it. =)
 
-## Some background about what has been done
+## Fork it and make it yours
 
-To fully appreciate the project's potential, let's first gain a grasp of the
-groundwork that has already been laid.
+The best part about treating a resume as a repository is that the whole pipeline is
+forkable. Clone or fork this repo, edit `resume.json` with your own information, push,
+and your personal resume pipeline is live — complete with GitHub Pages hosting, versioned
+PDF releases, and a Docker image on Docker Hub.
 
-### Setting the Stage: Introducing the Resume Generator
+If the default layout does not suit your style, the entire theme lives in the `theme/`
+folder: swap the Handlebars template, adjust the TailwindCSS tokens, add new helpers.
+The `resume.json` data model stays the same; only the presentation changes.
 
-The heart of this project lies in a file named `resume.json`, which serves as
-the source of truth for the generated `resume.pdf`. This file contains
-meticulously crafted JSON data, outlining my educational background,
-professional experiences, skills, and other relevant information. To ensure the
-integrity of this data, I used the
-[resumed](https://github.com/rbardini/resumed) library, a powerful tool for
-validating JSON resume schema compliance.
-
-After validating the `resume.json` file, the `resumed` library kicks off the
-next phase: generating the HTML template for the resume. This template serves as
-the foundation for the final PDF document, ensuring a consistent and visually
-appealing layout. The HTML template is then fed into
-[puppeteer](https://pptr.dev/), a headless browser automation library, which
-takes care of rendering the HTML content and generating the PDF file.
-
-### Harvesting the Fruits of Automation: the Pros of the Approach 
-
-The allure of this project lies in its ability to automate the tedious task of
-generating PDF resumes. This automation has several advantages:
-
-1. Consistency and Accuracy: By relying on automated processes, we can ensure
-   that every resume produced adheres to a consistent format and contains
-   accurate information. This eliminates the risk of human error and ensures a
-   professional presentation.
-
-2. Efficiency and Time Savings: Automating the resume generation process saves a
-   significant amount of time and effort. Instead of manually crafting each PDF,
-   we can focus on more strategic content creation and job search activities.
-
-3. Navigating the Challenges: Cons of the Approach While the benefits of
-   automation are undeniable, there are also some potential drawbacks to
-   consider:
-
-4. Data Dependency/validation: The success of this approach hinges on the
-   accuracy and completeness of the resume.json data. Any inconsistencies or
-   missing information will directly impact the generated PDF.
-
-5. Technical Expertise: Implementing and maintaining this automation pipeline
-   requires a certain level of technical proficiency. Developers with experience
-   in JSON, HTML, and headless browser automation will be well-equipped for this
-   task. Although anyone can easily edit the resume.json file, which is all that
-   is needed.
-
-6. Customization Flexibility: While the template generated by resumed provides a
-   solid foundation, it may not always align perfectly with individual
-   preferences. Some users may require more customization options to achieve the
-   desired look and feel. But, it's easy to do, just install any template or
-   extend the one from this project which lives under the folder `theme`.
-
-### Conclusion
-
-This resume generator project has been an exciting journey into the world of
-automation and resume creation. It's gratifying to have developed a tool that
-can streamline the resume-building process and enhance the overall job search
-experience. While there are challenges to consider, the benefits of automation
-make it an attractive approach for many. As a software engineer, I'm eager to
-continue exploring automation techniques and expanding my skillset.
+Your resume is a living document. It should be treated like one.

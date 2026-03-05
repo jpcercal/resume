@@ -1,3 +1,4 @@
-node_modules/
 resume.html
-.cache/
+resume.pdf
+resume-preview.pdf.png
+resume-preview.json.png

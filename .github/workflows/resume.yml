@@ -2,82 +2,114 @@ name: Resume
 
 on: [push]
 
+env:
+  IMAGE: jpcercal/resume
+
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      # ── Build multi-arch image and push to Docker Hub ────────────────────
+      - uses: docker/setup-qemu-action@v4
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/login-action@v3
         with:
-          node-version: '20'
-          cache: 'npm'
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - run: |
-          mkdir -p /opt/input/
-          mkdir -p /opt/output/
-          cp resume.json /opt/input/resume.json
-
-      - run: |
-          npm install
-
-      - run: |
-          npm run build
-
-      - run: |
-          cp -Rf /opt/output/* .
-
-      - uses: actions/upload-artifact@v4
+      - uses: docker/build-push-action@v6
         with:
-          name: resume.pdf
-          path: resume.pdf
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.IMAGE }}:latest,${{ env.IMAGE }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      - run: |
+      # ── Run the image to generate artifacts ──────────────────────────────
+      # Anonymous volume keeps node_modules inside the container (not on the runner workspace)
+      - name: Build resume
+        run: docker run --rm -v "$PWD:/app" ${{ env.IMAGE }}:${{ github.sha }}
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: resume-artifacts
+          retention-days: 7
+          path: |
+            resume.html
+            resume.pdf
+            resume-preview.pdf.png
+            resume-preview.json.png
+
+      # ── Minify HTML (main branch only, before deploy and commit) ─────────
+      - name: Minify resume.html
+        if: github.ref == 'refs/heads/main'
+        run: npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o resume.html resume.html
+
+      # ── Deploy HTML to GitHub Pages (main branch only) ───────────────────
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p /tmp/gh-pages
+          cp resume.html /tmp/gh-pages/index.html
+
+      - uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: /tmp/gh-pages
+          publish_branch: gh-pages
+          force_orphan: true
+
+      # ── Commit PDF + preview back to the branch ───────────────────────────
+      - name: Commit build artifacts
+        if: github.ref == 'refs/heads/main'
+        run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add resume.pdf
-          git add resume-preview.pdf.png
-          git add resume-preview.json.png
+          git add -f resume.pdf resume-preview.pdf.png resume-preview.json.png
+          git add -f resume.html
           git commit --amend --no-edit
 
       - uses: ad-m/github-push-action@master
+        if: github.ref == 'refs/heads/main'
         with:
           branch: ${{ github.ref }}
           force_with_lease: true
 
-      - uses: actions/github-script@v7
+      # ── Create versioned release (main branch only) ───────────────────────
+      - uses: actions/github-script@v8
         if: github.ref == 'refs/heads/main'
         with:
           script: |
             const fs = require('fs').promises;
 
-            const padding = (v) => v < 10 ? `0${v}` : v;
-
-            const date = new Date();
-            const year = padding(date.getFullYear());
-            const month = padding(date.getMonth());
-            const day = padding(date.getDate());
-            const hours = padding(date.getHours());
-            const minutes = padding(date.getMinutes());
-            const seconds = padding(date.getSeconds());
-
-            const major = year - 2023;
-            const minor = month;
-            const patch = `${day}${hours}${minutes}${seconds}`;
-
+            const pad = (v) => v < 10 ? `0${v}` : v;
+            const d = new Date();
+            const major = d.getFullYear() - 2023;
+            const minor = pad(d.getMonth() + 1);
+            const patch = `${pad(d.getDate())}${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
             const releaseName = `${major}.${minor}.${patch}`;
 
             await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: `refs/tags/${releaseName}`,
-              sha: context.sha
+              sha: context.sha,
             });
 
-            const createReleaseResponse = await github.rest.repos.createRelease({
+            const release = await github.rest.repos.createRelease({
               draft: false,
               generate_release_notes: true,
               name: releaseName,
@@ -91,8 +123,8 @@ jobs:
               name: 'resume.pdf',
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: createReleaseResponse.data.id,
-              data: await fs.readFile('./resume.pdf')
+              release_id: release.data.id,
+              data: await fs.readFile('./resume.pdf'),
             });
 
             return releaseName;
