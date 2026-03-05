@@ -40,7 +40,7 @@ jobs:
       # ── Run the image to generate artifacts ──────────────────────────────
       # Anonymous volume keeps node_modules inside the container (not on the runner workspace)
       - name: Build resume
-        run: docker run --rm -v "$PWD:/app" ${{ env.IMAGE }}:${{ github.sha }}
+        run: docker run --rm -v "$PWD:/app" --user $(id -u):$(id -g) ${{ env.IMAGE }}:${{ github.sha }}
 
       - uses: actions/upload-artifact@v7
         with:
