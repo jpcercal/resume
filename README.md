@@ -30,28 +30,40 @@ viewing.
 
 ## How do I build the resume file locally?
 
-To run this project locally, you will need to install the following dependencies:
+The only dependency is [Docker](https://www.docker.com/). Once installed, you
+have two options:
 
-- Docker
+**Option 1 — Pull the pre-built image from Docker Hub (fastest):**
 
-Once you have the required dependencies installed, run the following commands
-from the root directory of the project:
+```bash
+docker pull jpcercal/resume
+```
+
+**Option 2 — Build the image locally (after making changes to the `Dockerfile`):**
 
 ```bash
 docker build --tag jpcercal/resume .
 ```
 
-Once the docker image is built, you can apply the changes to the resume and 
-re-render the pdf document using the following command:
+Either way, generate the resume artifacts with a single command:
 
 ```bash
-docker run -it --rm -v $(pwd)/resume.json:/opt/input/resume.json -v $(pwd):/opt/output jpcercal/resume
+docker run --rm -v "$PWD:/app" jpcercal/resume
 ```
 
-This will create two files on the root directory, namely they are:
+> **Windows PowerShell:** replace `"$PWD"` with `"${PWD}"`.
 
-- resume.html
-- resume.pdf
+This mounts the project root as `/app` inside the container and writes the
+following files directly into your working directory:
+
+- `resume.pdf`
+- `resume.html`
+- `resume-preview.pdf.png`
+- `resume-preview.json.png`
+
+The Docker image is built for both `linux/amd64` and `linux/arm64`, so it runs
+natively on Intel/AMD machines as well as Apple Silicon (M-series) and ARM
+servers — no emulation overhead.
 
 Enjoy it. =)
 
