@@ -5,6 +5,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>{{basics.name}} — {{basics.label}}</title>
+	<meta name="description"  content="{{basics.summary}}">
+	<meta name="author"       content="{{basics.name}}">
+	<meta name="keywords"     content="resume, cv, curriculum vitae, {{basics.label}}, {{basics.name}}">
+	<meta name="generator"    content="jsonresume-theme-local">
+
+	<meta property="og:type"        content="profile">
+	<meta property="og:title"       content="{{basics.name}} — {{basics.label}}">
+	<meta property="og:description" content="{{basics.summary}}">
+	{{#if basics.picture}}
+	<meta property="og:image"       content="{{basics.picture}}">
+	{{/if}}
+	{{#if basics.website}}
+	<meta property="og:url"         content="{{basics.website}}">
+	{{/if}}
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
