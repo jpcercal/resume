@@ -10,34 +10,6 @@ exports.render = ({ meta, basics, skills, work }) => {
 			.css
 	))
 
-	Handlebars.registerHelper('compileSkills', (skills) => new Handlebars.SafeString(
-		skills.map((skill) => {
-			if (!skill.meta.display) {
-				return;
-			}
-		
-			let skillCssClasses = [];
-		
-			skillCssClasses.push(`skill`);
-			skillCssClasses.push(`skill-${skill.name.toLowerCase().replace(/ /g, '-')}`);
-			skillCssClasses.push(`skill-weight-${skill.level}`);
-		
-			if (skill.meta.highlighted) {
-				skillCssClasses.push(`skill-highlighted`);	
-			}
-		
-			return JSON.stringify({
-				'text': skill.name, 
-				'weight': skill.level,
-				'html': {
-					'class': skillCssClasses.join(' ')
-				}
-			});
-		})
-		.filter(Boolean)
-		.join(',')
-	))
-
 	Handlebars.registerHelper('compilePhoneNumber', (telephoneNumber) => new Handlebars
 		.SafeString(telephoneNumber
 			.replace(/ /g, '')
@@ -46,8 +18,8 @@ exports.render = ({ meta, basics, skills, work }) => {
 			.replace(/\)/g, '')
 		))
 
-	Handlebars.registerHelper('compileWorkPeriod', (startDate, endDate) => endDate 
-		? `${new Date(startDate).getFullYear()} - ${new Date(endDate).getFullYear()}` 
+	Handlebars.registerHelper('compileWorkPeriod', (startDate, endDate) => endDate
+		? `${new Date(startDate).getFullYear()} - ${new Date(endDate).getFullYear()}`
 		: `${new Date(startDate).getFullYear()} - Present`
 	)
 
