@@ -138,15 +138,17 @@ Custom CSS classes: `.page-background`, `.header`, `.header-content`, `.header-p
 | Item | Status |
 |---|---|
 | `resume.json` | Committed — source |
-| `resume.pdf` | Committed — build artifact |
-| `resume-preview.pdf.png` | Committed — build artifact |
-| `resume-preview.json.png` | Committed — build artifact |
-| `resume.html` | **Gitignored locally** — CI force-adds it during the amend step only |
+| `resume.pdf` | Gitignored — build artifact (CI only, force-added on main) |
+| `resume-preview.pdf.png` | Gitignored — build artifact (CI only, force-added on main) |
+| `resume-preview.json.png` | Gitignored — build artifact (CI only, force-added on main) |
+| `resume.html` | Gitignored — build artifact (CI only, force-added on main) |
 | `node_modules/` | Gitignored |
 | `.cache/` | Gitignored |
 
-`resume.html` is in `.gitignore` and not locally tracked. The CI workflow explicitly runs
-`git add resume.html` during the amend step, which overrides gitignore for that commit.
+All 4 build artifacts are in `.gitignore` and not locally tracked. On the main branch only,
+the CI workflow runs `git add -f` on all 4 files during the amend step, which overrides
+gitignore for that commit. Non-main branches never commit or push build artifacts — they are
+available only as the `resume-artifacts` CI artifact (7-day retention).
 
 ## Code Style
 
@@ -177,10 +179,11 @@ Triggers on every push to any branch.
 | Login to Docker Hub (`DOCKERHUB_USERNAME` + `DOCKERHUB_TOKEN` secrets) | all |
 | Build multi-arch image (`linux/amd64,linux/arm64`) and push to `jpcercal/resume` | all |
 | `docker run --rm -v "$PWD:/app" jpcercal/resume:<sha>` | all |
-| Upload `resume.pdf` as CI artifact | all |
+| Upload all 4 artifacts as `resume-artifacts` (7-day retention) | all |
+| Minify `resume.html` via `html-minifier-terser` | main only |
 | Deploy HTML to `gh-pages` via `peaceiris/actions-gh-pages@v4` | main only |
-| `git commit --amend --no-edit` — rewrites commit to include PDF + HTML + preview PNGs | all |
-| Force-push with `force_with_lease` to triggering branch | all |
+| `git commit --amend --no-edit` — rewrites commit to include PDF + HTML + preview PNGs | main only |
+| Force-push with `force_with_lease` to triggering branch | main only |
 | Create versioned GitHub release; upload `resume.pdf` as asset | main only |
 
 Release version format: `(year-2023).MM.DDHHmmss`
