@@ -57,6 +57,20 @@ jobs:
           branch: ${{ github.ref }}
           force_with_lease: true
 
+      # ── Deploy HTML resume to GitHub Pages (main branch only) ───────────────
+      - name: Prepare GitHub Pages artifact
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p _site
+          cp resume.html _site/index.html
+
+      - uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+
       # ── Create versioned release (main branch only) ───────────────────────
       - uses: actions/github-script@v7
         if: github.ref == 'refs/heads/main'
