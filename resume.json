@@ -29,6 +29,21 @@
   },
   "work": [
     {
+      "company": "LastPass",
+      "position": "Software Engineer Leader",
+      "website": "",
+      "startDate": "2024-08",
+      "summary": "",
+      "highlights": [
+        "Led the re-architecture of the account recovery flow, increasing successful recovery rates by 20% within two months. Coordinated UX researchers, translators, designers, an external vendor (Salesforce), architects, security, product, QAs, release managers, and software engineers to ship a high-visibility project that earned an internal award for its positive impact",
+        "Took ownership of the Akamai platform project (WAF controls, DNS, traffic reliability and optimization), which had been mismanaged for roughly five years with no clear ownership across the organization. Mapped the status quo, drafted a future-state vision, and earned leadership trust to lead the initiative",
+        "Delivered $495K in year-over-year contract savings through traffic optimization on Akamai, the largest cost saving across the entire platform cluster. Achieved this with a lean team of two engineers plus two outsourced DevOps engineers over six months",
+        "Awarded Best Culture Representative in the platform cluster and offered an Engineering Manager role in recognition of consistent high-impact leadership, team-building, and stakeholder communication",
+        "Responsible for team leadership including 1:1s, backlog ownership, refinement, planning, roadmaps, RFCs, ADRs, OpenAPI-driven communication processes, and representing the team technically in all Akamai-related discussions across the organization",
+        "Driving AI-augmented R&D initiatives to further scale the team's impact while continuing to onboard new projects onto Akamai and maintaining a strong security posture"
+      ]
+    },
+    {
       "company": "Emma",
       "position": "Senior Software Engineer",
       "website": "",
