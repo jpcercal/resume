@@ -8,7 +8,7 @@ const html = await render(resume, theme);
 
 const browser = await puppeteer.launch({
   headless: true,
-  args: ["--no-sandbox"],
+  args: ["--no-sandbox", "--crash-dumps-dir=/tmp"],
 });
 const page = await browser.newPage();
 
