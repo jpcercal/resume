@@ -42,8 +42,18 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: resume.pdf
-          path: resume.pdf
+          name: resume-artifacts
+          retention-days: 7
+          path: |
+            resume.html
+            resume.pdf
+            resume-preview.pdf.png
+            resume-preview.json.png
+
+      # ── Minify HTML (main branch only, before deploy and commit) ─────────
+      - name: Minify resume.html
+        if: github.ref == 'refs/heads/main'
+        run: npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o resume.html resume.html
 
       # ── Deploy HTML to GitHub Pages (main branch only) ───────────────────
       - name: Deploy to GitHub Pages
@@ -62,6 +72,7 @@ jobs:
 
       # ── Commit PDF + preview back to the branch ───────────────────────────
       - name: Commit build artifacts
+        if: github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -70,6 +81,7 @@ jobs:
           git commit --amend --no-edit
 
       - uses: ad-m/github-push-action@master
+        if: github.ref == 'refs/heads/main'
         with:
           branch: ${{ github.ref }}
           force_with_lease: true
