@@ -1,189 +1,225 @@
 <!DOCTYPE html>
 <html lang="{{meta.lang}}">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{{basics.name}} — {{basics.label}}</title>
-	<meta name="description"  content="{{basics.summary}}">
-	<meta name="author"       content="{{basics.name}}">
-	<meta name="keywords"     content="resume, cv, curriculum vitae, {{basics.label}}, {{basics.name}}">
-	<meta name="generator"    content="jsonresume-theme-local">
+    <!-- ═══ Primary document metadata ═════════════════════════════════════ -->
+    <title>{{basics.name}} — {{basics.label}}</title>
+    <meta name="description"  content="{{basics.summary}}">
+    <meta name="author"       content="{{basics.name}}">
+    <meta name="keywords"     content="resume, cv, curriculum vitae, {{basics.label}}, {{basics.name}}">
+    <meta name="generator"    content="jsonresume-theme-local">
 
-	<meta property="og:type"        content="profile">
-	<meta property="og:title"       content="{{basics.name}} — {{basics.label}}">
-	<meta property="og:description" content="{{basics.summary}}">
-	{{#if basics.picture}}
-	<meta property="og:image"       content="{{basics.picture}}">
-	{{/if}}
-	{{#if basics.website}}
-	<meta property="og:url"         content="{{basics.website}}">
-	{{/if}}
+    <!-- ═══ Open Graph — social sharing & machine preview ═════════════════ -->
+    <meta property="og:type"        content="profile">
+    <meta property="og:title"       content="{{basics.name}} — {{basics.label}}">
+    <meta property="og:description" content="{{basics.summary}}">
+    {{#if basics.picture}}
+    <meta property="og:image"       content="{{basics.picture}}">
+    {{/if}}
+    {{#if basics.website}}
+    <meta property="og:url"         content="{{basics.website}}">
+    {{/if}}
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <!-- ═══ Fonts ══════════════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-	<style>
-		{{style}}
-	</style>
+    <!-- ═══ Styles (compiled TailwindCSS + custom classes) ═════════════════ -->
+    <style>
+        {{style}}
+    </style>
 </head>
 <body>
-	<!-- Page decorative background (aria-hidden — purely visual) -->
-	<div class="page__background-top" aria-hidden="true" role="presentation"></div>
+    <!-- ═══ Page decorative background (aria-hidden — purely visual) ═══════ -->
+    <div class="page__background-top" aria-hidden="true" role="presentation"></div>
 
-	<!-- role="banner" marks this as the page-level header landmark -->
-	<header class="basics page__background-header" role="banner">
-		<div class="page__content">
-			<div class="basics__identity">
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         basics (JSON Resume: basics)
+         role="banner" marks this as the page-level header landmark for
+         screen readers and assistive technologies.
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <header class="basics page__background-header" role="banner">
 
-				<div class="flex w-full justify-center items-center mb-6">
-					<div class="w-1/4">
-						<!-- h1: primary page heading for screen readers and PDF outline -->
-						<h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
-					</div>
-					<div class="w-1/4">
-						<h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">{{basics.label}}</h2>
-					</div>
-					<div class="w-1/2">
-						<h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">{{ meta.mission_statement }}</h3>
-					</div>
-				</div>
+        <!-- ═══ basics — photo (JSON Resume: basics.picture) ══════════════════
+             Wrapped in <figure>/<figcaption> for semantic image grouping.
+             figcaption is visually hidden but read by screen readers and
+             preserved in the PDF tagged structure tree.
+             ═══════════════════════════════════════════════════════════════════ -->
+        <!-- ═══ basics — identity (JSON Resume: basics.name / basics.label / basics.summary) -->
+        <div class="page__content">
+            <div class="basics__identity">
 
-				{{#if basics.picture}}
-				<!-- Wrapped in <figure>/<figcaption> for semantic image grouping -->
-				<figure class="basics__photo-figure" role="img" aria-label="Profile photo of {{basics.name}}">
-					<img src="{{basics.picture}}"
-						alt="Professional headshot of {{basics.name}}, {{basics.label}}"
-						class="basics__photo"
-						width="88"
-						height="88">
-					<figcaption>Profile photo of {{basics.name}}</figcaption>
-				</figure>
-				{{/if}}
+                <div class="flex w-full justify-center items-center mb-6">
+                    <div class="w-1/4">
+                        <!-- h1: primary page heading — document title for screen readers and PDF outline -->
+                        <h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
+                    </div>
+                    <div class="w-1/4">
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">{{basics.label}}</h2>
+                    </div>
+                    <div class="w-1/2">
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">{{ meta.mission_statement }}</h3>
+                    </div>
+                </div>
 
-				<!-- Professional summary — full paragraph, read by screen readers and OCR -->
-				<p class="basics__summary">
-					<div class="mb-6">
-						<span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
-						<span class="text-accent" aria-hidden="true">&#x2665;</span>
-					</div>
-				</p>
-			</div>
-		</div>
+                {{#if basics.picture}}
+                <figure class="basics__photo-figure" role="img" aria-label="Profile photo of {{basics.name}}">
+                    <img src="{{basics.picture}}"
+                        alt="Professional headshot of {{basics.name}}, {{basics.label}}"
+                        class="basics__photo"
+                        width="88"
+                        height="88">
+                    <figcaption>Profile photo of {{basics.name}}</figcaption>
+                </figure>
+                {{/if}}
 
-		<!-- <address> is the correct semantic element for contact information -->
-		<address class="basics__contacts" aria-label="Contact information for {{basics.name}}">
-			<div class="max-w-4xl mx-auto px-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-1">
+                <!-- Professional summary — full paragraph, read by screen readers and OCR -->
+                <p class="basics__summary">
+                    <div class="mb-6">
+                        <span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
+                        <span class="text-accent" aria-hidden="true">&#x2665;</span>
+                    </div>
+                </p>
+            </div>
+        </div>
 
-				{{#each basics.profiles}}
-				<a href="{{this.url}}"
-				   class="contact"
-				   aria-label="{{this.network}} profile of {{this.username}}"
-				   rel="noopener noreferrer"
-				   target="_blank">
-					{{{networkIcon this.network}}}
-					<span class="font-mono text-gray-700 text-xs">/{{this.username}}</span>
-				</a>
-				{{/each}}
+        <!-- ═══ basics — contacts (JSON Resume: basics.profiles / basics.email / basics.phone)
+             <address> is the correct semantic element for contact information
+             associated with the nearest <article> or <body> ancestor.
+             aria-label provides a clear landmark label for screen readers.
+             ════════════════════════════════════════════════════════════════ -->
+        <address class="basics__contacts" aria-label="Contact information for {{basics.name}}">
+            <div class="max-w-4xl mx-auto px-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-1">
 
-				<a href="mailto:{{basics.email}}"
-				   class="contact"
-				   aria-label="Send email to {{basics.email}}">
-					<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
-						<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-					</svg>
-					<span class="font-mono text-gray-700 text-xs">{{basics.email}}</span>
-				</a>
+                {{#each basics.profiles}}
+                <a href="{{this.url}}"
+                   class="contact"
+                   aria-label="{{this.network}} profile of {{this.username}}"
+                   rel="noopener noreferrer"
+                   target="_blank">
+                    {{{networkIcon this.network}}}
+                    <span class="font-mono text-gray-700 text-xs">/{{this.username}}</span>
+                </a>
+                {{/each}}
 
-				<a href="tel:{{compilePhoneNumber basics.phone}}"
-				   class="contact contact--phone"
-				   aria-label="Call {{basics.phone}}">
-					<svg viewBox="0 0 24 24" width="14" height="14" fill="white" aria-hidden="true" focusable="false">
-						<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-					</svg>
-					<span class="font-mono text-xs">{{basics.phone}}</span>
-				</a>
+                <a href="mailto:{{basics.email}}"
+                   class="contact"
+                   aria-label="Send email to {{basics.email}}">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <span class="font-mono text-gray-700 text-xs">{{basics.email}}</span>
+                </a>
 
-			</div>
-		</address>
+                <a href="tel:{{compilePhoneNumber basics.phone}}"
+                   class="contact contact--phone"
+                   aria-label="Call {{basics.phone}}">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="white" aria-hidden="true" focusable="false">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <span class="font-mono text-xs">{{basics.phone}}</span>
+                </a>
 
-	</header>
+            </div>
+        </address>
 
-	<div class="page__content">
-		<!-- <main> landmark for skip-navigation and screen readers -->
-		<main class="max-w-4xl mx-auto py-7 space-y-6 text-gray-700"
-			id="main-content"
-			aria-label="Resume content">
+    </header>
 
-			{{#if work}}
-			<!-- aria-labelledby ties the section to its visible h2 heading -->
-			<section aria-labelledby="work-heading">
-				<h1 class="section__heading" id="work-heading">
-					Professional Experience
-					<span class="text-gray-400 font-mono" aria-label="(most recent positions)">(most recent positions, full work history on LinkedIn)</span>
-				</h1>
-				<div class="mt-3 space-y-5">
-					{{#each work}}
-					<!-- Each position is an independent <article> — self-contained content -->
-					<article class="work__entry" aria-labelledby="work-{{@index}}-title">
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         Main content — <main> landmark for skip-navigation and screen readers
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <div class="page__content">
+        <main class="max-w-4xl mx-auto py-7 space-y-6 text-gray-700"
+            id="main-content"
+            aria-label="Resume content">
 
-						<header class="work__entry-header">
-							<h2 class="work__entry-title" id="work-{{@index}}-title">
-								<span class="work__position">{{this.position}}</span>
-								<span aria-hidden="true" class="text-gray-400 text-sm">·</span>
-								<span class="work__company text-accent">{{this.company}}</span>
-							</h2>
-							<p class="work__period text-gray-400 text-xs">
-								<time datetime="{{this.startDate}}">{{formatDate this.startDate}}</time>
-								<span aria-hidden="true"> – </span>
-								{{#if this.endDate}}
-								<time datetime="{{this.endDate}}">{{formatDate this.endDate}}</time>
-								{{else}}
-								<span>Present</span>
-								{{/if}}
-							</p>
-						</header>
+            <!-- ═══ work (JSON Resume: work[]) ════════════════════════════════════
+                aria-labelledby ties the section landmark to its visible h2 heading
+                so screen readers announce "Work Experience, region" on focus.
+                ═══════════════════════════════════════════════════════════════════ -->
+            {{#if work}}
+            <section aria-labelledby="work-heading">
+                <h1 class="section__heading" id="work-heading">
+                    Professional Experience
+                    <span class="text-gray-400 font-mono" aria-label="(most recent positions)">(most recent positions, full work history on LinkedIn)</span>
+                </h1>
+                <div class="mt-3 space-y-5">
+                    {{#each work}}
+                    <!-- Each position is an independent <article> — a self-contained
+                        piece of content with its own heading, dates, and highlights -->
+                    <article class="work__entry"
+                            aria-labelledby="work-{{@index}}-title">
 
-						{{#if this.highlights}}
-						<ul class="work__highlights-list"
-							role="list"
-							aria-label="Key achievements and responsibilities at {{this.company}}">
-							{{#each this.highlights}}
-							<li class="work__highlight text-sm text-gray-700 leading-relaxed">{{.}}{{highlightPunctuation @index ../highlights.length}}</li>
-							{{/each}}
-						</ul>
-						{{/if}}
+                        <header class="work__entry-header">
+                            <!-- h3: identifies this article within the h1→h2→h3 outline -->
+                            <h2 class="work__entry-title" id="work-{{@index}}-title">
+                                <span class="work__position">{{this.position}}</span>
+                                <span aria-hidden="true" class="text-gray-400 text-sm">·</span>
+                                <span class="work__company text-accent">{{this.company}}</span>
+                            </h2>
+                            <!-- <time> elements carry machine-readable datetime attributes
+                                so ATS parsers and AI agents can extract structured dates -->
+                            <p class="work__period text-gray-400 text-xs">
+                                <time datetime="{{this.startDate}}">{{formatDate this.startDate}}</time>
+                                <span aria-hidden="true"> – </span>
+                                {{#if this.endDate}}
+                                <time datetime="{{this.endDate}}">{{formatDate this.endDate}}</time>
+                                {{else}}
+                                <span>Present</span>
+                                {{/if}}
+                            </p>
+                        </header>
 
-						{{#if this.summary}}
-						<p class="work__highlight mt-1.5 text-sm text-gray-700 leading-relaxed">{{this.summary}}</p>
-						{{/if}}
+                        {{#if this.highlights}}
+                        <ul class="work__highlights-list"
+                            role="list"
+                            aria-label="Key achievements and responsibilities at {{this.company}}">
+                            {{#each this.highlights}}
+                            <li class="work__highlight text-sm text-gray-700 leading-relaxed">{{.}}{{highlightPunctuation @index ../highlights.length}}</li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
 
-					</article>
-					{{/each}}
-				</div>
-			</section>
-			{{/if}}
+                        {{#if this.summary}}
+                        <p class="work__highlight mt-1.5 text-sm text-gray-700 leading-relaxed">{{this.summary}}</p>
+                        {{/if}}
 
-			{{#if displayedSkills}}
-			<section aria-labelledby="skills-heading">
-				<h1 class="section__heading" id="skills-heading">Skills</h1>
-				<ul class="skills__list"
-					role="list"
-					aria-label="Technical and professional skills">
-					{{#each displayedSkills}}
-					<li class="skill{{#if this.meta.highlighted}} skill--highlighted{{/if}}"
-						{{#if this.level}}aria-label="{{this.name}}, proficiency level {{this.level}} out of 100"{{else}}aria-label="{{this.name}}"{{/if}}>{{this.name}}</li>
-					{{/each}}
-				</ul>
-			</section>
-			{{/if}}
+                    </article>
+                    {{/each}}
+                </div>
+            </section>
+            {{/if}}
 
-		</main>
-	</div>
+            <!-- ═══ skills (JSON Resume: skills[]) ════════════════════════════════
+                Skills rendered as a semantic list (<ul><li>) rather than bare spans
+                so screen readers enumerate them and PDF structure preserves order.
+                ═══════════════════════════════════════════════════════════════════ -->
+            {{#if displayedSkills}}
+            <section aria-labelledby="skills-heading">
+                <h1 class="section__heading" id="skills-heading">Skills</h1>
+                <ul class="skills__list"
+                    role="list"
+                    aria-label="Technical and professional skills">
+                    {{#each displayedSkills}}
+                    <li class="skill{{#if this.meta.highlighted}} skill--highlighted{{/if}}"
+                        {{#if this.level}}aria-label="{{this.name}}, proficiency level {{this.level}} out of 100"{{else}}aria-label="{{this.name}}"{{/if}}>{{this.name}}</li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/if}}
 
-	<!-- Page decorative background (aria-hidden — purely visual) -->
-	<div class="page__background-footer" aria-hidden="true" role="presentation"></div>
+        </main>
+    </div>
+
+    <!-- ═══ Page decorative background (aria-hidden — purely visual) ═══════ -->
+    <div class="page__background-footer" aria-hidden="true" role="presentation"></div>
 
 </body>
 </html>
