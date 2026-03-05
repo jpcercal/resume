@@ -15,14 +15,17 @@
 	</style>
 </head>
 <body>
-	<div class="page__background-top"></div>
+	<!-- Page decorative background (aria-hidden — purely visual) -->
+	<div class="page__background-top" aria-hidden="true" role="presentation"></div>
 
-	<header class="basics page__background-header">
+	<!-- role="banner" marks this as the page-level header landmark -->
+	<header class="basics page__background-header" role="banner">
 		<div class="page__content">
 			<div class="basics__identity">
 
 				<div class="flex w-full justify-center items-center mb-6">
 					<div class="w-1/4">
+						<!-- h1: primary page heading for screen readers and PDF outline -->
 						<h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
 					</div>
 					<div class="w-1/4">
@@ -34,9 +37,10 @@
 				</div>
 
 				{{#if basics.picture}}
-				<figure class="basics__photo-figure">
+				<!-- Wrapped in <figure>/<figcaption> for semantic image grouping -->
+				<figure class="basics__photo-figure" role="img" aria-label="Profile photo of {{basics.name}}">
 					<img src="{{basics.picture}}"
-						alt="{{basics.name}}"
+						alt="Professional headshot of {{basics.name}}, {{basics.label}}"
 						class="basics__photo"
 						width="88"
 						height="88">
@@ -44,34 +48,44 @@
 				</figure>
 				{{/if}}
 
+				<!-- Professional summary — full paragraph, read by screen readers and OCR -->
 				<p class="basics__summary">
 					<div class="mb-6">
 						<span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
-						<span class="text-accent">&#x2665;</span>
+						<span class="text-accent" aria-hidden="true">&#x2665;</span>
 					</div>
 				</p>
 			</div>
 		</div>
 
-		<address class="basics__contacts">
+		<!-- <address> is the correct semantic element for contact information -->
+		<address class="basics__contacts" aria-label="Contact information for {{basics.name}}">
 			<div class="max-w-4xl mx-auto px-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-1">
 
 				{{#each basics.profiles}}
-				<a href="{{this.url}}" class="contact" rel="noopener noreferrer" target="_blank">
+				<a href="{{this.url}}"
+				   class="contact"
+				   aria-label="{{this.network}} profile of {{this.username}}"
+				   rel="noopener noreferrer"
+				   target="_blank">
 					{{{networkIcon this.network}}}
 					<span class="font-mono text-gray-700 text-xs">/{{this.username}}</span>
 				</a>
 				{{/each}}
 
-				<a href="mailto:{{basics.email}}" class="contact">
-					<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+				<a href="mailto:{{basics.email}}"
+				   class="contact"
+				   aria-label="Send email to {{basics.email}}">
+					<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
 						<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
 					</svg>
 					<span class="font-mono text-gray-700 text-xs">{{basics.email}}</span>
 				</a>
 
-				<a href="tel:{{compilePhoneNumber basics.phone}}" class="contact contact--phone">
-					<svg viewBox="0 0 24 24" width="14" height="14" fill="white">
+				<a href="tel:{{compilePhoneNumber basics.phone}}"
+				   class="contact contact--phone"
+				   aria-label="Call {{basics.phone}}">
+					<svg viewBox="0 0 24 24" width="14" height="14" fill="white" aria-hidden="true" focusable="false">
 						<path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
 					</svg>
 					<span class="font-mono text-xs">{{basics.phone}}</span>
@@ -83,30 +97,34 @@
 	</header>
 
 	<div class="page__content">
+		<!-- <main> landmark for skip-navigation and screen readers -->
 		<main class="max-w-4xl mx-auto py-7 space-y-6 text-gray-700"
-			id="main-content">
+			id="main-content"
+			aria-label="Resume content">
 
 			{{#if work}}
-			<section>
-				<h1 class="section__heading">
+			<!-- aria-labelledby ties the section to its visible h2 heading -->
+			<section aria-labelledby="work-heading">
+				<h1 class="section__heading" id="work-heading">
 					Professional Experience
-					<span class="text-gray-400 font-mono">(most recent positions, full work history on LinkedIn)</span>
+					<span class="text-gray-400 font-mono" aria-label="(most recent positions)">(most recent positions, full work history on LinkedIn)</span>
 				</h1>
 				<div class="mt-3 space-y-5">
 					{{#each work}}
-					<article class="work__entry">
+					<!-- Each position is an independent <article> — self-contained content -->
+					<article class="work__entry" aria-labelledby="work-{{@index}}-title">
 
 						<header class="work__entry-header">
-							<h2 class="work__entry-title">
+							<h2 class="work__entry-title" id="work-{{@index}}-title">
 								<span class="work__position">{{this.position}}</span>
-								<span class="text-gray-400 text-sm">·</span>
+								<span aria-hidden="true" class="text-gray-400 text-sm">·</span>
 								<span class="work__company text-accent">{{this.company}}</span>
 							</h2>
 							<p class="work__period text-gray-400 text-xs">
-								{{formatDate this.startDate}}
-								<span> – </span>
+								<time datetime="{{this.startDate}}">{{formatDate this.startDate}}</time>
+								<span aria-hidden="true"> – </span>
 								{{#if this.endDate}}
-								{{formatDate this.endDate}}
+								<time datetime="{{this.endDate}}">{{formatDate this.endDate}}</time>
 								{{else}}
 								<span>Present</span>
 								{{/if}}
@@ -114,7 +132,9 @@
 						</header>
 
 						{{#if this.highlights}}
-						<ul class="work__highlights-list">
+						<ul class="work__highlights-list"
+							role="list"
+							aria-label="Key achievements and responsibilities at {{this.company}}">
 							{{#each this.highlights}}
 							<li class="work__highlight text-sm text-gray-700 leading-relaxed">{{.}}{{highlightPunctuation @index ../highlights.length}}</li>
 							{{/each}}
@@ -132,11 +152,14 @@
 			{{/if}}
 
 			{{#if displayedSkills}}
-			<section>
-				<h1 class="section__heading">Skills</h1>
-				<ul class="skills__list">
+			<section aria-labelledby="skills-heading">
+				<h1 class="section__heading" id="skills-heading">Skills</h1>
+				<ul class="skills__list"
+					role="list"
+					aria-label="Technical and professional skills">
 					{{#each displayedSkills}}
-					<li class="skill{{#if this.meta.highlighted}} skill--highlighted{{/if}}">{{this.name}}</li>
+					<li class="skill{{#if this.meta.highlighted}} skill--highlighted{{/if}}"
+						{{#if this.level}}aria-label="{{this.name}}, proficiency level {{this.level}} out of 100"{{else}}aria-label="{{this.name}}"{{/if}}>{{this.name}}</li>
 					{{/each}}
 				</ul>
 			</section>
@@ -145,7 +168,8 @@
 		</main>
 	</div>
 
-	<div class="page__background-footer"></div>
+	<!-- Page decorative background (aria-hidden — purely visual) -->
+	<div class="page__background-footer" aria-hidden="true" role="presentation"></div>
 
 </body>
 </html>
