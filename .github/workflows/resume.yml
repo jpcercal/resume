@@ -57,7 +57,8 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           mkdir -p /tmp/gh-pages
-          npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o /tmp/gh-pages/index.html resume.html
+          cp resume.html /tmp/gh-pages/index.html
+          cp resume.pdf /tmp/gh-pages/resume.pdf
 
       - uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
