@@ -52,17 +52,12 @@ jobs:
             resume-preview.pdf.png
             resume-preview.json.png
 
-      # ── Minify HTML (main branch only, before deploy and commit) ─────────
-      - name: Minify resume.html
-        if: github.ref == 'refs/heads/main'
-        run: npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o resume.html resume.html
-
-      # ── Deploy HTML to GitHub Pages (main branch only) ───────────────────
-      - name: Deploy to GitHub Pages
+      # ── Minify HTML + stage for GitHub Pages (main branch only) ─────────
+      - name: Minify and stage for GitHub Pages
         if: github.ref == 'refs/heads/main'
         run: |
           mkdir -p /tmp/gh-pages
-          cp resume.html /tmp/gh-pages/index.html
+          npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o /tmp/gh-pages/index.html resume.html
 
       - uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
