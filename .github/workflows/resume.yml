@@ -52,17 +52,15 @@ jobs:
             resume-preview.pdf.png
             resume-preview.json.png
 
-      # ── Minify HTML (main branch only, before deploy and commit) ─────────
-      - name: Minify resume.html
-        if: github.ref == 'refs/heads/main'
-        run: npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o resume.html resume.html
-
-      # ── Deploy HTML to GitHub Pages (main branch only) ───────────────────
-      - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
+      # ── Minify HTML + stage for GitHub Pages ─────────────────────────────
+      # NOTE: resume.html is root-owned (written by docker run as root).
+      # We read it and write the minified output directly to /tmp/gh-pages/index.html
+      # to avoid a permission-denied error when overwriting the root-owned file.
+      # TODO: restore `if: github.ref == 'refs/heads/main'` after debugging on PR.
+      - name: Minify and stage for GitHub Pages
         run: |
           mkdir -p /tmp/gh-pages
-          cp resume.html /tmp/gh-pages/index.html
+          npx --yes html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o /tmp/gh-pages/index.html resume.html
 
       - uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
