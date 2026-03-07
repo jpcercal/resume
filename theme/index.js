@@ -23,6 +23,22 @@ function formatDate(dateStr) {
   return `${MONTHS[parseInt(month, 10) - 1]} ${year}`;
 }
 
+const FONTSOURCE_DIR = path.join(__dirname, "..", "node_modules", "@fontsource");
+
+function fontDataUri(relPath) {
+  const bytes = fs.readFileSync(path.join(FONTSOURCE_DIR, relPath));
+  return "data:font/woff2;base64," + bytes.toString("base64");
+}
+
+const FONT_FACE_CSS = [
+  `@font-face{font-family:'Inter';font-style:normal;font-weight:300;src:url('${fontDataUri("inter/files/inter-latin-300-normal.woff2")}')format('woff2');}`,
+  `@font-face{font-family:'Inter';font-style:normal;font-weight:400;src:url('${fontDataUri("inter/files/inter-latin-400-normal.woff2")}')format('woff2');}`,
+  `@font-face{font-family:'Inter';font-style:normal;font-weight:500;src:url('${fontDataUri("inter/files/inter-latin-500-normal.woff2")}')format('woff2');}`,
+  `@font-face{font-family:'Inter';font-style:normal;font-weight:600;src:url('${fontDataUri("inter/files/inter-latin-600-normal.woff2")}')format('woff2');}`,
+  `@font-face{font-family:'Inter';font-style:normal;font-weight:700;src:url('${fontDataUri("inter/files/inter-latin-700-normal.woff2")}')format('woff2');}`,
+  `@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;src:url('${fontDataUri("jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2")}')format('woff2');}`,
+].join("\n");
+
 exports.render = async (resume) => {
   const {
     meta = {},
@@ -39,7 +55,7 @@ exports.render = async (resume) => {
   const result = await postcss([tailwindcss()]).process(inputCss, {
     from: inputCssPath,
   });
-  const compiledCss = result.css;
+  const compiledCss = FONT_FACE_CSS + "\n" + result.css;
 
   // ── Handlebars helpers ──────────────────────────────────────────────────
 
