@@ -23,6 +23,18 @@ function formatDate(dateStr) {
   return `${MONTHS[parseInt(month, 10) - 1]} ${year}`;
 }
 
+const FONTSOURCE_DIR = path.join(__dirname, "..", "node_modules", "@fontsource-variable");
+
+function fontDataUri(relPath) {
+  const bytes = fs.readFileSync(path.join(FONTSOURCE_DIR, relPath));
+  return "data:font/woff2;base64," + bytes.toString("base64");
+}
+
+const FONT_FACE_CSS = [
+  `@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;src:url('${fontDataUri("inter/files/inter-latin-wght-normal.woff2")}')format('woff2-variations');}`,
+  `@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;src:url('${fontDataUri("jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2")}')format('woff2-variations');}`,
+].join("\n");
+
 exports.render = async (resume) => {
   const {
     meta = {},
@@ -39,7 +51,7 @@ exports.render = async (resume) => {
   const result = await postcss([tailwindcss()]).process(inputCss, {
     from: inputCssPath,
   });
-  const compiledCss = result.css;
+  const compiledCss = FONT_FACE_CSS + "\n" + result.css;
 
   // ── Handlebars helpers ──────────────────────────────────────────────────
 
