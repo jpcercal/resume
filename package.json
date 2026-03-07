@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
     "@tailwindcss/postcss": "^4.2.1",
     "handlebars": "^4.7.8",
     "jsonresume-theme-local": "file:theme",
