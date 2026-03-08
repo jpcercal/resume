@@ -49,8 +49,8 @@ jobs:
           path: |
             resume.html
             resume.pdf
-            resume-preview.pdf.png
-            resume-preview.json.png
+            resume.pdf.png
+            resume.json.png
 
       # ── Minify HTML + stage for GitHub Pages (main branch only) ─────────
       - name: Minify and stage for GitHub Pages
@@ -74,7 +74,7 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f resume.pdf resume-preview.pdf.png resume-preview.json.png
+          git add -f resume.pdf resume.pdf.png resume.json.png
           git add -f resume.html
           git commit --amend --no-edit
 

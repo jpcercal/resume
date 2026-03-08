@@ -53,13 +53,12 @@
         <div class="page__content">
             <div class="basics__identity">
 
-
                     <div class="basics__identity-bar flex-col md:flex-row">
                         <!-- h1: primary page heading — document title for screen readers and PDF outline -->
                         <h1 class="basics__identity-name font-mono text-xs text-center">{{basics.name}}</h1>
                         <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
                         <h2 class="basics__identity-label font-mono text-xs text-center">{{basics.label}}</h2>
-                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the mission statement / tagline -->
                         <h3 class="basics__identity-mission_statement font-mono text-xs text-center italic">{{meta.mission_statement}}</h3>
                     </div>
 
@@ -77,10 +76,8 @@
 
                 <!-- Professional summary — full paragraph, read by screen readers and OCR -->
                 <div class="basics__summary">
-                    <div class="mb-6">
-                        <span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
-                        <span class="text-accent" aria-hidden="true">&#x2665;</span>
-                    </div>
+                    <span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
+                    <span class="text-accent" aria-hidden="true">&#x2665;</span>
                 </div>
             </div>
         </div>
