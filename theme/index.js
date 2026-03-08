@@ -4,6 +4,8 @@ const postcss = require("postcss");
 const tailwindcss = require("@tailwindcss/postcss");
 const fs = require("fs");
 
+// ── Constants ──────────────────────────────────────────────────────────────────
+
 const MONTHS = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
@@ -14,15 +16,7 @@ const NETWORK_ICONS = {
   github: `<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>`,
 };
 
-/** "2024-08" → "Aug 2024"  |  "2011-01" → "Jan 2011" */
-function formatDate(dateStr) {
-  if (!dateStr) return "";
-  const parts = dateStr.split("-");
-  if (parts.length < 2) return parts[0];
-  const [year, month] = parts;
-  return `${MONTHS[parseInt(month, 10) - 1]} ${year}`;
-}
-
+/** Inline base64-encoded @font-face rules — no external font requests at render time */
 const FONTSOURCE_DIR = path.join(__dirname, "..", "node_modules", "@fontsource");
 
 function fontDataUri(relPath) {
@@ -39,6 +33,49 @@ const FONT_FACE_CSS = [
   `@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;src:url('${fontDataUri("jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2")}')format('woff2');}`,
 ].join("\n");
 
+// ── Utility helpers ────────────────────────────────────────────────────────────
+
+/**
+ * Converts a JSON Resume date string to a short human-readable label.
+ * @param {string} dateStr - ISO-style date: "2024-08" or "2011".
+ * @returns {string} Formatted date, e.g. "Aug 2024" or "2011".
+ */
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const parts = dateStr.split("-");
+  if (parts.length < 2) return parts[0];
+  const [year, month] = parts;
+  return `${MONTHS[parseInt(month, 10) - 1]} ${year}`;
+}
+
+/**
+ * Fetches an image URL and returns it as a base64 data URI so Puppeteer
+ * never makes a network request for the profile photo at render time.
+ * Falls back to the original URL on any fetch error.
+ * @param {string} url - Remote image URL (e.g. GitHub avatar URL).
+ * @returns {Promise<string>} Data URI string or the original URL on failure.
+ */
+async function fetchPictureDataUri(url) {
+  if (!url) return url;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return url;
+    const contentType = res.headers.get("content-type") || "image/jpeg";
+    const buffer = await res.arrayBuffer();
+    return `data:${contentType};base64,` + Buffer.from(buffer).toString("base64");
+  } catch {
+    return url;
+  }
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────────
+
+/**
+ * Renders the resume as an HTML string using the Handlebars template.
+ * Called by `resumed` (the JSON Resume CLI/library) — must be a named export.
+ * @param {object} resume - Parsed resume.json object.
+ * @returns {Promise<string>} Full HTML document string.
+ */
 exports.render = async (resume) => {
   const {
     meta = {},
@@ -49,7 +86,7 @@ exports.render = async (resume) => {
     languages = [],
   } = resume;
 
-  // Compile TailwindCSS from input.css
+  // ── Compile TailwindCSS ──────────────────────────────────────────────────
   const inputCssPath = path.join(__dirname, "input.css");
   const inputCss = fs.readFileSync(inputCssPath, "utf8");
   const result = await postcss([tailwindcss()]).process(inputCss, {
@@ -57,24 +94,22 @@ exports.render = async (resume) => {
   });
   const compiledCss = FONT_FACE_CSS + "\n" + result.css;
 
-  // ── Handlebars helpers ──────────────────────────────────────────────────
+  // ── Register Handlebars helpers ──────────────────────────────────────────
 
+  /** Inlines the full compiled CSS into the <style> tag (SafeString — no escaping) */
   Handlebars.registerHelper("style", () => new Handlebars.SafeString(compiledCss));
 
+  /** "2024-08" → "Aug 2024" */
   Handlebars.registerHelper("formatDate", (dateStr) => formatDate(dateStr));
 
-  Handlebars.registerHelper("formatPeriod", (startDate, endDate) => {
-    const start = formatDate(startDate);
-    const end = endDate ? formatDate(endDate) : "Present";
-    return `${start} – ${end}`;
-  });
-
+  /** Returns an inline SVG icon for "linkedin" or "github"; empty string otherwise */
   Handlebars.registerHelper("networkIcon", (network) =>
     new Handlebars.SafeString(
       NETWORK_ICONS[(network || "").toLowerCase()] || "",
     ),
   );
 
+  /** Strips spaces, dashes, and parentheses from a phone number for use in tel: hrefs */
   Handlebars.registerHelper("compilePhoneNumber", (phone) =>
     new Handlebars.SafeString(
       (phone || "")
@@ -85,21 +120,12 @@ exports.render = async (resume) => {
     ),
   );
 
-  Handlebars.registerHelper("stripProtocol", (url) =>
-    (url || "").replace(/^https?:\/\//, ""),
-  );
-
+  /** Returns "." for the last highlight item and ";" for all preceding ones */
   Handlebars.registerHelper("highlightPunctuation", (index, total) =>
     index === total - 1 ? "." : ";",
   );
 
-  Handlebars.registerHelper("formatDateHtml", (dateStr) => {
-    if (!dateStr) return "";
-    return new Handlebars.SafeString(
-      `<time datetime="${dateStr}">${formatDate(dateStr)}</time>`,
-    );
-  });
-
+  /** Emits a <script type="application/ld+json"> block with schema.org/Person data */
   Handlebars.registerHelper("jsonLd", () => {
     const ld = {
       "@context": "https://schema.org",
@@ -134,8 +160,9 @@ exports.render = async (resume) => {
     );
   });
 
-  // ── Pre-process skills ──────────────────────────────────────────────────
-  // Filter to displayed ones; highlighted first, then sorted by level desc.
+  // ── Pre-process skills ───────────────────────────────────────────────────
+  // Only skills with meta.display === true are shown.
+  // Sort order: highlighted first, then by level descending.
   const displayedSkills = (skills || [])
     .filter((s) => s.meta?.display)
     .sort((a, b) => {
@@ -145,14 +172,19 @@ exports.render = async (resume) => {
       return parseInt(b.level || "0", 10) - parseInt(a.level || "0", 10);
     });
 
-  // ── Render ──────────────────────────────────────────────────────────────
+  // ── Embed profile photo as base64 data URI ───────────────────────────────
+  // Pre-fetches the image in Node so the browser never makes a network
+  // request during PDF rendering (avoids timeouts in Docker).
+  const pictureDataUri = await fetchPictureDataUri(basics.picture);
+
+  // ── Render template ──────────────────────────────────────────────────────
   const template = Handlebars.compile(
     fs.readFileSync(path.join(__dirname, "template.hbs"), "utf8"),
   );
 
   return template({
     meta,
-    basics,
+    basics: { ...basics, picture: pictureDataUri },
     work,
     education,
     languages,
