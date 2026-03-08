@@ -55,7 +55,7 @@ reproducible container.
 
 ## See it in action
 
-![A preview of the resume file](resume-preview.pdf.png)
+![A preview of the resume file](resume.pdf.png)
 
 At the very top of this page you can click `João's Resume | VIEW` to open the PDF directly
 in your browser, or `João's Resume | DOWNLOAD` to save a copy for offline viewing.
@@ -64,7 +64,7 @@ in your browser, or `João's Resume | DOWNLOAD` to save a copy for offline viewi
 > [`resume.json`](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json) —
 > the file that drives everything. Here is a preview of what it looks like:
 >
-> ![A preview of the resume.json file](resume-preview.json.png)
+> ![A preview of the resume.json file](resume.json.png)
 
 > The full workflow is defined in `.github/workflows/resume.yml`. You can watch it run
 > live on [GitHub Actions](https://github.com/jpcercal/resume/actions).
@@ -99,8 +99,8 @@ into your working directory:
 
 - `resume.pdf`
 - `resume.html`
-- `resume-preview.pdf.png`
-- `resume-preview.json.png`
+- `resume.pdf.png`
+- `resume.json.png`
 
 The image is built for both `linux/amd64` and `linux/arm64`, so it runs natively on
 Intel/AMD machines as well as Apple Silicon (M-series) and ARM servers — no emulation
