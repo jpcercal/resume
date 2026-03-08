@@ -54,19 +54,13 @@
             <div class="basics__identity">
 
 
-                    <div class="flex w-full justify-center items-center mb-6">
-                        <div class="w-1/4">
-                            <!-- h1: primary page heading — document title for screen readers and PDF outline -->
-                            <h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">{{basics.name}}</h1>
-                        </div>
-                        <div class="w-1/4">
-                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
-                            <h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">{{basics.label}}</h2>
-                        </div>
-                        <div class="w-1/2">
-                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
-                            <h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">{{ meta.mission_statement }}</h3>
-                        </div>
+                    <div class="basics__identity-bar">
+                        <!-- h1: primary page heading — document title for screen readers and PDF outline -->
+                        <h1 class="basics__identity-name font-mono text-xs text-center">{{basics.name}}</h1>
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <h2 class="basics__identity-label font-mono text-xs text-center">{{basics.label}}</h2>
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <h3 class="basics__identity-mission_statement font-mono text-xs text-center italic">{{meta.mission_statement}}</h3>
                     </div>
 
 
@@ -82,12 +76,12 @@
                 {{/if}}
 
                 <!-- Professional summary — full paragraph, read by screen readers and OCR -->
-                <p class="basics__summary">
+                <div class="basics__summary">
                     <div class="mb-6">
                         <span class="text-gray-600 font-medium text-sm">{{basics.summary}}</span>
                         <span class="text-accent" aria-hidden="true">&#x2665;</span>
                     </div>
-                </p>
+                </div>
             </div>
         </div>
 
