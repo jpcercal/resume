@@ -33,7 +33,6 @@
   :root, :host {
     --font-sans: "Inter", system-ui, -apple-system, sans-serif;
     --font-mono: "JetBrains Mono", "Courier New", monospace;
-    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
@@ -255,17 +254,11 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
-  .-mr-2 {
-    margin-right: calc(var(--spacing) * -2);
-  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
-  }
-  .-ml-2 {
-    margin-left: calc(var(--spacing) * -2);
   }
   .block {
     display: block;
@@ -278,15 +271,6 @@
   }
   .hidden {
     display: none;
-  }
-  .w-1\/2 {
-    width: calc(1 / 2 * 100%);
-  }
-  .w-1\/4 {
-    width: calc(1 / 4 * 100%);
-  }
-  .w-full {
-    width: 100%;
   }
   .max-w-4xl {
     max-width: var(--container-4xl);
@@ -393,9 +377,6 @@
   .text-accent {
     color: var(--color-accent);
   }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
   .text-gray-400 {
     color: var(--color-gray-400);
   }
@@ -437,7 +418,7 @@ body {
 }
 .page__background-top {
   position: relative;
-  height: auto;
+  height: 2rem;
   width: auto;
 }
 .page__background-top::before {
@@ -508,34 +489,45 @@ body {
   display: table;
   clear: both;
 }
+.basics__identity-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--color-neutral-100);
+}
 .basics__identity-name,
 .basics__identity-label,
 .basics__identity-mission_statement {
-  margin-top: 2.4rem;
-  line-height: 1rem;
-  padding: 0.75rem 0.25rem 0.75rem 0.25rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.25;
+  padding: 0.75rem 1.25rem;
   font-weight: 700;
-  border: 0.2rem solid var(--color-neutral-100);
-  border-radius: 0.01rem;
 }
 .basics__identity-name {
   background: var(--color-primary-500);
   color: var(--color-neutral-0);
-  border-radius: 0.5rem 0 0 1rem;
-  border-right: none;
+  flex-shrink: 0;
 }
 .basics__identity-label {
-  background: var(--color-gray-700);
+  background: var(--color-neutral-700);
   color: var(--color-neutral-0);
-  border-left: none;
-  border-right: none;
+  flex-shrink: 0;
 }
 .basics__identity-mission_statement {
-  background: var(--color-gray-500);
+  background: var(--color-neutral-500);
   color: var(--color-neutral-0);
-  border-radius: 0 0.5rem 1rem 0;
-  border-left: none;
+  flex: 1;
+}
+@media (max-width: 639px) {
+  .basics__identity-bar {
+    flex-direction: column;
+  }
 }
 .basics__summary {
   font-size: 0.8rem;
@@ -600,7 +592,7 @@ address.basics__contacts {
   transition: color 0.12s ease;
 }
 .contact--phone {
-  background-color: var(--color-gray-400);
+  background-color: var(--color-neutral-500);
   color: var(--color-neutral-0);
   line-height: 1.5rem;
   padding: 0 0.35rem;
@@ -893,19 +885,13 @@ address.basics__contacts {
             <div class="basics__identity">
 
 
-                    <div class="flex w-full justify-center items-center mb-6">
-                        <div class="w-1/4">
-                            <!-- h1: primary page heading — document title for screen readers and PDF outline -->
-                            <h1 class="basics__identity-name text-accent font-mono text-xs text-center -ml-2">João Cercal</h1>
-                        </div>
-                        <div class="w-1/4">
-                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
-                            <h2 class="basics__identity-label text-gray-400 font-mono text-xs text-center">Principal Engineer</h2>
-                        </div>
-                        <div class="w-1/2">
-                            <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
-                            <h3 class="basics__identity-mission_statement text-gray-300 font-mono text-xs text-center italic -mr-2">Architecting Systems &amp; Empowering People</h3>
-                        </div>
+                    <div class="basics__identity-bar">
+                        <!-- h1: primary page heading — document title for screen readers and PDF outline -->
+                        <h1 class="basics__identity-name font-mono text-xs text-center">João Cercal</h1>
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <h2 class="basics__identity-label font-mono text-xs text-center">Principal Engineer</h2>
+                        <!-- role="doc-subtitle": DPUB-ARIA subtitle role for the job title / label -->
+                        <h3 class="basics__identity-mission_statement font-mono text-xs text-center italic">Architecting Systems &amp; Empowering People</h3>
                     </div>
 
 
@@ -919,12 +905,12 @@ address.basics__contacts {
                 </figure>
 
                 <!-- Professional summary — full paragraph, read by screen readers and OCR -->
-                <p class="basics__summary">
+                <div class="basics__summary">
                     <div class="mb-6">
                         <span class="text-gray-600 font-medium text-sm">I am passionate about creating innovative, scalable solutions that empower people to do what they love. With over 17 years of continuous experience in software engineering, I&#x27;ve evolved from a hands-on developer into a technical leader who architects systems, drives platform reliability, and delivers measurable business impact. I thrive in taking ownership of complex, cross-functional challenges, from re-architecting critical user flows to optimizing cloud infrastructure and strengthening security posture at scale. I&#x27;ve worked with talented individuals worldwide and I am always looking for ways to raise the bar for the teams and systems I work with.</span>
                         <span class="text-accent" aria-hidden="true">&#x2665;</span>
                     </div>
-                </p>
+                </div>
             </div>
         </div>
 
