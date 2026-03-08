@@ -178,7 +178,6 @@ body {
 /* ── Identity bar — connected pill strip ─────────────────────────────── */
 .basics__identity-bar {
   display: flex;
-  flex-direction: row;
   align-items: stretch;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -216,11 +215,6 @@ body {
   flex: 1;
 }
 
-@media (max-width: 639px) {
-  .basics__identity-bar {
-    flex-direction: column;
-  }
-}
 
 /* Element: professional summary paragraph */
 .basics__summary {
@@ -477,7 +471,7 @@ address.basics__contacts {
    Tailwind includes the generated CSS for those classes.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-@source inline("flex items-baseline justify-between gap-3 mb-3 min-w-0 gap-1 flex-wrap font-semibold text-gray-900 text-lg text-gray-400 text-sm text-gray-500 font-medium whitespace-nowrap flex-shrink-0 text-xs font-mono underline max-w-4xl mx-auto px-10 justify-center items-center gap-x-8 gap-y-1 mt-1.5 space-y-1.5 mt-3 space-y-5 break-inside-avoid mt-2 gap-1.5 py-7 space-y-6 text-gray-700 leading-relaxed");
+@source inline("flex items-baseline justify-between gap-3 mb-3 min-w-0 gap-1 flex-wrap font-semibold text-gray-900 text-lg text-gray-400 text-sm text-gray-500 font-medium whitespace-nowrap flex-shrink-0 text-xs font-mono underline max-w-4xl mx-auto px-10 justify-center items-center gap-x-8 gap-y-1 mt-1.5 space-y-1.5 mt-3 space-y-5 break-inside-avoid mt-2 gap-1.5 py-7 space-y-6 text-gray-700 leading-relaxed flex-col md:flex-row md:items-baseline md:gap-3");
 
 /* ═══════════════════════════════════════════════════════════════════════════
    13. PAGE CONTENT WRAPPER
