@@ -30,8 +30,8 @@ docker run --rm -v "$PWD:/app" jpcercal/resume
 docker run --rm -v "${PWD}:/app" jpcercal/resume
 ```
 
-`$PWD` mounts as `/app` inside the container. Outputs (`resume.pdf`, `resume-preview.pdf.png`,
-`resume-preview.json.png`) are written directly into `$PWD`. `node_modules` is baked into the
+`$PWD` mounts as `/app` inside the container. Outputs (`resume.pdf`, `resume.pdf.png`,
+`resume.json.png`) are written directly into `$PWD`. `node_modules` is baked into the
 image at `/deps/node_modules` — outside the bind-mount, so it is never overwritten by the mount.
 
 ## File Responsibilities
@@ -42,14 +42,17 @@ image at `/deps/node_modules` — outside the bind-mount, so it is never overwri
 | `theme/template.hbs` | Handlebars HTML template | Yes |
 | `theme/input.css` | TailwindCSS v4 tokens + custom classes + utility safelist | Yes |
 | `theme/index.js` | CommonJS: compiles CSS, registers helpers, exports `render()` | Yes |
-| `index.js` | ESM: orchestrates `resumed` + Puppeteer, writes PDF + PNGs | Yes |
+| `index.js` | ESM: orchestrates Puppeteer, delegates to scripts/ | Yes |
+| `scripts/generate-pdf.js` | ESM: renders HTML → `resume.pdf` | Yes |
+| `scripts/generate-pdf-preview.js` | ESM: screenshots rendered HTML → `resume.pdf.png` | Yes |
+| `scripts/generate-json-preview.js` | ESM: renders Monokai JSON view → `resume.json.png` | Yes |
 | `Dockerfile` | node:24-alpine + system Chromium; deps baked into `/deps/node_modules`; WORKDIR `/app` | Rarely |
 | `.github/workflows/resume.yml` | Full CI/CD pipeline | Rarely |
 | `.puppeteerrc.cjs` | Puppeteer cache dir (CommonJS — required by Puppeteer config loader) | Rarely |
 | `resume.html` | Generated — never edit | Never |
 | `resume.pdf` | Generated — never edit | Never |
-| `resume-preview.pdf.png` | Generated — never edit | Never |
-| `resume-preview.json.png` | Generated — never edit | Never |
+| `resume.pdf.png` | Generated — never edit | Never |
+| `resume.json.png` | Generated — never edit | Never |
 
 ## Module Systems — Critical
 
@@ -66,9 +69,9 @@ Do not change any path without updating all locations simultaneously.
 |---|---|
 | `/app/resume.json` | `package.json` scripts, `index.js` |
 | `/app/resume.html` | `package.json` scripts |
-| `/app/resume.pdf` | `index.js` |
-| `/app/resume-preview.pdf.png` | `index.js` |
-| `/app/resume-preview.json.png` | `index.js` |
+| `/app/resume.pdf` | `scripts/generate-pdf.js` |
+| `/app/resume.pdf.png` | `scripts/generate-pdf-preview.js` |
+| `/app/resume.json.png` | `scripts/generate-json-preview.js` |
 | `/app` | Dockerfile WORKDIR; bind-mount target in `docker run` and CI |
 | `/usr/bin/chromium-browser` | Dockerfile `ENV PUPPETEER_EXECUTABLE_PATH` |
 
@@ -96,7 +99,7 @@ All registered in `theme/index.js`. Use `{{{triple-stache}}}` for SafeString hel
 | `formatPeriod` | `{{formatPeriod start end}}` | `"Jan 2022 – Present"` |
 | `networkIcon` | `{{{networkIcon network}}}` | Inline SVG — LinkedIn or GitHub (SafeString) |
 | `compilePhoneNumber` | `{{compilePhoneNumber phone}}` | Strips spaces/dashes/parens for `tel:` href |
-| `stripProtocol` | `{{stripProtocol url}}` | Removes `https://` for display |
+| `highlightPunctuation` | `{{highlightPunctuation @index total}}` | Returns `.` for last item, `;` for others |
 
 ## Skills Data Structure
 
@@ -139,8 +142,8 @@ Custom CSS classes: `.page-background`, `.header`, `.header-content`, `.header-p
 |---|---|
 | `resume.json` | Committed — source |
 | `resume.pdf` | Gitignored — build artifact (CI only, force-added on main) |
-| `resume-preview.pdf.png` | Gitignored — build artifact (CI only, force-added on main) |
-| `resume-preview.json.png` | Gitignored — build artifact (CI only, force-added on main) |
+| `resume.pdf.png` | Gitignored — build artifact (CI only, force-added on main) |
+| `resume.json.png` | Gitignored — build artifact (CI only, force-added on main) |
 | `resume.html` | Gitignored — build artifact (CI only, force-added on main) |
 | `node_modules/` | Gitignored |
 | `.cache/` | Gitignored |
