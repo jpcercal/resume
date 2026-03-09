@@ -3,10 +3,11 @@
 ## Build Commands
 
 ```bash
-npm run validate        # validate resume.json against JSON Resume schema
-npm run render          # resume.json → /app/resume.html
-npm run generate-pdf    # resume.html → /app/resume.pdf + preview PNGs
-npm run build           # validate + render + generate-pdf (sequential)
+npm run validate-safelist  # check template.hbs classes exist in input.css safelist
+npm run validate           # validate resume.json against JSON Resume schema
+npm run render             # resume.json → /app/resume.html
+npm run generate-pdf       # resume.html → /app/resume.pdf + preview PNGs
+npm run build              # validate-safelist + validate + render + generate-pdf (sequential)
 ```
 
 Rebuild after any change to `resume.json` or anything in `theme/`.
@@ -43,10 +44,12 @@ image at `/deps/node_modules` — outside the bind-mount, so it is never overwri
 | `theme/input.css` | TailwindCSS v4 tokens + custom classes + utility safelist | Yes |
 | `theme/index.js` | CommonJS: compiles CSS, registers helpers, exports `render()` | Yes |
 | `index.js` | ESM: orchestrates Puppeteer, delegates to scripts/ | Yes |
-| `scripts/generate-pdf.js` | ESM: renders HTML → `resume.pdf` | Yes |
+| `scripts/constants.js` | ESM: shared constants (`EXPECTED_PDF_PAGES`) | Yes |
+| `scripts/generate-pdf.js` | ESM: renders HTML → `resume.pdf` + page count guard | Yes |
 | `scripts/generate-pdf-preview.js` | ESM: screenshots rendered HTML → `resume.pdf.png` | Yes |
 | `scripts/generate-json-preview.js` | ESM: renders Monokai JSON view → `resume.json.png` | Yes |
-| `Dockerfile` | node:24-alpine + system Chromium; deps baked into `/deps/node_modules`; WORKDIR `/app` | Rarely |
+| `scripts/validate-safelist.js` | ESM: validates template classes against CSS safelist | Yes |
+| `Dockerfile` | Multi-stage: node:24-alpine + system Chromium; deps baked into `/deps/node_modules`; WORKDIR `/app` | Rarely |
 | `.github/workflows/resume.yml` | Full CI/CD pipeline | Rarely |
 | `.puppeteerrc.cjs` | Puppeteer cache dir (CommonJS — required by Puppeteer config loader) | Rarely |
 | `resume.html` | Generated — never edit | Never |
@@ -74,6 +77,7 @@ Do not change any path without updating all locations simultaneously.
 | `/app/resume.json.png` | `scripts/generate-json-preview.js` |
 | `/app` | Dockerfile WORKDIR; bind-mount target in `docker run` and CI |
 | `/usr/bin/chromium-browser` | Dockerfile `ENV PUPPETEER_EXECUTABLE_PATH` |
+| `EXPECTED_PDF_PAGES = 3` | `scripts/constants.js` (used by `generate-pdf.js` guard + `generate-pdf-preview.js` height) |
 
 ## TailwindCSS Safelist — Required
 
@@ -86,7 +90,8 @@ The risk is Tailwind utilities used directly in the template markup (e.g., `flex
 `text-sm`, `space-y-5`, `break-inside-avoid`).
 
 **Rule:** when adding a new Tailwind utility to `template.hbs`, add it to `@source inline()` in
-`theme/input.css`.
+`theme/input.css`. The `npm run validate-safelist` script (runs first in `build`) will catch
+any mismatches automatically.
 
 ## Handlebars Helpers
 
@@ -179,10 +184,12 @@ Triggers on every push to any branch.
 | Checkout (full history) | all |
 | Set up QEMU (cross-arch emulation) | all |
 | Set up Docker Buildx | all |
-| Login to Docker Hub (`DOCKERHUB_USERNAME` + `DOCKERHUB_TOKEN` secrets) | all |
-| Build multi-arch image (`linux/amd64,linux/arm64`) and push to `jpcercal/resume` | all |
+| Login to Docker Hub (`DOCKERHUB_USERNAME` + `DOCKERHUB_TOKEN` secrets) | main only |
+| Build multi-arch image (`linux/amd64,linux/arm64`) and push to `jpcercal/resume` | main only |
+| Build single-arch image and load locally (no push) | non-main only |
 | `docker run --rm -v "$PWD:/app" jpcercal/resume:<sha>` | all |
 | Upload all 4 artifacts as `resume-artifacts` (7-day retention) | all |
+| Check dependency freshness (`npm audit` + `npm outdated`, informational) | main only |
 | Minify `resume.html` via `html-minifier-terser` | main only |
 | Deploy HTML to `gh-pages` via `peaceiris/actions-gh-pages@v4` | main only |
 | `git commit --amend --no-edit` — rewrites commit to include PDF + HTML + preview PNGs | main only |
