@@ -127,16 +127,18 @@ exports.render = async (resume) => {
 
   /** Emits a <script type="application/ld+json"> block with schema.org/Person data */
   Handlebars.registerHelper("jsonLd", () => {
+    const aiContext = meta.ai_context || {};
     const ld = {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": basics.name,
       "jobTitle": basics.label,
-      "description": basics.summary,
+      "description": aiContext.narrative || basics.summary,
       "image": basics.picture,
       "email": basics.email ? `mailto:${basics.email}` : undefined,
       "telephone": basics.phone,
       "url": basics.website,
+      "workLocation": basics.location?.address || undefined,
       "address": basics.location ? {
         "@type": "PostalAddress",
         "addressLocality": basics.location.address,
@@ -149,15 +151,82 @@ exports.render = async (resume) => {
         "startDate": w.startDate,
         "endDate": w.endDate || undefined,
       })),
-      "knowsAbout": (skills || []).filter((s) => s.meta?.display).map((s) => s.name),
+      "alumniOf": (education || []).map((e) => ({
+        "@type": "EducationalOrganization",
+        "name": e.institution,
+        "studySubject": e.area,
+      })),
+      "knowsAbout": [
+        ...(skills || []).filter((s) => s.meta?.display).map((s) => s.name),
+        ...(aiContext.keywords || []),
+      ],
       "knowsLanguage": (languages || []).map((l) => ({
         "@type": "Language",
         "name": l.language,
       })),
+      "seeks": aiContext.instructions ? {
+        "@type": "JobPosting",
+        "description": aiContext.instructions,
+      } : undefined,
     };
     return new Handlebars.SafeString(
       `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`,
     );
+  });
+
+  /** Renders AI context as visually hidden text for ATS/AI parsers (SafeString) */
+  Handlebars.registerHelper("aiContext", () => {
+    const ctx = meta.ai_context;
+    const parts = [];
+
+    // Keywords
+    if (ctx?.keywords?.length) {
+      parts.push(`Keywords: ${ctx.keywords.join(", ")}.`);
+    }
+
+    // Narrative and instructions
+    if (ctx?.narrative) parts.push(ctx.narrative);
+    if (ctx?.instructions) parts.push(ctx.instructions);
+
+    // Work history summary for plain-text ATS parsers
+    if (work?.length) {
+      const workSummary = work
+        .map((w) => {
+          const startDate = formatDate(w.startDate);
+          const endDate = w.endDate ? formatDate(w.endDate) : "Present";
+          const dateRange = `${startDate} – ${endDate}`;
+          return `${w.position} at ${w.company} (${dateRange})`;
+        })
+        .join("; ");
+      parts.push(`Work History: ${workSummary}.`);
+    }
+
+    // Education summary
+    if (education?.length) {
+      const eduSummary = education
+        .map((e) => {
+          const studyType = e.studyType || "";
+          const area = e.area || "";
+          const institution = e.institution || "";
+          return `${studyType} in ${area} from ${institution}`.trim();
+        })
+        .join("; ");
+      parts.push(`Education: ${eduSummary}.`);
+    }
+
+    // Languages summary
+    if (languages?.length) {
+      const langList = languages
+        .map((l) => {
+          const fluency = l.fluency ? ` (${l.fluency})` : "";
+          return `${l.language}${fluency}`;
+        })
+        .join(", ");
+      parts.push(`Languages: ${langList}.`);
+    }
+
+    if (!parts.length) return "";
+    return new Handlebars.SafeString(parts.join(" "));
   });
 
   // ── Pre-process skills ───────────────────────────────────────────────────
