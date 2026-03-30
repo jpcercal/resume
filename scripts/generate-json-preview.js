@@ -13,8 +13,7 @@ const comment = (s) => `<span class="c">${s}</span>`; // grey   — comments
 const line = (k, v) => `  ${key(`"${k}"`)}${punc(":")} ${v}`;
 
 // Indent level 2 (4 spaces, or custom): nested key–value pair
-const nested = (k, v, indent = "    ") =>
-  `${indent}${key(`"${k}"`)}${punc(":")} ${v}`;
+const nested = (k, v, indent = "    ") => `${indent}${key(`"${k}"`)}${punc(":")} ${v}`;
 
 // ── Data extraction ───────────────────────────────────────────────────────────
 
@@ -52,8 +51,7 @@ function buildSkillsLine(skills) {
     .join(`${punc(",")} `);
 
   const remainder = skills.length - SKILLS_SHOWN;
-  const suffix =
-    remainder > 0 ? `${punc(",")} ${comment(`/* +${remainder} more */`)}` : "";
+  const suffix = remainder > 0 ? `${punc(",")} ${comment(`/* +${remainder} more */`)}` : "";
 
   return names + suffix;
 }

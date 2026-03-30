@@ -37,25 +37,25 @@ image at `/deps/node_modules` — outside the bind-mount, so it is never overwri
 
 ## File Responsibilities
 
-| File | Role | Edit? |
-|---|---|---|
-| `resume.json` | Source of truth — JSON Resume schema v1.0.0 | Yes |
-| `theme/template.hbs` | Handlebars HTML template | Yes |
-| `theme/input.css` | TailwindCSS v4 tokens + custom classes + utility safelist | Yes |
-| `theme/index.js` | CommonJS: compiles CSS, registers helpers, exports `render()` | Yes |
-| `index.js` | ESM: orchestrates Puppeteer, delegates to scripts/ | Yes |
-| `scripts/constants.js` | ESM: shared constants (`EXPECTED_PDF_PAGES`) | Yes |
-| `scripts/generate-pdf.js` | ESM: renders HTML → `resume.pdf` + page count guard | Yes |
-| `scripts/generate-pdf-preview.js` | ESM: screenshots rendered HTML → `resume.pdf.png` | Yes |
-| `scripts/generate-json-preview.js` | ESM: renders Monokai JSON view → `resume.json.png` | Yes |
-| `scripts/validate-safelist.js` | ESM: validates template classes against CSS safelist | Yes |
-| `Dockerfile` | Multi-stage: node:24-alpine + system Chromium; deps baked into `/deps/node_modules`; WORKDIR `/app` | Rarely |
-| `.github/workflows/resume.yml` | Full CI/CD pipeline | Rarely |
-| `.puppeteerrc.cjs` | Puppeteer cache dir (CommonJS — required by Puppeteer config loader) | Rarely |
-| `resume.html` | Generated — never edit | Never |
-| `resume.pdf` | Generated — never edit | Never |
-| `resume.pdf.png` | Generated — never edit | Never |
-| `resume.json.png` | Generated — never edit | Never |
+| File                               | Role                                                                                                | Edit?  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------- | ------ |
+| `resume.json`                      | Source of truth — JSON Resume schema v1.0.0                                                         | Yes    |
+| `theme/template.hbs`               | Handlebars HTML template                                                                            | Yes    |
+| `theme/input.css`                  | TailwindCSS v4 tokens + custom classes + utility safelist                                           | Yes    |
+| `theme/index.js`                   | CommonJS: compiles CSS, registers helpers, exports `render()`                                       | Yes    |
+| `index.js`                         | ESM: orchestrates Puppeteer, delegates to scripts/                                                  | Yes    |
+| `scripts/constants.js`             | ESM: shared constants (`EXPECTED_PDF_PAGES`)                                                        | Yes    |
+| `scripts/generate-pdf.js`          | ESM: renders HTML → `resume.pdf` + page count guard                                                 | Yes    |
+| `scripts/generate-pdf-preview.js`  | ESM: screenshots rendered HTML → `resume.pdf.png`                                                   | Yes    |
+| `scripts/generate-json-preview.js` | ESM: renders Monokai JSON view → `resume.json.png`                                                  | Yes    |
+| `scripts/validate-safelist.js`     | ESM: validates template classes against CSS safelist                                                | Yes    |
+| `Dockerfile`                       | Multi-stage: node:24-alpine + system Chromium; deps baked into `/deps/node_modules`; WORKDIR `/app` | Rarely |
+| `.github/workflows/resume.yml`     | Full CI/CD pipeline                                                                                 | Rarely |
+| `.puppeteerrc.cjs`                 | Puppeteer cache dir (CommonJS — required by Puppeteer config loader)                                | Rarely |
+| `resume.html`                      | Generated — never edit                                                                              | Never  |
+| `resume.pdf`                       | Generated — never edit                                                                              | Never  |
+| `resume.pdf.png`                   | Generated — never edit                                                                              | Never  |
+| `resume.json.png`                  | Generated — never edit                                                                              | Never  |
 
 ## Module Systems — Critical
 
@@ -68,16 +68,16 @@ image at `/deps/node_modules` — outside the bind-mount, so it is never overwri
 
 Do not change any path without updating all locations simultaneously.
 
-| Path | Hardcoded in |
-|---|---|
-| `/app/resume.json` | `package.json` scripts, `index.js` |
-| `/app/resume.html` | `package.json` scripts |
-| `/app/resume.pdf` | `scripts/generate-pdf.js` |
-| `/app/resume.pdf.png` | `scripts/generate-pdf-preview.js` |
-| `/app/resume.json.png` | `scripts/generate-json-preview.js` |
-| `/app` | Dockerfile WORKDIR; bind-mount target in `docker run` and CI |
-| `/usr/bin/chromium-browser` | Dockerfile `ENV PUPPETEER_EXECUTABLE_PATH` |
-| `EXPECTED_PDF_PAGES = 3` | `scripts/constants.js` (used by `generate-pdf.js` guard + `generate-pdf-preview.js` height) |
+| Path                        | Hardcoded in                                                                                |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| `/app/resume.json`          | `package.json` scripts, `index.js`                                                          |
+| `/app/resume.html`          | `package.json` scripts                                                                      |
+| `/app/resume.pdf`           | `scripts/generate-pdf.js`                                                                   |
+| `/app/resume.pdf.png`       | `scripts/generate-pdf-preview.js`                                                           |
+| `/app/resume.json.png`      | `scripts/generate-json-preview.js`                                                          |
+| `/app`                      | Dockerfile WORKDIR; bind-mount target in `docker run` and CI                                |
+| `/usr/bin/chromium-browser` | Dockerfile `ENV PUPPETEER_EXECUTABLE_PATH`                                                  |
+| `EXPECTED_PDF_PAGES = 3`    | `scripts/constants.js` (used by `generate-pdf.js` guard + `generate-pdf-preview.js` height) |
 
 ## TailwindCSS Safelist — Required
 
@@ -97,14 +97,14 @@ any mismatches automatically.
 
 All registered in `theme/index.js`. Use `{{{triple-stache}}}` for SafeString helpers.
 
-| Helper | Usage | Output |
-|---|---|---|
-| `style` | `{{style}}` | Inlines full compiled CSS (SafeString) |
-| `formatDate` | `{{formatDate dateStr}}` | `"2024-08"` → `"Aug 2024"` |
-| `formatPeriod` | `{{formatPeriod start end}}` | `"Jan 2022 – Present"` |
-| `networkIcon` | `{{{networkIcon network}}}` | Inline SVG — LinkedIn or GitHub (SafeString) |
-| `compilePhoneNumber` | `{{compilePhoneNumber phone}}` | Strips spaces/dashes/parens for `tel:` href |
-| `highlightPunctuation` | `{{highlightPunctuation @index total}}` | Returns `.` for last item, `;` for others |
+| Helper                 | Usage                                   | Output                                       |
+| ---------------------- | --------------------------------------- | -------------------------------------------- |
+| `style`                | `{{style}}`                             | Inlines full compiled CSS (SafeString)       |
+| `formatDate`           | `{{formatDate dateStr}}`                | `"2024-08"` → `"Aug 2024"`                   |
+| `formatPeriod`         | `{{formatPeriod start end}}`            | `"Jan 2022 – Present"`                       |
+| `networkIcon`          | `{{{networkIcon network}}}`             | Inline SVG — LinkedIn or GitHub (SafeString) |
+| `compilePhoneNumber`   | `{{compilePhoneNumber phone}}`          | Strips spaces/dashes/parens for `tel:` href  |
+| `highlightPunctuation` | `{{highlightPunctuation @index total}}` | Returns `.` for last item, `;` for others    |
 
 ## Skills Data Structure
 
@@ -118,6 +118,7 @@ All registered in `theme/index.js`. Use `{{{triple-stache}}}` for SafeString hel
 ```
 
 Filtering and sorting is done in `theme/index.js` (not in Handlebars):
+
 - Only `meta.display === true` are included
 - Sorted: `meta.highlighted` first, then `level` descending
 - Passed to template as `displayedSkills`
@@ -128,11 +129,11 @@ Do not add display/sort logic to the template.
 
 Defined in `theme/input.css` `@theme` block:
 
-| Token | Value |
-|---|---|
-| `--color-accent` | `#ed5f1a` |
-| `--font-sans` | Inter, system-ui, -apple-system, sans-serif |
-| `--font-mono` | JetBrains Mono, Courier New, monospace |
+| Token            | Value                                       |
+| ---------------- | ------------------------------------------- |
+| `--color-accent` | `#ed5f1a`                                   |
+| `--font-sans`    | Inter, system-ui, -apple-system, sans-serif |
+| `--font-mono`    | JetBrains Mono, Courier New, monospace      |
 
 Fonts loaded from Google Fonts in `template.hbs`. Accent exposed as `.text-accent` and
 `var(--color-accent)` throughout.
@@ -143,15 +144,15 @@ Custom CSS classes: `.page-background`, `.header`, `.header-content`, `.header-p
 
 ## What Is Committed vs Gitignored
 
-| Item | Status |
-|---|---|
-| `resume.json` | Committed — source |
-| `resume.pdf` | Gitignored — build artifact (CI only, force-added on main) |
-| `resume.pdf.png` | Gitignored — build artifact (CI only, force-added on main) |
+| Item              | Status                                                     |
+| ----------------- | ---------------------------------------------------------- |
+| `resume.json`     | Committed — source                                         |
+| `resume.pdf`      | Gitignored — build artifact (CI only, force-added on main) |
+| `resume.pdf.png`  | Gitignored — build artifact (CI only, force-added on main) |
 | `resume.json.png` | Gitignored — build artifact (CI only, force-added on main) |
-| `resume.html` | Gitignored — build artifact (CI only, force-added on main) |
-| `node_modules/` | Gitignored |
-| `.cache/` | Gitignored |
+| `resume.html`     | Gitignored — build artifact (CI only, force-added on main) |
+| `node_modules/`   | Gitignored                                                 |
+| `.cache/`         | Gitignored                                                 |
 
 All 4 build artifacts are in `.gitignore` and not locally tracked. On the main branch only,
 the CI workflow runs `git add -f` on all 4 files during the amend step, which overrides
@@ -160,14 +161,28 @@ available only as the `resume-artifacts` CI artifact (7-day retention).
 
 ## Code Style
 
-- 2-space indentation (JS, JSON, YAML, HBS, CSS)
-- Double quotes in JS, JSON, YAML
-- Semicolons in JS
+Code style is enforced via **Prettier** (see `.prettierrc.yaml`):
+
+- 2-space indentation
+- Double quotes
+- Semicolons
+- Line length: 100 characters
+- Trailing commas (ES5 compatible)
+- LF line endings
 - `camelCase` for JS variables and functions
 - `SCREAMING_SNAKE_CASE` for JS module-level constants
 - `kebab-case` for CSS class names
 - CSS sections delimited with: `/* ─── Section name ─── */`
-- No linting/formatting config (ESLint, Prettier, EditorConfig) — convention only
+- Handlebars templates (`.hbs`) are not auto-formatted
+
+**Local development:**
+
+```bash
+npm run format:check  # Check if files conform to Prettier
+npm run format:fix   # Auto-fix formatting issues
+```
+
+**CI:** Format check runs first on every push. Build only proceeds if formatting passes.
 
 ## Git Conventions
 
@@ -179,22 +194,22 @@ available only as the `resume-artifacts` CI artifact (7-day retention).
 
 Triggers on every push to any branch.
 
-| Step | Branch |
-|---|---|
-| Checkout (full history) | all |
-| Set up QEMU (cross-arch emulation) | all |
-| Set up Docker Buildx | all |
-| Login to Docker Hub (`DOCKERHUB_USERNAME` + `DOCKERHUB_TOKEN` secrets) | main only |
-| Build multi-arch image (`linux/amd64,linux/arm64`) and push to `jpcercal/resume` | main only |
-| Build single-arch image and load locally (no push) | non-main only |
-| `docker run --rm -v "$PWD:/app" jpcercal/resume:<sha>` | all |
-| Upload all 4 artifacts as `resume-artifacts` (7-day retention) | all |
-| Check dependency freshness (`npm audit` + `npm outdated`, informational) | main only |
-| Minify `resume.html` via `html-minifier-terser` | main only |
-| Deploy HTML to `gh-pages` via `peaceiris/actions-gh-pages@v4` | main only |
-| `git commit --amend --no-edit` — rewrites commit to include PDF + HTML + preview PNGs | main only |
-| Force-push with `force_with_lease` to triggering branch | main only |
-| Create versioned GitHub release; upload `resume.pdf` as asset | main only |
+| Step                                                                                  | Branch        |
+| ------------------------------------------------------------------------------------- | ------------- |
+| Checkout (full history)                                                               | all           |
+| Set up QEMU (cross-arch emulation)                                                    | all           |
+| Set up Docker Buildx                                                                  | all           |
+| Login to Docker Hub (`DOCKERHUB_USERNAME` + `DOCKERHUB_TOKEN` secrets)                | main only     |
+| Build multi-arch image (`linux/amd64,linux/arm64`) and push to `jpcercal/resume`      | main only     |
+| Build single-arch image and load locally (no push)                                    | non-main only |
+| `docker run --rm -v "$PWD:/app" jpcercal/resume:<sha>`                                | all           |
+| Upload all 4 artifacts as `resume-artifacts` (7-day retention)                        | all           |
+| Check dependency freshness (`npm audit` + `npm outdated`, informational)              | main only     |
+| Minify `resume.html` via `html-minifier-terser`                                       | main only     |
+| Deploy HTML to `gh-pages` via `peaceiris/actions-gh-pages@v4`                         | main only     |
+| `git commit --amend --no-edit` — rewrites commit to include PDF + HTML + preview PNGs | main only     |
+| Force-push with `force_with_lease` to triggering branch                               | main only     |
+| Create versioned GitHub release; upload `resume.pdf` as asset                         | main only     |
 
 Release version format: `(year-2023).MM.DDHHmmss`
 Example: push on 2025-03-04 14:12:05 → `2.03.041412005`

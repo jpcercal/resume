@@ -6,8 +6,26 @@ env:
   IMAGE: jpcercal/resume
 
 jobs:
+  format:
+    name: Format Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check formatting
+        run: npm run format:check
+
   build:
     name: build
+    needs: format
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -1,6 +1,6 @@
 # Resume
 
-[![View Resume (EN)](https://img.shields.io/badge/Jo%C3%A3o's_Resume_(EN)-VIEW-blue?logo=googlechrome&logoColor=ffffff 'View Resume')](https://github.com/jpcercal/resume/releases/latest/download/resume.pdf) [![Download Resume (EN)](https://img.shields.io/badge/Jo%C3%A3o's_Resume_(EN)-DOWNLOAD-ED5F1A?logo=githubsponsors&logoColor=ffffff 'Download Resume')](https://github.com/jpcercal/resume/releases/latest/download/resume.pdf) [![View Resume (PT-BR)](https://img.shields.io/badge/Curr%C3%ADculo_(PT--BR)-VER-blue?logo=googlechrome&logoColor=ffffff 'View Resume')](https://github.com/jpcercal/resume/releases/latest/download/resume.pt-BR.pdf) [![Download Resume (PT-BR)](https://img.shields.io/badge/Curr%C3%ADculo_(PT--BR)-BAIXAR-ED5F1A?logo=githubsponsors&logoColor=ffffff 'Download Resume')](https://github.com/jpcercal/resume/releases/latest/download/resume.pt-BR.pdf) [![resume.json](https://img.shields.io/badge//resume.json-2B2B2B?logo=github&logoColor=ffffff 'resume.json')](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json) [![github actions](https://img.shields.io/badge/github%20actions-2B2B2B?logo=githubactions&logoColor=ffffff 'github actions')](https://github.com/jpcercal/resume/actions) [![CI](https://github.com/jpcercal/resume/actions/workflows/resume.yml/badge.svg?branch=main)](https://github.com/jpcercal/resume/actions/workflows/resume.yml?query=branch%3Amain) [![Latest Release](https://img.shields.io/github/v/release/jpcercal/resume?display_name=tag&logo=github&logoColor=ffffff&color=2B2B2B)](https://github.com/jpcercal/resume/releases) [![Docker Pulls](https://img.shields.io/docker/pulls/jpcercal/resume?logo=docker&logoColor=ffffff&color=2496ED)](https://hub.docker.com/r/jpcercal/resume) [![Node 24+](https://img.shields.io/badge/Node.js-24%2B-339933?logo=nodedotjs&logoColor=ffffff)](https://nodejs.org/)
+[![View Resume (EN)](<https://img.shields.io/badge/Jo%C3%A3o's_Resume_(EN)-VIEW-blue?logo=googlechrome&logoColor=ffffff> "View Resume")](https://github.com/jpcercal/resume/releases/latest/download/resume.pdf) [![Download Resume (EN)](<https://img.shields.io/badge/Jo%C3%A3o's_Resume_(EN)-DOWNLOAD-ED5F1A?logo=githubsponsors&logoColor=ffffff> "Download Resume")](https://github.com/jpcercal/resume/releases/latest/download/resume.pdf) [![View Resume (PT-BR)](<https://img.shields.io/badge/Curr%C3%ADculo_(PT--BR)-VER-blue?logo=googlechrome&logoColor=ffffff> "View Resume")](https://github.com/jpcercal/resume/releases/latest/download/resume.pt-BR.pdf) [![Download Resume (PT-BR)](<https://img.shields.io/badge/Curr%C3%ADculo_(PT--BR)-BAIXAR-ED5F1A?logo=githubsponsors&logoColor=ffffff> "Download Resume")](https://github.com/jpcercal/resume/releases/latest/download/resume.pt-BR.pdf) [![resume.json](https://img.shields.io/badge//resume.json-2B2B2B?logo=github&logoColor=ffffff "resume.json")](https://raw.githubusercontent.com/jpcercal/resume/main/resume.json) [![github actions](https://img.shields.io/badge/github%20actions-2B2B2B?logo=githubactions&logoColor=ffffff "github actions")](https://github.com/jpcercal/resume/actions) [![CI](https://github.com/jpcercal/resume/actions/workflows/resume.yml/badge.svg?branch=main)](https://github.com/jpcercal/resume/actions/workflows/resume.yml?query=branch%3Amain) [![Latest Release](https://img.shields.io/github/v/release/jpcercal/resume?display_name=tag&logo=github&logoColor=ffffff&color=2B2B2B)](https://github.com/jpcercal/resume/releases) [![Docker Pulls](https://img.shields.io/docker/pulls/jpcercal/resume?logo=docker&logoColor=ffffff&color=2496ED)](https://hub.docker.com/r/jpcercal/resume) [![Node 24+](https://img.shields.io/badge/Node.js-24%2B-339933?logo=nodedotjs&logoColor=ffffff)](https://nodejs.org/)
 
 As a software engineer with a thirst for adventure, I'm constantly looking for ways to
 apply engineering rigour to problems that most people solve manually. A resume is one of
@@ -35,15 +35,15 @@ in their working directory.
 
 The pipeline is intentionally simple:
 
-| Step | What happens |
-|------|--------------|
-| Edit `resume.json` | Update your content — work experience, skills, education |
-| `git push` | Triggers the GitHub Actions workflow |
-| CI builds the image | Multi-arch Docker image pushed to Docker Hub |
-| Artifacts are generated | `resume.pdf`, `resume.html`, and two preview PNGs |
-| HTML is minified | CSS, JS, and whitespace compressed for the web |
-| GitHub Pages is updated | The minified HTML is live at your Pages URL |
-| Release is tagged | A versioned GitHub release is created with `resume.pdf` as an asset |
+| Step                    | What happens                                                        |
+| ----------------------- | ------------------------------------------------------------------- |
+| Edit `resume.json`      | Update your content — work experience, skills, education            |
+| `git push`              | Triggers the GitHub Actions workflow                                |
+| CI builds the image     | Multi-arch Docker image pushed to Docker Hub                        |
+| Artifacts are generated | `resume.pdf`, `resume.html`, and two preview PNGs                   |
+| HTML is minified        | CSS, JS, and whitespace compressed for the web                      |
+| GitHub Pages is updated | The minified HTML is live at your Pages URL                         |
+| Release is tagged       | A versioned GitHub release is created with `resume.pdf` as an asset |
 
 Under the hood, [resumed](https://github.com/rbardini/resumed) validates the JSON and
 renders it through a custom [Handlebars](https://handlebarsjs.com/) template styled with

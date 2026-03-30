@@ -2,7 +2,6 @@ import { readFileSync } from "fs";
 import { setPdfMetadata } from "./set-pdf-metadata.js";
 
 export async function run(page, html, resume, outputPath, expectedPages) {
-
   await page.setContent(html, { waitUntil: "domcontentloaded" });
   await page.evaluate(() => document.fonts.ready);
   await page.pdf({

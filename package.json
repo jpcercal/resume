@@ -7,6 +7,7 @@
     "jsonresume-theme-local": "file:theme",
     "pdf-lib": "^1.17.1",
     "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
     "puppeteer": "^24.38.0",
     "resumed": "^6.1.0",
     "tailwindcss": "^4.2.1"
@@ -20,7 +21,9 @@
     "validate": "resumed validate /app/resume.json",
     "render": "resumed render /app/resume.json --theme jsonresume-theme-local --output /app/resume.html",
     "generate-pdf": "node index.js",
-    "build": "sh scripts/build.sh"
+    "build": "sh scripts/build.sh",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "author": {
     "name": "João Paulo Cercal",

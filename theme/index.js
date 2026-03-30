@@ -92,20 +92,20 @@ async function getCompiledCss() {
  */
 function registerStaticHelpers() {
   /** Returns an inline SVG icon for "linkedin" or "github"; empty string otherwise */
-  Handlebars.registerHelper("networkIcon", (network) =>
-    new Handlebars.SafeString(
-      NETWORK_ICONS[(network || "").toLowerCase()] || "",
-    ),
+  Handlebars.registerHelper(
+    "networkIcon",
+    (network) => new Handlebars.SafeString(NETWORK_ICONS[(network || "").toLowerCase()] || "")
   );
 
   /** Strips spaces, dashes, and parentheses from a phone number for use in tel: hrefs */
-  Handlebars.registerHelper("compilePhoneNumber", (phone) =>
-    new Handlebars.SafeString((phone || "").replace(/[\s\-()]/g, "")),
+  Handlebars.registerHelper(
+    "compilePhoneNumber",
+    (phone) => new Handlebars.SafeString((phone || "").replace(/[\s\-()]/g, ""))
   );
 
   /** Returns "." for the last highlight item and ";" for all preceding ones */
   Handlebars.registerHelper("highlightPunctuation", (index, total) =>
-    index === total - 1 ? "." : ";",
+    index === total - 1 ? "." : ";"
   );
 }
 
@@ -121,14 +121,7 @@ registerStaticHelpers();
  * @returns {Promise<string>} Full HTML document string.
  */
 exports.render = async (resume) => {
-  const {
-    meta = {},
-    basics = {},
-    work = [],
-    skills = [],
-    education = [],
-    languages = [],
-  } = resume;
+  const { meta = {}, basics = {}, work = [], skills = [], education = [], languages = [] } = resume;
 
   // ── Get compiled CSS (cached after first call) ──────────────────────────
   const compiledCss = await getCompiledCss();
@@ -148,46 +141,50 @@ exports.render = async (resume) => {
     const ld = {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": basics.name,
-      "jobTitle": basics.label,
-      "description": aiContext.narrative || basics.summary,
-      "image": basics.picture,
-      "email": basics.email ? `mailto:${basics.email}` : undefined,
-      "telephone": basics.phone,
-      "url": basics.website,
-      "workLocation": basics.location?.address || undefined,
-      "address": basics.location ? {
-        "@type": "PostalAddress",
-        "addressLocality": basics.location.address,
-      } : undefined,
-      "sameAs": (basics.profiles || []).map((p) => p.url),
-      "hasOccupation": (work || []).map((w) => ({
+      name: basics.name,
+      jobTitle: basics.label,
+      description: aiContext.narrative || basics.summary,
+      image: basics.picture,
+      email: basics.email ? `mailto:${basics.email}` : undefined,
+      telephone: basics.phone,
+      url: basics.website,
+      workLocation: basics.location?.address || undefined,
+      address: basics.location
+        ? {
+            "@type": "PostalAddress",
+            addressLocality: basics.location.address,
+          }
+        : undefined,
+      sameAs: (basics.profiles || []).map((p) => p.url),
+      hasOccupation: (work || []).map((w) => ({
         "@type": "Occupation",
-        "name": w.position,
-        "hiringOrganization": { "@type": "Organization", "name": w.company },
-        "startDate": w.startDate,
-        "endDate": w.endDate || undefined,
+        name: w.position,
+        hiringOrganization: { "@type": "Organization", name: w.company },
+        startDate: w.startDate,
+        endDate: w.endDate || undefined,
       })),
-      "alumniOf": (education || []).map((e) => ({
+      alumniOf: (education || []).map((e) => ({
         "@type": "EducationalOrganization",
-        "name": e.institution,
-        "studySubject": e.area,
+        name: e.institution,
+        studySubject: e.area,
       })),
-      "knowsAbout": [
+      knowsAbout: [
         ...(skills || []).filter((s) => s.meta?.display).map((s) => s.name),
         ...(aiContext.keywords || []),
       ],
-      "knowsLanguage": (languages || []).map((l) => ({
+      knowsLanguage: (languages || []).map((l) => ({
         "@type": "Language",
-        "name": l.language,
+        name: l.language,
       })),
-      "seeks": aiContext.instructions ? {
-        "@type": "JobPosting",
-        "description": aiContext.instructions,
-      } : undefined,
+      seeks: aiContext.instructions
+        ? {
+            "@type": "JobPosting",
+            description: aiContext.instructions,
+          }
+        : undefined,
     };
     return new Handlebars.SafeString(
-      `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`,
+      `<script type="application/ld+json">\n${JSON.stringify(ld, null, 2)}\n</script>`
     );
   });
 
@@ -210,7 +207,9 @@ exports.render = async (resume) => {
       const workSummary = work
         .map((w) => {
           const startDate = formatDate(w.startDate, meta.lang || "en");
-          const endDate = w.endDate ? formatDate(w.endDate, meta.lang || "en") : (meta.i18n?.present || "Present");
+          const endDate = w.endDate
+            ? formatDate(w.endDate, meta.lang || "en")
+            : meta.i18n?.present || "Present";
           const dateRange = `${startDate} – ${endDate}`;
           return `${w.position} at ${w.company} (${dateRange})`;
         })
@@ -265,7 +264,7 @@ exports.render = async (resume) => {
 
   // ── Render template ──────────────────────────────────────────────────────
   const template = Handlebars.compile(
-    fs.readFileSync(path.join(__dirname, "template.hbs"), "utf8"),
+    fs.readFileSync(path.join(__dirname, "template.hbs"), "utf8")
   );
 
   return template({
