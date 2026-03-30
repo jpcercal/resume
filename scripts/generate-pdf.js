@@ -1,10 +1,9 @@
 import { readFileSync } from "fs";
 import * as theme from "jsonresume-theme-local";
 import { render } from "resumed";
-import { EXPECTED_PDF_PAGES } from "./constants.js";
 import { setPdfMetadata } from "./set-pdf-metadata.js";
 
-export async function run(page, resume, outputPath) {
+export async function run(page, resume, outputPath, expectedPages) {
   const html = await render(resume, theme);
 
   await page.setContent(html, { waitUntil: "domcontentloaded" });
@@ -22,14 +21,14 @@ export async function run(page, resume, outputPath) {
   const countMatch = pdfContent.match(/\/Type\s*\/Pages\s*[^>]*\/Count\s+(\d+)/);
   const pageCount = countMatch ? parseInt(countMatch[1], 10) : 0;
 
-  if (pageCount !== EXPECTED_PDF_PAGES) {
+  if (pageCount !== expectedPages) {
     console.error(
-      `PDF page count guard FAILED: expected ${EXPECTED_PDF_PAGES} pages, got ${pageCount}`
+      `PDF page count guard FAILED: expected ${expectedPages} pages, got ${pageCount}`
     );
     process.exit(1);
   }
 
-  console.log(`PDF page count: ${pageCount} (expected: ${EXPECTED_PDF_PAGES})`);
+  console.log(`PDF page count: ${pageCount} (expected: ${expectedPages})`);
 
   // ── Set PDF metadata ────────────────────────────────────────────────
   // Inject Author, Subject, Keywords, Creator into the PDF's /Info dict
