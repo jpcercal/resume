@@ -3,6 +3,12 @@
   "meta": {
     "lang": "en",
     "mission_statement": "Architecting Systems & Empowering People",
+    "i18n": {
+      "section_work": "Professional Experience",
+      "section_work_subtitle": "(most recent positions, full work history on LinkedIn)",
+      "section_skills": "Skills",
+      "present": "Present"
+    },
     "ai_context": {
       "keywords": [
         "distributed systems",
