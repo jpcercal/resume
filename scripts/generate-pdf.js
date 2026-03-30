@@ -1,10 +1,7 @@
 import { readFileSync } from "fs";
-import * as theme from "jsonresume-theme-local";
-import { render } from "resumed";
 import { setPdfMetadata } from "./set-pdf-metadata.js";
 
-export async function run(page, resume, outputPath, expectedPages) {
-  const html = await render(resume, theme);
+export async function run(page, html, resume, outputPath, expectedPages) {
 
   await page.setContent(html, { waitUntil: "domcontentloaded" });
   await page.evaluate(() => document.fonts.ready);
