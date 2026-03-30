@@ -63,10 +63,54 @@ async function fetchPictureDataUri(url) {
     const contentType = res.headers.get("content-type") || "image/jpeg";
     const buffer = await res.arrayBuffer();
     return `data:${contentType};base64,` + Buffer.from(buffer).toString("base64");
-  } catch {
+  } catch (err) {
+    console.warn(`fetchPictureDataUri: failed to fetch ${url}:`, err.message);
     return url;
   }
 }
+
+/**
+ * Lazily compiles TailwindCSS from input.css. CSS is cached after the first
+ * compilation since it does not depend on resume data.
+ * @returns {Promise<string>} Full compiled CSS including font faces.
+ */
+let _compiledCss = null;
+async function getCompiledCss() {
+  if (_compiledCss) return _compiledCss;
+  const inputCssPath = path.join(__dirname, "input.css");
+  const inputCss = fs.readFileSync(inputCssPath, "utf8");
+  const result = await postcss([tailwindcss()]).process(inputCss, {
+    from: inputCssPath,
+  });
+  _compiledCss = FONT_FACE_CSS + "\n" + result.css;
+  return _compiledCss;
+}
+
+/**
+ * Registers static (pure) Handlebars helpers once at module load.
+ * These helpers do not close over per-render state.
+ */
+function registerStaticHelpers() {
+  /** Returns an inline SVG icon for "linkedin" or "github"; empty string otherwise */
+  Handlebars.registerHelper("networkIcon", (network) =>
+    new Handlebars.SafeString(
+      NETWORK_ICONS[(network || "").toLowerCase()] || "",
+    ),
+  );
+
+  /** Strips spaces, dashes, and parentheses from a phone number for use in tel: hrefs */
+  Handlebars.registerHelper("compilePhoneNumber", (phone) =>
+    new Handlebars.SafeString((phone || "").replace(/[\s\-()]/g, "")),
+  );
+
+  /** Returns "." for the last highlight item and ";" for all preceding ones */
+  Handlebars.registerHelper("highlightPunctuation", (index, total) =>
+    index === total - 1 ? "." : ";",
+  );
+}
+
+// Register static helpers once at module load
+registerStaticHelpers();
 
 // ── Render ─────────────────────────────────────────────────────────────────────
 
@@ -86,44 +130,17 @@ exports.render = async (resume) => {
     languages = [],
   } = resume;
 
-  // ── Compile TailwindCSS ──────────────────────────────────────────────────
-  const inputCssPath = path.join(__dirname, "input.css");
-  const inputCss = fs.readFileSync(inputCssPath, "utf8");
-  const result = await postcss([tailwindcss()]).process(inputCss, {
-    from: inputCssPath,
-  });
-  const compiledCss = FONT_FACE_CSS + "\n" + result.css;
+  // ── Get compiled CSS (cached after first call) ──────────────────────────
+  const compiledCss = await getCompiledCss();
 
-  // ── Register Handlebars helpers ──────────────────────────────────────────
+  // ── Register dynamic Handlebars helpers ─────────────────────────────────
+  // These helpers close over per-render state (compiledCss, meta, work, etc.)
 
   /** Inlines the full compiled CSS into the <style> tag (SafeString — no escaping) */
   Handlebars.registerHelper("style", () => new Handlebars.SafeString(compiledCss));
 
   /** "2024-08" → locale-aware month abbreviation + year (e.g., "Aug 2024" or "Ago 2024") */
   Handlebars.registerHelper("formatDate", (dateStr) => formatDate(dateStr, meta.lang || "en"));
-
-  /** Returns an inline SVG icon for "linkedin" or "github"; empty string otherwise */
-  Handlebars.registerHelper("networkIcon", (network) =>
-    new Handlebars.SafeString(
-      NETWORK_ICONS[(network || "").toLowerCase()] || "",
-    ),
-  );
-
-  /** Strips spaces, dashes, and parentheses from a phone number for use in tel: hrefs */
-  Handlebars.registerHelper("compilePhoneNumber", (phone) =>
-    new Handlebars.SafeString(
-      (phone || "")
-        .replace(/ /g, "")
-        .replace(/-/g, "")
-        .replace(/\(/g, "")
-        .replace(/\)/g, ""),
-    ),
-  );
-
-  /** Returns "." for the last highlight item and ";" for all preceding ones */
-  Handlebars.registerHelper("highlightPunctuation", (index, total) =>
-    index === total - 1 ? "." : ";",
-  );
 
   /** Emits a <script type="application/ld+json"> block with schema.org/Person data */
   Handlebars.registerHelper("jsonLd", () => {

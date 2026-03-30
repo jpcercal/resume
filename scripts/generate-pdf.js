@@ -1,10 +1,7 @@
 import { readFileSync } from "fs";
-import * as theme from "jsonresume-theme-local";
-import { render } from "resumed";
 import { setPdfMetadata } from "./set-pdf-metadata.js";
 
-export async function run(page, resume, outputPath, expectedPages) {
-  const html = await render(resume, theme);
+export async function run(page, html, resume, outputPath, expectedPages) {
 
   await page.setContent(html, { waitUntil: "domcontentloaded" });
   await page.evaluate(() => document.fonts.ready);
@@ -22,10 +19,9 @@ export async function run(page, resume, outputPath, expectedPages) {
   const pageCount = countMatch ? parseInt(countMatch[1], 10) : 0;
 
   if (pageCount !== expectedPages) {
-    console.error(
+    throw new Error(
       `PDF page count guard FAILED: expected ${expectedPages} pages, got ${pageCount}`
     );
-    process.exit(1);
   }
 
   console.log(`PDF page count: ${pageCount} (expected: ${expectedPages})`);

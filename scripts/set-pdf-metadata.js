@@ -24,8 +24,10 @@ export async function setPdfMetadata(pdfPath, resume) {
     pdfDoc.setKeywords(aiContext.keywords);
   }
 
-  // Set /Creator: custom signature
-  pdfDoc.setCreator("João Cercal – jpcercal.com");
+  // Set /Creator: derive from basics.name and basics.url
+  const creatorUrl = basics.url || basics.website || "";
+  const creatorString = creatorUrl ? `${basics.name} – ${creatorUrl}` : basics.name;
+  pdfDoc.setCreator(creatorString);
 
   // Save back to disk
   const pdfBytes = await pdfDoc.save();
