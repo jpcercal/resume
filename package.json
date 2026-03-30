@@ -20,7 +20,9 @@
     "validate": "resumed validate /app/resume.json",
     "render": "resumed render /app/resume.json --theme jsonresume-theme-local --output /app/resume.html",
     "generate-pdf": "node index.js",
-    "build": "sh scripts/build.sh"
+    "build": "sh scripts/build.sh",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "author": {
     "name": "João Paulo Cercal",
@@ -31,5 +33,8 @@
   "license": "MIT",
   "engines": {
     "node": ">=24"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
   }
 }

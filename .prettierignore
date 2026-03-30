@@ -1,0 +1,15 @@
+node_modules/
+.cache/
+.git/
+.claude/
+*.hbs
+resume.html
+resume.pdf
+resume.json.png
+resume.pdf.png
+resume.pt-BR.html
+resume.pt-BR.pdf
+resume.pt-BR.json.png
+resume.pt-BR.pdf.png
+package-lock.json
+.DS_Store
