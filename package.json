@@ -5,6 +5,7 @@
     "@tailwindcss/postcss": "^4.2.1",
     "handlebars": "^4.7.8",
     "jsonresume-theme-local": "file:theme",
+    "pdf-lib": "^1.17.1",
     "postcss": "^8.5.8",
     "puppeteer": "^24.38.0",
     "resumed": "^6.1.0",
