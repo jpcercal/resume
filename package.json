@@ -7,6 +7,7 @@
     "jsonresume-theme-local": "file:theme",
     "pdf-lib": "^1.17.1",
     "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
     "puppeteer": "^24.38.0",
     "resumed": "^6.1.0",
     "tailwindcss": "^4.2.1"
@@ -33,8 +34,5 @@
   "license": "MIT",
   "engines": {
     "node": ">=24"
-  },
-  "devDependencies": {
-    "prettier": "^3.8.1"
   }
 }
