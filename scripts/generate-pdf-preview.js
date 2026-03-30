@@ -1,4 +1,4 @@
-export const PREVIEW_WIDTH = 800;
+import { PREVIEW_WIDTH } from "./constants.js";
 
 export async function run(page, html, outputPath, expectedPages) {
   const PREVIEW_HEIGHT = 29.7 * 37 * expectedPages; // A4 cm-to-px × page count

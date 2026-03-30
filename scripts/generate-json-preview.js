@@ -18,7 +18,9 @@ const nested = (k, v, indent = "    ") =>
 
 // ── Data extraction ───────────────────────────────────────────────────────────
 
+// Number of work entries to show before truncating with "… N more positions"
 const WORK_SHOWN = 3;
+// Number of skills to show before truncating with "+ N more"
 const SKILLS_SHOWN = 12;
 
 function buildWorkLines(work) {
@@ -122,7 +124,8 @@ function buildHtml(resume) {
 
 // ── Entry point ───────────────────────────────────────────────────────────────
 
-const PREVIEW_WIDTH = 800;
+import { PREVIEW_WIDTH } from "./constants.js";
+
 const PREVIEW_HEIGHT = 520;
 
 export async function run(page, resume, outputPath) {
