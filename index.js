@@ -14,14 +14,16 @@ const browser = await puppeteer.launch({
 });
 const page = await browser.newPage();
 
-for (const locale of localesToBuild) {
-  const { expectedPages } = LOCALE_CONFIG[locale];
-  const paths = outputPaths(locale);
-  const resume = JSON.parse(await fs.readFile(paths.resumeJson, "utf-8"));
+try {
+  for (const locale of localesToBuild) {
+    const { expectedPages } = LOCALE_CONFIG[locale];
+    const paths = outputPaths(locale);
+    const resume = JSON.parse(await fs.readFile(paths.resumeJson, "utf-8"));
 
-  await generatePdf(page, resume, paths.resumePdf, expectedPages);
-  await generatePdfPreview(page, resume, paths.resumePdfPng, expectedPages);
-  await generateJsonPreview(page, resume, paths.resumeJsonPng);
+    await generatePdf(page, resume, paths.resumePdf, expectedPages);
+    await generatePdfPreview(page, resume, paths.resumePdfPng, expectedPages);
+    await generateJsonPreview(page, resume, paths.resumeJsonPng);
+  }
+} finally {
+  await browser.close();
 }
-
-await browser.close();
