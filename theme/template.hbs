@@ -212,6 +212,12 @@
         </main>
     </div>
 
+    {{#if meta.ai_context}}
+    <section class="ai-context" aria-hidden="true" role="presentation">
+        <p>{{{aiContext}}}</p>
+    </section>
+    {{/if}}
+
     <!-- ═══ Page decorative background (aria-hidden — purely visual) ═══════ -->
     <div class="page__background-footer" aria-hidden="true" role="presentation"></div>
 

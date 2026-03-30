@@ -447,6 +447,20 @@ address.basics__contacts {
   border-color: var(--color-accent);
 }
 
+/* ─── AI Context — hidden text ─── */
+
+.ai-context {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    12. TAILWIND UTILITY SAFELIST
    Tailwind v4 cannot scan Handlebars templates at build time. Every utility
